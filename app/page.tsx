@@ -1,13 +1,20 @@
-import { Header } from '@/components/Header';
-import Image from 'next/image';
+import { NextPage } from 'next';
 
-export default function Home() {
+const HomePage: NextPage = () => {
   return (
-    <>
-      <Header />
-      <main className='flex min-h-screen flex-col items-center justify-between p-24'>
-        <div className='z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex'></div>
-      </main>
-    </>
+    <main className='md:container md:mx-auto p-8'>
+      <h1 className='text-4xl font-bold'>Hello world!</h1>
+      <h3>
+        My name is <span className='text-blue-500'>Mustafa Kibar</span> and
+        I&apos;m a <span className='text-blue-500'>software engineer</span>.
+      </h3>
+
+      {/* Find me on */}
+      {/* Projects */}
+      {/* Snippets */}
+      {/* Blog posts / Articles */}
+    </main>
   );
-}
+};
+
+export default HomePage;

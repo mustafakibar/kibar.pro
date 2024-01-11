@@ -3,13 +3,21 @@ import Image from 'next/image';
 
 const Header: React.FC = () => {
   return (
-    <header className='w-full relative mx-auto flex p-4 items-end justify-between'>
+    <header className='w-full mx-auto flex p-4 items-end justify-between'>
       <div className='relative'>
-        <span className='absolute bottom-4 right-4 size-4 text-4xl font-extrabold'>
+        <span className='absolute bottom-2 right-2 size-4 text-2xl font-extrabold'>
           Kibar
         </span>
-        <Image src='/crab.png' width={64} height={64} alt='kibar.pro Logo' />
+        <Image
+          className='w-12 h-12'
+          src='/crab.png'
+          width={512}
+          height={512}
+          alt='kibar.pro Logo'
+        />
       </div>
+
+      {/* TODO: Add a theme switcher here. */}
 
       {/* On small screens, show a hamburger menu icon. */}
       <nav className='md:hidden flex-shrink'>
@@ -37,7 +45,6 @@ const Header: React.FC = () => {
           <li>Projects</li>
           <li>Snippets</li>
           <li>About</li>
-          <li>Contact</li>
           <li>Resume</li>
         </ul>
       </nav>
