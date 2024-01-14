@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import { Header } from '@/components/Header';
 import './globals.css';
 import { cn } from '@/lib/utils';
+import { Footer } from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Mustafa Kibar',
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body className={cn(inter.className)}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
