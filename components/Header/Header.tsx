@@ -1,5 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
+import { ThemeSwitchButton } from '../ThemeSwitchButton';
+import { NavMenu } from '../NavMenu';
 
 const Header: React.FC = () => {
   return (
@@ -17,37 +19,11 @@ const Header: React.FC = () => {
         />
       </div>
 
-      {/* TODO: Add a theme switcher here. */}
+      <div className='flex flex-shrink'>
+        <ThemeSwitchButton />
 
-      {/* On small screens, show a hamburger menu icon. */}
-      <nav className='md:hidden flex-shrink'>
-        <button>
-          <svg
-            className='w-6 h-6'
-            fill='none'
-            stroke='currentColor'
-            viewBox='0 0 24 24'
-            xmlns='http://www.w3.org/2000/svg'>
-            <path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              strokeWidth='2'
-              d='M4 6h16M4 12h16M4 18h16'></path>
-          </svg>
-        </button>
-      </nav>
-
-      {/* On large screens, show the navigation links on the right side of the logo. */}
-      <nav className='hidden md:flex flex-shrink justify-end items-end'>
-        <ul className='inline-flex'>
-          <li>Home</li>
-          <li>Blog</li>
-          <li>Projects</li>
-          <li>Snippets</li>
-          <li>About</li>
-          <li>Resume</li>
-        </ul>
-      </nav>
+        <NavMenu />
+      </div>
     </header>
   );
 };
