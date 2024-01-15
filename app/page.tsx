@@ -1,7 +1,6 @@
 import { FindMeOn } from '@/components/FindMeOn';
 import { Hero } from '@/components/Hero';
 import { SectionCard } from '@/components/SectionCard';
-import { Hash } from 'lucide-react';
 import { NextPage } from 'next';
 
 const HomePage: NextPage = () => {
@@ -10,13 +9,17 @@ const HomePage: NextPage = () => {
       <Hero />
       <FindMeOn />
 
-      <SectionCard title='Projects'>
+      <SectionCard title='Projects' className='my-4'>
         <p>Coming soon...</p>
       </SectionCard>
 
-      {/* Projects */}
-      {/* Snippets */}
-      {/* Blog posts / Articles */}
+      <SectionCard title='Snippets' className='my-4'>
+        <p>Coming soon...</p>
+      </SectionCard>
+
+      <SectionCard title='Blog Posts' className='my-4'>
+        <p>Coming soon...</p>
+      </SectionCard>
     </main>
   );
 };

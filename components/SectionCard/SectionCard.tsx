@@ -13,11 +13,13 @@ import { cn } from '@/lib/utils';
 
 const SectionCard: React.FC<SectionCardProps> = ({
   title,
-  customIcon,
-  hideIcon,
   description,
+  className,
+  hideIcon,
+  customIcon,
   children,
   footer,
+  ...props
 }) => {
   let headerIcon: ReactNode | null;
 
@@ -28,7 +30,7 @@ const SectionCard: React.FC<SectionCardProps> = ({
   }
 
   return (
-    <Card>
+    <Card className={className} {...props}>
       <CardHeader>
         <div className='flex flex-initial'>
           {headerIcon}
