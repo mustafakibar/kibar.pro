@@ -18,7 +18,7 @@ const ThemeSwitchButton: React.FC<ThemeSwitchButtonProps> = ({
 
   return (
     <DropdownMenu {...props}>
-      <DropdownMenuTrigger className={className} {...props}>
+      <DropdownMenuTrigger asChild className={className} {...props}>
         {theme === 'light' ? <Sun /> : <Moon />}
       </DropdownMenuTrigger>
       <DropdownMenuContent>

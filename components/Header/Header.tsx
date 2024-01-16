@@ -19,9 +19,8 @@ const Header: React.FC = () => {
         />
       </div>
 
-      <div className='flex flex-shrink'>
+      <div className='flex flex-shrink gap-5'>
         <ThemeSwitchButton />
-
         <NavMenu />
       </div>
     </header>
