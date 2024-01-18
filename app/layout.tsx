@@ -4,6 +4,7 @@ import { Header } from '@/components/Header';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Footer } from '@/components/Footer';
+import Providers from './providers';
 
 export const metadata: Metadata = {
   title: 'Mustafa Kibar',
@@ -18,11 +19,15 @@ type RootLayoutProps = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang='en'>
-      <body className={cn(inter.className)}>
-        <Header />
-        {children}
-        <Footer />
+    <html lang='en' suppressHydrationWarning>
+      <body className={cn(inter.className, 'overflow-hidden')}>
+        <Providers>
+          <div className='kbr-container flex flex-col min-h-screen transition-all overflow-y-auto'>
+            <Header />
+            <div className='flex-grow'>{children}</div>
+            <Footer />
+          </div>
+        </Providers>
       </body>
     </html>
   );
