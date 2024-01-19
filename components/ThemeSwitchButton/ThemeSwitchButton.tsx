@@ -1,16 +1,31 @@
 'use client';
 
-import { Moon, Sun } from 'lucide-react';
+import { Moon, Sun, SunMoon } from 'lucide-react';
 import { ThemeSwitchButtonProps } from '.';
 import { Button } from '../ui/button';
 import { useTheme } from 'next-themes';
 import {
   DropdownMenu,
+  DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuItem,
   DropdownMenuTrigger,
 } from '../ui/dropdown-menu';
 import { useEffect, useState } from 'react';
+
+const ThemeModes = [
+  {
+    value: 'light',
+    label: 'Light',
+  },
+  {
+    value: 'dark',
+    label: 'Dark',
+  },
+  {
+    value: 'system',
+    label: 'System',
+  },
+] as const;
 
 const ThemeSwitchButton: React.FC<ThemeSwitchButtonProps> = ({
   className,
@@ -23,27 +38,31 @@ const ThemeSwitchButton: React.FC<ThemeSwitchButtonProps> = ({
     setMounted(true);
   }, []);
 
-  if (!mounted) {
-    return null;
-  }
-
   return (
     <DropdownMenu {...props}>
       <DropdownMenuTrigger asChild className={className} {...props}>
-        <Button variant='ghost'>
-          {theme === 'light' ? <Sun /> : <Moon />}
-        </Button>
+        {mounted ? (
+          <Button
+            variant='ghost'
+            className='outline-none border-0 focus:!ring-transparent'>
+            {theme === 'light' ? <Sun /> : <Moon />}
+          </Button>
+        ) : (
+          <Button variant='ghost'>
+            <SunMoon />
+          </Button>
+        )}
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <DropdownMenuItem onClick={setTheme.bind(this, 'light')}>
-          Light
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={setTheme.bind(this, 'dark')}>
-          Dark
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={setTheme.bind(this, 'system')}>
-          System
-        </DropdownMenuItem>
+        {ThemeModes.map((mode) => (
+          <DropdownMenuCheckboxItem
+            key={mode.value}
+            checked={theme === mode.value}
+            disabled={theme === mode.value}
+            onClick={setTheme.bind(this, mode.value)}>
+            {mode.label}
+          </DropdownMenuCheckboxItem>
+        ))}
       </DropdownMenuContent>
     </DropdownMenu>
   );

@@ -5,7 +5,7 @@ import { NextPage } from 'next';
 
 const HomePage: NextPage = () => {
   return (
-    <main className='md:container md:mx-auto p-8'>
+    <main className='p-8'>
       <Hero />
       <FindMeOn />
 

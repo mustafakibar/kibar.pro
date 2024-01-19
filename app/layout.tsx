@@ -20,12 +20,14 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <body className={cn(inter.className, 'overflow-hidden')}>
+      <body className={cn(inter.className, 'overflow-hidden bg-foreground')}>
         <Providers>
-          <div className='kbr-container flex flex-col min-h-screen transition-all overflow-y-auto'>
-            <Header />
-            <div className='flex-grow'>{children}</div>
-            <Footer />
+          <div className='kbr-main-background bg-background'>
+            <div className='kbr-main-container md:container flex flex-col min-h-screen'>
+              <Header />
+              <div className='flex-grow'>{children}</div>
+              <Footer />
+            </div>
           </div>
         </Providers>
       </body>

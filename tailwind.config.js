@@ -70,6 +70,7 @@ module.exports = {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'ping-slow': 'ping 7s cubic-bezier(0, 0.9, 0.5, 1) infinite',
       },
     },
   },

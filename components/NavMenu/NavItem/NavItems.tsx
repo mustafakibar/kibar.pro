@@ -1,3 +1,6 @@
+'use client';
+
+import { useRouter } from 'next/navigation';
 import { NavItem } from '.';
 
 const NAV_ITEMS = [
@@ -10,6 +13,8 @@ const NAV_ITEMS = [
 ];
 
 const NavItems: React.FC<{ className?: string }> = ({ className }) => {
+  const router = useRouter();
+
   return NAV_ITEMS.map((item) => (
     <NavItem
       key={item.text.concat(item.href)}

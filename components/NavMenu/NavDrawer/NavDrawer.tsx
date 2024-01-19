@@ -21,7 +21,7 @@ const NavDrawer: React.FC = () => {
           <Menu />
         </Button>
       </DrawerTrigger>
-      <DrawerContent className='h-3/4'>
+      <DrawerContent>
         <DrawerHeader className='flex flex-col gap-5 items-center justify-center'>
           <NavItems className='p-4 text-2xl' />
         </DrawerHeader>
