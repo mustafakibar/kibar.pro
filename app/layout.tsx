@@ -4,7 +4,7 @@ import { Header } from '@/components/Header';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Footer } from '@/components/Footer';
-import Providers from './providers';
+import ThemeProvider from './theme-providers';
 
 export const metadata: Metadata = {
   title: 'Mustafa Kibar',
@@ -21,7 +21,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang='en' suppressHydrationWarning>
       <body className={cn(inter.className, 'overflow-hidden bg-foreground')}>
-        <Providers>
+        <ThemeProvider enableSystem defaultTheme='system' attribute='class'>
           <div className='kbr-main-background bg-background'>
             <div className='kbr-main-container md:container flex flex-col min-h-screen'>
               <Header />
@@ -29,7 +29,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               <Footer />
             </div>
           </div>
-        </Providers>
+        </ThemeProvider>
       </body>
     </html>
   );
