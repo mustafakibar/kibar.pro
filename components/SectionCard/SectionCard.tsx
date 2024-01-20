@@ -1,15 +1,15 @@
+import { cn } from '@/lib/utils';
 import { Hash } from 'lucide-react';
+import { ReactNode } from 'react';
 import {
   Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
-  CardDescription,
-  CardContent,
-  CardFooter,
 } from '../ui/card';
 import { SectionCardProps } from './type';
-import { ReactNode } from 'react';
-import { cn } from '@/lib/utils';
 
 const SectionCard: React.FC<SectionCardProps> = ({
   title,
@@ -32,7 +32,7 @@ const SectionCard: React.FC<SectionCardProps> = ({
   return (
     <Card className={className} {...props}>
       <CardHeader>
-        <div className='flex flex-initial'>
+        <div className="flex flex-initial">
           {headerIcon}
 
           <CardTitle

@@ -1,9 +1,9 @@
+import { Footer } from '@/components/Footer';
+import { Header } from '@/components/Header';
+import { cn } from '@/lib/utils';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { Header } from '@/components/Header';
 import './globals.css';
-import { cn } from '@/lib/utils';
-import { Footer } from '@/components/Footer';
 import ThemeProvider from './theme-providers';
 
 export const metadata: Metadata = {
@@ -19,13 +19,13 @@ type RootLayoutProps = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang='en' suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body className={cn(inter.className, 'overflow-hidden bg-foreground')}>
-        <ThemeProvider enableSystem defaultTheme='system' attribute='class'>
-          <div className='kbr-main-background bg-background'>
-            <div className='kbr-main-container md:container flex flex-col min-h-screen'>
+        <ThemeProvider enableSystem defaultTheme="system" attribute="class">
+          <div className="kbr-main-background bg-background">
+            <div className="kbr-main-container flex min-h-screen flex-col md:container">
               <Header />
-              <div className='flex-grow'>{children}</div>
+              <div className="flex-grow">{children}</div>
               <Footer />
             </div>
           </div>

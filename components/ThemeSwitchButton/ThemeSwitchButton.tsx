@@ -1,16 +1,16 @@
 'use client';
 
 import { Moon, Sun, SunMoon } from 'lucide-react';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 import { ThemeSwitchButtonProps } from '.';
 import { Button } from '../ui/button';
-import { useTheme } from 'next-themes';
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from '../ui/dropdown-menu';
-import { useEffect, useState } from 'react';
 
 const ThemeModes = [
   {
@@ -43,12 +43,12 @@ const ThemeSwitchButton: React.FC<ThemeSwitchButtonProps> = ({
       <DropdownMenuTrigger asChild className={className} {...props}>
         {mounted ? (
           <Button
-            variant='ghost'
-            className='outline-none border-0 focus:!ring-transparent'>
+            variant="ghost"
+            className="border-0 outline-none focus:!ring-transparent">
             {theme === 'light' ? <Sun /> : <Moon />}
           </Button>
         ) : (
-          <Button variant='ghost'>
+          <Button variant="ghost">
             <SunMoon />
           </Button>
         )}
