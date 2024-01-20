@@ -41,17 +41,11 @@ const ThemeSwitchButton: React.FC<ThemeSwitchButtonProps> = ({
   return (
     <DropdownMenu {...props}>
       <DropdownMenuTrigger asChild className={className} {...props}>
-        {mounted ? (
-          <Button
-            variant="ghost"
-            className="border-0 outline-none focus:!ring-transparent">
-            {theme === 'light' ? <Sun /> : <Moon />}
-          </Button>
-        ) : (
-          <Button variant="ghost">
-            <SunMoon />
-          </Button>
-        )}
+        <Button
+          variant="ghost"
+          className="w-9 border-0 px-0 outline-none focus:!ring-transparent">
+          {!mounted ? <SunMoon /> : theme === 'light' ? <Moon /> : <Sun />}
+        </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         {ThemeModes.map((mode) => (

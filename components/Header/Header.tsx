@@ -25,7 +25,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         />
       </div>
 
-      <div className="flex flex-shrink md:flex-row-reverse">
+      <div className="flex flex-shrink items-center justify-center gap-3 sm:flex-row-reverse lg:gap-8">
         <ThemeSwitchButton />
         <NavMenu />
       </div>

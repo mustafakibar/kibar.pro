@@ -1,8 +1,9 @@
 type NavItemProps = {
   text: string;
-  path: string;
+  href: string;
+  active?: boolean;
   className?: string;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 };
 
 export type { NavItemProps };

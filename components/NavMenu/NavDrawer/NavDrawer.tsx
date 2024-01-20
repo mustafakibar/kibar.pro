@@ -17,13 +17,13 @@ const NavDrawer: React.FC = () => {
   return (
     <Drawer open={isOpen} onOpenChange={setIsOpen}>
       <DrawerTrigger asChild>
-        <Button variant="ghost">
+        <Button variant="ghost" size="icon">
           <Menu />
         </Button>
       </DrawerTrigger>
       <DrawerContent>
-        <DrawerHeader className="flex flex-col items-center justify-center gap-5">
-          <NavItems className="p-4 text-2xl" />
+        <DrawerHeader>
+          <NavItems onItemClicked={setIsOpen.bind(this, false)} />
         </DrawerHeader>
       </DrawerContent>
     </Drawer>
