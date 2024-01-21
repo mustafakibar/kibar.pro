@@ -1,17 +1,25 @@
 'use client';
 
+import {
+  ABOUT_PATH,
+  BLOG_PATH,
+  HOME_PATH,
+  PROJECTS_PATH,
+  RESUME_PATH,
+  SNIPPETS_PATH,
+} from '@/app/constants';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { NavItem } from '.';
 
 const NAV_ITEMS = [
-  { text: 'Home', href: '/' },
-  { text: 'About', href: '/about' },
-  { text: 'Blog', href: '/blog' },
-  { text: 'Projects', href: '/projects' },
-  { text: 'Snippets', href: '/snippets' },
-  { text: 'Resume', href: '/resume' },
+  { text: 'Home', href: HOME_PATH },
+  { text: 'About', href: ABOUT_PATH },
+  { text: 'Blog', href: BLOG_PATH },
+  { text: 'Projects', href: PROJECTS_PATH },
+  { text: 'Snippets', href: SNIPPETS_PATH },
+  { text: 'Resume', href: RESUME_PATH },
 ];
 
 const NavItems: React.FC<{

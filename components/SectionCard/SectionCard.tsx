@@ -1,6 +1,8 @@
 import { cn } from '@/lib/utils';
-import { Hash } from 'lucide-react';
+import { ArrowUpRight, Hash } from 'lucide-react';
+import Link from 'next/link';
 import { ReactNode } from 'react';
+import { SectionCardProps } from '.';
 import {
   Card,
   CardContent,
@@ -9,7 +11,6 @@ import {
   CardHeader,
   CardTitle,
 } from '../ui/card';
-import { SectionCardProps } from './type';
 
 const SectionCard: React.FC<SectionCardProps> = ({
   title,
@@ -17,6 +18,7 @@ const SectionCard: React.FC<SectionCardProps> = ({
   className,
   hideIcon,
   customIcon,
+  viewAllHref,
   children,
   footer,
   ...props
@@ -30,17 +32,21 @@ const SectionCard: React.FC<SectionCardProps> = ({
   }
 
   return (
-    <Card className={className} {...props}>
+    <Card className={cn(className)} {...props}>
       <CardHeader>
         <div className="flex flex-initial">
           {headerIcon}
 
-          <CardTitle
-            className={cn({
-              'ml-2': (headerIcon = !null),
-            })}>
+          <CardTitle className={cn({ 'ml-2': (headerIcon = !null) })}>
             {title}
           </CardTitle>
+
+          {viewAllHref && (
+            <div className="text-md mx-5 flex flex-row items-center">
+              <Link href={viewAllHref}>View all</Link>
+              <ArrowUpRight size={16} />
+            </div>
+          )}
         </div>
 
         {description && <CardDescription>{description}</CardDescription>}

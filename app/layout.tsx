@@ -20,7 +20,7 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn(inter.className, 'overflow-hidden bg-foreground')}>
+      <body className={cn(inter.className, 'overflow-auto bg-foreground')}>
         <ThemeProvider enableSystem defaultTheme="system" attribute="class">
           <div className="kbr-main-background bg-background">
             <div className="kbr-main-container flex min-h-screen flex-col md:container">

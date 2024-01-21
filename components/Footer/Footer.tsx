@@ -4,7 +4,7 @@ import { FooterProps } from '.';
 
 const Footer: React.FC<FooterProps> = ({ className }) => {
   return (
-    <footer className={cn('sticky bottom-0 w-full', className)}>
+    <footer className={cn('w-full', className)}>
       <div className="flex flex-row items-center justify-center p-3">
         designed with{' '}
         <div className="mx-1 flex flex-shrink items-center justify-center pb-2 align-middle">
