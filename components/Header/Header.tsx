@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import React from 'react';
 import { HeaderProps } from '.';
-import { NavMenu } from '../NavMenu';
+import { NavMenu } from '../Nav';
 import { ThemeSwitchButton } from '../ThemeSwitchButton';
 
 const Header: React.FC<HeaderProps> = ({ className }) => {

@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils';
 import { ArrowUpRight, Hash } from 'lucide-react';
 import Link from 'next/link';
 import { ReactNode } from 'react';
-import { SectionCardProps } from '.';
+import { SectionHeadingProps } from '.';
 import {
   Card,
   CardContent,
@@ -12,7 +12,7 @@ import {
   CardTitle,
 } from '../ui/card';
 
-const SectionCard: React.FC<SectionCardProps> = ({
+const SectionHeading: React.FC<SectionHeadingProps> = ({
   title,
   description,
   className,
@@ -57,4 +57,4 @@ const SectionCard: React.FC<SectionCardProps> = ({
   );
 };
 
-export default SectionCard;
+export default SectionHeading;

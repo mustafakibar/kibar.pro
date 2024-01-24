@@ -1,10 +1,13 @@
-import { FindMeOn } from '@/components/FindMeOn';
+import { Post, PostShowcase } from '@/components/Blog';
+import { Contact } from '@/components/Contact';
 import { Hero } from '@/components/Hero';
 import { Project } from '@/components/Project';
 import { ProjectShowcase } from '@/components/Project/ProjectShowcase';
-import { SectionCard } from '@/components/SectionCard';
+import { SectionHeading } from '@/components/SectionHeading';
+import { Snippet } from '@/components/Snippet';
+import { SnippetShowcase } from '@/components/Snippet/SnippetShowcase';
 import { NextPage } from 'next';
-import { BLOG_PATH, PROJECTS_PATH } from './constants';
+import { BLOG_PATH, PROJECTS_PATH, SNIPPETS_PATH } from './constants';
 
 const dummyProjects: Project[] = [
   {
@@ -22,26 +25,95 @@ const dummyProjects: Project[] = [
   },
 ];
 
+const dummySnippets: Snippet[] = [
+  {
+    title: 'Dummy Snippet -1',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    tags: ['react', 'typescript'],
+  },
+  {
+    title: 'Dummy Snippet -2',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    tags: ['rust', 'webassembly'],
+  },
+  {
+    title: 'Dummy Snippet -3',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    tags: ['kotlin', 'microservice'],
+  },
+];
+
+const dummyBlogPosts: Post[] = [
+  {
+    id: '1',
+    slug: 'dummy-blog-post-1',
+    tags: ['react', 'typescript'],
+    title: 'Dummy Blog Post -1',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    published: true,
+    createdAt: new Date().toLocaleDateString(),
+    updatedAt: null,
+  },
+  {
+    id: '2',
+    slug: 'dummy-blog-post-2',
+    tags: ['rust', 'webassembly'],
+    title: 'Dummy Blog Post -2',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    published: true,
+    createdAt: new Date().toLocaleDateString(),
+    updatedAt: null,
+  },
+  {
+    id: '3',
+    slug: 'dummy-blog-post-3',
+    tags: ['kotlin', 'microservice'],
+    title: 'Dummy Blog Post -3',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    published: true,
+    createdAt: new Date().toLocaleDateString(),
+    updatedAt: null,
+  },
+];
+
 const HomePage: NextPage = () => {
   return (
     <main className="p-8">
       <Hero />
-      <FindMeOn />
+      <Contact />
 
-      <SectionCard
+      <SectionHeading
         title="Projects"
         viewAllHref={PROJECTS_PATH}
         className="my-4">
         <div className="max-h-[40vh] overflow-y-auto px-2">
-          {dummyProjects.map((project) => (
-            <ProjectShowcase key={project.title} project={project} />
+          {dummyProjects.map((item) => (
+            <ProjectShowcase key={item.title} project={item} />
           ))}
         </div>
-      </SectionCard>
+      </SectionHeading>
 
-      <SectionCard title="Blog Posts" viewAllHref={BLOG_PATH} className="my-4">
-        <p>Coming soon...</p>
-      </SectionCard>
+      <SectionHeading
+        title="Blog Posts"
+        viewAllHref={BLOG_PATH}
+        className="my-4">
+        <div className="max-h-[40vh] overflow-y-auto px-2">
+          {dummyBlogPosts.map((item) => (
+            <PostShowcase key={item.title} post={item} />
+          ))}
+        </div>
+      </SectionHeading>
+
+      <SectionHeading
+        title="Snippets"
+        viewAllHref={SNIPPETS_PATH}
+        className="my-4">
+        <div className="max-h-[40vh] overflow-y-auto px-2">
+          {dummySnippets.map((item) => (
+            <SnippetShowcase key={item.title} snippet={item} />
+          ))}
+        </div>
+      </SectionHeading>
     </main>
   );
 };

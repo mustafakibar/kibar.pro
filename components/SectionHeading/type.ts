@@ -1,4 +1,4 @@
-type SectionCardProps = {
+type SectionHeadingProps = {
   title: string;
   description?: string;
   className?: string;
@@ -9,4 +9,4 @@ type SectionCardProps = {
   footer?: React.ReactNode;
 };
 
-export type { SectionCardProps };
+export type { SectionHeadingProps };
