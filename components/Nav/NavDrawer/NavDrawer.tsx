@@ -30,4 +30,4 @@ const NavDrawer: React.FC = () => {
   );
 };
 
-export default NavDrawer;
+export { NavDrawer };

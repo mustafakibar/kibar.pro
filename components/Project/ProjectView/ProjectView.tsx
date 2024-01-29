@@ -10,4 +10,4 @@ const ProjectView: React.FC<ProjectViewProps> = ({ project }) => {
   );
 };
 
-export default ProjectView;
+export { ProjectView };

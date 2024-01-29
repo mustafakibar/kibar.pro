@@ -25,4 +25,4 @@ const NavItem = React.forwardRef<HTMLAnchorElement, NavItemProps>(
 
 NavItem.displayName = 'NavItem';
 
-export default NavItem;
+export { NavItem };

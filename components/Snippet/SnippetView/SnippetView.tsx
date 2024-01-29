@@ -10,4 +10,4 @@ const SnippetView: React.FC<SnippetViewProps> = ({ snippet }) => {
   );
 };
 
-export default SnippetView;
+export { SnippetView };

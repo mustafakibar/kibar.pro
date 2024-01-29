@@ -21,4 +21,4 @@ const SnippetShowcase: React.FC<SnippetShowcaseProps> = ({
   );
 };
 
-export default SnippetShowcase;
+export { SnippetShowcase };

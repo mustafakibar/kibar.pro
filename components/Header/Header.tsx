@@ -1,5 +1,7 @@
+import { HOME_PATH } from '@/app/constants';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import { HeaderProps } from '.';
 import { NavMenu } from '../Nav';
@@ -13,16 +15,18 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         className,
       )}>
       <div className="relative">
-        <span className="absolute bottom-2 right-2 size-4 text-2xl font-extrabold">
-          Kibar
-        </span>
-        <Image
-          className="h-12 w-12"
-          src="/crab.png"
-          width={512}
-          height={512}
-          alt="kibar.pro Logo"
-        />
+        <Link href={HOME_PATH}>
+          <span className="absolute bottom-2 right-2 size-4 text-2xl font-extrabold">
+            Kibar
+          </span>
+          <Image
+            className="h-12 w-12"
+            src="/crab.png"
+            width={512}
+            height={512}
+            alt="kibar.pro Logo"
+          />
+        </Link>
       </div>
 
       <div className="flex flex-shrink items-center justify-center gap-3 sm:flex-row-reverse lg:gap-8">

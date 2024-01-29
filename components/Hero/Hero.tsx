@@ -13,4 +13,4 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
   );
 };
 
-export default Hero;
+export { Hero };

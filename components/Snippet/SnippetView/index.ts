@@ -1,4 +1,4 @@
-import SnippetView from './SnippetView';
+import { SnippetView } from './SnippetView';
 import { SnippetViewProps } from './type';
 
 export { SnippetView };

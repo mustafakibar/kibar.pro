@@ -53,4 +53,4 @@ const NavItems: React.FC<{
   );
 };
 
-export default NavItems;
+export { NavItems };

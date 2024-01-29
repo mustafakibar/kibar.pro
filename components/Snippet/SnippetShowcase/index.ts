@@ -1,4 +1,4 @@
-import SnippetShowcase from './SnippetShowcase';
+import { SnippetShowcase } from './SnippetShowcase';
 import { SnippetShowcaseProps } from './type';
 
 export { SnippetShowcase };

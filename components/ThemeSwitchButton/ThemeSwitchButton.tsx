@@ -62,4 +62,4 @@ const ThemeSwitchButton: React.FC<ThemeSwitchButtonProps> = ({
   );
 };
 
-export default ThemeSwitchButton;
+export { ThemeSwitchButton };

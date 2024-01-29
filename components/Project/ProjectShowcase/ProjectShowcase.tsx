@@ -31,4 +31,4 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({
   );
 };
 
-export default ProjectShowcase;
+export { ProjectShowcase };
