@@ -23,9 +23,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body className={cn(inter.className, 'overflow-auto bg-foreground')}>
         <ThemeProvider enableSystem defaultTheme="system" attribute="class">
           <div className="kbr-main-background bg-background">
-            <div className="kbr-main-container flex min-h-screen flex-col md:container">
+            <div className="flex min-h-screen flex-col">
               <Header />
-              <div className="flex-grow">{children}</div>
+              <div className="kbr-main-container container  flex-grow">
+                {children}
+              </div>
               <Footer />
             </div>
           </div>

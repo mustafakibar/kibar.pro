@@ -42,7 +42,7 @@ const AboutPage: NextPage = () => {
       <div>- Workspace</div>
       <div>- Stack</div>
       <div>- Bookmarks</div>
-      <div>- Read</div>
+      <div>- Books</div>
       <div>- Gallery</div>
     </div>
   );

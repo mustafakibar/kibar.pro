@@ -78,7 +78,7 @@ const dummyBlogPosts: Post[] = [
 
 const HomePage: NextPage = () => {
   return (
-    <main className="p-8">
+    <main>
       <Hero />
       <Contact />
 

@@ -1,5 +1,5 @@
-import { NavMenu } from './NavMenu';
-import { NavMenuProps } from './type';
+import { NavItem, NavItemProps } from './NavItem';
+import { NavItems } from './NavItems';
 
-export { NavMenu };
-export type { NavMenuProps };
+export { NavItem, NavItems };
+export type { NavItemProps };
