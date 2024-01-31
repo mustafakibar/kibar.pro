@@ -23,21 +23,20 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
   return (
     <header
       className={cn(
-        'sticky inset-x-0 top-0  mx-auto w-full p-[var(--container-padding)]',
+        'sticky inset-x-0 top-0 z-10 mx-auto mb-4 w-full',
         className,
       )}>
-      <div className="relative ">
+      <div className="relative w-full px-[var(--container-padding)] py-4">
         <div className="flex items-center justify-between">
           <Link
             href={HOME_PATH}
             passHref
             className={cn(
-              'inline-block text-2xl md:text-3xl lg:text-4xl',
+              'inline-block touch-none text-2xl md:text-3xl lg:text-4xl',
               pasifico.className,
             )}>
             kibAr
           </Link>
-
           <div className="flex flex-shrink items-center justify-center gap-3 sm:flex-row-reverse lg:gap-8">
             <ThemeSwitchButton />
             <Button
@@ -59,6 +58,8 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             <NavItems />
           </nav>
         )}
+
+        <div className="absolute inset-0 -z-10 w-full border-b-2 bg-slate-50 opacity-80 shadow-sm backdrop-blur backdrop-filter dark:bg-gray-950"></div>
       </div>
     </header>
   );
