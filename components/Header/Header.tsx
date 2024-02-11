@@ -32,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             href={HOME_PATH}
             passHref
             className={cn(
-              'inline-block touch-none text-2xl md:text-3xl lg:text-4xl',
+              'inline-block touch-none text-2xl text-primary md:text-3xl lg:text-4xl',
               pasifico.className,
             )}>
             kibAr
@@ -59,7 +59,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           </nav>
         )}
 
-        <div className="absolute inset-0 -z-10 w-full border-b-2 bg-slate-50 opacity-80 shadow-sm backdrop-blur backdrop-filter dark:bg-gray-950"></div>
+        <div className="absolute inset-0 -z-10 w-full border-b-2 opacity-80 shadow-sm backdrop-blur backdrop-filter dark:bg-gray-950"></div>
       </div>
     </header>
   );
