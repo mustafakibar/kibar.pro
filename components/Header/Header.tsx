@@ -1,21 +1,15 @@
 'use client';
 
 import { HOME_PATH } from '@/app/constants';
+import { brandFont } from '@/app/fonts';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
-import { Pacifico } from 'next/font/google';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { HeaderProps } from '.';
 import { NavItems } from '../Nav';
 import { ThemeSwitchButton } from '../ThemeSwitchButton';
 import { Button } from '../ui/button';
-
-const pasifico = Pacifico({
-  weight: '400',
-  subsets: ['latin'],
-  display: 'swap',
-});
 
 const Header: React.FC<HeaderProps> = ({ className }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,14 +20,14 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         'sticky inset-x-0 top-0 z-10 mx-auto mb-4 w-full',
         className,
       )}>
-      <div className="relative w-full px-[var(--container-padding)] py-4">
+      <div className="relative w-full px-[var(--container-padding)] py-3">
         <div className="flex items-center justify-between">
           <Link
             href={HOME_PATH}
             passHref
             className={cn(
-              'inline-block touch-none text-3xl text-primary md:text-4xl lg:text-5xl',
-              pasifico.className,
+              'inline-block touch-none bg-gradient-to-r from-primary to-secondary bg-clip-text px-1 text-3xl text-transparent md:text-4xl lg:text-5xl',
+              brandFont.className,
             )}>
             kibAr
           </Link>
@@ -66,7 +60,13 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         )}
 
         {/* Header shadow and background blur */}
-        <div className="absolute inset-0 -z-10 w-full border-b-2 opacity-80 shadow-sm backdrop-blur backdrop-filter dark:bg-gray-950"></div>
+        <div
+          className={cn(
+            'absolute inset-0 -z-10 w-full border-b-2 shadow-sm backdrop-blur backdrop-filter dark:bg-gray-950',
+            {
+              'opacity-90': !isMenuOpen,
+            },
+          )}></div>
       </div>
     </header>
   );

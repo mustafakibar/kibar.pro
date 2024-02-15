@@ -29,17 +29,17 @@
 
   .dark {
     --background: 20 14.3 4.1;
-    --foreground: 180 9 98;
-    --card: 200 3 18;
+    --foreground: 180 9 91;
+    --card: 200 3 11;
     --card-foreground: 204 29 90;
-    --popover: 200 3 18;
+    --popover: 200 3 13;
     --popover-foreground: 204 29 90;
-    --primary: 338 84 22;
+    --primary: 338 84 31;
     --primary-foreground: 25 100 72;
     --secondary: 25 100 72;
     --secondary-foreground: 338 84 22;
     --muted: 210 4 9;
-    --muted-foreground: 210 3 27;
+    --muted-foreground: 210 3 43;
     --accent: 210 100 13;
     --accent-foreground: 25 100 72;
     --destructive: 0 62.8 30.6;

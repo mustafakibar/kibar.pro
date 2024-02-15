@@ -12,7 +12,7 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({
   return (
     <div className={cn('p-2', className)} {...props}>
       <div>
-        <h2>{project.title}</h2>
+        <h1>{project.title}</h1>
         <p>{project.description}</p>
       </div>
       {hasImages && (

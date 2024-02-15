@@ -1,5 +1,6 @@
+import { titleFont } from '@/app/fonts';
 import { cn } from '@/lib/utils';
-import { ArrowUpRight, Hash } from 'lucide-react';
+import { ArrowUpRight, SquareStack } from 'lucide-react';
 import Link from 'next/link';
 import { ReactNode } from 'react';
 import { SectionHeadingProps } from '.';
@@ -26,7 +27,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
   let headerIcon: ReactNode | null;
 
   if (!hideIcon) {
-    headerIcon = customIcon ? customIcon : <Hash />;
+    headerIcon = customIcon ? customIcon : <SquareStack />;
   } else {
     headerIcon = null;
   }
@@ -34,18 +35,31 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
   return (
     <Card className={cn(className)} {...props}>
       <CardHeader>
-        <div className="flex flex-initial">
-          {headerIcon}
-
-          <CardTitle className={cn({ 'ml-2': (headerIcon = !null) })}>
+        <div className="flex flex-grow flex-row flex-nowrap text-nowrap">
+          <CardTitle
+            className={cn(
+              titleFont.className,
+              'flex flex-row items-center text-4xl font-normal tracking-wide text-foreground/90',
+              {
+                'gap-1': headerIcon != null,
+              },
+            )}>
+            {headerIcon && <div className="mb-1 mr-1">{headerIcon}</div>}
             {title}
           </CardTitle>
 
           {viewAllHref && (
-            <div className="text-md mx-5 flex flex-row items-center">
-              <Link href={viewAllHref}>View all</Link>
-              <ArrowUpRight size={16} />
-            </div>
+            <Link href={viewAllHref}>
+              <div className="relative">
+                <div className="text-md absolute mx-4 flex flex-row items-center rounded tracking-tighter text-foreground/70 underline-offset-4 outline-4 outline-offset-4 outline-accent-foreground/40 transition-all duration-300 ease-in hover:cursor-pointer hover:gap-1 hover:px-1 hover:font-black hover:text-accent-foreground hover:underline hover:outline">
+                  <span>View all</span>
+                  <ArrowUpRight
+                    strokeWidth={3}
+                    className="text-accent-foreground/70"
+                  />
+                </div>
+              </div>
+            </Link>
           )}
         </div>
 
