@@ -31,7 +31,7 @@ const NavItems: React.FC<{
   return (
     <ul
       className={cn(
-        'flex list-none flex-col gap-5 p-3 sm:flex-row sm:gap-1',
+        'flex w-full list-none flex-col items-center justify-center gap-5 p-3 sm:flex-row sm:gap-1',
         className,
       )}>
       {NAV_ITEMS.map((item) => (
@@ -41,10 +41,8 @@ const NavItems: React.FC<{
               text={item.text}
               href={item.href}
               active={pathname === item.href}
-              className="w-full justify-center p-4 text-2xl sm:w-auto sm:justify-normal sm:text-base md:text-lg lg:text-xl"
-              onClick={() => {
-                if (onItemClicked != null) onItemClicked(item.text, item.href);
-              }}
+              className="justify-center p-4 text-2xl sm:w-auto sm:justify-normal sm:text-base md:text-lg lg:text-xl"
+              onClick={onItemClicked?.bind(this, item.text, item.href)}
             />
           </Link>
         </li>

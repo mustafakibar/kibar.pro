@@ -32,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             href={HOME_PATH}
             passHref
             className={cn(
-              'inline-block touch-none text-2xl text-primary md:text-3xl lg:text-4xl',
+              'inline-block touch-none text-3xl text-primary md:text-4xl lg:text-5xl',
               pasifico.className,
             )}>
             kibAr
@@ -47,18 +47,25 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               {isMenuOpen ? <X /> : <Menu />}
             </Button>
 
+            {/* Large screen */}
             <nav className="hidden sm:flex">
               <NavItems />
             </nav>
           </div>
         </div>
 
+        {/* Small screen */}
         {isMenuOpen && (
-          <nav className="flex w-full flex-col sm:hidden">
-            <NavItems />
-          </nav>
+          <div className="sm:hidden">
+            <nav className="absolute left-0 z-10 flex w-full flex-col bg-background py-6">
+              <NavItems onItemClicked={setIsMenuOpen.bind(this, false)} />
+            </nav>
+
+            <div className="fixed inset-x-0 top-[7rem] h-screen w-screen bg-background/80"></div>
+          </div>
         )}
 
+        {/* Header shadow and background blur */}
         <div className="absolute inset-0 -z-10 w-full border-b-2 opacity-80 shadow-sm backdrop-blur backdrop-filter dark:bg-gray-950"></div>
       </div>
     </header>
