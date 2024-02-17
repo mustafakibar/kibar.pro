@@ -1,9 +1,11 @@
 type Project = {
   title: string;
+  slug: string;
+  year: number;
   description: string;
   tags?: string[];
   images?: { src: string; alt: string }[];
-  github?: string;
+  repoUrl?: string;
 };
 
 export type { Project };

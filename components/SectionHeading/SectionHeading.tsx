@@ -50,7 +50,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
 
           {viewAllHref && (
             <Link href={viewAllHref}>
-              <div className="relative">
+              <div className="relative mt-2">
                 <div className="text-md absolute mx-4 flex flex-row items-center rounded tracking-tighter text-foreground/70 underline-offset-4 outline-4 outline-offset-4 outline-accent-foreground/40 transition-all duration-300 ease-in hover:cursor-pointer hover:gap-1 hover:px-1 hover:font-black hover:text-accent-foreground hover:underline hover:outline">
                   <span>View all</span>
                   <ArrowUpRight
