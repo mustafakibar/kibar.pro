@@ -44,7 +44,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
                 'gap-1': headerIcon != null,
               },
             )}>
-            {headerIcon && <div className="mb-1 mr-1">{headerIcon}</div>}
+            {headerIcon && <div className="mb-1 me-1">{headerIcon}</div>}
             {title}
           </CardTitle>
 

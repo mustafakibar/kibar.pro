@@ -1,8 +1,8 @@
-type TagProps = {
+type TagItemProps = {
   name: string;
   className?: string;
   clickable?: boolean;
   customHref?: string;
 };
 
-export type { TagProps };
+export type { TagItemProps };

@@ -13,7 +13,7 @@ const SnippetShowcase: React.FC<SnippetShowcaseProps> = ({
         <p>{snippet.content}</p>
       </div>
       <div>
-        <a href={snippet.link} target="_blank" rel="noopener noreferrer">
+        <a href={snippet.url} target="_blank" rel="noopener noreferrer">
           Snippet Link
         </a>
       </div>

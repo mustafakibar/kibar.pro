@@ -20,7 +20,7 @@ const NavItem = React.forwardRef<HTMLAnchorElement, NavItemProps>(
               active,
           },
         )}>
-        {active && <LandPlot className="mr-1" size={24} />}
+        {active && <LandPlot className="me-1" size={24} />}
         {text}
       </a>
     );

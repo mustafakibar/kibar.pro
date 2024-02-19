@@ -1,8 +1,8 @@
 type Snippet = {
   title: string;
   content: string;
+  url?: string;
   tags?: string[];
-  link?: string;
 };
 
 export type { Snippet };
