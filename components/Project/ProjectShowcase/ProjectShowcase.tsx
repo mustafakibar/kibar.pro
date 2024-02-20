@@ -8,6 +8,7 @@ import {
   ShowcaseFooter,
   ShowcaseHeader,
   ShowcaseMain,
+  ShowcaseStamp,
   ShowcaseTitle,
   ShowcaseViewURLButton,
 } from '@/components/Showcase';
@@ -23,9 +24,9 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({
   return (
     <ShowcaseContainer className={cn(className)} {...props}>
       <ShowcaseMain>
-        <span className="pointer-events-none absolute bottom-0 right-0 touch-none rounded-tl-lg bg-background/30 px-2 text-xs text-foreground/30">
+        <ShowcaseStamp>
           Year: <span className="font-semibold">{project.year}</span>
-        </span>
+        </ShowcaseStamp>
 
         <ShowcaseHeader>
           <ShowcaseTitle>{project.title}</ShowcaseTitle>

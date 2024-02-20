@@ -23,7 +23,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <div className="kbr-main-background bg-background">
             <div className="flex min-h-screen flex-col">
               <Header />
-              <div className="kbr-main-container container  flex-grow">
+              <div className="kbr-main-container container flex-grow">
                 {children}
               </div>
               <Footer />

@@ -3,6 +3,7 @@ type Post = {
   slug: string;
   tags?: string[];
   title: string;
+  foreword?: string;
   content: string;
   readingTimeMillis?: number;
   published: boolean;

@@ -9,7 +9,7 @@ const ShowcaseContainer: React.FC<ShowcaseContainerProps> = ({
   return (
     <div
       className={cn(
-        'relative flex flex-col flex-nowrap gap-3 rounded-xl bg-primary/5 p-5',
+        'relative flex flex-col flex-nowrap gap-3 rounded-lg bg-primary/10 p-5',
         className,
       )}
       {...props}>

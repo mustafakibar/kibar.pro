@@ -12,10 +12,14 @@ import { ShowcaseHeader } from './ShowcaseHeader/ShowcaseHeader';
 import { ShowcaseHeaderProps } from './ShowcaseHeader/type';
 import { ShowcaseMain } from './ShowcaseMain/ShowcaseMain';
 import { ShowcaseMainProps } from './ShowcaseMain/type';
+import { ShowcaseStamp } from './ShowcaseStamp/ShowcaseStamp';
+import { ShowcaseStampProps } from './ShowcaseStamp/type';
 import { ShowcaseTitle } from './ShowcaseTitle/ShowcaseTitle';
 import { ShowcaseTitleProps } from './ShowcaseTitle/type';
 import { ShowcaseViewURLButton } from './ShowcaseViewURLButton/ShowcaseViewURLButton';
 import { ShowCaseViewURLButtonProps } from './ShowcaseViewURLButton/type';
+import { ShowcaseViewer } from './ShowcaseViewer/ShowcaseViewer';
+import { ShowcaseViewerProps } from './ShowcaseViewer/type';
 
 export {
   ShowcaseActionContainer,
@@ -25,8 +29,10 @@ export {
   ShowcaseFooter,
   ShowcaseHeader,
   ShowcaseMain,
+  ShowcaseStamp,
   ShowcaseTitle,
   ShowcaseViewURLButton,
+  ShowcaseViewer,
 };
 export type {
   ShowCaseViewURLButtonProps,
@@ -37,5 +43,7 @@ export type {
   ShowcaseFooterProps,
   ShowcaseHeaderProps,
   ShowcaseMainProps,
+  ShowcaseStampProps,
   ShowcaseTitleProps,
+  ShowcaseViewerProps,
 };

@@ -20,8 +20,8 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         'sticky inset-x-0 top-0 z-10 mx-auto mb-4 w-full',
         className,
       )}>
-      <div className="relative w-full px-[var(--container-padding)] py-4">
-        <div className="md:container">
+      <div className="relative w-full">
+        <div className="container py-5">
           <div className="flex items-center justify-between">
             <Link
               href={HOME_PATH}
@@ -56,7 +56,10 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
                 <NavItems onItemClicked={setIsMenuOpen.bind(this, false)} />
               </nav>
 
-              <div className="fixed inset-x-0 top-[7rem] h-screen w-screen bg-background/80 backdrop-blur-sm"></div>
+              <div
+                className="fixed inset-x-0 top-[7rem] h-screen w-screen bg-background/80 backdrop-blur-sm"
+                onClick={setIsMenuOpen.bind(this, false)}
+              />
             </div>
           )}
 

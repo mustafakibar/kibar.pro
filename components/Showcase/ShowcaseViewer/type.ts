@@ -1,4 +1,4 @@
-type SectionHeadingProps = {
+type ShowcaseViewerProps = {
   title: string;
   description?: string;
   className?: string;
@@ -9,4 +9,4 @@ type SectionHeadingProps = {
   footer?: React.ReactNode;
 };
 
-export type { SectionHeadingProps };
+export type { ShowcaseViewerProps };

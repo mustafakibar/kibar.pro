@@ -1,3 +1,16 @@
+import { SNIPPETS_PATH } from '@/app/constants';
+import {
+  ShowcaseActionContainer,
+  ShowcaseContainer,
+  ShowcaseContent,
+  ShowcaseDivider,
+  ShowcaseFooter,
+  ShowcaseHeader,
+  ShowcaseMain,
+  ShowcaseTitle,
+  ShowcaseViewURLButton,
+} from '@/components/Showcase';
+import { TagItems } from '@/components/Tag';
 import { cn } from '@/lib/utils';
 import { SnippetShowcaseProps } from '.';
 
@@ -7,17 +20,29 @@ const SnippetShowcase: React.FC<SnippetShowcaseProps> = ({
   ...props
 }) => {
   return (
-    <div className={cn('p-2', className)} {...props}>
-      <div>
-        <h2>{snippet.title}</h2>
-        <p>{snippet.content}</p>
-      </div>
-      <div>
-        <a href={snippet.url} target="_blank" rel="noopener noreferrer">
-          Snippet Link
-        </a>
-      </div>
-    </div>
+    <ShowcaseContainer className={cn(className)} {...props}>
+      <ShowcaseMain>
+        <ShowcaseHeader>
+          <ShowcaseTitle>{snippet.title}</ShowcaseTitle>
+
+          <ShowcaseActionContainer>
+            {snippet.slug && (
+              <ShowcaseViewURLButton
+                url={`${SNIPPETS_PATH}\\${snippet.slug}`}
+              />
+            )}
+          </ShowcaseActionContainer>
+        </ShowcaseHeader>
+
+        <ShowcaseDivider />
+
+        <ShowcaseContent>{snippet.content}</ShowcaseContent>
+      </ShowcaseMain>
+
+      <ShowcaseFooter>
+        <TagItems tags={snippet.tags} />
+      </ShowcaseFooter>
+    </ShowcaseContainer>
   );
 };
 

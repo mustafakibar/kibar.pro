@@ -1,7 +1,7 @@
 type Snippet = {
   title: string;
   content: string;
-  url?: string;
+  slug?: string;
   tags?: string[];
 };
 

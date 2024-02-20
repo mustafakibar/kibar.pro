@@ -4,7 +4,6 @@
 
 @layer base {
   :root {
-    --container-padding: 2rem;
     --background: 180 9 98;
     --foreground: 209.57 100 13.53;
     --card: 202 24 93;

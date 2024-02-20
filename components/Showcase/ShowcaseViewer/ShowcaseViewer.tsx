@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 import { ArrowUpRight, SquareStack } from 'lucide-react';
 import Link from 'next/link';
 import { ReactNode } from 'react';
-import { SectionHeadingProps } from '.';
+import { ShowcaseViewerProps } from '..';
 import {
   Card,
   CardContent,
@@ -11,9 +11,9 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '../ui/card';
+} from '../../ui/card';
 
-const SectionHeading: React.FC<SectionHeadingProps> = ({
+const ShowcaseViewer: React.FC<ShowcaseViewerProps> = ({
   title,
   description,
   className,
@@ -33,7 +33,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
   }
 
   return (
-    <Card className={cn(className)} {...props}>
+    <Card className={cn('bg-transparent', className)} {...props}>
       <CardHeader>
         <div className="flex flex-grow flex-row flex-nowrap text-nowrap">
           <CardTitle
@@ -65,10 +65,16 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
 
         {description && <CardDescription>{description}</CardDescription>}
       </CardHeader>
-      <CardContent>{children}</CardContent>
+
+      <CardContent>
+        <div className="grid max-h-[40vh] grid-cols-1 gap-4 overflow-y-auto md:grid-cols-2">
+          {children}
+        </div>
+      </CardContent>
+
       {footer && <CardFooter>{footer}</CardFooter>}
     </Card>
   );
 };
 
-export { SectionHeading };
+export { ShowcaseViewer };
