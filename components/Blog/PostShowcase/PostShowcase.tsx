@@ -42,9 +42,11 @@ const PostShowcase: React.FC<PostShowcaseProps> = ({
         <ShowcaseContent>{post.foreword ?? post.content}</ShowcaseContent>
       </ShowcaseMain>
 
-      <ShowcaseFooter>
-        <TagItems tags={post.tags} />
-      </ShowcaseFooter>
+      {post.tags && (
+        <ShowcaseFooter>
+          <TagItems tags={post.tags} />
+        </ShowcaseFooter>
+      )}
     </ShowcaseContainer>
   );
 };

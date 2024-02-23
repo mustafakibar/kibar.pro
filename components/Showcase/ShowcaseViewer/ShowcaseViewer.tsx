@@ -4,14 +4,6 @@ import { ArrowUpRight, SquareStack } from 'lucide-react';
 import Link from 'next/link';
 import { ReactNode } from 'react';
 import { ShowcaseViewerProps } from '..';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '../../ui/card';
 
 const ShowcaseViewer: React.FC<ShowcaseViewerProps> = ({
   title,
@@ -33,29 +25,29 @@ const ShowcaseViewer: React.FC<ShowcaseViewerProps> = ({
   }
 
   return (
-    <Card className={cn('bg-transparent', className)} {...props}>
-      <CardHeader>
-        <div className="flex flex-grow flex-row flex-nowrap text-nowrap">
-          <CardTitle
+    <div className={cn(className)} {...props}>
+      <div className="space-y-2 py-4 sm:px-2">
+        <div className="flex flex-grow flex-nowrap text-nowrap">
+          <div
             className={cn(
               titleFont.className,
-              'flex flex-row items-center text-4xl font-normal tracking-wide text-foreground/90',
+              'flex items-center text-foreground/90',
               {
                 'gap-1': headerIcon != null,
               },
             )}>
             {headerIcon && <div className="mb-1 me-1">{headerIcon}</div>}
-            {title}
-          </CardTitle>
+            <span className={cn('text-4xl tracking-tight')}>{title}</span>
+          </div>
 
           {viewAllHref && (
             <Link href={viewAllHref}>
               <div className="relative mt-2">
-                <div className="text-md absolute mx-4 flex flex-row items-center rounded tracking-tighter text-foreground/70 underline-offset-4 outline-4 outline-offset-4 outline-accent-foreground/40 transition-all duration-300 ease-in hover:cursor-pointer hover:gap-1 hover:px-1 hover:font-black hover:text-accent-foreground hover:underline hover:outline">
+                <div className="text-md group absolute mx-4 flex items-center text-accent-foreground underline-offset-4 transition-all duration-100 ease-in hover:cursor-pointer hover:gap-1 hover:px-1 hover:underline">
                   <span>View all</span>
                   <ArrowUpRight
                     strokeWidth={3}
-                    className="text-accent-foreground/70"
+                    className="text-accent-foreground/70 transition-all duration-700 ease-in-out group-hover:rotate-45 group-hover:scale-125 group-hover:animate-pulse"
                   />
                 </div>
               </div>
@@ -63,17 +55,17 @@ const ShowcaseViewer: React.FC<ShowcaseViewerProps> = ({
           )}
         </div>
 
-        {description && <CardDescription>{description}</CardDescription>}
-      </CardHeader>
+        {description && (
+          <h4 className="text-sm text-muted-foreground">{description}</h4>
+        )}
+      </div>
 
-      <CardContent>
-        <div className="grid max-h-[40vh] grid-cols-1 gap-4 overflow-y-auto md:grid-cols-2">
-          {children}
-        </div>
-      </CardContent>
+      <div className="grid grid-cols-1 gap-4 sm:p-5 md:grid-cols-2 md:gap-8 lg:gap-12 xl:grid-cols-3">
+        {children}
+      </div>
 
-      {footer && <CardFooter>{footer}</CardFooter>}
-    </Card>
+      {footer && <div className="flex items-center p-6">{footer}</div>}
+    </div>
   );
 };
 

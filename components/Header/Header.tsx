@@ -21,7 +21,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         className,
       )}>
       <div className="relative w-full">
-        <div className="container py-5">
+        <div className="container py-3">
           <div className="flex items-center justify-between">
             <Link
               href={HOME_PATH}

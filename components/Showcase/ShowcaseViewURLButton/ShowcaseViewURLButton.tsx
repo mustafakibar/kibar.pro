@@ -11,7 +11,7 @@ const ShowcaseViewURLButton: React.FC<ShowCaseViewURLButtonProps> = ({
   return (
     <div
       className={cn(
-        'inline-flex flex-row underline-offset-4 hover:text-accent-foreground hover:underline',
+        'inline-flex underline-offset-4 hover:text-accent-foreground hover:underline',
         className,
       )}
       {...props}>

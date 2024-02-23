@@ -7,9 +7,7 @@ const ShowcaseFooter: React.FC<ShowcaseFooterProps> = ({
   ...props
 }) => {
   return (
-    <div
-      className={cn('flex w-full flex-row items-center', className)}
-      {...props}>
+    <div className={cn('flex items-center', className)} {...props}>
       {children}
     </div>
   );

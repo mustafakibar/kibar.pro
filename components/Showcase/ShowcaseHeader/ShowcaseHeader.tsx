@@ -8,7 +8,7 @@ const ShowcaseHeader: React.FC<ShowcaseHeaderProps> = ({
 }) => {
   return (
     <div
-      className={cn('flex flex-row items-center justify-between', className)}
+      className={cn('flex items-center justify-between', className)}
       {...props}>
       {children}
     </div>

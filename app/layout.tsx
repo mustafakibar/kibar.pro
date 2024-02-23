@@ -18,7 +18,7 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn(textFont.className, 'overflow-auto bg-foreground')}>
+      <body className={cn(textFont.className, 'bg-foreground text-foreground')}>
         <ThemeProvider enableSystem defaultTheme="system" attribute="class">
           <div className="kbr-main-background bg-background">
             <div className="flex min-h-screen flex-col">

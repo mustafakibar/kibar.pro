@@ -39,9 +39,11 @@ const SnippetShowcase: React.FC<SnippetShowcaseProps> = ({
         <ShowcaseContent>{snippet.content}</ShowcaseContent>
       </ShowcaseMain>
 
-      <ShowcaseFooter>
-        <TagItems tags={snippet.tags} />
-      </ShowcaseFooter>
+      {snippet.tags && (
+        <ShowcaseFooter>
+          <TagItems tags={snippet.tags} />
+        </ShowcaseFooter>
+      )}
     </ShowcaseContainer>
   );
 };

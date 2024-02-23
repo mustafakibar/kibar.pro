@@ -22,7 +22,7 @@ const TagItem: React.FC<TagItemProps> = ({
           : {}
       }
       className={cn(
-        'group relative inline-flex -skew-y-3 items-center rounded-sm bg-background px-1 outline outline-background/30 transition-all duration-500 ease-in-out hover:cursor-pointer hover:rounded-md hover:bg-background/90 hover:opacity-95 hover:outline-offset-4 hover:outline-background/90 md:px-2 md:py-1',
+        'group relative inline-flex -skew-y-3 items-center rounded-sm bg-foreground/10 px-1 outline outline-foreground/30 transition-all duration-500 ease-in-out hover:cursor-pointer hover:rounded-md hover:bg-foreground/20 hover:opacity-95 hover:outline-offset-4 hover:outline-foreground/40 md:px-2 md:py-1',
         className,
       )}
       {...props}>

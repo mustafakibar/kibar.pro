@@ -33,9 +33,9 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({
 
           <ShowcaseActionContainer>
             {project.repoUrl && (
-              <span className="hover:text-accent-foreground">
+              <div className="inline-block hover:text-accent-foreground">
                 <RepoIcon url={project.repoUrl} />
-              </span>
+              </div>
             )}
 
             {project.slug && (
@@ -51,9 +51,11 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({
         <ShowcaseContent>{project.description}</ShowcaseContent>
       </ShowcaseMain>
 
-      <ShowcaseFooter>
-        <TagItems tags={project.tags} />
-      </ShowcaseFooter>
+      {project.tags && (
+        <ShowcaseFooter>
+          <TagItems tags={project.tags} />
+        </ShowcaseFooter>
+      )}
     </ShowcaseContainer>
   );
 };

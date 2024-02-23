@@ -9,9 +9,10 @@ const ShowcaseDivider: React.FC<ShowcaseDividerProps> = ({
     <div className="relative h-1" {...props}>
       <div
         className={cn(
-          'absolute h-1/2 w-full rounded-md bg-foreground/15 outline outline-2 outline-offset-1 outline-primary/10',
+          'absolute h-1/2 w-full rounded-md bg-foreground/15 opacity-75 outline outline-1 outline-offset-1 outline-primary/30',
           className,
-        )}></div>
+        )}
+      />
     </div>
   );
 };

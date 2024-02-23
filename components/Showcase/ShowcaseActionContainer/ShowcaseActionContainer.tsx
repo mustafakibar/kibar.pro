@@ -8,10 +8,7 @@ const ShowcaseActionContainer: React.FC<ShowcaseActionContainerProps> = ({
 }) => {
   return (
     <div
-      className={cn(
-        'flex flex-row items-center gap-5 text-primary/80',
-        className,
-      )}
+      className={cn('flex items-center gap-5 text-primary/80', className)}
       {...props}>
       {children}
     </div>

@@ -7,11 +7,14 @@ const ShowcaseTitle: React.FC<ShowcaseTitleProps> = ({
   ...props
 }) => {
   return (
-    <h1
-      className={cn('line-clamp-1 text-xl font-semibold', className)}
+    <h2
+      className={cn(
+        'line-clamp-1 text-xl font-medium text-foreground',
+        className,
+      )}
       {...props}>
       {children}
-    </h1>
+    </h2>
   );
 };
 
