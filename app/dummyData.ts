@@ -65,7 +65,7 @@ const dummyBlogPosts: Post[] = [
   {
     id: '1',
     slug: 'dummy-blog-post-1',
-    tags: ['react', 'typescript'],
+    tags: null,
     title: 'Dummy Blog Post -1',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     published: true,

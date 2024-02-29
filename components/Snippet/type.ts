@@ -1,8 +1,8 @@
 type Snippet = {
   title: string;
-  content: string;
   slug?: string;
-  tags?: string[];
+  tags?: string[] | null;
+  content: string;
 };
 
 export type { Snippet };

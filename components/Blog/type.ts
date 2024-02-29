@@ -1,7 +1,7 @@
 type Post = {
   id: string;
   slug: string;
-  tags?: string[];
+  tags?: string[] | null;
   title: string;
   foreword?: string;
   content: string;

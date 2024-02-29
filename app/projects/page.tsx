@@ -1,4 +1,6 @@
+import { GridWrapper } from '@/components/GridWrapper';
 import { ProjectShowcase } from '@/components/Project/ProjectShowcase';
+import { SectionHeading } from '@/components/SectionHeading';
 import { ArrowUpDownIcon, FilterIcon, SearchIcon } from 'lucide-react';
 import { NextPage } from 'next';
 import { dummyProjects } from '../dummyData';
@@ -10,14 +12,12 @@ export const metadata = {
 
 const ProjectsPage: NextPage = () => {
   return (
-    <section className="flex flex-col gap-4">
+    <section className="flex flex-col sm:p-4 md:p-0">
       <div className="flex items-center justify-between">
-        <div className="flex flex-col">
-          <h1 className="text-4xl font-black tracking-tighter">Projects</h1>
-          <h3 className="text-sm text-muted-foreground">
-            Showing 3 projects in total
-          </h3>
-        </div>
+        <SectionHeading
+          title="Projects"
+          subtitle="Showing 3 projects in total"
+        />
 
         {/* TODO */}
         <div className="flex flex-shrink gap-4">
@@ -27,11 +27,11 @@ const ProjectsPage: NextPage = () => {
         </div>
       </div>
 
-      <div className="my-4 grid grid-flow-row grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8">
+      <GridWrapper>
         {[...dummyProjects, ...dummyProjects, ...dummyProjects].map((item) => (
           <ProjectShowcase key={item.title} project={item} />
         ))}
-      </div>
+      </GridWrapper>
     </section>
   );
 };

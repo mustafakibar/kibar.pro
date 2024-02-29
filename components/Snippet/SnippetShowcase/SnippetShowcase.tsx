@@ -17,6 +17,7 @@ import { SnippetShowcaseProps } from '.';
 const SnippetShowcase: React.FC<SnippetShowcaseProps> = ({
   snippet,
   className,
+  hideTags = false,
   ...props
 }) => {
   return (
@@ -39,11 +40,9 @@ const SnippetShowcase: React.FC<SnippetShowcaseProps> = ({
         <ShowcaseContent>{snippet.content}</ShowcaseContent>
       </ShowcaseMain>
 
-      {snippet.tags && (
-        <ShowcaseFooter>
-          <TagItems tags={snippet.tags} />
-        </ShowcaseFooter>
-      )}
+      <ShowcaseFooter>
+        {!hideTags && snippet.tags && <TagItems tags={snippet.tags} />}
+      </ShowcaseFooter>
     </ShowcaseContainer>
   );
 };

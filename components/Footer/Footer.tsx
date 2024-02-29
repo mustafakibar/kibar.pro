@@ -16,7 +16,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           />
         </div>
         <span>by</span>
-        <span className={cn('tracking-wide')}>Mustafa KibAr</span>
+        <span className="tracking-wide">Mustafa KibAr</span>
       </div>
     </footer>
   );

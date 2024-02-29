@@ -11,14 +11,14 @@ const ShowcaseViewURLButton: React.FC<ShowCaseViewURLButtonProps> = ({
   return (
     <div
       className={cn(
-        'inline-flex underline-offset-4 hover:text-accent-foreground hover:underline',
+        'inline-flex items-center underline-offset-4 hover:text-accent-foreground hover:underline',
         className,
       )}
       {...props}>
       <Link passHref href={`${url}`}>
         View
       </Link>
-      <ChevronRight />
+      <ChevronRight className="size-4" />
     </div>
   );
 };

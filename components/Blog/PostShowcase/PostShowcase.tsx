@@ -18,14 +18,13 @@ import { PostShowcaseProps } from '.';
 const PostShowcase: React.FC<PostShowcaseProps> = ({
   post,
   className,
+  hideTags = false,
   ...props
 }) => {
   return (
     <ShowcaseContainer className={cn(className)} {...props}>
       <ShowcaseMain>
-        <ShowcaseStamp>
-          <span className="font-semibold">{post.createdAt}</span>
-        </ShowcaseStamp>
+        <ShowcaseStamp>{post.createdAt}</ShowcaseStamp>
 
         <ShowcaseHeader>
           <ShowcaseTitle>{post.title}</ShowcaseTitle>
@@ -42,11 +41,9 @@ const PostShowcase: React.FC<PostShowcaseProps> = ({
         <ShowcaseContent>{post.foreword ?? post.content}</ShowcaseContent>
       </ShowcaseMain>
 
-      {post.tags && (
-        <ShowcaseFooter>
-          <TagItems tags={post.tags} />
-        </ShowcaseFooter>
-      )}
+      <ShowcaseFooter>
+        {!hideTags && post.tags && <TagItems tags={post.tags} />}
+      </ShowcaseFooter>
     </ShowcaseContainer>
   );
 };

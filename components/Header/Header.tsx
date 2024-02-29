@@ -42,33 +42,33 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
                 {isMenuOpen ? <X /> : <Menu />}
               </Button>
 
-              {/* Large screen */}
               <nav className="hidden sm:flex">
                 <NavItems />
               </nav>
             </div>
           </div>
 
-          {/* Small screen */}
           {isMenuOpen && (
             <div className="sm:hidden">
-              <nav className="absolute left-0 z-10 flex w-full flex-col bg-background py-6">
+              <nav className="absolute left-0 z-10 flex w-full flex-col bg-transparent py-6">
                 <NavItems onItemClicked={setIsMenuOpen.bind(this, false)} />
               </nav>
 
+              {/* Background overlay */}
               <div
-                className="fixed inset-x-0 top-[7rem] h-screen w-screen bg-background/80 backdrop-blur-sm"
+                className="fixed inset-x-0 top-[3rem] h-screen w-screen bg-background opacity-95"
                 onClick={setIsMenuOpen.bind(this, false)}
               />
             </div>
           )}
 
-          {/* Header shadow and background blur */}
+          {/* Header shadow */}
           <div
             className={cn(
-              'absolute inset-0 -z-10 w-full border-b-2 shadow-sm backdrop-blur backdrop-filter',
+              'absolute inset-0 -z-10 w-full border-b-2 shadow-sm',
               {
-                'opacity-90': !isMenuOpen,
+                'bg-background': isMenuOpen,
+                'opacity-90 backdrop-blur backdrop-filter': !isMenuOpen,
               },
             )}></div>
         </div>

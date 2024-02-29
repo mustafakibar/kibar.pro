@@ -19,14 +19,13 @@ import { ProjectShowcaseProps } from '.';
 const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({
   project,
   className,
+  hideTags = false,
   ...props
 }) => {
   return (
     <ShowcaseContainer className={cn(className)} {...props}>
       <ShowcaseMain>
-        <ShowcaseStamp>
-          Year: <span className="font-semibold">{project.year}</span>
-        </ShowcaseStamp>
+        <ShowcaseStamp>{project.year}</ShowcaseStamp>
 
         <ShowcaseHeader>
           <ShowcaseTitle>{project.title}</ShowcaseTitle>
@@ -51,11 +50,9 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({
         <ShowcaseContent>{project.description}</ShowcaseContent>
       </ShowcaseMain>
 
-      {project.tags && (
-        <ShowcaseFooter>
-          <TagItems tags={project.tags} />
-        </ShowcaseFooter>
-      )}
+      <ShowcaseFooter>
+        {!hideTags && project.tags && <TagItems tags={project.tags} />}
+      </ShowcaseFooter>
     </ShowcaseContainer>
   );
 };

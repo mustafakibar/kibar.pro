@@ -6,17 +6,19 @@ const brandFont = Yesteryear({
   display: 'swap',
 });
 
-const titleFont = Lilita_One({
-  weight: '400',
-  subsets: ['latin'],
-  display: 'swap',
-});
-
 const textFont = Ubuntu({
   weight: '400',
   subsets: ['latin'],
   display: 'swap',
 });
+
+const headingFont = Lilita_One({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+});
+
+const titleFont = textFont;
 
 const navFont = Outfit({
   weight: '400',
@@ -24,4 +26,4 @@ const navFont = Outfit({
   display: 'swap',
 });
 
-export { brandFont, navFont, textFont, titleFont };
+export { brandFont, headingFont, navFont, textFont, titleFont };
