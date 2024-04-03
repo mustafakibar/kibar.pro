@@ -56,7 +56,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
 
               {/* Background overlay */}
               <div
-                className="fixed inset-x-0 top-[3rem] h-screen w-screen bg-background opacity-95"
+                className="fixed inset-x-0 top-[4.9rem] h-screen w-screen bg-background opacity-95"
                 onClick={setIsMenuOpen.bind(this, false)}
               />
             </div>

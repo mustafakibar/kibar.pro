@@ -21,7 +21,7 @@ const NavItem = React.forwardRef<HTMLAnchorElement, NavItemProps>(
         )}>
         {text}
         {active && (
-          <div className="absolute bottom-1.5 left-0 inline-flex h-1 w-full">
+          <div className="absolute bottom-1.5 left-0 hidden h-1 w-full sm:inline-flex">
             <div className="mx-auto w-3 rounded-full bg-accent-foreground/80"></div>
           </div>
         )}
