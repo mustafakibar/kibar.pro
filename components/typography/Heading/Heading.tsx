@@ -1,4 +1,4 @@
-import { headingFont } from '@/app/fonts';
+import { headingFont } from '@/app/(main)/fonts';
 import { cn } from '@/lib/utils';
 import { HeadingProps } from '..';
 

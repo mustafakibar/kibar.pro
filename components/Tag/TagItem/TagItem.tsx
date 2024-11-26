@@ -1,4 +1,4 @@
-import { HOME_PATH } from '@/app/constants';
+import { HOME_PATH } from '@/app/(main)/constants';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { TagItemProps } from '..';

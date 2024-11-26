@@ -1,4 +1,4 @@
-import { PROJECTS_PATH } from '@/app/constants';
+import { PROJECTS_PATH } from '@/app/(main)/constants';
 import { RepoIcon } from '@/components/RepoIcon';
 import {
   ShowcaseActionContainer,

@@ -1,4 +1,5 @@
 type Project = {
+  id: string;
   title: string;
   slug: string;
   tags?: string[] | null;

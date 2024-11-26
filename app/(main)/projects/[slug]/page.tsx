@@ -1,4 +1,4 @@
-import { dummyProjects } from '@/app/dummyData';
+import { dummyProjects } from '@/app/(main)/dummyData';
 import { NextPage } from 'next';
 import { ProjectPageProps } from './type';
 

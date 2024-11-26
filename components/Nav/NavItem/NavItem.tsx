@@ -1,4 +1,4 @@
-import { navFont } from '@/app/fonts';
+import { navFont } from '@/app/(main)/fonts';
 import { cn } from '@/lib/utils';
 import React from 'react';
 import { NavItemProps } from '.';

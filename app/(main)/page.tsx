@@ -19,7 +19,7 @@ const HomePage: NextPage = () => {
         viewAllHref={PROJECTS_PATH}
         className="my-4">
         {dummyProjects.slice(0, 3).map((item) => (
-          <ProjectShowcase key={item.title} project={item} hideTags />
+          <ProjectShowcase key={item.id} project={item} hideTags />
         ))}
       </ShowcaseViewer>
 
@@ -28,7 +28,7 @@ const HomePage: NextPage = () => {
         viewAllHref={BLOG_PATH}
         className="my-4">
         {dummyBlogPosts.slice(0, 3).map((item) => (
-          <PostShowcase key={item.title} post={item} />
+          <PostShowcase key={item.id} post={item} />
         ))}
       </ShowcaseViewer>
 
@@ -37,7 +37,7 @@ const HomePage: NextPage = () => {
         viewAllHref={SNIPPETS_PATH}
         className="my-4">
         {dummySnippets.slice(0, 3).map((item) => (
-          <SnippetShowcase key={item.title} snippet={item} />
+          <SnippetShowcase key={item.id} snippet={item} />
         ))}
       </ShowcaseViewer>
     </main>

@@ -1,7 +1,7 @@
 'use client';
 
-import { HOME_PATH } from '@/app/constants';
-import { brandFont } from '@/app/fonts';
+import { HOME_PATH } from '@/app/(main)/constants';
+import { brandFont } from '@/app/(main)/fonts';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';

@@ -1,4 +1,5 @@
 type Snippet = {
+  id: string;
   title: string;
   slug?: string;
   tags?: string[] | null;

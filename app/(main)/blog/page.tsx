@@ -1,18 +1,15 @@
+import { PostShowcase } from '@/components/Blog';
 import { GridWrapper } from '@/components/GridWrapper';
 import { SectionHeading } from '@/components/SectionHeading';
-import { SnippetShowcase } from '@/components/Snippet/SnippetShowcase';
 import { ArrowUpDownIcon, FilterIcon, SearchIcon } from 'lucide-react';
 import { NextPage } from 'next';
-import { dummySnippets } from '../dummyData';
+import { dummyBlogPosts } from '../dummyData';
 
-const SnippetsPage: NextPage = () => {
+const BlogPage: NextPage = () => {
   return (
     <section className="flex flex-col sm:p-4 md:p-0">
       <div className="flex items-center justify-between">
-        <SectionHeading
-          title="Snippets"
-          subtitle="Showing 3 snippets in total"
-        />
+        <SectionHeading title="Posts" subtitle="Showing 3 posts in total" />
 
         {/* TODO */}
         <div className="flex flex-shrink gap-4">
@@ -23,12 +20,14 @@ const SnippetsPage: NextPage = () => {
       </div>
 
       <GridWrapper>
-        {[...dummySnippets, ...dummySnippets, ...dummySnippets].map((item) => (
-          <SnippetShowcase key={item.title} snippet={item} />
-        ))}
+        {[...dummyBlogPosts, ...dummyBlogPosts, ...dummyBlogPosts].map(
+          (data, index) => (
+            <PostShowcase key={index} post={data} />
+          ),
+        )}
       </GridWrapper>
     </section>
   );
 };
 
-export default SnippetsPage;
+export default BlogPage;

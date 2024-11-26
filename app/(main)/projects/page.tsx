@@ -28,8 +28,8 @@ const ProjectsPage: NextPage = () => {
       </div>
 
       <GridWrapper>
-        {[...dummyProjects, ...dummyProjects, ...dummyProjects].map((item) => (
-          <ProjectShowcase key={item.title} project={item} />
+        {[...dummyProjects, ...dummyProjects, ...dummyProjects].map((data, index) => (
+          <ProjectShowcase key={index} project={data} />
         ))}
       </GridWrapper>
     </section>

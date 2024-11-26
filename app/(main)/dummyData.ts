@@ -4,6 +4,7 @@ import { Snippet } from '@/components/Snippet';
 
 const dummyProjects: Project[] = [
   {
+    id: '1',
     title: 'Dummy Project -1',
     slug: 'dummy-project-1',
     year: 2016,
@@ -12,6 +13,7 @@ const dummyProjects: Project[] = [
     repoUrl: 'https://github.com',
   },
   {
+    id: '2',
     title: 'Dummy Project -2',
     slug: 'dummy-project-2',
     year: 2021,
@@ -21,6 +23,7 @@ const dummyProjects: Project[] = [
     tags: ['react', 'typescript'],
   },
   {
+    id: '3',
     title: 'Dummy Project -3',
     slug: 'dummy-project-3',
     year: 2012,
@@ -30,6 +33,7 @@ const dummyProjects: Project[] = [
     tags: ['react', 'typescript'],
   },
   {
+    id: '4',
     title: 'Dummy Project -4',
     slug: 'dummy-project-4',
     year: 2011,
@@ -42,18 +46,21 @@ const dummyProjects: Project[] = [
 
 const dummySnippets: Snippet[] = [
   {
+    id: '1',
     title: 'Dummy Snippet -1',
     slug: 'dummy-snippet-1',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     tags: ['react', 'typescript'],
   },
   {
+    id: '2',
     title: 'Dummy Snippet -2',
     slug: 'dummy-snippet-2',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     tags: ['rust', 'webassembly'],
   },
   {
+    id: '3',
     title: 'Dummy Snippet -3',
     slug: 'dummy-snippet-3',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',

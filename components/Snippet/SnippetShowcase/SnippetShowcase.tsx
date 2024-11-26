@@ -1,4 +1,4 @@
-import { SNIPPETS_PATH } from '@/app/constants';
+import { SNIPPETS_PATH } from '@/app/(main)/constants';
 import {
   ShowcaseActionContainer,
   ShowcaseContainer,

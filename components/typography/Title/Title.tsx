@@ -1,4 +1,4 @@
-import { titleFont } from '@/app/fonts';
+import { titleFont } from '@/app/(main)/fonts';
 import { cn } from '@/lib/utils';
 import { TitleProps } from '..';
 

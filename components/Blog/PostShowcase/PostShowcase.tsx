@@ -1,4 +1,4 @@
-import { BLOG_PATH } from '@/app/constants';
+import { BLOG_PATH } from '@/app/(main)/constants';
 import {
   ShowcaseActionContainer,
   ShowcaseContainer,
