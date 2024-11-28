@@ -1,7 +1,6 @@
 import { GridWrapper } from '@/components/GridWrapper';
 import { ProjectShowcase } from '@/components/Project/ProjectShowcase';
 import { SectionHeading } from '@/components/SectionHeading';
-import { ArrowUpDownIcon, FilterIcon, SearchIcon } from 'lucide-react';
 import { NextPage } from 'next';
 import { dummyProjects } from '../dummyData';
 
@@ -20,17 +19,15 @@ const ProjectsPage: NextPage = () => {
         />
 
         {/* TODO */}
-        <div className="flex flex-shrink gap-4">
-          <SearchIcon />
-          <FilterIcon />
-          <ArrowUpDownIcon />
-        </div>
+        <div className="flex flex-shrink gap-4"></div>
       </div>
 
       <GridWrapper>
-        {[...dummyProjects, ...dummyProjects, ...dummyProjects].map((data, index) => (
-          <ProjectShowcase key={index} project={data} />
-        ))}
+        {[...dummyProjects, ...dummyProjects, ...dummyProjects].map(
+          (data, index) => (
+            <ProjectShowcase key={index} project={data} />
+          ),
+        )}
       </GridWrapper>
     </section>
   );

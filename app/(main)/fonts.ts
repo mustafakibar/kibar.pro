@@ -1,4 +1,10 @@
-import { Lilita_One, Outfit, Ubuntu, Yesteryear } from 'next/font/google';
+import {
+  Kelly_Slab,
+  Lilita_One,
+  Outfit,
+  Ubuntu,
+  Yesteryear,
+} from 'next/font/google';
 
 const brandFont = Yesteryear({
   weight: '400',
@@ -18,6 +24,12 @@ const headingFont = Lilita_One({
   display: 'swap',
 });
 
+const heroFont = Kelly_Slab({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+});
+
 const titleFont = textFont;
 
 const navFont = Outfit({
@@ -26,4 +38,4 @@ const navFont = Outfit({
   display: 'swap',
 });
 
-export { brandFont, headingFont, navFont, textFont, titleFont };
+export { brandFont, headingFont, heroFont, navFont, textFont, titleFont };

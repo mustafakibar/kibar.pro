@@ -1,5 +1,5 @@
 type HeroProps = {
-    className?: string;
+  className?: string;
 };
 
 export type { HeroProps };

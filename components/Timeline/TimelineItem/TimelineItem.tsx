@@ -1,5 +1,6 @@
+import { Milestone } from '@/lib/icons';
 import { cn } from '@/lib/utils';
-import { Milestone } from 'lucide-react';
+import React from 'react';
 import { TimelineItemProps } from '.';
 
 const TimelineItem: React.FC<TimelineItemProps> = ({ children, className }) => {

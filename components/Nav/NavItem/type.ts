@@ -3,7 +3,7 @@ type NavItemProps = {
   href: string;
   active?: boolean;
   className?: string;
-  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
+  onClick?: (e: React.MouseEvent) => void;
 };
 
 export type { NavItemProps };

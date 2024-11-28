@@ -31,11 +31,10 @@ export {
   ShowcaseMain,
   ShowcaseStamp,
   ShowcaseTitle,
-  ShowcaseViewURLButton,
   ShowcaseViewer,
+  ShowcaseViewURLButton,
 };
 export type {
-  ShowCaseViewURLButtonProps,
   ShowcaseActionContainerProps,
   ShowcaseContainerProps,
   ShowcaseContentProps,
@@ -46,4 +45,5 @@ export type {
   ShowcaseStampProps,
   ShowcaseTitleProps,
   ShowcaseViewerProps,
+  ShowCaseViewURLButtonProps,
 };

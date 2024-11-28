@@ -1,6 +1,6 @@
 'use client';
 
-import { Moon, Sun, SunMoon } from 'lucide-react';
+import { Moon, Sun, SunMoon } from '@/lib/icons';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { ThemeSwitchButtonProps } from '.';
@@ -44,7 +44,13 @@ const ThemeSwitchButton: React.FC<ThemeSwitchButtonProps> = ({
         <Button
           variant="ghost"
           className="w-9 border-0 px-0 outline-none focus:!ring-transparent">
-          {!mounted ? <SunMoon /> : theme === 'light' ? <Moon /> : <Sun />}
+          {!mounted ? (
+            <SunMoon />
+          ) : theme === 'light' ? (
+            <Moon size={24} />
+          ) : (
+            <Sun size={24} />
+          )}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>

@@ -1,6 +1,7 @@
+import { ChevronUpRight } from '@/lib/icons';
 import { cn } from '@/lib/utils';
-import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
+import React from 'react';
 import { ViewAllButtonProps } from '.';
 
 const ViewAllButton: React.FC<ViewAllButtonProps> = ({
@@ -12,13 +13,13 @@ const ViewAllButton: React.FC<ViewAllButtonProps> = ({
     <Link href={href} {...props} legacyBehavior>
       <div
         className={cn(
-          'group mx-4 inline-flex items-center text-sm text-accent-foreground underline-offset-4 transition-all duration-100 ease-in hover:cursor-pointer hover:gap-1 hover:px-1 hover:underline',
+          'group mx-4 inline-flex items-center text-sm text-accent-foreground underline-offset-4 transition-all duration-100 ease-in hover:cursor-pointer hover:underline',
           className,
         )}>
         <span>View all</span>
-        <ArrowUpRight
+        <ChevronUpRight
           strokeWidth={3}
-          className="text-accent-foreground/70 transition-all duration-500 ease-in-out group-hover:rotate-45 group-hover:scale-125 group-hover:animate-pulse"
+          className="text-accent-foreground/70 transition-all duration-200 ease-in group-hover:scale-50"
         />
       </div>
     </Link>

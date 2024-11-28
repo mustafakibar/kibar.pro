@@ -2,8 +2,8 @@
 
 import { HOME_PATH } from '@/app/(main)/constants';
 import { brandFont } from '@/app/(main)/fonts';
+import { BurgerMenu, BurgerMenuOpened } from '@/lib/icons';
 import { cn } from '@/lib/utils';
-import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { HeaderProps } from '.';
@@ -33,13 +33,17 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               kibAr
             </Link>
             <div className="flex flex-shrink items-center justify-center gap-3 sm:flex-row-reverse lg:gap-8">
-              <ThemeSwitchButton />
+              {!isMenuOpen && <ThemeSwitchButton />}
               <Button
                 className="flex sm:hidden"
                 variant="ghost"
                 size="icon"
                 onClick={setIsMenuOpen.bind(this, !isMenuOpen)}>
-                {isMenuOpen ? <X /> : <Menu />}
+                {isMenuOpen ? (
+                  <BurgerMenuOpened size={32} />
+                ) : (
+                  <BurgerMenu size={32} />
+                )}
               </Button>
 
               <nav className="hidden sm:flex">
@@ -56,7 +60,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
 
               {/* Background overlay */}
               <div
-                className="fixed inset-x-0 top-[4.9rem] h-screen w-screen bg-background opacity-95"
+                className="fixed inset-x-0 h-screen w-screen bg-background opacity-[.98]"
                 onClick={setIsMenuOpen.bind(this, false)}
               />
             </div>

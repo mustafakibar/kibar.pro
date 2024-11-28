@@ -1,13 +1,14 @@
 'use client';
 
+import { Github, Gitlab } from '@/lib/icons';
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from '@radix-ui/react-tooltip';
-import { ExternalLink, Github, Gitlab } from 'lucide-react';
 import Link from 'next/link';
+import React from 'react';
 import { RepoIconPros } from '.';
 
 const RepoIcon: React.FC<RepoIconPros> = ({
@@ -26,9 +27,6 @@ const RepoIcon: React.FC<RepoIconPros> = ({
     } else if (url.includes('gitlab')) {
       tooltipText = 'View on GitLab';
       repoIcon = <Gitlab className={className} />;
-    } else {
-      tooltipText = 'View';
-      repoIcon = <ExternalLink className={className} />;
     }
   }
 

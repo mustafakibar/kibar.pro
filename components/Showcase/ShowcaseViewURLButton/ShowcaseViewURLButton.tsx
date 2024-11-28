@@ -1,5 +1,5 @@
+import { ChevronRight } from '@/lib/icons';
 import { cn } from '@/lib/utils';
-import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { ShowCaseViewURLButtonProps } from '..';
 
@@ -15,7 +15,7 @@ const ShowcaseViewURLButton: React.FC<ShowCaseViewURLButtonProps> = ({
         className,
       )}
       {...props}>
-      <Link passHref href={`${url}`}>
+      <Link passHref href={url}>
         View
       </Link>
       <ChevronRight className="size-4" />

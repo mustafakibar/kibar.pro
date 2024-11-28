@@ -1,8 +1,9 @@
 import { GridWrapper } from '@/components/GridWrapper';
 import { SectionHeading } from '@/components/SectionHeading';
 import { ViewAllButton } from '@/components/ViewAllButton';
+import { SquareStack } from '@/lib/icons';
 import { cn } from '@/lib/utils';
-import { SquareStack } from 'lucide-react';
+import React from 'react';
 import { ShowcaseViewerProps } from '..';
 
 const ShowcaseViewer: React.FC<ShowcaseViewerProps> = ({
@@ -22,7 +23,7 @@ const ShowcaseViewer: React.FC<ShowcaseViewerProps> = ({
         <SectionHeading
           title={title}
           subtitle={description}
-          icon={!hideIcon ? customIcon ?? <SquareStack /> : undefined}
+          icon={!hideIcon ? (customIcon ?? <SquareStack />) : undefined}
         />
 
         {viewAllHref && <ViewAllButton href={viewAllHref} />}

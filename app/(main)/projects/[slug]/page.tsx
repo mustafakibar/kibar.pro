@@ -1,8 +1,7 @@
 import { dummyProjects } from '@/app/(main)/dummyData';
 import { NextPage } from 'next';
-import { ProjectPageProps } from './type';
 
-const ProjectPage: NextPage<ProjectPageProps> = async ({ params }) => {
+const ProjectPage: NextPage = async ({ params }) => {
   const { slug } = await params;
   const project = dummyProjects.find((p) => p.slug === slug);
 
