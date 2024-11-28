@@ -1,6 +1,5 @@
 import { SNIPPETS_PATH } from '@/app/(main)/constants';
 import {
-  ShowcaseActionContainer,
   ShowcaseContainer,
   ShowcaseContent,
   ShowcaseDivider,
@@ -8,10 +7,10 @@ import {
   ShowcaseHeader,
   ShowcaseMain,
   ShowcaseTitle,
-  ShowcaseViewURLButton,
 } from '@/components/Showcase';
 import { TagItems } from '@/components/Tag';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 import { SnippetShowcaseProps } from '.';
 
 const SnippetShowcase: React.FC<SnippetShowcaseProps> = ({
@@ -20,30 +19,26 @@ const SnippetShowcase: React.FC<SnippetShowcaseProps> = ({
   hideTags = false,
   ...props
 }) => {
+  const href = snippet.slug ? `${SNIPPETS_PATH}//${snippet.slug}` : '';
+
   return (
-    <ShowcaseContainer className={cn(className)} {...props}>
-      <ShowcaseMain>
-        <ShowcaseHeader>
-          <ShowcaseTitle>{snippet.title}</ShowcaseTitle>
+    <Link href={href} className={cn({ 'pointer-events-none': href == '' })}>
+      <ShowcaseContainer className={cn(className)} {...props}>
+        <ShowcaseMain>
+          <ShowcaseHeader>
+            <ShowcaseTitle>{snippet.title}</ShowcaseTitle>
+          </ShowcaseHeader>
 
-          <ShowcaseActionContainer>
-            {snippet.slug && (
-              <ShowcaseViewURLButton
-                url={`${SNIPPETS_PATH}\\${snippet.slug}`}
-              />
-            )}
-          </ShowcaseActionContainer>
-        </ShowcaseHeader>
+          <ShowcaseDivider />
 
-        <ShowcaseDivider />
+          <ShowcaseContent>{snippet.content}</ShowcaseContent>
+        </ShowcaseMain>
 
-        <ShowcaseContent>{snippet.content}</ShowcaseContent>
-      </ShowcaseMain>
-
-      <ShowcaseFooter>
-        {!hideTags && snippet.tags && <TagItems tags={snippet.tags} />}
-      </ShowcaseFooter>
-    </ShowcaseContainer>
+        <ShowcaseFooter>
+          {!hideTags && snippet.tags && <TagItems tags={snippet.tags} />}
+        </ShowcaseFooter>
+      </ShowcaseContainer>
+    </Link>
   );
 };
 

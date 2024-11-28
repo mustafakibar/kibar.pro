@@ -1,7 +1,7 @@
 type Project = {
   id: string;
   title: string;
-  slug: string;
+  slug?: string;
   tags?: string[] | null;
   year: number;
   description: string;

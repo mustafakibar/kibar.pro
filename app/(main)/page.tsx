@@ -1,5 +1,4 @@
 import { PostShowcase } from '@/components/Blog';
-import { Contact } from '@/components/Contact';
 import { Hero } from '@/components/Hero';
 import { ProjectShowcase } from '@/components/Project/ProjectShowcase';
 import { ShowcaseViewer } from '@/components/Showcase';
@@ -12,7 +11,6 @@ const HomePage: NextPage = () => {
   return (
     <main>
       <Hero />
-      <Contact />
 
       <ShowcaseViewer
         title="Projects"

@@ -1,6 +1,5 @@
 import { BLOG_PATH } from '@/app/(main)/constants';
 import {
-  ShowcaseActionContainer,
   ShowcaseContainer,
   ShowcaseContent,
   ShowcaseDivider,
@@ -9,10 +8,10 @@ import {
   ShowcaseMain,
   ShowcaseStamp,
   ShowcaseTitle,
-  ShowcaseViewURLButton,
 } from '@/components/Showcase';
 import { TagItems } from '@/components/Tag';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 import { PostShowcaseProps } from '.';
 
 const PostShowcase: React.FC<PostShowcaseProps> = ({
@@ -21,30 +20,28 @@ const PostShowcase: React.FC<PostShowcaseProps> = ({
   hideTags = false,
   ...props
 }) => {
+  const href = post.slug ? `${BLOG_PATH}//${post.slug}` : '';
+
   return (
-    <ShowcaseContainer className={cn(className)} {...props}>
-      <ShowcaseMain>
-        <ShowcaseStamp>{post.createdAt}</ShowcaseStamp>
+    <Link href={href} className={cn({ 'pointer-events-none': href == '' })}>
+      <ShowcaseContainer className={cn(className)} {...props}>
+        <ShowcaseMain>
+          <ShowcaseStamp>{post.createdAt}</ShowcaseStamp>
 
-        <ShowcaseHeader>
-          <ShowcaseTitle>{post.title}</ShowcaseTitle>
+          <ShowcaseHeader>
+            <ShowcaseTitle>{post.title}</ShowcaseTitle>
+          </ShowcaseHeader>
 
-          <ShowcaseActionContainer>
-            {post.slug && (
-              <ShowcaseViewURLButton url={`${BLOG_PATH}\\${post.slug}`} />
-            )}
-          </ShowcaseActionContainer>
-        </ShowcaseHeader>
+          <ShowcaseDivider />
 
-        <ShowcaseDivider />
+          <ShowcaseContent>{post.foreword ?? post.content}</ShowcaseContent>
+        </ShowcaseMain>
 
-        <ShowcaseContent>{post.foreword ?? post.content}</ShowcaseContent>
-      </ShowcaseMain>
-
-      <ShowcaseFooter>
-        {!hideTags && post.tags && <TagItems tags={post.tags} />}
-      </ShowcaseFooter>
-    </ShowcaseContainer>
+        <ShowcaseFooter>
+          {!hideTags && post.tags && <TagItems tags={post.tags} />}
+        </ShowcaseFooter>
+      </ShowcaseContainer>
+    </Link>
   );
 };
 

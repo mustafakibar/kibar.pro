@@ -16,8 +16,6 @@ import { ShowcaseStamp } from './ShowcaseStamp/ShowcaseStamp';
 import { ShowcaseStampProps } from './ShowcaseStamp/type';
 import { ShowcaseTitle } from './ShowcaseTitle/ShowcaseTitle';
 import { ShowcaseTitleProps } from './ShowcaseTitle/type';
-import { ShowcaseViewURLButton } from './ShowcaseViewURLButton/ShowcaseViewURLButton';
-import { ShowCaseViewURLButtonProps } from './ShowcaseViewURLButton/type';
 import { ShowcaseViewer } from './ShowcaseViewer/ShowcaseViewer';
 import { ShowcaseViewerProps } from './ShowcaseViewer/type';
 
@@ -32,7 +30,6 @@ export {
   ShowcaseStamp,
   ShowcaseTitle,
   ShowcaseViewer,
-  ShowcaseViewURLButton,
 };
 export type {
   ShowcaseActionContainerProps,
@@ -45,5 +42,4 @@ export type {
   ShowcaseStampProps,
   ShowcaseTitleProps,
   ShowcaseViewerProps,
-  ShowCaseViewURLButtonProps,
 };

@@ -10,10 +10,10 @@ import {
   ShowcaseMain,
   ShowcaseStamp,
   ShowcaseTitle,
-  ShowcaseViewURLButton,
 } from '@/components/Showcase';
 import { TagItems } from '@/components/Tag';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 import { ProjectShowcaseProps } from '.';
 
 const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({
@@ -22,38 +22,36 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({
   hideTags = false,
   ...props
 }) => {
+  const href = project.slug ? `${PROJECTS_PATH}//${project.slug}` : '';
+
   return (
-    <ShowcaseContainer className={cn(className)} {...props}>
-      <ShowcaseMain>
-        <ShowcaseStamp>{project.year}</ShowcaseStamp>
+    <Link href={href} className={cn({ 'pointer-events-none': href == '' })}>
+      <ShowcaseContainer className={cn(className)} {...props}>
+        <ShowcaseMain>
+          <ShowcaseStamp>{project.year}</ShowcaseStamp>
 
-        <ShowcaseHeader>
-          <ShowcaseTitle>{project.title}</ShowcaseTitle>
+          <ShowcaseHeader>
+            <ShowcaseTitle>{project.title}</ShowcaseTitle>
 
-          <ShowcaseActionContainer>
-            {project.repoUrl && (
-              <div className="inline-block hover:text-accent-foreground">
-                <RepoIcon url={project.repoUrl} />
-              </div>
-            )}
+            <ShowcaseActionContainer>
+              {project.repoUrl && (
+                <div className="inline-block hover:text-accent-foreground">
+                  <RepoIcon url={project.repoUrl} />
+                </div>
+              )}
+            </ShowcaseActionContainer>
+          </ShowcaseHeader>
 
-            {project.slug && (
-              <ShowcaseViewURLButton
-                url={`${PROJECTS_PATH}\\${project.slug}`}
-              />
-            )}
-          </ShowcaseActionContainer>
-        </ShowcaseHeader>
+          <ShowcaseDivider />
 
-        <ShowcaseDivider />
+          <ShowcaseContent>{project.description}</ShowcaseContent>
+        </ShowcaseMain>
 
-        <ShowcaseContent>{project.description}</ShowcaseContent>
-      </ShowcaseMain>
-
-      <ShowcaseFooter>
-        {!hideTags && project.tags && <TagItems tags={project.tags} />}
-      </ShowcaseFooter>
-    </ShowcaseContainer>
+        <ShowcaseFooter>
+          {!hideTags && project.tags && <TagItems tags={project.tags} />}
+        </ShowcaseFooter>
+      </ShowcaseContainer>
+    </Link>
   );
 };
 

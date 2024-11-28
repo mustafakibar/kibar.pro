@@ -1,13 +1,13 @@
 'use client';
 
 import { Github, Gitlab } from '@/lib/icons';
+import { openInNewTab } from '@/lib/utils';
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from '@radix-ui/react-tooltip';
-import Link from 'next/link';
 import React from 'react';
 import { RepoIconPros } from '.';
 
@@ -34,10 +34,14 @@ const RepoIcon: React.FC<RepoIconPros> = ({
     return (
       <TooltipProvider>
         <Tooltip>
-          <TooltipTrigger asChild>
-            <Link passHref target="_blank" rel="noopener noreferrer" href={url}>
-              {repoIcon}
-            </Link>
+          <TooltipTrigger
+            asChild
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              openInNewTab(url);
+            }}>
+            {repoIcon}
           </TooltipTrigger>
           <TooltipContent>{tooltipText}</TooltipContent>
         </Tooltip>
