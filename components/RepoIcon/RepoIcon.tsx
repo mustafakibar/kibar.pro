@@ -2,12 +2,6 @@
 
 import { Github, Gitlab } from '@/lib/icons';
 import { openInNewTab } from '@/lib/utils';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@radix-ui/react-tooltip';
 import React from 'react';
 import { RepoIconPros } from '.';
 
@@ -32,20 +26,15 @@ const RepoIcon: React.FC<RepoIconPros> = ({
 
   if (tooltipText != null && repoIcon != null) {
     return (
-      <TooltipProvider>
-        <Tooltip>
-          <TooltipTrigger
-            asChild
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              openInNewTab(url);
-            }}>
-            {repoIcon}
-          </TooltipTrigger>
-          <TooltipContent>{tooltipText}</TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
+      <div
+        className="inline-flex"
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          openInNewTab(url);
+        }}>
+        {repoIcon}
+      </div>
     );
   }
 

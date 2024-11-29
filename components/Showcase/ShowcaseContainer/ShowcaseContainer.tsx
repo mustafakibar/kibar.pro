@@ -9,7 +9,7 @@ const ShowcaseContainer: React.FC<ShowcaseContainerProps> = ({
   return (
     <div
       className={cn(
-        'relative translate-x-0 rounded-lg px-4 py-5 ring-1 ring-primary/50 duration-150 ease-out hover:gap-8 hover:bg-primary/5 hover:ring-2 hover:ring-primary/90 sm:p-5 lg:p-6',
+        'relative translate-x-0 rounded-lg px-4 py-5 ring-1 ring-primary/5 duration-500 ease-out hover:gap-8 hover:ring-primary dark:ring-primary/25 dark:hover:ring-primary sm:p-5 lg:p-6',
         className,
       )}
       {...props}>

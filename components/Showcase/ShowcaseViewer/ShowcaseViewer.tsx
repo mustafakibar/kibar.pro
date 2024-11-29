@@ -17,13 +17,18 @@ const ShowcaseViewer: React.FC<ShowcaseViewerProps> = ({
   footer,
   ...props
 }) => {
+  let sectionIcon = null;
+  if (!hideIcon) {
+    sectionIcon = customIcon ?? <SquareStack size={32} />;
+  }
+
   return (
     <div className={cn(className)} {...props}>
       <div className="flex">
         <SectionHeading
           title={title}
           subtitle={description}
-          icon={!hideIcon ? (customIcon ?? <SquareStack />) : undefined}
+          icon={sectionIcon}
         />
 
         {viewAllHref && <ViewAllButton href={viewAllHref} />}

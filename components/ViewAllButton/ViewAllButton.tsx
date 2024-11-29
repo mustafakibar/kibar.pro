@@ -19,7 +19,7 @@ const ViewAllButton: React.FC<ViewAllButtonProps> = ({
         <span>View all</span>
         <ChevronUpRight
           strokeWidth={3}
-          className="text-accent-foreground/70 transition-all duration-200 ease-in group-hover:scale-50"
+          className="text-accent-foreground/70 transition-all duration-200 ease-in group-hover:translate-x-1.5 group-hover:rotate-[-24deg] group-hover:scale-[1.75]"
         />
       </div>
     </Link>

@@ -7,6 +7,7 @@ type ContactProps = {
 type ContactItemProps = {
   icon: IconType;
   href: string;
+  className?: string;
 };
 
 export type { ContactItemProps, ContactProps };
