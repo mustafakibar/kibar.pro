@@ -1,5 +1,4 @@
 import { heroFont } from '@/app/(main)/fonts';
-import { HeroShapes } from '@/components/Hero/HeroShapes';
 import { ProfileImage } from '@/components/ProfileImage';
 import { TurkeyFlagImage } from '@/components/TurkeyFlagImage';
 import {
@@ -9,9 +8,11 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 import React from 'react';
 import { HeroProps } from '.';
 import { Contact } from '../Contact';
+import { HeroWithLoveSection } from './HeroWithLoveSection';
 
 const Hero: React.FC<HeroProps> = ({ className }) => {
   return (
@@ -20,14 +21,14 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
         'my-[2rem] flex w-full items-center justify-center sm:my-[7rem]',
         className,
       )}>
-      <div className="xs:grid-cols-1 xs:grid-rows-2 grid w-5/6 place-items-center justify-center gap-10 sm:grid-cols-2 sm:grid-rows-1 md:gap-3">
+      <div className="xs:grid-cols-1 xs:grid-rows-2 grid w-5/6 place-items-center justify-center gap-10 sm:grid-cols-2 sm:grid-rows-1 md:gap-3 xl:w-full">
         <div className="flex flex-col gap-8 sm:-mt-[2rem] xl:-mt-[4rem]">
           <div className={cn('text-nowrap', heroFont.className)}>
-            <h1 className="pl-2 text-6xl text-primary opacity-75">Mustafa</h1>
+            <h1 className="pl-2 text-5xl text-primary opacity-75">Mustafa</h1>
             <h2 className="text-9xl font-extrabold text-secondary opacity-95">
               K
-              <span className="inline-flex animate-bounce text-8xl text-secondary/85 delay-500 duration-1000 ease-in-out fill-mode-forwards repeat-[2]">
-                !
+              <span className="mx-1 inline-flex -translate-y-4 text-8xl">
+                i
               </span>
               BAR
             </h2>
@@ -35,13 +36,9 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
 
           <div className="ml-4">
             <div>
-              <h4 className="bg-gradient-to-t from-primary from-0% to-secondary to-100% bg-clip-text text-3xl leading-[3rem] text-transparent">
-                I&#39;am{' '}
-                <span className="mx-1 font-bold -tracking-wider underline decoration-secondary/5 decoration-wavy">
-                  full stack
-                </span>
-                developer{' '}
-                <span className="whitespace-nowrap">
+              <h4 className="text-3xl">
+                I&#39;am full stack developer{' '}
+                <span className="text-nowrap">
                   living in{' '}
                   <TooltipProvider>
                     <Tooltip>
@@ -57,20 +54,26 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
               </h4>
             </div>
 
-            <div className="mt-4">
+            <div className="mt-2 tracking-widest">
+              <HeroWithLoveSection />
+            </div>
+
+            <div className="mt-8">
               <Contact />
             </div>
           </div>
         </div>
 
         <div className="relative order-first sm:order-last">
-          <div className="absolute left-0 top-0 hidden h-full w-full sm:inline-flex">
-            <HeroShapes />
-          </div>
+          <Image
+            src="/misc/profile-bg.webp"
+            alt="profile background"
+            width={256}
+            height={256}
+            className="pointer-events-none absolute -left-16 -top-16 hidden h-full w-full scale-x-110 opacity-5 xl:inline-flex"
+          />
 
-          <div className="group relative">
-            <ProfileImage className="pointer-events-none rounded-md border-8 border-white/70 shadow-sm duration-300 ease-in-out group-hover:rotate-0 dark:border-white/10 md:group-hover:scale-110 md:group-hover:shadow-md" />
-          </div>
+          <ProfileImage className="border-gray/70 dark:border-gray/10 pointer-events-none relative max-w-[24rem] rounded-md border-8 shadow-sm md:hover:shadow-md" />
         </div>
       </div>
     </div>
