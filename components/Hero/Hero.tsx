@@ -22,8 +22,8 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
         className,
       )}>
       <div className="xs:grid-cols-1 xs:grid-rows-2 grid w-5/6 place-items-center justify-center gap-10 sm:grid-cols-2 sm:grid-rows-1 md:gap-3 xl:w-full">
-        <div className="flex flex-col gap-8 sm:-mt-[2rem] xl:-mt-[4rem]">
-          <div className={cn('text-nowrap', heroFont.className)}>
+        <div className="flex flex-col gap-8">
+          <div className={cn('text-nowrap md:pt-10', heroFont.className)}>
             <h1 className="pl-2 text-5xl text-primary opacity-75">Mustafa</h1>
             <h2 className="text-9xl font-extrabold text-secondary opacity-95">
               K

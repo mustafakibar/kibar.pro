@@ -17,7 +17,7 @@ const NavItem: React.FC<NavItemProps> = (
         navFont.className,
         'relative inline-flex items-center rounded-sm px-3 py-2 opacity-40 transition-all duration-300 ease-in-out hover:rounded-xl hover:bg-foreground/10 hover:underline hover:opacity-95 lg:px-6 lg:py-3',
         {
-          'opacity- pointer-events-none cursor-none select-none text-accent-foreground/80':
+          'opacity- pointer-events-none cursor-none select-none text-accent-foreground':
             active,
         },
       )}>

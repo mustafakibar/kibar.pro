@@ -18,7 +18,7 @@ const Contact: React.FC<ContactProps> = ({ className }) => {
   return (
     <div
       className={cn(
-        'flex flex-row items-center gap-8 align-middle text-4xl text-gray-600 dark:text-gray-400',
+        'flex flex-row items-center gap-8 align-middle text-4xl',
         className,
       )}>
       <p className="group hidden cursor-pointer items-center text-xl lg:inline-flex">
