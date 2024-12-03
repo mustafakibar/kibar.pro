@@ -13,6 +13,11 @@ import React from 'react';
 import { HeroProps } from '.';
 import { Contact } from '../Contact';
 import { HeroWithLoveSection } from './HeroWithLoveSection';
+import {
+  PROFILE_IMAGE_ALT,
+  PROFILE_IMAGE_BLUR_DATA_URL,
+  PROFILE_IMAGE_SRC,
+} from './contant';
 
 const Hero: React.FC<HeroProps> = ({ className }) => {
   return (
@@ -22,9 +27,9 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
         className,
       )}>
       <div className="xs:grid-cols-1 xs:grid-rows-2 grid w-5/6 place-items-center justify-center gap-10 sm:grid-cols-2 sm:grid-rows-1 md:gap-3 xl:w-full">
-        <div className="flex flex-col gap-4 antialiased md:gap-8">
+        <div className="flex flex-col gap-4 text-center antialiased sm:text-start md:gap-8">
           <div className={cn('text-nowrap md:pt-10', heroFont.className)}>
-            <h1 className="pl-1 text-4xl text-primary opacity-75 lg:text-5xl">
+            <h1 className="pl-0 text-4xl text-primary opacity-75 sm:pl-1 lg:text-5xl">
               Mustafa
             </h1>
             <h2 className="text-8xl font-extrabold text-secondary opacity-95 lg:text-9xl">
@@ -36,7 +41,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             </h2>
           </div>
 
-          <div className="ml-3">
+          <div className="ml-0 sm:ml-3">
             <div>
               <h4 className="text-2xl">
                 I&#39;am full stack developer{' '}
@@ -75,7 +80,12 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             className="pointer-events-none absolute -left-16 -top-16 hidden h-full w-full scale-x-110 opacity-5 md:inline-flex"
           />
 
-          <ProfileImage className="border-gray/70 dark:border-gray/10 pointer-events-none relative max-w-[24rem] rounded-md border-8 shadow-sm md:hover:shadow-md" />
+          <ProfileImage
+            src={PROFILE_IMAGE_SRC}
+            alt={PROFILE_IMAGE_ALT}
+            blurDataURL={PROFILE_IMAGE_BLUR_DATA_URL}
+            className="border-gray/70 dark:border-gray/10 pointer-events-none relative max-w-[24rem] rounded-md border-8 shadow-sm md:hover:shadow-md"
+          />
         </div>
       </div>
     </div>

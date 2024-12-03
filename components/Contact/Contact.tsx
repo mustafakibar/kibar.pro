@@ -18,7 +18,7 @@ const Contact: React.FC<ContactProps> = ({ className }) => {
   return (
     <div
       className={cn(
-        'group/container flex transform-gpu flex-row items-center gap-8 align-middle text-4xl transition-all',
+        'group/container flex transform-gpu flex-row items-center gap-16 align-middle text-4xl transition-all md:gap-8',
         className,
       )}>
       <p className="group/mail hidden cursor-pointer items-center text-xl hover:!opacity-100 group-hover/container:opacity-35 lg:inline-flex">

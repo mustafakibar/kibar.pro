@@ -47,7 +47,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               </Button>
 
               <nav className="hidden sm:flex">
-                <NavItems />
+                <NavItems isMobile={isMenuOpen} />
               </nav>
             </div>
           </div>
@@ -55,7 +55,10 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           {isMenuOpen && (
             <div className="sm:hidden">
               <nav className="absolute left-0 z-10 flex w-full flex-col bg-transparent py-6">
-                <NavItems onItemClicked={setIsMenuOpen.bind(this, false)} />
+                <NavItems
+                  isMobile={isMenuOpen}
+                  onItemClicked={setIsMenuOpen.bind(this, false)}
+                />
               </nav>
 
               {/* Background overlay */}

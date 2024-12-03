@@ -1,3 +1,11 @@
+import { ProfileDetails } from '@/components/About';
+import {
+  PROFILE_IMAGE_ALT,
+  PROFILE_IMAGE_BLUR_DATA_URL,
+  PROFILE_IMAGE_SRC,
+} from '@/components/About/contant';
+import { Contact } from '@/components/Contact';
+import { ProfileImage } from '@/components/ProfileImage';
 import {
   Timeline,
   TimelineContent,
@@ -5,24 +13,42 @@ import {
   TimelineItem,
   TimelineTitle,
 } from '@/components/Timeline';
+import { cn } from '@/lib/utils';
 import { NextPage } from 'next';
+import { titleFont } from '../fonts';
 
 const AboutPage: NextPage = () => {
   return (
-    <div>
-      <h1>About</h1>
-      <p>This is the about page</p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-        ultricies, sapien quis venenatis tincidunt, dui velit ultrices mi, quis
-        aliquam tellus leo a justo. Donec auctor, odio eu aliquet lacinia, elit
-        velit ultricies eros, vitae finibus sapien ligula vitae nisi. Nullam ac
-        tellus vitae nisl consectetur ultricies. Donec ultricies, sapien quis
-        venenatis tincidunt, dui velit ultrices mi, quis aliquam tellus leo a
-        justo. Donec auctor, odio eu aliquet lacinia, elit velit ultricies eros,
-        vitae finibus sapien ligula vitae nisi. Nullam ac tellus vitae nisl
-        consectetur ultricies.
-      </p>
+    <div className="flex flex-col gap-16 py-8">
+      <div
+        className={cn(
+          'flex w-full justify-center text-5xl font-black sm:text-7xl',
+          titleFont.className,
+        )}>
+        Hey There 👋
+      </div>
+
+      <div className="grid grid-cols-1 grid-rows-1 place-items-start justify-items-center gap-16 p-4 md:grid-cols-2 md:place-items-center">
+        <div className="flex shrink rotate-0 flex-col items-center justify-center gap-16 sm:rotate-3">
+          <ProfileImage
+            className="rounded-xl ring-2"
+            src={PROFILE_IMAGE_SRC}
+            alt={PROFILE_IMAGE_ALT}
+            blurDataURL={PROFILE_IMAGE_BLUR_DATA_URL}
+          />
+
+          <Contact />
+        </div>
+
+        <div
+          // TODO
+          className={cn(
+            'text-justify text-2xl opacity-75',
+            titleFont.className,
+          )}>
+          <ProfileDetails />
+        </div>
+      </div>
 
       <Timeline>
         <TimelineItem>
