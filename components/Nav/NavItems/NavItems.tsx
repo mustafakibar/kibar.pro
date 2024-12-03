@@ -25,7 +25,6 @@ const NavItems: React.FC<{
               text={item.text}
               href={item.href}
               active={pathname === item.href}
-              className="justify-center p-4 text-2xl sm:w-auto sm:justify-normal sm:text-base md:text-lg lg:text-xl"
               onClick={onItemClicked?.bind(this, item.text, item.href)}
             />
           </Link>

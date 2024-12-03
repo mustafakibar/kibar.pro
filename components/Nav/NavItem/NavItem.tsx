@@ -8,18 +8,27 @@ const NavItem: React.FC<NavItemProps> = (
   ref,
 ) => {
   return (
-    <div className="relative inline-flex items-center transition-all duration-300 ease-in-out hover:rounded-xl hover:bg-foreground/10 md:px-1">
+    <div
+      className={cn(
+        'relative inline-flex items-center transition-all duration-300 ease-in-out hover:rounded-xl md:px-1',
+        className,
+        {
+          'hover:bg-foreground/10': !active,
+        },
+      )}>
       <a
         href={href}
         onClick={onClick}
         ref={ref}
         className={cn(
-          className,
           navFont.className,
-          'opacity-40 hover:opacity-95',
+          'p-4 text-sm md:text-lg',
           {
-            'pointer-events-none scale-110 cursor-none select-none opacity-90 duration-75 ease-linear':
+            'pointer-events-none cursor-none select-none opacity-90 duration-75 ease-linear':
               active,
+          },
+          {
+            'opacity-40 hover:opacity-95': !active,
           },
         )}>
         {text}
