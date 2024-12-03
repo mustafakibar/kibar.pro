@@ -8,26 +8,28 @@ const NavItem: React.FC<NavItemProps> = (
   ref,
 ) => {
   return (
-    <a
-      href={href}
-      onClick={onClick}
-      ref={ref}
-      className={cn(
-        className,
-        navFont.className,
-        'relative inline-flex items-center rounded-sm px-3 py-2 opacity-40 transition-all duration-300 ease-in-out hover:rounded-xl hover:bg-foreground/10 hover:underline hover:opacity-95 lg:px-6 lg:py-3',
-        {
-          'opacity- pointer-events-none cursor-none select-none text-accent-foreground':
-            active,
-        },
-      )}>
-      {text}
-      {active && (
-        <div className="absolute bottom-1.5 left-0 hidden h-1 w-full sm:inline-flex">
-          <div className="mx-auto w-3 rounded-full bg-accent-foreground/80"></div>
-        </div>
-      )}
-    </a>
+    <div className="relative inline-flex items-center transition-all duration-300 ease-in-out hover:rounded-xl hover:bg-foreground/10 md:px-1">
+      <a
+        href={href}
+        onClick={onClick}
+        ref={ref}
+        className={cn(
+          className,
+          navFont.className,
+          'opacity-40 hover:opacity-95',
+          {
+            'pointer-events-none scale-110 cursor-none select-none opacity-90 duration-75 ease-linear':
+              active,
+          },
+        )}>
+        {text}
+        {active && (
+          <div className="absolute bottom-3 left-0 hidden h-[3%] w-full sm:inline-flex">
+            <div className="mx-auto w-1/4 rounded-full bg-foreground/80"></div>
+          </div>
+        )}
+      </a>
+    </div>
   );
 };
 

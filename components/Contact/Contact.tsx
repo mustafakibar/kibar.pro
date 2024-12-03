@@ -18,22 +18,24 @@ const Contact: React.FC<ContactProps> = ({ className }) => {
   return (
     <div
       className={cn(
-        'flex flex-row items-center gap-8 align-middle text-4xl',
+        'group/container flex transform-gpu flex-row items-center gap-8 align-middle text-4xl transition-all',
         className,
       )}>
-      <p className="group hidden cursor-pointer items-center text-xl lg:inline-flex">
+      <p className="group/mail hidden cursor-pointer items-center text-xl hover:!opacity-100 group-hover/container:opacity-35 lg:inline-flex">
         <Envelope
           size={24}
-          className="mr-2 -rotate-12 duration-300 ease-in-out group-hover:rotate-0"
+          className="mr-2 -rotate-12 duration-500 ease-in-out group-hover/mail:rotate-0 group-hover/mail:scale-125"
         />{' '}
-        mustafa@kibar.pro
+        <span className="duration-300 group-hover/mail:translate-x-1">
+          mustafa@kibar.pro
+        </span>
       </p>
 
       {contacts.map(({ icon: Icon, className, href }, idx) => (
         <Link href={href} target="_blank" key={idx}>
           <Icon
             className={cn(
-              'transition-transform duration-100 hover:scale-110 hover:text-gray-800 dark:hover:text-gray-200',
+              'transition-transform duration-100 hover:scale-110 hover:text-gray-800 hover:!opacity-100 group-hover/container:opacity-35 dark:hover:text-gray-200',
               className,
             )}
           />
