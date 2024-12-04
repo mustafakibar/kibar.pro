@@ -6,7 +6,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
   return (
     <footer
       className={cn(
-        'w-full min-w-full max-w-full overflow-hidden py-[2.5rem]',
+        'w-full max-w-full overflow-hidden py-[2.5rem]',
         className,
       )}>
       <div className="from-1% to-91% flex items-center justify-center gap-1 bg-gradient-to-r from-background/5 to-foreground/100 bg-clip-text p-3 text-transparent transition-all duration-300 ease-linear hover:-skew-y-2 hover:gap-[6px]">

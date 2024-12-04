@@ -71,7 +71,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             alt="profile background"
             width={256}
             height={256}
-            className="pointer-events-none absolute -left-16 -top-16 hidden h-full w-full scale-x-110 opacity-5 md:inline-flex"
+            className="pointer-events-none absolute -left-16 -top-16 hidden h-full w-full scale-x-110 opacity-5 dark:invert md:inline-flex"
           />
 
           <ProfileImage

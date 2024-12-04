@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { ContactProps } from '.';
 import { ContactItemProps } from './type';
 
-const contacts: ContactItemProps[] = [
+const contactItemList: ContactItemProps[] = [
   {
     icon: Envelope,
     href: 'mailto:mustafa@kibar.pro',
@@ -31,7 +31,7 @@ const Contact: React.FC<ContactProps> = ({ className }) => {
         </span>
       </p>
 
-      {contacts.map(({ icon: Icon, className, href }, idx) => (
+      {contactItemList.map(({ icon: Icon, className, href }, idx) => (
         <Link href={href} target="_blank" key={idx}>
           <Icon
             className={cn(

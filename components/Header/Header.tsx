@@ -20,7 +20,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         'sticky inset-x-0 top-0 z-10 mx-auto mb-4 w-full',
         className,
       )}>
-      <div className="relative w-full">
+      <div className="relative">
         <div className="container py-3">
           <div className="flex items-center justify-between">
             <Link
@@ -54,7 +54,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
 
           {isMenuOpen && (
             <div className="sm:hidden">
-              <nav className="absolute left-0 z-10 flex w-full flex-col bg-transparent py-6">
+              <nav className="absolute left-0 z-10 bg-transparent py-6">
                 <NavItems
                   isMobile={isMenuOpen}
                   onItemClicked={setIsMenuOpen.bind(this, false)}
@@ -71,13 +71,10 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
 
           {/* Header shadow */}
           <div
-            className={cn(
-              'absolute inset-0 -z-10 w-full border-b-2 shadow-sm',
-              {
-                'bg-background': isMenuOpen,
-                'opacity-90 backdrop-blur backdrop-filter': !isMenuOpen,
-              },
-            )}></div>
+            className={cn('absolute inset-0 -z-10 border-b-2 shadow-sm', {
+              'bg-background': isMenuOpen,
+              'opacity-90 backdrop-blur backdrop-filter': !isMenuOpen,
+            })}></div>
         </div>
       </div>
     </header>
