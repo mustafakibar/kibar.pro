@@ -32,10 +32,10 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               )}>
               kibAr
             </Link>
-            <div className="flex flex-shrink items-center justify-center gap-3 sm:flex-row-reverse lg:gap-8">
+            <div className="flex flex-shrink items-center max-sm:gap-4 sm:flex-row-reverse">
               {!isMenuOpen && <ThemeSwitchButton />}
               <Button
-                className="flex sm:hidden"
+                className="sm:hidden"
                 variant="ghost"
                 size="icon"
                 onClick={setIsMenuOpen.bind(this, !isMenuOpen)}>

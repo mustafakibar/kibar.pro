@@ -5,27 +5,33 @@ import React from 'react';
 import { NavItemProps } from '.';
 
 const NavItem: React.FC<NavItemProps> = (
-  { text, href, className, active, onClick },
+  { text, href, className, active, onClick, ...props },
   ref,
 ) => {
   return (
-    <Link href={href} shallow>
+    <Link
+      href={href}
+      shallow
+      className={cn({
+        'pointer-events-none cursor-none select-none': active,
+      })}>
       <div
         onClick={onClick}
         ref={ref}
         className={cn(
-          'relative flex w-full items-center justify-center text-sm transition-all duration-300 ease-in-out hover:rounded-xl md:px-1 md:text-lg',
+          'relative flex px-1 transition-all duration-300 ease-in-out hover:rounded-xl max-sm:w-full md:text-lg',
           className,
           {
             'hover:bg-foreground/10': !active,
           },
-        )}>
+        )}
+        {...props}>
         <span
           className={cn(
             navFont.className,
             'p-4',
             {
-              'pointer-events-none cursor-none select-none opacity-90 duration-75 ease-linear':
+              'text-accent-foreground opacity-90 duration-75 ease-linear':
                 active,
             },
             {
@@ -35,7 +41,7 @@ const NavItem: React.FC<NavItemProps> = (
           {text}
           {active && (
             <div className="absolute bottom-3 left-0 hidden h-[3%] w-full sm:inline-flex">
-              <div className="mx-auto w-1/4 rounded-full bg-foreground/80" />
+              <div className="mx-auto w-1/4 rounded-full bg-accent-foreground/80" />
             </div>
           )}
         </span>

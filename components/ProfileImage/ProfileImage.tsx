@@ -16,7 +16,6 @@ const ProfileImage: React.FC<ProfileImageProps> = ({
       className={cn(className)}
       src={src}
       alt={alt}
-      layout="responsive"
       width={width || 512}
       height={height || 512}
       placeholder={blurDataURL ? 'blur' : 'empty'}

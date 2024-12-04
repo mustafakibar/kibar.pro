@@ -11,7 +11,7 @@ export const metadata = {
 
 const ProjectsPage: NextPage = () => {
   return (
-    <section className="flex flex-col sm:p-4 md:p-0">
+    <section className="flex flex-col max-sm:p-4">
       <div className="flex items-center justify-between">
         <SectionHeading
           title="Projects"

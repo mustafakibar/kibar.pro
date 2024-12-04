@@ -21,15 +21,11 @@ import {
 
 const Hero: React.FC<HeroProps> = ({ className }) => {
   return (
-    <div
-      className={cn(
-        'my-[2rem] flex w-full items-center justify-center sm:my-[7rem]',
-        className,
-      )}>
-      <div className="xs:grid-cols-1 xs:grid-rows-2 grid w-5/6 place-items-center justify-center gap-10 sm:grid-cols-2 sm:grid-rows-1 md:gap-3 xl:w-full">
-        <div className="flex flex-col gap-4 text-center antialiased sm:text-start md:gap-8">
-          <div className={cn('text-nowrap md:pt-10', heroFont.className)}>
-            <h1 className="pl-0 text-4xl text-primary opacity-75 sm:pl-1 lg:text-5xl">
+    <div className={cn('my-[2rem] lg:my-[8rem]', className)}>
+      <div className="flex flex-col items-center justify-evenly gap-12 lg:flex-row lg:gap-4">
+        <div className="flex flex-col gap-4 text-center antialiased lg:gap-8 lg:text-start">
+          <div className={cn('text-nowrap lg:pt-10', heroFont.className)}>
+            <h1 className="text-4xl text-primary opacity-75 sm:pl-1 lg:text-5xl">
               Mustafa
             </h1>
             <h2 className="text-8xl font-extrabold text-secondary opacity-95 lg:text-9xl">
@@ -41,7 +37,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             </h2>
           </div>
 
-          <div className="ml-0 sm:ml-3">
+          <div className="sm:ml-3">
             <div>
               <h4 className="text-2xl">
                 I&#39;am full stack developer{' '}
@@ -65,13 +61,11 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
               <HeroWithLoveSection />
             </div>
 
-            <div className="mt-8">
-              <Contact />
-            </div>
+            <Contact className="mt-8 flex max-lg:justify-center" />
           </div>
         </div>
 
-        <div className="relative order-first sm:order-last">
+        <div className="relative order-first lg:order-last">
           <Image
             src="/misc/profile-bg.webp"
             alt="profile background"
@@ -84,7 +78,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             src={PROFILE_IMAGE_SRC}
             alt={PROFILE_IMAGE_ALT}
             blurDataURL={PROFILE_IMAGE_BLUR_DATA_URL}
-            className="border-gray/70 dark:border-gray/10 pointer-events-none relative max-w-[24rem] rounded-md border-8 shadow-sm md:hover:shadow-md"
+            className="border-gray/70 dark:border-gray/10 pointer-events-none relative max-w-[24rem] rounded-md border-8 object-contain shadow-sm max-sm:max-h-[35vh] max-sm:border-0 md:hover:shadow-md"
           />
         </div>
       </div>

@@ -22,16 +22,16 @@ const AboutPage: NextPage = () => {
     <div className="flex flex-col gap-16 py-8">
       <div
         className={cn(
-          'flex w-full justify-center text-5xl font-black sm:text-7xl',
+          'flex w-full justify-center text-5xl font-black opacity-75 sm:text-7xl',
           titleFont.className,
         )}>
         Hey There 👋
       </div>
 
-      <div className="grid grid-cols-1 grid-rows-1 place-items-start justify-items-center gap-16 p-4 md:grid-cols-2 md:place-items-center">
-        <div className="flex shrink rotate-0 flex-col items-center justify-center gap-16 sm:rotate-3">
+      <div className="xk:gap-32 flex w-full flex-col justify-evenly gap-8 p-4 lg:flex-row lg:items-center lg:gap-16">
+        <div className="flex flex-col items-center gap-8 lg:w-1/3 lg:gap-16">
           <ProfileImage
-            className="rounded-xl ring-2"
+            className="rotate-0 rounded-xl object-contain ring-2 max-sm:max-h-[35vh] lg:rotate-3"
             src={PROFILE_IMAGE_SRC}
             alt={PROFILE_IMAGE_ALT}
             blurDataURL={PROFILE_IMAGE_BLUR_DATA_URL}
@@ -41,9 +41,8 @@ const AboutPage: NextPage = () => {
         </div>
 
         <div
-          // TODO
           className={cn(
-            'text-justify text-2xl opacity-75',
+            'text-justify text-2xl opacity-75 lg:-mt-24 lg:w-2/3',
             titleFont.className,
           )}>
           <ProfileDetails />

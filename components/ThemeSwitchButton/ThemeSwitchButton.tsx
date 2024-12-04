@@ -1,31 +1,8 @@
-'use client';
-
 import { Moon, Sun, SunMoon } from '@/lib/icons';
+import { cn } from '@/lib/utils';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { ThemeSwitchButtonProps } from '.';
-import { Button } from '../ui/button';
-import {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-} from '../ui/dropdown-menu';
-
-const ThemeModes = [
-  {
-    value: 'light',
-    label: 'Light',
-  },
-  {
-    value: 'dark',
-    label: 'Dark',
-  },
-  {
-    value: 'system',
-    label: 'System',
-  },
-] as const;
 
 const ThemeSwitchButton: React.FC<ThemeSwitchButtonProps> = ({
   className,
@@ -38,33 +15,30 @@ const ThemeSwitchButton: React.FC<ThemeSwitchButtonProps> = ({
     setMounted(true);
   }, []);
 
+  const changeTheme = () => {
+    if (theme === 'light') {
+      setTheme('dark');
+    } else {
+      setTheme('light');
+    }
+  };
+
   return (
-    <DropdownMenu {...props}>
-      <DropdownMenuTrigger asChild className={className} {...props}>
-        <Button
-          variant="ghost"
-          className="w-9 border-0 px-0 outline-none focus:!ring-transparent">
-          {!mounted ? (
-            <SunMoon />
-          ) : theme === 'light' ? (
-            <Moon size={24} />
-          ) : (
-            <Sun size={24} />
-          )}
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent>
-        {ThemeModes.map((mode) => (
-          <DropdownMenuCheckboxItem
-            key={mode.value}
-            checked={theme === mode.value}
-            disabled={theme === mode.value}
-            onClick={setTheme.bind(this, mode.value)}>
-            {mode.label}
-          </DropdownMenuCheckboxItem>
-        ))}
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <div
+      className={cn(
+        'inline-flex rounded-lg p-2 duration-300 hover:cursor-pointer hover:bg-foreground/25',
+        className,
+      )}
+      onClick={changeTheme.bind(this)}
+      {...props}>
+      {!mounted ? (
+        <SunMoon size={24} />
+      ) : theme === 'light' ? (
+        <Moon size={24} />
+      ) : (
+        <Sun size={24} />
+      )}
+    </div>
   );
 };
 
