@@ -4,9 +4,11 @@ import {
   PROFILE_IMAGE_BLUR_DATA_URL,
   PROFILE_IMAGE_SRC,
 } from '@/components/About/contant';
+import { ParallaxCertificates } from '@/components/Certificates';
 import { Contact } from '@/components/Contact';
-import { Parallax } from '@/components/Parallax';
 import { ProfileImage } from '@/components/ProfileImage';
+import { SectionHeading } from '@/components/SectionHeading';
+import { ParallaxSkills } from '@/components/Skills';
 import {
   Timeline,
   TimelineContent,
@@ -14,33 +16,12 @@ import {
   TimelineItem,
   TimelineTitle,
 } from '@/components/Timeline';
-import { cn, getRandomInt } from '@/lib/utils';
+import { cn } from '@/lib/utils';
 import { NextPage } from 'next';
-import { FaRust } from 'react-icons/fa';
-import { FaAws, FaDocker, FaReact } from 'react-icons/fa6';
-import { TbBrandFlutter, TbBrandKotlin } from 'react-icons/tb';
+import Image from 'next/image';
+import { FaInfinity, FaToolbox } from 'react-icons/fa6';
+import { TbCertificate, TbSchool } from 'react-icons/tb';
 import { titleFont } from '../fonts';
-
-const parallaxIconOpacity = 0.5;
-const parallaxIconSize = 64;
-const parallaxAnimationReverse = (getRandomInt(0, 10) % 2) / 2 == 0;
-const parallaxAnimationDurationInMillis = 50_000;
-
-const SkillsParallax = ({ className }: { className: string }) => {
-  return (
-    <Parallax
-      className={className}
-      durationInMillis={parallaxAnimationDurationInMillis}
-      reverse={parallaxAnimationReverse}>
-      <FaRust size={parallaxIconSize} opacity={parallaxIconOpacity} />
-      <TbBrandKotlin size={parallaxIconSize} opacity={parallaxIconOpacity} />
-      <TbBrandFlutter size={parallaxIconSize} opacity={parallaxIconOpacity} />
-      <FaReact size={parallaxIconSize} opacity={parallaxIconOpacity} />
-      <FaAws size={parallaxIconSize} opacity={parallaxIconOpacity} />
-      <FaDocker size={parallaxIconSize} opacity={parallaxIconOpacity} />
-    </Parallax>
-  );
-};
 
 const AboutPage: NextPage = () => {
   return (
@@ -56,7 +37,7 @@ const AboutPage: NextPage = () => {
       <div className="flex flex-col justify-evenly gap-8 p-4 lg:flex-row lg:items-center lg:gap-16 xl:gap-32">
         <div className="flex flex-col items-center gap-8 lg:w-1/3 lg:gap-16">
           <ProfileImage
-            className="rotate-0 rounded-xl object-contain ring-2 max-sm:max-h-[35vh] lg:rotate-3"
+            className="rotate-0 rounded-xl object-contain ring-2 dark:brightness-75 max-sm:max-h-[35vh] lg:rotate-3"
             src={PROFILE_IMAGE_SRC}
             alt={PROFILE_IMAGE_ALT}
             blurDataURL={PROFILE_IMAGE_BLUR_DATA_URL}
@@ -64,7 +45,7 @@ const AboutPage: NextPage = () => {
 
           <Contact />
 
-          <SkillsParallax className="lg:hidden" />
+          <ParallaxSkills className="lg:hidden" />
         </div>
 
         <div
@@ -76,30 +57,114 @@ const AboutPage: NextPage = () => {
         </div>
       </div>
 
-      <div className="flex justify-center">
-        <SkillsParallax className="max-lg:hidden" />
+      <div className="flex justify-center max-lg:hidden">
+        <ParallaxSkills />
       </div>
 
-      <Timeline>
-        <TimelineItem>
-          <TimelineTitle>This is the timeline title</TimelineTitle>
-          <TimelineDescription>This is the description</TimelineDescription>
-          <TimelineContent>This is the content</TimelineContent>
-        </TimelineItem>
+      <div className="grid-cols-3 place-items-center items-start gap-16 lg:grid">
+        <section>
+          <SectionHeading
+            title={'Education'}
+            titleWrapperClassName="md:justify-center"
+            icon={<TbSchool size={32} />}
+          />
 
-        <TimelineItem>
-          <TimelineTitle>This is the timeline title</TimelineTitle>
-          <TimelineDescription>This is the description</TimelineDescription>
-          <TimelineContent>This is the content</TimelineContent>
-        </TimelineItem>
-      </Timeline>
+          <div className="flex max-lg:justify-center">
+            <Timeline>
+              <TimelineItem>
+                <TimelineTitle>Computer Programming</TimelineTitle>
+                <TimelineDescription className="inline-flex">
+                  2024 <span className="mx-1 inline-block">-</span>
+                  <FaInfinity size={16} />
+                </TimelineDescription>
+                <TimelineContent>Istanbul University</TimelineContent>
+              </TimelineItem>
 
-      <div>- Experience</div>
-      <div>- Workspace</div>
-      <div>- Stack</div>
-      <div>- Bookmarks</div>
-      <div>- Books</div>
-      <div>- Gallery</div>
+              <TimelineItem>
+                <TimelineTitle>Public Administration</TimelineTitle>
+                <TimelineDescription>2018-2020</TimelineDescription>
+                <TimelineContent>Eskisehir University</TimelineContent>
+              </TimelineItem>
+
+              <TimelineItem>
+                <TimelineTitle>Rustu Unsal P.M.Y.O</TimelineTitle>
+                <TimelineDescription>2011-2013</TimelineDescription>
+                <TimelineContent>Buca/Izmir</TimelineContent>
+              </TimelineItem>
+
+              <TimelineItem>
+                <TimelineTitle>T.O.K.I Anatolian High School</TimelineTitle>
+                <TimelineDescription>2005-2009</TimelineDescription>
+                <TimelineContent>Eryaman/Ankara</TimelineContent>
+              </TimelineItem>
+
+              <TimelineItem>
+                <TimelineTitle>Melihsah Primary School</TimelineTitle>
+                <TimelineDescription>1998-2005</TimelineDescription>
+                <TimelineContent>Sincan/Ankara</TimelineContent>
+              </TimelineItem>
+
+              <TimelineItem>
+                <TimelineTitle>Born</TimelineTitle>
+                <TimelineDescription>1991</TimelineDescription>
+                <TimelineContent>Yenimahalle/Ankara</TimelineContent>
+              </TimelineItem>
+            </Timeline>
+          </div>
+        </section>
+
+        <section className="lg:col-span-2">
+          <SectionHeading
+            title={'Environment'}
+            titleWrapperClassName="md:justify-center"
+            icon={<FaToolbox size={32} />}
+          />
+
+          <div className="flex flex-col items-center justify-evenly gap-8 lg:items-start">
+            <div>
+              <Image
+                className={cn('object-fill')}
+                src={'/workspace/desk.webp'}
+                alt={'My sweet desk'}
+                width={512}
+                height={512}
+                placeholder={'blur'}
+                blurDataURL={
+                  'data:image/webp;base64,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'
+                }
+              />
+            </div>
+
+            <div>
+              <ul className="text-center text-xl">
+                <li>Tischkönig Flex v2 Adjustable Desk</li>
+                <li>Anker Soundcore Motion+ Bluetooth Speaker</li>
+                <li>SteelSeries Arctis Pro Wireless Headset</li>
+                <li>ViewSonic VP3268-4K IPS Monitor</li>
+                <li>Corsair 5000D Case</li>
+                <li>Corsair RM850x Power Supply</li>
+                <li>Logitech G915 TKL Lightspeed Wireless Keyboard</li>
+                <li>Logitech G502 Lightspeed Wireless Mouse</li>
+                <li>AMD Ryzen 9 5900X 12-Core CPU</li>
+                <li>MSI Meg x570 Ace Motherboard</li>
+                <li>Asus GTX 1070 GPU</li>
+                <li>G.Skill Trident Z Neo RGB 3600Mhz 16GB x2 RAM</li>
+                <li>Seagate Firecuda 530 1GB NVMe SSD</li>
+                <li>Macbook M3 Pro Laptop</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <section>
+        <SectionHeading
+          title={'Certificates'}
+          icon={<TbCertificate size={32} />}
+        />
+
+        <ParallaxCertificates />
+      </section>
     </div>
   );
 };

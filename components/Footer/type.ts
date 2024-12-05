@@ -2,4 +2,10 @@ type FooterProps = {
   className?: string;
 };
 
-export type { FooterProps };
+type FooterHeartIconProps = {
+  className?: string;
+  size: number;
+  color: string;
+};
+
+export type { FooterHeartIconProps, FooterProps };

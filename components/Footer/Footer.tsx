@@ -1,6 +1,5 @@
-import { HeartPulse } from '@/lib/icons';
 import { cn } from '@/lib/utils';
-import { FooterProps } from '.';
+import { FooterHeartIcon, FooterProps } from '.';
 
 const Footer: React.FC<FooterProps> = ({ className }) => {
   return (
@@ -11,13 +10,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
       )}>
       <div className="from-1% to-91% flex items-center justify-center gap-1 bg-gradient-to-r from-background/5 to-foreground/100 bg-clip-text p-3 text-transparent transition-all duration-300 ease-linear hover:-skew-y-2 hover:gap-[6px]">
         <span className="font-extrabold tracking-tighter">designed with</span>
-        <div className="flex flex-shrink items-center justify-center pb-2 align-middle">
-          <HeartPulse className="fill-red-700" size={48} />
-          <HeartPulse
-            className="absolute animate-ping-slow fill-red-500/60 stroke-gray-500/60"
-            size={64}
-          />
-        </div>
+        <FooterHeartIcon className="mx-2 pb-1" size={64} color="text-red-700" />
         <span>by</span>
         <span className="tracking-wide">Mustafa KibAr</span>
       </div>

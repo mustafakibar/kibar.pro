@@ -83,8 +83,8 @@ const config: Config = {
         },
       },
       animation: {
+        ping: 'ping 20s cubic-bezier(1, 0.9, 0.5, 1) infinite',
         parallax: 'parallax var(--duration) linear infinite var(--direction)',
-        'ping-slow': 'ping 20s cubic-bezier(1, 0.9, 0.5, 1) infinite',
       },
     },
   },

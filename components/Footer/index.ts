@@ -1,5 +1,6 @@
 import { Footer } from './Footer';
-import { FooterProps } from './type';
+import { FooterHeartIcon } from './FooterHeartIcon';
+import { FooterHeartIconProps, FooterProps } from './type';
 
-export { Footer };
-export type { FooterProps };
+export { Footer, FooterHeartIcon };
+export type { FooterHeartIconProps, FooterProps };

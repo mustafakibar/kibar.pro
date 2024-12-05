@@ -78,7 +78,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             src={PROFILE_IMAGE_SRC}
             alt={PROFILE_IMAGE_ALT}
             blurDataURL={PROFILE_IMAGE_BLUR_DATA_URL}
-            className="border-gray/70 dark:border-gray/10 pointer-events-none relative max-w-[24rem] rounded-md border-8 object-contain shadow-sm max-sm:max-h-[35vh] max-sm:border-0 md:hover:shadow-md"
+            className="border-gray/70 dark:border-gray/10 pointer-events-none relative max-w-[24rem] rounded-md border-8 object-contain shadow-sm dark:grayscale-[50%] max-sm:max-h-[35vh] max-sm:border-0 md:hover:shadow-md"
           />
         </div>
       </div>

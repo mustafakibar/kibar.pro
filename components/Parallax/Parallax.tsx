@@ -1,5 +1,8 @@
+'use client';
+
 import { cn } from '@/lib/utils';
-import React from 'react';
+import React, { useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 import { ParallaxProps } from '.';
 
 // thanks to https://codepen.io/ykadosh/pen/KKezJzz
@@ -11,12 +14,18 @@ const Parallax: React.FC<ParallaxProps> = ({
   reverse = true,
   ...props
 }) => {
+  const { ref, inView } = useInView();
+  const [hovered, setHovered] = useState(false);
+
   return (
     <div
+      ref={ref}
       className={cn(
         'max-w[50vw] relative flex overflow-hidden sm:max-w-[90vw]',
         className,
       )}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
       style={
         {
           '--duration': `${durationInMillis}ms`,
@@ -26,7 +35,9 @@ const Parallax: React.FC<ParallaxProps> = ({
       {...props}>
       <div
         className={cn(
-          'animate-parallax flex max-w-fit items-center gap-8 p-6',
+          'flex max-w-fit animate-parallax items-center gap-8 px-6 py-4 delay-500',
+          inView ? 'running' : 'paused',
+          hovered ? 'paused' : 'running',
         )}>
         {children}
         {children}
