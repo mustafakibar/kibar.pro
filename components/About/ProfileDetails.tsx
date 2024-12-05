@@ -3,7 +3,7 @@
 import { cn } from '@/lib/utils';
 import { TypeAnimation } from 'react-type-animation';
 
-const DETAILS_TEXT = `I am a full-stack developer since 2011, specializing in crafting scalable, responsive, efficient, and maintainable robust software systems.\n\nProficient in Rust, Kotlin, React, React Native, and Flutter.\n\nI enjoy making applications that make users' daily tasks easier and continuously push the boundaries of innovation in blockchain, AI, and systems programming, always striving to create high-quality software products efficiently with adapting to latest technology trends.`;
+const DETAILS_TEXT = `My name is Mustafa KiBAR. I am a full-stack developer since 2011, specializing in crafting scalable, responsive, efficient, and maintainable robust software systems.\n\nProficient in Rust, Kotlin, React, React Native, and Flutter.\n\nI enjoy making applications that make users' daily tasks easier and continuously push the boundaries of innovation in blockchain, AI, and systems programming, always striving to create high-quality software products efficiently with adapting to latest technology trends.`;
 
 const ProfileDetails: React.FC = () => {
   const classNameOfDetailsText =
@@ -13,7 +13,7 @@ const ProfileDetails: React.FC = () => {
     <div className="relative">
       <TypeAnimation
         sequence={[DETAILS_TEXT]}
-        speed={80}
+        speed={95}
         className={cn('absolute', classNameOfDetailsText)}
         repeat={0}
         omitDeletionAnimation={true}

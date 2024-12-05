@@ -35,9 +35,10 @@ const AboutPage: NextPage = () => {
       </div>
 
       <div className="flex flex-col justify-evenly gap-8 p-4 lg:flex-row lg:items-center lg:gap-16 xl:gap-32">
+        {/* Image & Contact & Skills */}
         <div className="flex flex-col items-center gap-8 lg:w-1/3 lg:gap-16">
           <ProfileImage
-            className="rotate-0 rounded-xl object-contain ring-2 dark:brightness-75 max-sm:max-h-[35vh] lg:rotate-3"
+            className="rotate-0 rounded-xl object-contain dark:brightness-75 max-sm:max-h-[35vh] md:ring-2 lg:rotate-3"
             src={PROFILE_IMAGE_SRC}
             alt={PROFILE_IMAGE_ALT}
             blurDataURL={PROFILE_IMAGE_BLUR_DATA_URL}
@@ -48,6 +49,7 @@ const AboutPage: NextPage = () => {
           <ParallaxSkills className="lg:hidden" />
         </div>
 
+        {/* Profile Details */}
         <div
           className={cn(
             'flex flex-col gap-8 text-justify text-2xl opacity-75 lg:-mt-24 lg:w-2/3 lg:gap-16',
@@ -57,12 +59,14 @@ const AboutPage: NextPage = () => {
         </div>
       </div>
 
+      {/* Skills */}
       <div className="flex justify-center max-lg:hidden">
         <ParallaxSkills />
       </div>
 
-      <div className="grid-cols-3 place-items-center items-start gap-16 lg:grid">
-        <section>
+      <div className="flex grid-cols-3 flex-col place-items-center items-start gap-16 lg:grid">
+        {/* Education */}
+        <section className="w-full">
           <SectionHeading
             title={'Education'}
             titleWrapperClassName="md:justify-center"
@@ -72,55 +76,57 @@ const AboutPage: NextPage = () => {
           <div className="flex max-lg:justify-center">
             <Timeline>
               <TimelineItem>
-                <TimelineTitle>Computer Programming</TimelineTitle>
                 <TimelineDescription className="inline-flex">
                   2024 <span className="mx-1 inline-block">-</span>
                   <FaInfinity size={16} />
                 </TimelineDescription>
+                <TimelineTitle>Computer Programming</TimelineTitle>
+
                 <TimelineContent>Istanbul University</TimelineContent>
               </TimelineItem>
 
               <TimelineItem>
-                <TimelineTitle>Public Administration</TimelineTitle>
                 <TimelineDescription>2018-2020</TimelineDescription>
+                <TimelineTitle>Public Administration</TimelineTitle>
                 <TimelineContent>Eskisehir University</TimelineContent>
               </TimelineItem>
 
               <TimelineItem>
-                <TimelineTitle>Rustu Unsal P.M.Y.O</TimelineTitle>
                 <TimelineDescription>2011-2013</TimelineDescription>
+                <TimelineTitle>Rustu Unsal P.M.Y.O</TimelineTitle>
                 <TimelineContent>Buca/Izmir</TimelineContent>
               </TimelineItem>
 
               <TimelineItem>
-                <TimelineTitle>T.O.K.I Anatolian High School</TimelineTitle>
                 <TimelineDescription>2005-2009</TimelineDescription>
+                <TimelineTitle>T.O.K.I Anatolian High School</TimelineTitle>
                 <TimelineContent>Eryaman/Ankara</TimelineContent>
               </TimelineItem>
 
               <TimelineItem>
-                <TimelineTitle>Melihsah Primary School</TimelineTitle>
                 <TimelineDescription>1998-2005</TimelineDescription>
+                <TimelineTitle>Melihsah Primary School</TimelineTitle>
                 <TimelineContent>Sincan/Ankara</TimelineContent>
               </TimelineItem>
 
               <TimelineItem>
-                <TimelineTitle>Born</TimelineTitle>
                 <TimelineDescription>1991</TimelineDescription>
+                <TimelineTitle>Born</TimelineTitle>
                 <TimelineContent>Yenimahalle/Ankara</TimelineContent>
               </TimelineItem>
             </Timeline>
           </div>
         </section>
 
-        <section className="lg:col-span-2">
+        {/* Environments */}
+        <section className="w-full lg:col-span-2">
           <SectionHeading
             title={'Environment'}
             titleWrapperClassName="md:justify-center"
             icon={<FaToolbox size={32} />}
           />
 
-          <div className="flex flex-col items-center justify-evenly gap-8 lg:items-start">
+          <div className="flex flex-col items-center justify-evenly gap-8">
             <div>
               <Image
                 className={cn('object-fill')}
@@ -157,6 +163,7 @@ const AboutPage: NextPage = () => {
         </section>
       </div>
 
+      {/* Certificates */}
       <section>
         <SectionHeading
           title={'Certificates'}

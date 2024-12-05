@@ -25,7 +25,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
       <div className="flex flex-col items-center justify-evenly gap-12 lg:flex-row lg:gap-4">
         <div className="flex flex-col gap-4 text-center antialiased lg:gap-8 lg:text-start">
           <div className={cn('text-nowrap lg:pt-10', heroFont.className)}>
-            <h1 className="text-4xl text-primary opacity-75 sm:pl-1 lg:text-5xl">
+            <h1 className="text-4xl text-primary opacity-75 sm:pl-2 lg:text-5xl">
               Mustafa
             </h1>
             <h2 className="text-8xl font-extrabold text-secondary opacity-95 lg:text-9xl">
