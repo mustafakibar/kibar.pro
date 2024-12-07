@@ -53,4 +53,8 @@
   * {
     @apply border-border;
   }
+
+  .text-highlight {
+    @apply mx-4 inline-block scale-110 rounded border bg-primary px-2 italic text-white;
+  }
 }

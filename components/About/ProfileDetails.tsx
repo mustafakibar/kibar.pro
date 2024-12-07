@@ -20,6 +20,7 @@ const ProfileDetails: React.FC = () => {
         cursor={false}
       />
 
+      {/* Layout shift issue is fixed by using the absolute position for the text. */}
       <span className={cn('opacity-0', classNameOfDetailsText)}>
         {DETAILS_TEXT}
       </span>
