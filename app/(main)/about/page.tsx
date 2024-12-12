@@ -38,7 +38,7 @@ const AboutPage: NextPage = () => {
         {/* Image & Contact & Skills */}
         <div className="flex flex-col items-center gap-8 lg:w-1/3 lg:gap-16">
           <ProfileImage
-            className="rotate-0 rounded-xl object-contain dark:brightness-75 max-sm:max-h-[35vh] md:ring-2 lg:rotate-3"
+            className="rotate-0 rounded-xl object-contain ring-primary dark:brightness-75 max-sm:max-h-[35vh] md:ring-2 lg:rotate-3"
             src={PROFILE_IMAGE_SRC}
             alt={PROFILE_IMAGE_ALT}
             blurDataURL={PROFILE_IMAGE_BLUR_DATA_URL}

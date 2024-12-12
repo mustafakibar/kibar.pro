@@ -32,10 +32,10 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               )}>
               kibAr
             </Link>
-            <div className="flex flex-shrink items-center max-sm:gap-4 sm:flex-row-reverse">
+            <div className="flex flex-shrink items-center max-md:gap-4 md:flex-row-reverse">
               {!isMenuOpen && <ThemeSwitchButton />}
               <Button
-                className="sm:hidden"
+                className="md:hidden"
                 variant="ghost"
                 size="icon"
                 onClick={setIsMenuOpen.bind(this, !isMenuOpen)}>
@@ -46,15 +46,15 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
                 )}
               </Button>
 
-              <nav className="hidden sm:flex">
+              <nav className="hidden md:flex">
                 <NavItems isMobile={isMenuOpen} />
               </nav>
             </div>
           </div>
 
           {isMenuOpen && (
-            <div className="sm:hidden">
-              <nav className="absolute left-0 z-10 bg-transparent py-6">
+            <div className="md:hidden">
+              <nav className="absolute left-0 z-10 w-full bg-transparent py-6">
                 <NavItems
                   isMobile={isMenuOpen}
                   onItemClicked={setIsMenuOpen.bind(this, false)}

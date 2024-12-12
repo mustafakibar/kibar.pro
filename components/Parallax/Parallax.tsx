@@ -47,7 +47,7 @@ const Parallax: React.FC<ParallaxProps> = ({
         {children}
       </div>
 
-      <div className="absolute left-0 top-0 h-full w-full rounded-xl bg-gradient-to-r from-black/5 via-transparent to-black/5 opacity-50 dark:from-white/5 dark:to-white/5" />
+      <div className="absolute left-0 top-0 h-full w-full rounded-xl bg-gradient-to-r from-black/5 via-transparent to-black/5 opacity-75 dark:from-white/5 dark:to-white/5" />
     </div>
   );
 };

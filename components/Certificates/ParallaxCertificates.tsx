@@ -1,49 +1,41 @@
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { Parallax } from '../Parallax';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '../ui/card';
+import { Card } from '../ui/card';
 import { CERTIFICATE_ITEMS } from './constant';
 
 const ParallaxCertificates = () => {
   return (
-    <Parallax className={''} durationInMillis={300000} reverse={true}>
+    <Parallax durationInMillis={900000} reverse={true}>
       {...[
         CERTIFICATE_ITEMS.map((item) => {
           return (
             <Card
               key={item.title}
               className={cn(
-                'relative h-auto max-h-[20rem] w-fit max-w-[20rem] overflow-hidden',
+                'relative h-[20vh] max-h-[20vh] w-[25vh] max-w-[25vh] overflow-hidden',
               )}>
-              <CardHeader>
-                <CardTitle className="text-nowrap">{item.title}</CardTitle>
-                <CardDescription className="text-nowrap">
+              {item.imageUrl && (
+                <Image
+                  className="absolute left-0 top-0 h-full w-full rounded-md object-contain p-4"
+                  src={item.imageUrl}
+                  alt={item.title}
+                  width={256}
+                  height={256}
+                  placeholder={item.blurDataURL ? 'blur' : 'empty'}
+                  blurDataURL={item.blurDataURL}
+                />
+              )}
+
+              <div className="absolute bottom-0 flex w-full flex-col gap-1 rounded-lg bg-background/85 px-2 py-1">
+                <span className="inline-flex max-w-[90%] text-ellipsis text-nowrap text-lg text-foreground/90">
+                  {item.title}
+                </span>
+
+                <span className="inline-flex text-sm font-bold tracking-wide">
                   {item.description}
-                  <span className="mx-1 inline-block">-</span>
-                  <span className="font-semibold">{item.date}</span>
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div>
-                  {item.imageUrl && (
-                    <Image
-                      className="rounded-md"
-                      src={item.imageUrl}
-                      alt={item.title}
-                      width={256}
-                      height={256}
-                      placeholder={item.blurDataURL ? 'blur' : 'empty'}
-                      blurDataURL={item.blurDataURL}
-                    />
-                  )}
-                </div>
-              </CardContent>
+                </span>
+              </div>
             </Card>
           );
         }),

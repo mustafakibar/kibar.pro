@@ -1,4 +1,3 @@
-// storage-adapter-import-placeholder
 import { postgresAdapter } from '@payloadcms/db-postgres';
 import { nodemailerAdapter } from '@payloadcms/email-nodemailer';
 import { payloadCloudPlugin } from '@payloadcms/payload-cloud';
@@ -9,8 +8,8 @@ import sharp from 'sharp';
 import { fileURLToPath } from 'url';
 
 import { Media } from './collections/Media';
-import Posts from './collections/Posts';
-import Tags from './collections/Tags';
+import { Posts } from './collections/Posts';
+import { Tags } from './collections/Tags';
 import { Users } from './collections/Users';
 
 const filename = fileURLToPath(import.meta.url);
@@ -23,7 +22,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Posts, Tags, Users, Media],
+  collections: [Users, Media, Tags, Posts],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
@@ -33,6 +32,7 @@ export default buildConfig({
     pool: {
       connectionString: process.env.DATABASE_URI || '',
     },
+    migrationDir: './cms/migrations',
   }),
   sharp,
   email: nodemailerAdapter({
@@ -47,8 +47,5 @@ export default buildConfig({
       },
     },
   }),
-  plugins: [
-    payloadCloudPlugin(),
-    // storage-adapter-placeholder
-  ],
+  plugins: [payloadCloudPlugin()],
 });

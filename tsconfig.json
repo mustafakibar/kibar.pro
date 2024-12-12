@@ -21,7 +21,7 @@
     ],
     "paths": {
       "@/*": ["./*"],
-      "@payload-config": ["./payload.config.ts"]
+      "@payload-config": ["./cms/payload.config.ts"]
     }
   },
   "include": [

@@ -19,7 +19,7 @@ const NavItem: React.FC<NavItemProps> = (
         onClick={onClick}
         ref={ref}
         className={cn(
-          'relative flex px-1 transition-all duration-300 ease-in-out hover:rounded-xl max-sm:w-full md:text-lg',
+          'relative flex px-1 transition-all duration-300 ease-in-out hover:rounded-xl md:text-lg',
           className,
           {
             'hover:bg-foreground/10': !active,
@@ -40,7 +40,7 @@ const NavItem: React.FC<NavItemProps> = (
           )}>
           {text}
           {active && (
-            <div className="absolute bottom-3 left-0 hidden h-[3%] w-full sm:inline-flex">
+            <div className="absolute bottom-3 left-0 hidden h-[3%] w-full md:inline-flex">
               <div className="mx-auto w-1/4 rounded-full bg-accent-foreground/80" />
             </div>
           )}

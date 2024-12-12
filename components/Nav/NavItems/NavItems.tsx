@@ -15,7 +15,7 @@ const NavItems: React.FC<{
   return (
     <ul
       className={cn(
-        'flex list-none flex-col items-center justify-center gap-5 p-3 sm:flex-row sm:gap-1',
+        'flex list-none flex-col items-center justify-center gap-5 p-3 md:flex-row md:gap-1',
         className,
       )}>
       {NAV_ITEMS.map((item) => (

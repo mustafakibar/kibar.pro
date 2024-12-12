@@ -1,12 +1,20 @@
 import { CollectionConfig } from 'payload';
+import { permitAll, permitIfAdmin } from '../access';
 
 const Tags: CollectionConfig = {
   slug: 'tags',
+  labels: {
+    singular: 'Tag',
+    plural: 'Tags',
+  },
   admin: {
     useAsTitle: 'name',
   },
   access: {
-    read: () => true,
+    read: permitAll,
+    create: permitIfAdmin,
+    delete: permitIfAdmin,
+    update: permitIfAdmin,
   },
   fields: [
     {
@@ -18,4 +26,4 @@ const Tags: CollectionConfig = {
   timestamps: false,
 };
 
-export default Tags;
+export { Tags };

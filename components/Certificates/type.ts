@@ -2,7 +2,7 @@ type ParallaxCertificatesProps = {
   className?: string;
 };
 
-type CertificateItemProps = {
+type Certificate = {
   title: string;
   description: string;
   imageUrl?: string;
@@ -10,4 +10,4 @@ type CertificateItemProps = {
   date: string;
 };
 
-export type { CertificateItemProps, ParallaxCertificatesProps };
+export type { Certificate, ParallaxCertificatesProps };
