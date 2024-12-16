@@ -1,6 +1,6 @@
 'use client';
 
-import { HOME_PATH } from '@/app/(main)/constants';
+import { HOME_PATH } from '@/common/paths';
 import { cn } from '@/lib/utils';
 import { useRouter } from 'next/navigation';
 import { TagItemProps } from '..';

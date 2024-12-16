@@ -1,10 +1,10 @@
+import { BLOG_PATH, PROJECTS_PATH, SNIPPETS_PATH } from '@/common/paths';
 import { PostShowcase } from '@/components/Blog';
 import { Hero } from '@/components/Hero';
 import { ProjectShowcase } from '@/components/Project/ProjectShowcase';
 import { ShowcaseViewer } from '@/components/Showcase';
 import { SnippetShowcase } from '@/components/Snippet/SnippetShowcase';
 import { NextPage } from 'next';
-import { BLOG_PATH, PROJECTS_PATH, SNIPPETS_PATH } from './constants';
 import { dummyBlogPosts, dummyProjects, dummySnippets } from './dummyData';
 
 const HomePage: NextPage = () => {

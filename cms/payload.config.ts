@@ -7,6 +7,7 @@ import { buildConfig } from 'payload';
 import sharp from 'sharp';
 import { fileURLToPath } from 'url';
 
+import env from '@/env';
 import { Media } from './collections/Media';
 import { Posts } from './collections/Posts';
 import { Tags } from './collections/Tags';
@@ -24,26 +25,26 @@ export default buildConfig({
   },
   collections: [Users, Media, Tags, Posts],
   editor: lexicalEditor(),
-  secret: process.env.PAYLOAD_SECRET || '',
+  secret: env.PAYLOADCMS_SECRET,
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
   db: postgresAdapter({
     pool: {
-      connectionString: process.env.DATABASE_URI || '',
+      connectionString: env.DATABASE_URI,
     },
     migrationDir: './cms/migrations',
   }),
   sharp,
   email: nodemailerAdapter({
-    defaultFromAddress: process.env.NODEMAIL_FROM_ADDRESS || '',
-    defaultFromName: process.env.NODEMAIL_FROM_NAME || '',
+    defaultFromName: env.MAIL_FROM_NAME,
+    defaultFromAddress: env.MAIL_FROM_ADDRESS,
     transportOptions: {
-      host: process.env.SMTP_HOST,
-      port: process.env.SMTP_PORT,
+      host: env.SMTP_HOST,
+      port: env.SMTP_PORT,
       auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
+        user: env.SMTP_USER,
+        pass: env.SMTP_PASS,
       },
     },
   }),

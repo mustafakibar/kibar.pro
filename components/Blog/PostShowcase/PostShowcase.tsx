@@ -1,4 +1,4 @@
-import { BLOG_PATH } from '@/app/(main)/constants';
+import { BLOG_PATH } from '@/common/paths';
 import {
   ShowcaseContainer,
   ShowcaseContent,

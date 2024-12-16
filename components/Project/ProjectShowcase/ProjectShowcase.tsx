@@ -1,4 +1,4 @@
-import { PROJECTS_PATH } from '@/app/(main)/constants';
+import { PROJECTS_PATH } from '@/common/paths';
 import { RepoIcon } from '@/components/RepoIcon';
 import {
   ShowcaseActionContainer,
@@ -22,10 +22,13 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({
   hideTags = false,
   ...props
 }) => {
-  const href = project.slug ? `${PROJECTS_PATH}//${project.slug}` : '';
+  const href = project.repoUrl ?? PROJECTS_PATH;
 
   return (
-    <Link href={href} className={cn({ 'pointer-events-none': href == '' })}>
+    <Link
+      href={href}
+      target="_blank"
+      className={cn({ 'pointer-events-none': href == '' })}>
       <ShowcaseContainer className={cn(className)} {...props}>
         <ShowcaseMain>
           <ShowcaseStamp>{project.year}</ShowcaseStamp>
@@ -42,9 +45,12 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({
             </ShowcaseActionContainer>
           </ShowcaseHeader>
 
-          <ShowcaseDivider />
-
-          <ShowcaseContent>{project.description}</ShowcaseContent>
+          {project.description && (
+            <>
+              <ShowcaseDivider />
+              <ShowcaseContent>{project.description}</ShowcaseContent>
+            </>
+          )}
         </ShowcaseMain>
 
         <ShowcaseFooter>

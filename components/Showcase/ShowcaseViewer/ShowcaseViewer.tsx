@@ -27,7 +27,7 @@ const ShowcaseViewer: React.FC<ShowcaseViewerProps> = ({
       <div className="flex">
         <SectionHeading
           title={title}
-          subtitle={description}
+          description={description}
           icon={sectionIcon}
         />
 

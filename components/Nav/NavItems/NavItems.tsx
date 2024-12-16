@@ -1,9 +1,9 @@
 'use client';
 
-import { NAV_ITEMS } from '@/app/(main)/constants';
 import { cn } from '@/lib/utils';
 import { usePathname } from 'next/navigation';
 import { NavItem } from '../NavItem';
+import { NAV_ITEMS } from './constants';
 
 const NavItems: React.FC<{
   className?: string;

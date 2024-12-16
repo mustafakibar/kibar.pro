@@ -8,7 +8,7 @@ const ShowcaseTitle: React.FC<ShowcaseTitleProps> = ({
   ...props
 }) => {
   return (
-    <Title className={cn('line-clamp-1', className)} {...props}>
+    <Title className={cn(className)} {...props}>
       {children}
     </Title>
   );

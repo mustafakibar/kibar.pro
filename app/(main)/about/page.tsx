@@ -25,7 +25,7 @@ import { titleFont } from '../fonts';
 
 const AboutPage: NextPage = () => {
   return (
-    <div className="flex flex-col gap-16 py-8">
+    <div className="flex flex-col gap-8 py-8">
       <div
         className={cn(
           'flex justify-center text-5xl font-black opacity-75 sm:text-7xl',
@@ -34,7 +34,7 @@ const AboutPage: NextPage = () => {
         Hey There 👋
       </div>
 
-      <div className="flex flex-col justify-evenly gap-8 p-4 lg:flex-row lg:items-center lg:gap-16 xl:gap-32">
+      <div className="flex flex-col justify-evenly gap-8 p-4 md:p-16 lg:flex-row lg:items-center lg:gap-16 xl:gap-32">
         {/* Image & Contact & Skills */}
         <div className="flex flex-col items-center gap-8 lg:w-1/3 lg:gap-16">
           <ProfileImage

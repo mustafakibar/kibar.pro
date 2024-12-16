@@ -1,33 +1,30 @@
 import { GridWrapper } from '@/components/GridWrapper';
 import { ProjectShowcase } from '@/components/Project/ProjectShowcase';
 import { SectionHeading } from '@/components/SectionHeading';
+import { getProjects } from '@/data/getProjects';
 import { NextPage } from 'next';
-import { dummyProjects } from '../dummyData';
 
 export const metadata = {
   title: 'Projects',
   description: "Here are some of the projects I've worked on.",
 };
 
-const ProjectsPage: NextPage = () => {
+const ProjectsPage: NextPage = async () => {
+  const projects = await getProjects();
+
   return (
-    <section className="flex flex-col max-sm:p-4">
+    <section className="flex flex-col gap-8 max-sm:p-4">
       <div className="flex items-center justify-between">
         <SectionHeading
           title="Projects"
-          subtitle="Showing 3 projects in total"
+          description="Here are some of the projects I've worked on."
         />
-
-        {/* TODO */}
-        <div className="flex flex-shrink gap-4"></div>
       </div>
 
       <GridWrapper>
-        {[...dummyProjects, ...dummyProjects, ...dummyProjects].map(
-          (data, index) => (
-            <ProjectShowcase key={index} project={data} />
-          ),
-        )}
+        {projects?.map((data, index) => (
+          <ProjectShowcase key={index} project={data} />
+        )) ?? <p className="text-xl">No projects found</p>}
       </GridWrapper>
     </section>
   );

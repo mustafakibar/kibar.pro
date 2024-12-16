@@ -1,7 +1,7 @@
 'use client';
 
-import { HOME_PATH } from '@/app/(main)/constants';
 import { brandFont } from '@/app/(main)/fonts';
+import { HOME_PATH } from '@/common/paths';
 import { BurgerMenu, BurgerMenuOpened } from '@/lib/icons';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';

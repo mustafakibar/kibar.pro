@@ -2,7 +2,7 @@ type SectionHeadingProps = {
   className?: string;
   title: string;
   titleWrapperClassName?: string;
-  subtitle?: string;
+  description?: string;
   icon?: React.ReactNode;
 };
 

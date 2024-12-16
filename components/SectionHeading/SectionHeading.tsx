@@ -6,12 +6,12 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
   className,
   title,
   titleWrapperClassName,
-  subtitle,
+  description,
   icon,
   ...props
 }) => {
   return (
-    <div className={cn('py-4 sm:px-2', className)} {...props}>
+    <div className={cn(className)} {...props}>
       <div
         className={cn(
           'flex flex-grow flex-nowrap text-nowrap',
@@ -26,7 +26,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
         </div>
       </div>
 
-      {subtitle && <Subhead>{subtitle}</Subhead>}
+      {description && <Subhead className="ml-[2px]">{description}</Subhead>}
     </div>
   );
 };

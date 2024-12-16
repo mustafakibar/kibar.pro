@@ -6,12 +6,9 @@ import { dummyBlogPosts } from '../dummyData';
 
 const BlogPage: NextPage = () => {
   return (
-    <section className="flex flex-col max-sm:p-4">
+    <section className="flex flex-col gap-8 max-sm:p-4">
       <div className="flex items-center justify-between">
-        <SectionHeading title="Posts" subtitle="Showing 3 posts in total" />
-
-        {/* TODO */}
-        <div className="flex flex-shrink gap-4"></div>
+        <SectionHeading title="Posts" description="Showing 3 posts in total" />
       </div>
 
       <GridWrapper>

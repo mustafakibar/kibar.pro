@@ -23,4 +23,7 @@ const shuffle = (array: string[]) => {
   return array;
 };
 
-export { cn, getRandomInt, openInNewTab, shuffle };
+const asyncTimeout = (ms: number) =>
+  new Promise((resolve) => setTimeout(resolve, ms));
+
+export { asyncTimeout, cn, getRandomInt, openInNewTab, shuffle };
