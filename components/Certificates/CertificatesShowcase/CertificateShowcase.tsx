@@ -29,7 +29,7 @@ const CertificateShowcase: React.FC<CertificateShowcaseProps> = ({
         {...props}>
         <ShowcaseMain>
           <ShowcaseHeader>
-            <ShowcaseTitle className="line-clamp-none group-hover:font-black group-hover:tracking-wider">
+            <ShowcaseTitle className="line-clamp-none duration-300 group-hover:-skew-y-3 group-hover:font-black group-hover:tracking-tighter">
               {certificate.title}
             </ShowcaseTitle>
           </ShowcaseHeader>
@@ -38,19 +38,17 @@ const CertificateShowcase: React.FC<CertificateShowcaseProps> = ({
 
           <ShowcaseContent>{certificate.description}</ShowcaseContent>
 
-          <div>
-            {certificate.imageUrl && (
-              <Image
-                className="h-full w-full rounded-md object-contain p-4 transition-transform duration-200 ease-in group-hover:-translate-y-1 group-hover:scale-105 group-hover:shadow-lg group-hover:grayscale"
-                src={certificate.imageUrl}
-                alt={certificate.title}
-                width={256}
-                height={256}
-                placeholder={certificate.blurDataURL ? 'blur' : 'empty'}
-                blurDataURL={certificate.blurDataURL}
-              />
-            )}
-          </div>
+          {certificate.imageUrl && (
+            <Image
+              className="h-full w-full rounded-md object-contain p-4 transition-transform duration-200 ease-in group-hover:skew-y-1 group-hover:shadow-lg group-hover:grayscale"
+              src={certificate.imageUrl}
+              alt={certificate.title}
+              width={256}
+              height={256}
+              placeholder={certificate.blurDataURL ? 'blur' : 'empty'}
+              blurDataURL={certificate.blurDataURL}
+            />
+          )}
         </ShowcaseMain>
 
         <ShowcaseFooter>

@@ -1,3 +1,6 @@
+export const dynamic = 'force-static';
+
+import { AnimatedItemWrapper } from '@/components/AnimatedItemWrapper';
 import { CertificateShowcase } from '@/components/Certificates/CertificatesShowcase';
 import { GridWrapper } from '@/components/GridWrapper';
 import { SectionHeading } from '@/components/SectionHeading';
@@ -18,7 +21,9 @@ const CertificatesPage: NextPage = async () => {
 
       <GridWrapper>
         {certificates?.map((data, index) => (
-          <CertificateShowcase key={index} certificate={data} />
+          <AnimatedItemWrapper key={index} itemIndex={index}>
+            <CertificateShowcase certificate={data} />
+          </AnimatedItemWrapper>
         )) ?? <p className="text-xl">No certificates found</p>}
       </GridWrapper>
     </section>

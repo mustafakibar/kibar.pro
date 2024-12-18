@@ -4,7 +4,7 @@ const BLOG_PATH = '/blog';
 const PROJECTS_PATH = '/projects';
 const SNIPPETS_PATH = '/snippets';
 const CERTIFICATES_PATH = '/certificates';
-const RESUME_PATH = '/resume';
+const RESUME_PATH = 'https://kibar.pro/cv';
 
 export {
   ABOUT_PATH,

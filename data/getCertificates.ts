@@ -4,7 +4,7 @@ import env from '@/env';
 import ms from 'ms';
 import { unstable_cache } from 'next/cache';
 
-const revalidate = env.IS_DEV ? 1 : ms('6h');
+const revalidate = env.IS_DEV ? ms('30m') : ms('1d');
 
 // TODO S3
 const getCertificates = unstable_cache(

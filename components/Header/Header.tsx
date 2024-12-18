@@ -4,6 +4,7 @@ import { brandFont } from '@/app/(main)/fonts';
 import { HOME_PATH } from '@/common/paths';
 import { BurgerMenu, BurgerMenuOpened } from '@/lib/icons';
 import { cn } from '@/lib/utils';
+import { AnimatePresence, motion } from 'motion/react';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { HeaderProps } from '.';
@@ -34,17 +35,24 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             </Link>
             <div className="flex flex-shrink items-center max-md:gap-4 md:flex-row-reverse">
               {!isMenuOpen && <ThemeSwitchButton />}
-              <Button
-                className="md:hidden"
-                variant="ghost"
-                size="icon"
-                onClick={setIsMenuOpen.bind(this, !isMenuOpen)}>
-                {isMenuOpen ? (
-                  <BurgerMenuOpened size={32} />
-                ) : (
-                  <BurgerMenu size={32} />
-                )}
-              </Button>
+              <motion.div
+                whileTap={{ x: -4, opacity: 0.8 }}
+                transition={{
+                  duration: 0.2,
+                  ease: 'anticipate',
+                }}>
+                <Button
+                  className="md:hidden"
+                  variant="ghost"
+                  size="icon"
+                  onClick={setIsMenuOpen.bind(this, !isMenuOpen)}>
+                  {isMenuOpen ? (
+                    <BurgerMenuOpened size={32} />
+                  ) : (
+                    <BurgerMenu size={32} />
+                  )}
+                </Button>
+              </motion.div>
 
               <nav className="hidden md:flex">
                 <NavItems isMobile={isMenuOpen} />
@@ -52,22 +60,28 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             </div>
           </div>
 
-          {isMenuOpen && (
-            <div className="md:hidden">
-              <nav className="absolute left-0 z-10 w-full bg-transparent py-6">
-                <NavItems
-                  isMobile={isMenuOpen}
-                  onItemClicked={setIsMenuOpen.bind(this, false)}
-                />
-              </nav>
+          <AnimatePresence>
+            {isMenuOpen && (
+              <motion.div
+                className="md:hidden"
+                animate={{ opacity: [0, 1] }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}>
+                <nav className="absolute left-0 z-10 w-full bg-transparent py-6">
+                  <NavItems
+                    isMobile={isMenuOpen}
+                    onItemClicked={setIsMenuOpen.bind(this, false)}
+                  />
+                </nav>
 
-              {/* Background overlay */}
-              <div
-                className="fixed inset-x-0 h-screen w-screen bg-background opacity-[.98]"
-                onClick={setIsMenuOpen.bind(this, false)}
-              />
-            </div>
-          )}
+                {/* Background overlay */}
+                <div
+                  className="fixed inset-x-0 h-screen w-screen bg-background opacity-[.98]"
+                  onClick={setIsMenuOpen.bind(this, false)}
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           {/* Header shadow */}
           <div

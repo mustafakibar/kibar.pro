@@ -12,7 +12,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
         <span className="font-extrabold tracking-tighter">designed with</span>
         <FooterHeartIcon className="mx-2 pb-1" size={64} color="text-red-700" />
         <span>by</span>
-        <span className="tracking-wide">Mustafa KibAr</span>
+        <span className="tracking-wide">Mustafa KiBAR</span>
       </div>
     </footer>
   );

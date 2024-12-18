@@ -5,14 +5,14 @@ import { getGithubRepos } from '@/lib/github';
 import ms from 'ms';
 import { unstable_cache } from 'next/cache';
 
-const revalidate = env.IS_DEV ? 1 : ms('6h');
+const revalidate = env.IS_DEV ? ms('30m') : ms('1d');
 
-// Integrate with the cms
+// Todo Integrate with the cms
 const getProjects = unstable_cache(
   async () => {
     const repos = await getGithubRepos();
 
-    if (!repos || repos.length <= 0 || !Array.isArray(repos)) {
+    if (!repos || repos.length <= 0 || !Array.isArray(repos) || !repos[0].id) {
       return null;
     }
 

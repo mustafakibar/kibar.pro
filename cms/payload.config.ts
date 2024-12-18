@@ -37,8 +37,8 @@ export default buildConfig({
   }),
   sharp,
   email: nodemailerAdapter({
-    defaultFromName: env.MAIL_FROM_NAME,
-    defaultFromAddress: env.MAIL_FROM_ADDRESS,
+    defaultFromName: env.MAIL_FROM_NAME ?? 'no-name',
+    defaultFromAddress: env.MAIL_FROM_ADDRESS ?? 'no-email',
     transportOptions: {
       host: env.SMTP_HOST,
       port: env.SMTP_PORT,

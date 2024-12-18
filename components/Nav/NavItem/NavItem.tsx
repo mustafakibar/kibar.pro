@@ -4,10 +4,14 @@ import Link from 'next/link';
 import React from 'react';
 import { NavItemProps } from '.';
 
-const NavItem: React.FC<NavItemProps> = (
-  { text, href, className, active, onClick, ...props },
-  ref,
-) => {
+const NavItem: React.FC<NavItemProps> = ({
+  text,
+  href,
+  className,
+  active,
+  onClick,
+  ...props
+}) => {
   return (
     <Link
       href={href}
@@ -17,7 +21,6 @@ const NavItem: React.FC<NavItemProps> = (
       })}>
       <div
         onClick={onClick}
-        ref={ref}
         className={cn(
           'relative flex px-1 transition-all duration-300 ease-in-out hover:rounded-xl md:text-lg',
           className,

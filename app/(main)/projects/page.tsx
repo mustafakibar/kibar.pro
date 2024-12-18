@@ -1,3 +1,4 @@
+import { AnimatedItemWrapper } from '@/components/AnimatedItemWrapper';
 import { GridWrapper } from '@/components/GridWrapper';
 import { ProjectShowcase } from '@/components/Project/ProjectShowcase';
 import { SectionHeading } from '@/components/SectionHeading';
@@ -23,7 +24,9 @@ const ProjectsPage: NextPage = async () => {
 
       <GridWrapper>
         {projects?.map((data, index) => (
-          <ProjectShowcase key={index} project={data} />
+          <AnimatedItemWrapper key={index} itemIndex={index}>
+            <ProjectShowcase project={data} />
+          </AnimatedItemWrapper>
         )) ?? <p className="text-xl">No projects found</p>}
       </GridWrapper>
     </section>

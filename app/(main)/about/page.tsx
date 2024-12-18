@@ -1,3 +1,5 @@
+export const dynamic = 'force-static';
+
 import { ProfileDetails } from '@/components/About';
 import {
   PROFILE_IMAGE_ALT,
