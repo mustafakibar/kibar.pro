@@ -1,3 +1,5 @@
+'use client';
+
 import { heroFont } from '@/app/(main)/fonts';
 import { ProfileImage } from '@/components/ProfileImage';
 import { TurkeyFlagImage } from '@/components/TurkeyFlagImage';
@@ -8,6 +10,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { cn } from '@/lib/utils';
+import { motion } from 'motion/react';
 import Image from 'next/image';
 import React from 'react';
 import { HeroProps } from '.';
@@ -22,7 +25,19 @@ import {
 const Hero: React.FC<HeroProps> = ({ className }) => {
   return (
     <div className={cn('my-[2rem] lg:my-[8rem]', className)}>
-      <div className="flex flex-col items-center justify-evenly gap-12 lg:flex-row lg:gap-4">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        animate={{
+          y: [24, 0],
+          opacity: [0, 0.9, 0.6, 1],
+        }}
+        transition={{
+          duration: 3.0,
+          ease: 'backOut',
+        }}
+        className="flex flex-col items-center justify-evenly gap-12 lg:flex-row lg:gap-4">
         <div className="flex flex-col gap-4 text-center antialiased lg:gap-8 lg:text-start">
           <div className={cn('text-nowrap lg:pt-10', heroFont.className)}>
             <h1 className="text-4xl text-primary opacity-75 sm:pl-2 lg:text-5xl">
@@ -81,7 +96,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             className="border-gray/70 dark:border-gray/10 pointer-events-none relative max-w-[24rem] rounded-md border-8 object-contain shadow-sm dark:grayscale-[50%] max-sm:max-h-[35vh] max-sm:border-0 md:hover:shadow-md"
           />
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

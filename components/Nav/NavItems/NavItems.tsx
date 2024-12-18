@@ -18,7 +18,7 @@ const NavItems: React.FC<{
         'flex list-none flex-col items-center justify-center gap-5 p-3 md:flex-row md:gap-1',
         className,
       )}>
-      {NAV_ITEMS.map((item) => (
+      {NAV_ITEMS.filter(({ enabled = true }) => enabled).map((item) => (
         <li
           className={cn({
             'w-full': isMobile,

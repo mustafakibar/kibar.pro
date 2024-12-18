@@ -4,7 +4,6 @@ import {
   PROFILE_IMAGE_BLUR_DATA_URL,
   PROFILE_IMAGE_SRC,
 } from '@/components/About/contant';
-import { ParallaxCertificates } from '@/components/Certificates';
 import { Contact } from '@/components/Contact';
 import { ProfileImage } from '@/components/ProfileImage';
 import { SectionHeading } from '@/components/SectionHeading';
@@ -19,8 +18,8 @@ import {
 import { cn } from '@/lib/utils';
 import { NextPage } from 'next';
 import Image from 'next/image';
-import { FaInfinity, FaToolbox } from 'react-icons/fa6';
-import { TbCertificate, TbSchool } from 'react-icons/tb';
+import { FaToolbox } from 'react-icons/fa6';
+import { TbSchool } from 'react-icons/tb';
 import { titleFont } from '../fonts';
 
 const AboutPage: NextPage = () => {
@@ -66,7 +65,7 @@ const AboutPage: NextPage = () => {
 
       <div className="flex grid-cols-3 flex-col place-items-center items-start gap-16 px-8 lg:grid">
         {/* Education */}
-        <section className="w-full">
+        <div className="flex w-full flex-col gap-8">
           <SectionHeading
             title={'Education'}
             titleWrapperClassName="max-lg:justify-center"
@@ -77,8 +76,7 @@ const AboutPage: NextPage = () => {
             <Timeline>
               <TimelineItem>
                 <TimelineDescription className="inline-flex">
-                  2024 <span className="mx-1 inline-block">-</span>
-                  <FaInfinity size={16} />
+                  Present
                 </TimelineDescription>
                 <TimelineTitle>Computer Programming</TimelineTitle>
 
@@ -116,10 +114,10 @@ const AboutPage: NextPage = () => {
               </TimelineItem>
             </Timeline>
           </div>
-        </section>
+        </div>
 
         {/* Environments */}
-        <section className="w-full lg:col-span-2">
+        <div className="flex w-full flex-col gap-8 lg:col-span-2">
           <SectionHeading
             title={'Environment'}
             titleWrapperClassName="lg:justify-end justify-center"
@@ -199,19 +197,8 @@ const AboutPage: NextPage = () => {
               </ul>
             </div>
           </div>
-        </section>
+        </div>
       </div>
-
-      {/* Certificates */}
-      <section>
-        <SectionHeading
-          title={'Certificates'}
-          titleWrapperClassName="max-lg:justify-center"
-          icon={<TbCertificate size={32} />}
-        />
-
-        <ParallaxCertificates />
-      </section>
     </div>
   );
 };

@@ -34,7 +34,7 @@ const ShowcaseViewer: React.FC<ShowcaseViewerProps> = ({
         {viewAllHref && <ViewAllButton href={viewAllHref} />}
       </div>
 
-      <GridWrapper>{children}</GridWrapper>
+      <GridWrapper className="mt-4">{children}</GridWrapper>
 
       {footer && <div className="flex items-center p-6">{footer}</div>}
     </div>

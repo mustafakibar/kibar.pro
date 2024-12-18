@@ -13,15 +13,15 @@ const ParallaxCertificates = () => {
             <Card
               key={item.title}
               className={cn(
-                'relative h-[20vh] max-h-[20vh] w-[25vh] max-w-[25vh] overflow-hidden',
+                'relative h-[15rem] max-h-[15rem] w-[20rem] max-w-[20rem] overflow-hidden',
               )}>
               {item.imageUrl && (
                 <Image
-                  className="absolute left-0 top-0 h-full w-full rounded-md object-contain p-4"
+                  className="absolute left-0 top-0 h-full w-full rounded-md object-cover p-4"
                   src={item.imageUrl}
                   alt={item.title}
-                  width={256}
-                  height={256}
+                  width={128}
+                  height={128}
                   placeholder={item.blurDataURL ? 'blur' : 'empty'}
                   blurDataURL={item.blurDataURL}
                 />

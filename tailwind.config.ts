@@ -1,5 +1,4 @@
 import type { Config } from 'tailwindcss';
-import twAnimate from 'tailwindcss-animate';
 
 const config: Config = {
   darkMode: ['class'],
@@ -72,22 +71,9 @@ const config: Config = {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
-      keyframes: {
-        parallax: {
-          from: {
-            transform: 'translateX(-50%)',
-          },
-          to: {
-            transform: 'translateX(0%)',
-          },
-        },
-      },
-      animation: {
-        ping: 'ping 20s cubic-bezier(1, 0.9, 0.5, 1) infinite',
-        parallax: 'parallax var(--duration) linear infinite var(--direction)',
-      },
     },
   },
-  plugins: [twAnimate],
+  plugins: [],
 };
+
 export default config;

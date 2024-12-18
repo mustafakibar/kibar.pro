@@ -1,5 +1,6 @@
 import { Moon, Sun, SunMoon } from '@/lib/icons';
 import { cn } from '@/lib/utils';
+import { motion } from 'motion/react';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { ThemeSwitchButtonProps } from '.';
@@ -8,12 +9,10 @@ const ThemeSwitchButton: React.FC<ThemeSwitchButtonProps> = ({
   className,
   ...props
 }) => {
-  const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  useEffect(() => setMounted(true), []);
 
   const changeTheme = () => {
     if (theme === 'light') {
@@ -24,7 +23,12 @@ const ThemeSwitchButton: React.FC<ThemeSwitchButtonProps> = ({
   };
 
   return (
-    <div
+    <motion.div
+      whileTap={{ scale: 0.4 }}
+      transition={{
+        duration: 0.2,
+        ease: 'anticipate',
+      }}
       className={cn(
         'inline-flex rounded-lg p-2 duration-300 hover:cursor-pointer hover:bg-foreground/25',
         className,
@@ -38,7 +42,7 @@ const ThemeSwitchButton: React.FC<ThemeSwitchButtonProps> = ({
       ) : (
         <Sun size={24} />
       )}
-    </div>
+    </motion.div>
   );
 };
 
