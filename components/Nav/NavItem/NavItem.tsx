@@ -15,7 +15,6 @@ const NavItem: React.FC<NavItemProps> = ({
   return (
     <Link
       href={href}
-      shallow
       className={cn({
         'pointer-events-none cursor-none select-none': active,
       })}>

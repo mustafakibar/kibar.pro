@@ -10,16 +10,16 @@ const ShowcaseViewer: React.FC<ShowcaseViewerProps> = ({
   title,
   description,
   className,
-  hideIcon,
-  customIcon,
+  hideHeadingIcon,
+  customHeadingIcon,
   viewAllHref,
   children,
   footer,
   ...props
 }) => {
-  let sectionIcon = null;
-  if (!hideIcon) {
-    sectionIcon = customIcon ?? <SquareStack size={32} />;
+  let headingIcon = null;
+  if (!hideHeadingIcon) {
+    headingIcon = customHeadingIcon ?? <SquareStack size={32} />;
   }
 
   return (
@@ -28,7 +28,7 @@ const ShowcaseViewer: React.FC<ShowcaseViewerProps> = ({
         <SectionHeading
           title={title}
           description={description}
-          icon={sectionIcon}
+          icon={headingIcon}
         />
 
         {viewAllHref && <ViewAllButton href={viewAllHref} />}

@@ -7,8 +7,9 @@ import { textFont } from './fonts';
 import './globals.css';
 import ThemeProvider from './theme-providers';
 
+// todo seo
 export const metadata: Metadata = {
-  title: 'Mustafa Kibar',
+  title: 'Mustafa KiBAR',
   description: 'I am a software engineer based in Istanbul, Turkey.',
 };
 

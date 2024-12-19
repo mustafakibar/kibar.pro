@@ -23,7 +23,7 @@ const getProjects = unstable_cache(
         title: data.name,
         slug: data.name,
         tags: data.topics,
-        year: new Date(data.created_at).getFullYear(),
+        year: data.created_at ? new Date(data.created_at).getFullYear() : 'n/a',
         description: data.description,
         images: [],
         repoUrl: data.html_url,

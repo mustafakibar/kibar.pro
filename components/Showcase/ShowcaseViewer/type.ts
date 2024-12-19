@@ -2,8 +2,8 @@ type ShowcaseViewerProps = {
   title: string;
   description?: string;
   className?: string;
-  hideIcon?: boolean;
-  customIcon?: React.ReactNode;
+  hideHeadingIcon?: boolean;
+  customHeadingIcon?: React.ReactNode;
   viewAllHref?: string;
   children: React.ReactNode;
   footer?: React.ReactNode;

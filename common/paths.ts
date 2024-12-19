@@ -4,7 +4,9 @@ const BLOG_PATH = '/blog';
 const PROJECTS_PATH = '/projects';
 const SNIPPETS_PATH = '/snippets';
 const CERTIFICATES_PATH = '/certificates';
-const RESUME_PATH = 'https://kibar.pro/cv';
+// TODO env variable
+const RESUME_PATH =
+  'https://drive.google.com/file/d/1z7Jv-tPBspGX4FEokzSOk88DxWUupyWU/view';
 
 export {
   ABOUT_PATH,

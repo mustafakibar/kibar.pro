@@ -1,0 +1,3 @@
+const HEADER_CURRENT_PATH = 'X-PATH';
+
+export { HEADER_CURRENT_PATH };

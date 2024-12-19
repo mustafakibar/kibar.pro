@@ -13,7 +13,7 @@ const ViewAllButton: React.FC<ViewAllButtonProps> = ({
     <Link href={href} {...props} legacyBehavior>
       <div
         className={cn(
-          'group mx-4 inline-flex items-center text-sm text-foreground/40 underline-offset-4 transition-all duration-100 ease-in hover:cursor-pointer hover:text-foreground hover:underline',
+          'group mx-4 inline-flex items-center text-nowrap text-sm text-foreground/40 underline-offset-4 transition-all duration-100 ease-in hover:cursor-pointer hover:text-foreground hover:underline',
           className,
         )}>
         <span>View all</span>

@@ -1,9 +1,18 @@
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
+import { HEADER_CURRENT_PATH } from './common/headers';
+import { RESUME_PATH } from './common/paths';
 
 export function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  // Redirect /cv and /resume pathname to the 'RESUME_PATH'
+  if (pathname === '/cv' || pathname === '/resume') {
+    return NextResponse.redirect(new URL(RESUME_PATH, request.url));
+  }
+
   const headers = new Headers(request.headers);
-  headers.set('x-current-path', request.nextUrl.pathname);
+  headers.set(HEADER_CURRENT_PATH, pathname);
   return NextResponse.next({ headers });
 }
 
