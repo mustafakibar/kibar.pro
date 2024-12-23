@@ -8,7 +8,7 @@ import { ParallaxSkillsProps } from './type';
 const ParallaxSkills: React.FC<ParallaxSkillsProps> = ({
   className,
   iconSize = 32,
-  iconOpacity = 0.9,
+  iconOpacity = 0.8,
   animationReverse = (getRandomInt(0, 10) % 2) / 2 == 0,
   animationDurationInMillis = 50_000,
 }) => {
@@ -17,12 +17,12 @@ const ParallaxSkills: React.FC<ParallaxSkillsProps> = ({
       className={className}
       durationInMillis={animationDurationInMillis}
       reverse={animationReverse}>
-      <FaRust size={iconSize} color="#CE422B" opacity={iconOpacity} />
-      <TbBrandKotlin size={iconSize} color="#B125EA" opacity={iconOpacity} />
-      <TbBrandFlutter size={iconSize} color="#027DFD" opacity={iconOpacity} />
-      <FaReact size={iconSize} color="#61dbfb" opacity={iconOpacity} />
-      <FaAws size={iconSize} color="#FF9900" opacity={iconOpacity} />
-      <FaDocker size={iconSize} color="#0db7ed" opacity={iconOpacity} />
+      <FaRust size={iconSize} opacity={iconOpacity} />
+      <TbBrandKotlin size={iconSize} opacity={iconOpacity} />
+      <TbBrandFlutter size={iconSize} opacity={iconOpacity} />
+      <FaReact size={iconSize} opacity={iconOpacity} />
+      <FaAws size={iconSize} opacity={iconOpacity} />
+      <FaDocker size={iconSize} opacity={iconOpacity} />
     </Parallax>
   );
 };

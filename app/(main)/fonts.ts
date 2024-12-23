@@ -1,9 +1,9 @@
 import {
   Chango,
+  Inconsolata,
   Kelly_Slab,
   Lilita_One,
   Outfit,
-  Ubuntu,
 } from 'next/font/google';
 
 const brandFont = Chango({
@@ -12,7 +12,7 @@ const brandFont = Chango({
   display: 'swap',
 });
 
-const textFont = Ubuntu({
+const textFont = Inconsolata({
   weight: '400',
   subsets: ['latin'],
   display: 'swap',

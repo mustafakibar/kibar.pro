@@ -7,7 +7,7 @@ const DETAILS_TEXT = `My name is Mustafa KiBAR. I am a full-stack developer sinc
 
 const ProfileDetails: React.FC = () => {
   const classNameOfDetailsText =
-    'pointer-events-none flex touch-none antialiased whitespace-pre-line py-2';
+    'pointer-events-none flex touch-none antialiased whitespace-pre-line py-2 md:text-xl';
 
   return (
     <div className="relative">

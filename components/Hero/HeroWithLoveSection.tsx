@@ -24,7 +24,7 @@ const HeroWithLoveSection: React.FC = () => {
         duration,
       ]}
       speed={60}
-      className="pointer-events-none touch-none whitespace-nowrap text-nowrap text-xl font-extrabold antialiased"
+      className="pointer-events-none touch-none whitespace-nowrap text-nowrap font-extrabold antialiased"
       repeat={Infinity}
       omitDeletionAnimation={true}
       cursor={false}

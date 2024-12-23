@@ -24,7 +24,7 @@ import {
 
 const Hero: React.FC<HeroProps> = ({ className }) => {
   return (
-    <div className={cn('my-[2rem] lg:my-[8rem]', className)}>
+    <div className={cn('my-[1rem] md:my-[8rem]', className)}>
       <motion.div
         initial="hidden"
         viewport={{ once: true }}
@@ -36,17 +36,17 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           duration: 3.0,
           ease: 'backOut',
         }}
-        className="flex flex-col items-center justify-evenly gap-12 lg:flex-row lg:gap-4">
-        <div className="group flex flex-col gap-8 text-center antialiased transition-transform ease-out lg:text-start">
+        className="flex flex-col items-center justify-evenly gap-8 md:flex-row md:gap-4">
+        <div className="group flex flex-col gap-8 text-center antialiased transition-transform ease-out md:text-start">
           <div
             className={cn(
               'text-nowrap duration-1000 group-hover:skew-y-0 max-sm:-skew-y-3 lg:pt-10',
               heroFont.className,
             )}>
-            <h1 className="text-4xl text-primary opacity-75 sm:pl-2 lg:text-5xl">
+            <h1 className="text-2xl text-primary opacity-75 sm:pl-2 lg:text-5xl">
               Mustafa
             </h1>
-            <h2 className="text-8xl font-extrabold text-secondary opacity-95 lg:text-9xl">
+            <h2 className="text-6xl font-extrabold text-secondary opacity-95 lg:text-9xl">
               K
               <span className="mx-1 inline-flex -translate-y-2 scale-75">
                 i
@@ -57,7 +57,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
 
           <div className="duration-1000 group-hover:skew-y-0 max-sm:skew-y-3 sm:ml-3">
             <div>
-              <h4 className="text-2xl">
+              <h4 className="text-xl">
                 I&#39;am full stack developer{' '}
                 <span className="text-nowrap">
                   living in{' '}
@@ -85,7 +85,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
 
         <div className="relative order-first lg:order-last">
           <Image
-            className="pointer-events-none absolute -left-16 -top-16 hidden h-full w-full scale-x-110 opacity-5 dark:invert md:inline-flex"
+            className="pointer-events-none absolute -left-16 -top-16 hidden h-full w-full scale-x-110 opacity-5 dark:invert lg:inline-flex"
             src="/misc/profile-bg.webp"
             alt="profile background"
             width={256}
@@ -93,7 +93,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           />
 
           <ProfileImage
-            className="border-gray/70 dark:border-gray/10 pointer-events-none relative max-w-[24rem] rounded-md border-8 object-cover dark:grayscale-[50%] max-sm:max-h-[35vh] max-sm:max-w-[18rem] md:hover:shadow-md"
+            className="border-gray/70 dark:border-gray/10 pointer-events-none relative max-w-[24rem] rounded-md border-8 dark:grayscale-[50%] max-lg:max-w-[12rem] md:hover:shadow-md"
             src={PROFILE_IMAGE_SRC}
             alt={PROFILE_IMAGE_ALT}
             blurDataURL={PROFILE_IMAGE_BLUR_DATA_URL}

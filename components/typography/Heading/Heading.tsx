@@ -7,7 +7,7 @@ const Heading: React.FC<HeadingProps> = ({ className, children }) => {
     <span
       className={cn(
         headingFont.className,
-        'text-3xl tracking-tight',
+        'text-2xl tracking-tight',
         className,
       )}>
       {children}

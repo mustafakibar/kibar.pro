@@ -55,6 +55,6 @@
   }
 
   .text-highlight {
-    @apply mx-4 inline-block scale-110 rounded border bg-primary px-2 italic text-white;
+    @apply mx-2 inline-block rounded border bg-primary px-2 text-white ring-2 ring-primary/25;
   }
 }

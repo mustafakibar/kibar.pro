@@ -30,6 +30,7 @@ const Parallax: React.FC<ParallaxProps> = ({
       {
         repeat: Infinity,
         duration: durationInMillis / 1000,
+        ease: 'linear',
       },
     );
 

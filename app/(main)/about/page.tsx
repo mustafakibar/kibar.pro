@@ -26,19 +26,12 @@ import { titleFont } from '../fonts';
 
 const AboutPage: NextPage = () => {
   return (
-    <div className="flex flex-col gap-8 py-8">
-      <div
-        className={cn(
-          'flex justify-center text-center text-5xl font-black opacity-75',
-        )}>
-        Hey There 👋
-      </div>
-
-      <div className="flex flex-col justify-evenly gap-8 p-4 md:p-16 lg:flex-row lg:items-center lg:gap-16 xl:gap-32">
+    <div className="flex flex-col gap-8 py-2 lg:py-8">
+      <div className="flex flex-col justify-evenly gap-4 md:p-16 lg:flex-row lg:items-center lg:gap-16 xl:gap-32">
         {/* Image & Contact & Skills */}
-        <div className="flex flex-col items-center gap-8 lg:w-1/3 lg:gap-16">
+        <div className="flex flex-col items-center gap-4 lg:w-1/3 lg:gap-16">
           <ProfileImage
-            className="rotate-0 rounded-xl object-cover ring-2 ring-primary dark:brightness-75 max-sm:max-h-[35vh] lg:rotate-3"
+            className="rotate-0 rounded-xl ring-2 ring-primary dark:brightness-75 max-lg:max-w-[12rem] lg:rotate-3"
             src={PROFILE_IMAGE_SRC}
             alt={PROFILE_IMAGE_ALT}
             blurDataURL={PROFILE_IMAGE_BLUR_DATA_URL}
@@ -52,7 +45,7 @@ const AboutPage: NextPage = () => {
         {/* Profile Details */}
         <div
           className={cn(
-            'flex flex-col gap-8 text-justify text-xl opacity-75 lg:-mt-24 lg:w-2/3 lg:gap-16',
+            'flex flex-col gap-8 text-justify opacity-75 lg:-mt-24 lg:w-2/3 lg:gap-16',
             titleFont.className,
           )}>
           <ProfileDetails />
@@ -67,7 +60,7 @@ const AboutPage: NextPage = () => {
           <SectionHeading
             title={'Education'}
             titleWrapperClassName="max-lg:justify-center"
-            icon={<TbSchool size={32} />}
+            icon={<TbSchool size={24} />}
           />
 
           <div className="flex max-lg:justify-center">
@@ -116,7 +109,7 @@ const AboutPage: NextPage = () => {
           <SectionHeading
             title={'Environment'}
             titleWrapperClassName="lg:justify-end justify-center"
-            icon={<FaToolbox size={32} />}
+            icon={<FaToolbox size={24} />}
           />
 
           <div className="flex flex-col items-center justify-evenly gap-8 lg:items-end">
@@ -137,53 +130,53 @@ const AboutPage: NextPage = () => {
             <div>
               <ul className="flex flex-col gap-4 text-center font-bold [&>*:nth-child(odd)]:bg-primary/20 [&>*]:rounded-lg [&>*]:px-3 [&>*]:py-2">
                 <li>
-                  Tischkönig Flex v2 Adjustable{' '}
+                  Tischkönig Flex v2 Adjustable
                   <span className="text-highlight">Desk</span>
                 </li>
                 <li>
-                  Anker Soundcore Motion+{' '}
+                  Anker Soundcore Motion+
                   <span className="text-highlight">Bluetooth Speaker</span>
                 </li>
                 <li>
-                  SteelSeries Arctis Pro{' '}
+                  SteelSeries Arctis Pro
                   <span className="text-highlight">Wireless Headset</span>
                 </li>
                 <li>
-                  ViewSonic VP3268-4K{' '}
+                  ViewSonic VP3268-4K
                   <span className="text-highlight">IPS Monitor</span>
                 </li>
                 <li>
                   Corsair 5000D <span className="text-highlight">Case</span>
                 </li>
                 <li>
-                  Corsair RM850x{' '}
+                  Corsair RM850x
                   <span className="text-highlight">Power Supply</span>
                 </li>
                 <li>
-                  Logitech G915 TKL Lightspeed{' '}
+                  Logitech G915 TKL Lightspeed
                   <span className="text-highlight">Wireless Keyboard</span>
                 </li>
                 <li>
-                  Logitech G502 Lightspeed{' '}
+                  Logitech G502 Lightspeed
                   <span className="text-highlight">Wireless Mouse</span>
                 </li>
                 <li>
-                  AMD Ryzen 9 5900X 12-Core{' '}
+                  AMD Ryzen 9 5900X 12-Core
                   <span className="text-highlight">CPU</span>
                 </li>
                 <li>
-                  MSI Meg x570 Ace{' '}
+                  MSI Meg x570 Ace
                   <span className="text-highlight">Motherboard</span>
                 </li>
                 <li>
                   Asus GTX 1070 <span className="text-highlight">GPU</span>
                 </li>
                 <li>
-                  G.Skill Trident Z Neo RGB 3600Mhz 16GB x2{' '}
+                  G.Skill Trident Z Neo RGB 3600Mhz 16GB x2
                   <span className="text-highlight">RAM</span>
                 </li>
                 <li>
-                  Seagate Firecuda 530 1GB{' '}
+                  Seagate Firecuda 530 1GB
                   <span className="text-highlight">NVMe SSD</span>
                 </li>
                 <li>
