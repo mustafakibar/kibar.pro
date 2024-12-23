@@ -28,11 +28,12 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               href={HOME_PATH}
               passHref
               className={cn(
-                'inline-block touch-none bg-gradient-to-r from-primary to-secondary bg-clip-text px-1 text-3xl text-transparent md:text-4xl lg:text-5xl',
+                'inline-block touch-none bg-gradient-to-r from-primary from-25% to-secondary to-90% bg-clip-text text-3xl text-transparent hover:cursor-default',
                 brandFont.className,
               )}>
-              kibAr
+              MK
             </Link>
+
             <div className="flex flex-shrink items-center max-md:gap-4 md:flex-row-reverse">
               {!isMenuOpen && <ThemeSwitchButton />}
               <motion.div

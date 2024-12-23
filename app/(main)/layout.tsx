@@ -22,19 +22,15 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          'overflow-x-hidden bg-foreground text-foreground',
+          'flex min-h-screen flex-col overflow-x-hidden bg-background text-foreground [&::-webkit-scrollbar-thumb]:rounded-s-full [&::-webkit-scrollbar-thumb]:bg-secondary [&::-webkit-scrollbar-thumb]:hover:bg-primary/80 [&::-webkit-scrollbar]:w-1.5',
           textFont.className,
         )}>
         <ThemeProvider enableSystem defaultTheme="system" attribute="class">
-          <div className="kbr-main-background bg-background">
-            <div className="flex min-h-screen flex-col">
-              <Header />
-              <div className="kbr-main-container container flex-grow">
-                {children}
-              </div>
-              <Footer />
-            </div>
+          <Header />
+          <div className="kbr-main-container container flex-grow">
+            {children}
           </div>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

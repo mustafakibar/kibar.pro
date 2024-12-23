@@ -85,18 +85,18 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
 
         <div className="relative order-first lg:order-last">
           <Image
+            className="pointer-events-none absolute -left-16 -top-16 hidden h-full w-full scale-x-110 opacity-5 dark:invert md:inline-flex"
             src="/misc/profile-bg.webp"
             alt="profile background"
             width={256}
             height={256}
-            className="pointer-events-none absolute -left-16 -top-16 hidden h-full w-full scale-x-110 opacity-5 dark:invert md:inline-flex"
           />
 
           <ProfileImage
+            className="border-gray/70 dark:border-gray/10 pointer-events-none relative max-w-[24rem] rounded-md border-8 object-cover dark:grayscale-[50%] max-sm:max-h-[35vh] max-sm:max-w-[18rem] md:hover:shadow-md"
             src={PROFILE_IMAGE_SRC}
             alt={PROFILE_IMAGE_ALT}
             blurDataURL={PROFILE_IMAGE_BLUR_DATA_URL}
-            className="border-gray/70 dark:border-gray/10 pointer-events-none relative max-w-[24rem] rounded-md border-8 object-contain shadow-sm dark:grayscale-[50%] max-sm:max-h-[35vh] max-sm:border-0 md:hover:shadow-md"
           />
         </div>
       </motion.div>

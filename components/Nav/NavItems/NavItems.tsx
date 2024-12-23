@@ -26,8 +26,8 @@ const NavItems: React.FC<{
             opacity: [0, 1],
           }}
           transition={{
-            delay: 0.3 + i * 0.1,
-            duration: 0.3,
+            delay: 0.1 + i * 0.1,
+            duration: 0.2,
             ease: 'anticipate',
           }}
           layout

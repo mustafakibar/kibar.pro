@@ -5,11 +5,14 @@ import { TimelineItemProps } from '.';
 
 const TimelineItem: React.FC<TimelineItemProps> = ({ children, className }) => {
   return (
-    <div className={cn('mb-10 ms-10', className)}>
-      <span className="absolute -start-4 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground ring-8 ring-primary/5 dark:ring-primary/25">
-        <Milestone className="h-2/3 w-2/3" />
-      </span>
-      {children}
+    <div className={cn('flex gap-x-4', className)}>
+      <div className="relative after:absolute after:bottom-0 after:start-3.5 after:top-5 after:w-px after:-translate-x-[0.5px] after:bg-primary/80 last:after:hidden dark:after:bg-neutral-700">
+        <div className="relative z-10 flex size-7 items-center justify-center">
+          <Milestone size={24} />
+        </div>
+      </div>
+
+      <div className="grow pb-8 pt-1">{children}</div>
     </div>
   );
 };

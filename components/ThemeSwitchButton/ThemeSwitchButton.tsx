@@ -1,3 +1,5 @@
+'use client';
+
 import { Moon, Sun, SunMoon } from '@/lib/icons';
 import { cn } from '@/lib/utils';
 import { motion } from 'motion/react';
@@ -24,13 +26,9 @@ const ThemeSwitchButton: React.FC<ThemeSwitchButtonProps> = ({
 
   return (
     <motion.div
-      whileTap={{ scale: 0.4 }}
-      transition={{
-        duration: 0.2,
-        ease: 'anticipate',
-      }}
+      whileTap={{ scale: 0.7 }}
       className={cn(
-        'inline-flex rounded-lg p-2 duration-300 hover:cursor-pointer hover:bg-foreground/25',
+        'rounded-lg p-2 duration-300 hover:cursor-pointer hover:bg-foreground/25',
         className,
       )}
       onClick={changeTheme.bind(this)}

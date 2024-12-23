@@ -7,7 +7,7 @@ import { ParallaxSkillsProps } from './type';
 
 const ParallaxSkills: React.FC<ParallaxSkillsProps> = ({
   className,
-  iconSize = 64,
+  iconSize = 32,
   iconOpacity = 0.9,
   animationReverse = (getRandomInt(0, 10) % 2) / 2 == 0,
   animationDurationInMillis = 50_000,

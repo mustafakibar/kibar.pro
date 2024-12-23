@@ -5,15 +5,7 @@ const TimelineContent: React.FC<TimelineContentProps> = ({
   children,
   className,
 }) => {
-  return (
-    <p
-      className={cn(
-        'mb-4 text-base font-normal text-gray-500 dark:text-gray-400',
-        className,
-      )}>
-      {children}
-    </p>
-  );
+  return <p className={cn('opacity-80', className)}>{children}</p>;
 };
 
 export { TimelineContent };

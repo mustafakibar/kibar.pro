@@ -1,3 +1,5 @@
+'server-only';
+
 import { CACHE_TAG_CERTIFICATES } from '@/common/cache-tags';
 import { CERTIFICATE_ITEMS } from '@/components/Certificates/constant';
 import env from '@/env';

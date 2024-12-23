@@ -18,7 +18,7 @@ const HomePage: NextPage = async () => {
   const projects = await getProjects();
 
   const ComingSoon = (
-    <p className="text-xl font-semibold opacity-80">Coming soon...</p>
+    <p className="font-semibold opacity-80">Coming soon...</p>
   );
 
   return (
@@ -39,11 +39,11 @@ const HomePage: NextPage = async () => {
         ))}
       </ShowcaseViewer>
 
-      <ShowcaseViewer title="Blog" viewAllHref={BLOG_PATH}>
+      <ShowcaseViewer title="Blog">
         {ComingSoon}
       </ShowcaseViewer>
 
-      <ShowcaseViewer title="Snippets" viewAllHref={SNIPPETS_PATH}>
+      <ShowcaseViewer title="Snippets">
         {ComingSoon}
       </ShowcaseViewer>
     </main>

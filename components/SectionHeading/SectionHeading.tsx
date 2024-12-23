@@ -19,9 +19,9 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
         )}>
         <div
           className={cn('flex items-center text-foreground/90', {
-            'gap-1': icon != null,
+            'gap-4': icon != null,
           })}>
-          {icon && <div className="mb-1 me-1">{icon}</div>}
+          {icon && <div className="mb-1">{icon}</div>}
           <Heading>{title}</Heading>
         </div>
       </div>

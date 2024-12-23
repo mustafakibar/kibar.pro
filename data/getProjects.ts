@@ -1,3 +1,5 @@
+'server-only';
+
 import { CACHE_TAG_GITHUB_REPOS } from '@/common/cache-tags';
 import { Project } from '@/components/Project';
 import env from '@/env';
@@ -7,7 +9,7 @@ import { unstable_cache } from 'next/cache';
 
 const revalidate = env.IS_DEV ? ms('30m') : ms('1d');
 
-// Todo Integrate with the cms
+// TODO Integrate with the cms
 const getProjects = unstable_cache(
   async () => {
     const repos = await getGithubRepos();

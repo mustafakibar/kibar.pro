@@ -18,14 +18,11 @@ const Contact: React.FC<ContactProps> = ({ className }) => {
   return (
     <div
       className={cn(
-        'group/container flex shrink-0 transform-gpu flex-row items-center gap-16 align-middle text-4xl transition-all lg:gap-8',
+        'group/container flex shrink-0 transform-gpu flex-row items-center gap-16 align-middle text-xl transition-all lg:gap-8',
         className,
       )}>
       <p className="group/mail hidden cursor-pointer items-center text-xl hover:!opacity-100 group-hover/container:opacity-35 md:inline-flex">
-        <Envelope
-          size={24}
-          className="mr-2 -rotate-12 duration-500 ease-in-out group-hover/mail:rotate-0 group-hover/mail:scale-125"
-        />{' '}
+        <Envelope className="mr-2 -rotate-12 duration-500 ease-in-out group-hover/mail:rotate-0 group-hover/mail:scale-125" />
         <span className="duration-300 group-hover/mail:translate-x-1">
           mustafa@kibar.pro
         </span>

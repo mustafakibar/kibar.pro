@@ -1,15 +1,15 @@
+'use client';
+
 import { cn } from '@/lib/utils';
+import { motion } from 'motion/react';
 import { TimelineProps } from '.';
 
 const Timeline: React.FC<TimelineProps> = ({ children, className }) => {
   return (
-    <div
-      className={cn(
-        'relative m-4 border-s border-gray-300 dark:border-gray-700',
-        className,
-      )}>
+    // TODO
+    <motion.div className={cn(className)} layout>
       {children}
-    </div>
+    </motion.div>
   );
 };
 

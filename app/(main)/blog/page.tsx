@@ -5,7 +5,7 @@ const BlogPage: NextPage = () => {
   return (
     <section className="flex flex-col gap-8 max-sm:p-4">
       <div className="flex items-center justify-between">
-        <SectionHeading title="Posts" description="My blog posts" />
+        <SectionHeading title="Blog" description="My blog posts" />
       </div>
     </section>
   );

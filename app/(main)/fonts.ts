@@ -1,12 +1,12 @@
 import {
+  Chango,
   Kelly_Slab,
   Lilita_One,
   Outfit,
   Ubuntu,
-  Yesteryear,
 } from 'next/font/google';
 
-const brandFont = Yesteryear({
+const brandFont = Chango({
   weight: '400',
   subsets: ['latin'],
   display: 'swap',
