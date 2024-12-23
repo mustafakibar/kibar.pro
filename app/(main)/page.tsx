@@ -1,11 +1,6 @@
 export const dynamic = 'force-static';
 
-import {
-  BLOG_PATH,
-  CERTIFICATES_PATH,
-  PROJECTS_PATH,
-  SNIPPETS_PATH,
-} from '@/common/paths';
+import { CERTIFICATES_PATH, PROJECTS_PATH } from '@/common/paths';
 import { CertificateShowcase } from '@/components/Certificates/CertificatesShowcase';
 import { CERTIFICATE_ITEMS } from '@/components/Certificates/constant';
 import { Hero } from '@/components/Hero';
@@ -17,9 +12,7 @@ import { NextPage } from 'next';
 const HomePage: NextPage = async () => {
   const projects = await getProjects();
 
-  const ComingSoon = (
-    <p className="font-semibold opacity-80">Coming soon...</p>
-  );
+  const ComingSoon = <p className="font-semibold opacity-80">Coming soon...</p>;
 
   return (
     <main className="flex flex-col gap-16">
@@ -39,13 +32,9 @@ const HomePage: NextPage = async () => {
         ))}
       </ShowcaseViewer>
 
-      <ShowcaseViewer title="Blog">
-        {ComingSoon}
-      </ShowcaseViewer>
+      <ShowcaseViewer title="Blog">{ComingSoon}</ShowcaseViewer>
 
-      <ShowcaseViewer title="Snippets">
-        {ComingSoon}
-      </ShowcaseViewer>
+      <ShowcaseViewer title="Snippets">{ComingSoon}</ShowcaseViewer>
     </main>
   );
 };
