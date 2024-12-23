@@ -128,7 +128,7 @@ const AboutPage: NextPage = () => {
             </div>
 
             <div>
-              <ul className="flex flex-col gap-4 text-center font-bold [&>*:nth-child(odd)]:bg-primary/20 [&>*]:rounded-lg [&>*]:px-3 [&>*]:py-2">
+              <ul className="flex flex-col gap-4 text-center font-bold [&>*:nth-child(odd)]:bg-foreground/5 [&>*]:rounded-lg [&>*]:px-3 [&>*]:py-2">
                 <li>
                   Tischkönig Flex v2 Adjustable
                   <span className="text-highlight">Desk</span>
