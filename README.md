@@ -19,25 +19,17 @@ This project is a personal web portfolio built using Next.js. It showcases my sk
 
 ## Installation
 
-1. Clone the repository:
+1. Clone the repository
 
-    ```bash
-    git clone https://github.com/yourusername/nextjs-portfolio.git
-    ```
+2. Navigate to the project directory
 
-2. Navigate to the project directory:
-
-3. Run the development server:
+3. Run the development server
 
     ```bash
     npm run dev
     ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser to view the portfolio.
-
-## Usage
-
-- Update the content in the `pages` and `components` directories to customize the portfolio.
 
 ## Contributing
 
