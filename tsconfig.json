@@ -30,7 +30,8 @@
     "**/*.js",
     "**/*.tsx",
     "**/*.jsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "commitlint.config.ts"
   ],
   "exclude": ["node_modules"]
 }

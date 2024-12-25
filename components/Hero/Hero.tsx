@@ -1,6 +1,11 @@
 'use client';
 
 import { heroFont } from '@/app/(main)/fonts';
+import {
+  HERO_PROFILE_IMAGE_ALT,
+  HERO_PROFILE_IMAGE_BLUR_DATA_URL,
+  HERO_PROFILE_IMAGE_SRC,
+} from '@/common/image';
 import { ProfileImage } from '@/components/ProfileImage';
 import { TurkeyFlagImage } from '@/components/TurkeyFlagImage';
 import {
@@ -16,11 +21,6 @@ import React from 'react';
 import { HeroProps } from '.';
 import { Contact } from '../Contact';
 import { HeroWithLoveSection } from './HeroWithLoveSection';
-import {
-  PROFILE_IMAGE_ALT,
-  PROFILE_IMAGE_BLUR_DATA_URL,
-  PROFILE_IMAGE_SRC,
-} from './contant';
 
 const Hero: React.FC<HeroProps> = ({ className }) => {
   return (
@@ -37,12 +37,8 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           ease: 'backOut',
         }}
         className="flex flex-col items-center justify-evenly gap-8 md:flex-row md:gap-4">
-        <div className="group flex flex-col gap-8 text-center antialiased transition-transform ease-out md:text-start">
-          <div
-            className={cn(
-              'text-nowrap duration-1000 group-hover:skew-y-0 max-sm:-skew-y-3 lg:pt-10',
-              heroFont.className,
-            )}>
+        <div className="flex flex-col gap-8 text-center antialiased md:text-start">
+          <div className={cn('text-nowrap lg:pt-10', heroFont.className)}>
             <h1 className="text-2xl text-primary opacity-75 sm:pl-2 lg:text-5xl">
               Mustafa
             </h1>
@@ -55,7 +51,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             </h2>
           </div>
 
-          <div className="duration-1000 group-hover:skew-y-0 max-sm:skew-y-3 sm:ml-3">
+          <div className="sm:ml-3">
             <div>
               <h4 className="text-xl">
                 I&#39;am full stack developer{' '}
@@ -85,7 +81,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
 
         <div className="relative order-first lg:order-last">
           <Image
-            className="pointer-events-none absolute -left-16 -top-16 hidden h-full w-full scale-x-110 opacity-5 dark:invert lg:inline-flex"
+            className="pointer-events-none absolute -left-16 -top-16 hidden size-full scale-x-110 opacity-5 dark:invert lg:inline-flex"
             src="/misc/profile-bg.webp"
             alt="profile background"
             width={256}
@@ -93,10 +89,10 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           />
 
           <ProfileImage
-            className="border-gray/70 dark:border-gray/10 pointer-events-none relative max-w-[24rem] rounded-md border-8 dark:grayscale-[50%] max-lg:max-w-[12rem] md:hover:shadow-md"
-            src={PROFILE_IMAGE_SRC}
-            alt={PROFILE_IMAGE_ALT}
-            blurDataURL={PROFILE_IMAGE_BLUR_DATA_URL}
+            className="border-gray/70 dark:border-gray/10 pointer-events-none relative max-w-[24rem] rounded-md border-8 dark:grayscale-[50%] max-lg:max-w-48 md:hover:shadow-md"
+            src={HERO_PROFILE_IMAGE_SRC}
+            alt={HERO_PROFILE_IMAGE_ALT}
+            blurDataURL={HERO_PROFILE_IMAGE_BLUR_DATA_URL}
           />
         </div>
       </motion.div>

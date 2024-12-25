@@ -55,6 +55,6 @@
   }
 
   .text-highlight {
-    @apply mx-2 inline-block rounded border bg-foreground/20 px-2 tracking-tighter text-white ring-2 ring-background md:-skew-y-2;
+    @apply mx-2 inline-block rounded border bg-primary/20 px-1 tracking-tighter ring-2 ring-primary/50 md:-skew-y-2;
   }
 }

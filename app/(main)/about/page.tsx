@@ -1,11 +1,10 @@
 export const dynamic = 'force-static';
 
-import { ProfileDetails } from '@/components/About';
 import {
-  PROFILE_IMAGE_ALT,
-  PROFILE_IMAGE_BLUR_DATA_URL,
-  PROFILE_IMAGE_SRC,
-} from '@/components/About/contant';
+  ABOUT_PROFILE_IMAGE_ALT,
+  ABOUT_PROFILE_IMAGE_BLUR_DATA_URL,
+  ABOUT_PROFILE_IMAGE_SRC,
+} from '@/common/image';
 import { Contact } from '@/components/Contact';
 import { ProfileImage } from '@/components/ProfileImage';
 import { SectionHeading } from '@/components/SectionHeading';
@@ -17,6 +16,7 @@ import {
   TimelineItem,
   TimelineTitle,
 } from '@/components/Timeline';
+import { Text } from '@/components/typography';
 import { cn } from '@/lib/utils';
 import { NextPage } from 'next';
 import Image from 'next/image';
@@ -31,10 +31,10 @@ const AboutPage: NextPage = () => {
         {/* Image & Contact & Skills */}
         <div className="flex flex-col items-center gap-4 lg:w-1/3 lg:gap-16">
           <ProfileImage
-            className="rotate-0 rounded-xl ring-2 ring-primary dark:brightness-75 max-lg:max-w-[12rem] lg:rotate-3"
-            src={PROFILE_IMAGE_SRC}
-            alt={PROFILE_IMAGE_ALT}
-            blurDataURL={PROFILE_IMAGE_BLUR_DATA_URL}
+            className="rotate-0 rounded-xl ring-2 ring-primary dark:brightness-75 max-lg:max-w-48 lg:rotate-3"
+            src={ABOUT_PROFILE_IMAGE_SRC}
+            alt={ABOUT_PROFILE_IMAGE_ALT}
+            blurDataURL={ABOUT_PROFILE_IMAGE_BLUR_DATA_URL}
           />
 
           <Contact />
@@ -48,7 +48,22 @@ const AboutPage: NextPage = () => {
             'flex flex-col gap-8 text-justify opacity-75 lg:-mt-24 lg:w-2/3 lg:gap-16',
             titleFont.className,
           )}>
-          <ProfileDetails />
+          <Text className="pointer-events-none touch-none whitespace-pre-line text-xl antialiased">
+            My name is Mustafa KiBAR. I am a full-stack developer since 2011,
+            specializing in crafting scalable, responsive, efficient, and
+            maintainable robust software systems.
+            <br />
+            <br />
+            <br />
+            Proficient in Rust, Kotlin, React, React Native, and Flutter.
+            <br />
+            <br />
+            <br />I enjoy making applications that make users&apos; daily tasks
+            easier and continuously push the boundaries of innovation in
+            blockchain, AI, and systems programming, always striving to create
+            high-quality software products efficiently with adapting to latest
+            technology trends.
+          </Text>
 
           <ParallaxSkills className="max-lg:hidden" />
         </div>
