@@ -1,6 +1,6 @@
 type AnimatedItemWrapperProps = {
   className?: string;
-  itemIndex: number;
+  delay?: number;
   children: React.ReactNode;
 };
 

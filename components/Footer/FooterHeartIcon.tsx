@@ -2,10 +2,15 @@
 
 import { useAnimInMouseEvent } from '@/hooks/useAnimInMouseEvent';
 import { useAnimInView } from '@/hooks/useAnimInView';
-import { HeartPulse } from '@/lib/icons';
 import { cn } from '@/lib/utils';
-import { AnimationPlaybackControls, motion, useAnimate } from 'motion/react';
+import {
+  AnimatePresence,
+  AnimationControls,
+  motion,
+  useAnimate,
+} from 'motion/react';
 import React, { useEffect, useRef } from 'react';
+import { FaRegHeart } from 'react-icons/fa6';
 import { FooterHeartIconProps } from '.';
 
 const FooterHeartIcon: React.FC<FooterHeartIconProps> = ({
@@ -14,7 +19,7 @@ const FooterHeartIcon: React.FC<FooterHeartIconProps> = ({
   color,
 }) => {
   const [scope, animate] = useAnimate();
-  const controlsRef = useRef<AnimationPlaybackControls>(null);
+  const controlsRef = useRef<AnimationControls>(null);
   useAnimInView(scope, controlsRef);
   useAnimInMouseEvent(scope, controlsRef);
 
@@ -22,14 +27,14 @@ const FooterHeartIcon: React.FC<FooterHeartIconProps> = ({
     controlsRef.current = animate(
       scope.current,
       {
-        opacity: [0, 0.3, 0.1, 0.1, 0],
-        scale: [1, 2],
+        opacity: [0, 0.05, 0.1, 0.2, 0],
+        scale: [1, 0.3, 1.1, 2],
       },
       {
         repeat: Infinity,
         repeatDelay: 7,
-        duration: 7,
-        ease: 'easeOut',
+        duration: 10,
+        ease: 'easeInOut',
       },
     );
 
@@ -40,14 +45,19 @@ const FooterHeartIcon: React.FC<FooterHeartIconProps> = ({
   return (
     <div
       className={cn(
-        'flex flex-shrink items-center justify-center align-middle',
+        'flex flex-shrink items-center justify-center overflow-hidden align-middle',
         color,
         className,
       )}>
-      <HeartPulse size={Math.max(8, size - 16)} />
-      <motion.div ref={scope} initial="hidden" className="absolute">
-        <HeartPulse size={size} />
-      </motion.div>
+      <AnimatePresence>
+        <FaRegHeart key="h1" size={Math.max(8, size - 16)} />
+        <motion.div
+          ref={scope}
+          initial={{ opacity: 0, scale: 1 }}
+          className="absolute">
+          <FaRegHeart key="h2" size={size} />
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 };

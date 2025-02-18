@@ -27,7 +27,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         )}>
         <ThemeProvider enableSystem defaultTheme="system" attribute="class">
           <Header />
-          <div className="kbr-main-container container grow">{children}</div>
+          <div className="container grow">{children}</div>
           <Footer />
         </ThemeProvider>
       </body>

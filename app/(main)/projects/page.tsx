@@ -24,7 +24,7 @@ const ProjectsPage: NextPage = async () => {
 
       <GridWrapper>
         {projects?.map((data, index) => (
-          <AnimatedItemWrapper key={index} itemIndex={index}>
+          <AnimatedItemWrapper key={index} delay={index}>
             <ProjectShowcase project={data} />
           </AnimatedItemWrapper>
         )) ?? <p className="text-xl">No projects found</p>}

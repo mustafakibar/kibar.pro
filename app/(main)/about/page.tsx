@@ -1,5 +1,3 @@
-export const dynamic = 'force-static';
-
 import {
   ABOUT_PROFILE_IMAGE_ALT,
   ABOUT_PROFILE_IMAGE_BLUR_DATA_URL,

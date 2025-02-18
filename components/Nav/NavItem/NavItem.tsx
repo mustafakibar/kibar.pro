@@ -31,7 +31,7 @@ const NavItem: React.FC<NavItemProps> = ({
         <span
           className={cn(
             navFont.className,
-            'p-4',
+            'p-2',
             {
               'text-accent-foreground opacity-90 duration-75 ease-linear':
                 active,
@@ -42,8 +42,8 @@ const NavItem: React.FC<NavItemProps> = ({
           )}>
           {text}
           {active && (
-            <div className="absolute bottom-3 left-0 hidden h-[3%] w-full md:inline-flex">
-              <div className="mx-auto w-1/4 rounded-full bg-accent-foreground/80" />
+            <div className="absolute bottom-1.5 left-0 hidden h-[3%] w-full md:inline-flex">
+              <div className="mx-auto w-1/12 rounded-full bg-accent-foreground/80" />
             </div>
           )}
         </span>

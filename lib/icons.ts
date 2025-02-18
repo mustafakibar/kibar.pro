@@ -1,4 +1,4 @@
-import { BsHeartPulse } from 'react-icons/bs';
+import { BsEnvelope, BsHeartPulse } from 'react-icons/bs';
 import { FaCheck, FaChevronRight, FaMoon } from 'react-icons/fa';
 import {
   FaArrowLeft,
@@ -6,7 +6,6 @@ import {
   FaGithub,
   FaGitlab,
   FaRegCircle,
-  FaRegEnvelope,
   FaSun,
   FaXTwitter,
 } from 'react-icons/fa6';
@@ -23,7 +22,7 @@ export {
   FaChevronRight as ChevronRight,
   TbChevronUpRight as ChevronUpRight,
   FaRegCircle as Circle,
-  FaRegEnvelope as Envelope,
+  BsEnvelope as Envelope,
   FaGithub as Github,
   FaGitlab as Gitlab,
   BsHeartPulse as HeartPulse,

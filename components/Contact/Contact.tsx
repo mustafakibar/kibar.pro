@@ -5,39 +5,39 @@ import { ContactProps } from '.';
 import { ContactItemProps } from './type';
 
 const contactItemList: ContactItemProps[] = [
+  { icon: Github, href: 'https://github.com/mustafakibar' },
+  { icon: SocialX, href: 'https://x.com/kibarpro' },
   {
     icon: Envelope,
     href: 'mailto:mustafa@kibar.pro',
     className: 'inline-flex md:hidden',
   },
-  { icon: Github, href: 'https://github.com/mustafakibar' },
-  { icon: SocialX, href: 'https://x.com/kibarpro' },
 ];
 
 const Contact: React.FC<ContactProps> = ({ className }) => {
   return (
     <div
       className={cn(
-        'group/container flex shrink-0 transform-gpu flex-row items-center gap-16 align-middle text-xl transition-all lg:gap-8',
+        'group/container flex shrink-0 transform-gpu flex-row items-center gap-8 text-xl transition-all lg:gap-12',
         className,
       )}>
-      <p className="group/mail hidden cursor-pointer items-center text-xl hover:!opacity-100 group-hover/container:opacity-35 md:inline-flex">
-        <Envelope className="mr-2 -rotate-12 duration-500 ease-in-out group-hover/mail:rotate-0 group-hover/mail:scale-125" />
-        <span className="duration-300 group-hover/mail:translate-x-1">
-          mustafa@kibar.pro
-        </span>
-      </p>
-
       {contactItemList.map(({ icon: Icon, className, href }, idx) => (
         <Link href={href} target="_blank" key={idx}>
           <Icon
             className={cn(
-              'transition-transform duration-100 hover:scale-110 hover:text-gray-800 hover:!opacity-100 group-hover/container:opacity-35 dark:hover:text-gray-200',
+              'transition-transform duration-150 hover:scale-125 hover:text-gray-800 hover:!opacity-100 group-hover/container:opacity-35 dark:hover:text-gray-200',
               className,
             )}
           />
         </Link>
       ))}
+
+      <p className="group/mail -ml-8 hidden cursor-pointer items-center space-x-2 text-xl hover:!opacity-100 group-hover/container:opacity-50 md:inline-flex">
+        <Envelope className="duration-150 ease-in-out group-hover/mail:scale-125" />
+        <span className="duration-300 group-hover/mail:translate-x-2 group-hover/mail:text-gray-400 dark:group-hover/mail:text-gray-600">
+          mustafa@kibar.pro
+        </span>
+      </p>
     </div>
   );
 };

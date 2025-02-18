@@ -28,10 +28,11 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               href={HOME_PATH}
               passHref
               className={cn(
-                'inline-block touch-none bg-gradient-to-r from-primary from-25% to-secondary to-90% bg-clip-text text-3xl text-transparent hover:cursor-default',
+                'inline-block touch-none -space-x-2.5 bg-gradient-to-r from-primary from-25% to-secondary to-90% bg-clip-text text-3xl text-transparent hover:cursor-default',
                 brandFont.className,
               )}>
-              MK
+              <span>M</span>
+              <span>K</span>
             </Link>
 
             <div className="flex shrink items-center max-md:gap-4 md:flex-row-reverse">

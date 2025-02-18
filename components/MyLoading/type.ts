@@ -1,7 +1,7 @@
 type MyLoadingProps = {
   className?: string;
+  text?: string;
   children?: React.ReactNode;
-  loadingText?: string;
 };
 
 export type { MyLoadingProps };
