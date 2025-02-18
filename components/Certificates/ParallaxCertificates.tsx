@@ -17,7 +17,7 @@ const ParallaxCertificates = () => {
               )}>
               {item.imageUrl && (
                 <Image
-                  className="absolute left-0 top-0 h-full w-full rounded-md object-cover p-4"
+                  className="absolute left-0 top-0 size-full rounded-md object-cover p-4"
                   src={item.imageUrl}
                   alt={item.title}
                   width={128}

@@ -40,7 +40,7 @@ const CertificateShowcase: React.FC<CertificateShowcaseProps> = ({
 
           {certificate.imageUrl && (
             <Image
-              className="h-full w-full rounded-md object-contain p-4 transition-transform duration-200 ease-in group-hover:-translate-y-1 group-hover:scale-110 group-hover:shadow-lg group-hover:grayscale"
+              className="size-full rounded-md object-contain p-4 transition-transform duration-200 ease-in group-hover:-translate-y-1 group-hover:scale-110 group-hover:shadow-lg group-hover:grayscale"
               src={certificate.imageUrl}
               alt={certificate.title}
               width={256}

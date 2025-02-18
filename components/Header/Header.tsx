@@ -34,7 +34,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               MK
             </Link>
 
-            <div className="flex flex-shrink items-center max-md:gap-4 md:flex-row-reverse">
+            <div className="flex shrink items-center max-md:gap-4 md:flex-row-reverse">
               {!isMenuOpen && <ThemeSwitchButton />}
               <motion.div
                 whileTap={{ x: -4, opacity: 0.8 }}
