@@ -21,7 +21,7 @@ const NavItem: React.FC<NavItemProps> = ({
       <div
         onClick={onClick}
         className={cn(
-          'relative flex px-1 transition-all duration-300 ease-in-out hover:rounded-xl md:text-lg',
+          'relative flex px-1 transition-all duration-300 ease-in-out hover:rounded-xl',
           className,
           {
             'hover:bg-foreground/10': !active,

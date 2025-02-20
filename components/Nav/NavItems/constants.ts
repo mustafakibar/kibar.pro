@@ -2,7 +2,6 @@ import {
   ABOUT_PATH,
   BLOG_PATH,
   CERTIFICATES_PATH,
-  HOME_PATH,
   PROJECTS_PATH,
   RESUME_PATH,
   SNIPPETS_PATH,
@@ -13,7 +12,6 @@ const NAV_ITEMS: {
   href: string;
   enabled?: boolean;
 }[] = [
-  { text: 'Home', href: HOME_PATH },
   { text: 'About', href: ABOUT_PATH },
   { text: 'Blog', href: BLOG_PATH, enabled: false },
   { text: 'Projects', href: PROJECTS_PATH },

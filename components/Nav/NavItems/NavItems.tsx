@@ -16,13 +16,15 @@ const NavItems: React.FC<{
     <AnimatePresence>
       <ul
         className={cn(
-          'flex list-none flex-col items-center justify-center gap-4 px-1 md:flex-row md:gap-1',
+          'flex list-none flex-col items-center justify-center md:flex-row md:gap-1',
+          { 'px-2': !isMobile, 'gap-0': isMobile },
           className,
         )}>
         {NAV_ITEMS.filter(({ enabled = true }) => enabled).map((item, i) => (
           <motion.li
             key={item.text.concat(item.href)}
             className={cn({
+              'mx-1': !isMobile,
               'w-full': isMobile,
             })}
             initial={{ height: 0, opacity: 0 }}
@@ -40,7 +42,7 @@ const NavItems: React.FC<{
               href={item.href}
               active={pathname === item.href}
               className={cn({
-                'text-2xl': isMobile,
+                'my-2 px-2 py-2 text-2xl': isMobile,
               })}
               onClick={onItemClicked?.bind(this, item.text, item.href)}
             />

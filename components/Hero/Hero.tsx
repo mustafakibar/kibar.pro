@@ -26,7 +26,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
     <div className={cn('my-[1rem] md:my-[8rem]', className)}>
       <AnimatePresence>
         <motion.div
-          className="flex flex-col items-center justify-evenly gap-8 md:flex-row md:gap-4 lg:justify-between"
+          className="flex flex-col items-center justify-evenly gap-8 md:flex-row md:gap-4"
           layout
           variants={{
             hidden: { opacity: 0 },
@@ -51,7 +51,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
 
             <div className="sm:ml-3">
               <div>
-                <h4 className="text-xl">
+                <h4 className="text-2xl">
                   I&#39;am full stack developer{' '}
                   <span className="text-nowrap">
                     living in{' '}

@@ -18,7 +18,7 @@ const Contact: React.FC<ContactProps> = ({ className }) => {
   return (
     <div
       className={cn(
-        'group/container flex shrink-0 transform-gpu flex-row items-center gap-8 text-xl transition-all lg:gap-12',
+        'group/container flex shrink-0 transform-gpu flex-row items-center gap-8 text-xl transition-all max-md:justify-center lg:gap-12',
         className,
       )}>
       {contactItemList.map(({ icon: Icon, className, href }, idx) => (

@@ -28,7 +28,7 @@ const ThemeSwitchButton: React.FC<ThemeSwitchButtonProps> = ({
     <motion.div
       whileTap={{ scale: 0.7 }}
       className={cn(
-        'rounded-lg p-2 duration-300 hover:cursor-pointer hover:bg-foreground/25',
+        'rounded-lg p-2 text-gray-600 duration-300 hover:cursor-pointer hover:bg-foreground/25 dark:text-gray-400',
         className,
       )}
       onClick={changeTheme.bind(this)}

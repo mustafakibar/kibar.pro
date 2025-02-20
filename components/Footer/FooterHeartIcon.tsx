@@ -5,7 +5,7 @@ import { useAnimInView } from '@/hooks/useAnimInView';
 import { cn } from '@/lib/utils';
 import {
   AnimatePresence,
-  AnimationControls,
+  AnimationPlaybackControls,
   motion,
   useAnimate,
 } from 'motion/react';
@@ -19,7 +19,7 @@ const FooterHeartIcon: React.FC<FooterHeartIconProps> = ({
   color,
 }) => {
   const [scope, animate] = useAnimate();
-  const controlsRef = useRef<AnimationControls>(null);
+  const controlsRef = useRef<AnimationPlaybackControls>(null);
   useAnimInView(scope, controlsRef);
   useAnimInMouseEvent(scope, controlsRef);
 

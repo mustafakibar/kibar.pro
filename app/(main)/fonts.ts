@@ -1,6 +1,6 @@
-import { Chango, Inconsolata, Lilita_One, Outfit } from 'next/font/google';
+import { Inconsolata, Lilita_One, Outfit, Rowdies } from 'next/font/google';
 
-const brandFont = Chango({
+const brandFont = Rowdies({
   weight: '400',
   subsets: ['latin'],
   display: 'swap',

@@ -15,7 +15,7 @@ const compat = new FlatCompat({
   allConfig: js.configs.all,
 });
 
-export default [
+const eslintConfig = [
   ...compat.extends(
     'next/core-web-vitals',
     'eslint:recommended',
@@ -36,6 +36,9 @@ export default [
 
     rules: {
       'unused-imports/no-unused-imports': 'error',
+      '@typescript-eslint/no-empty-object-type': 'off',
     },
   },
 ];
+
+export default eslintConfig;
