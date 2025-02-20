@@ -17,7 +17,7 @@ const ParallaxCertificates = () => {
               )}>
               {item.imageUrl && (
                 <Image
-                  className="absolute left-0 top-0 size-full rounded-md object-cover p-4"
+                  className="absolute top-0 left-0 size-full rounded-md object-cover p-4"
                   src={item.imageUrl}
                   alt={item.title}
                   width={128}
@@ -27,8 +27,8 @@ const ParallaxCertificates = () => {
                 />
               )}
 
-              <div className="absolute bottom-0 flex w-full flex-col gap-1 rounded-lg bg-background/85 px-2 py-1">
-                <span className="inline-flex max-w-[90%] text-ellipsis text-nowrap text-lg text-foreground/90">
+              <div className="bg-background/85 absolute bottom-0 flex w-full flex-col gap-1 rounded-lg px-2 py-1">
+                <span className="text-foreground/90 inline-flex max-w-[90%] text-lg text-nowrap text-ellipsis">
                   {item.title}
                 </span>
 

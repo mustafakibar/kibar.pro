@@ -59,7 +59,7 @@ const Parallax: React.FC<ParallaxProps> = ({
         {children}
       </motion.div>
 
-      <div className="pointer-events-none absolute inset-0 z-20 before:absolute before:left-0 before:top-0 before:h-full before:w-1/4 before:bg-gradient-to-r before:from-black/5 before:to-transparent before:blur-[3] after:absolute after:right-0 after:top-0 after:h-full after:w-1/4 after:bg-gradient-to-l after:from-black/5 after:to-transparent after:blur-[3] dark:before:from-white/5 dark:after:from-white/5"></div>
+      <div className="pointer-events-none absolute inset-0 z-20 before:absolute before:top-0 before:left-0 before:h-full before:w-1/4 before:bg-linear-to-r before:from-black/5 before:to-transparent before:blur-[3] after:absolute after:top-0 after:right-0 after:h-full after:w-1/4 after:bg-linear-to-l after:from-black/5 after:to-transparent after:blur-[3] dark:before:from-white/5 dark:after:from-white/5"></div>
     </div>
   );
 };

@@ -14,11 +14,11 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
     <div className={cn(className)} {...props}>
       <div
         className={cn(
-          'flex flex-grow flex-nowrap text-nowrap',
+          'flex grow flex-nowrap text-nowrap',
           titleWrapperClassName,
         )}>
         <div
-          className={cn('flex items-center text-foreground/90', {
+          className={cn('text-foreground/90 flex items-center', {
             'gap-4': icon != null,
           })}>
           {icon && <div className="mb-1">{icon}</div>}

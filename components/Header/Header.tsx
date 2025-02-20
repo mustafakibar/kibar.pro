@@ -57,7 +57,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             href={HOME_PATH}
             passHref
             className={cn(
-              'inline-block touch-none -space-x-2.5 bg-gradient-to-r from-primary from-25% to-secondary to-90% bg-clip-text text-3xl text-transparent hover:cursor-pointer',
+              'from-primary to-secondary inline-block touch-none -space-x-2.5 bg-linear-to-r from-25% to-90% bg-clip-text text-3xl text-transparent hover:cursor-pointer',
               brandFont.className,
             )}>
             <span>M</span>
@@ -98,7 +98,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               animate={{ opacity: [0, 1] }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3, ease: 'easeInOut' }}>
-              <nav className="absolute left-0 z-10 h-screen w-full bg-background py-6 opacity-[.98]">
+              <nav className="bg-background absolute left-0 z-10 h-screen w-full py-6 opacity-[.98]">
                 <NavItems
                   isMobile={isMenuOpen}
                   onItemClicked={setIsMenuOpen.bind(this, false)}
@@ -111,9 +111,9 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         {/* Header shadow */}
         <motion.div
           className={cn(
-            'absolute inset-0 -z-50 shadow-primary/20 dark:shadow-primary/20',
+            'shadow-primary/20 dark:shadow-primary/20 absolute inset-0 -z-50',
             {
-              'shadow-sm': isScrollGoingDown,
+              'shadow-xs': isScrollGoingDown,
               'bg-background opacity-90': !isMenuOpen,
             },
           )}></motion.div>

@@ -25,14 +25,14 @@ const Contact: React.FC<ContactProps> = ({ className }) => {
         <Link href={href} target="_blank" key={idx}>
           <Icon
             className={cn(
-              'transition-transform duration-150 hover:scale-125 hover:text-gray-800 hover:!opacity-100 group-hover/container:opacity-35 dark:hover:text-gray-200',
+              'transition-transform duration-150 group-hover/container:opacity-35 hover:scale-125 hover:text-gray-800 hover:opacity-100! dark:hover:text-gray-200',
               className,
             )}
           />
         </Link>
       ))}
 
-      <p className="group/mail -ml-8 hidden cursor-pointer items-center space-x-2 text-xl hover:!opacity-100 group-hover/container:opacity-50 md:inline-flex">
+      <p className="group/mail -ml-8 hidden cursor-pointer items-center space-x-2 text-xl group-hover/container:opacity-50 hover:opacity-100! md:inline-flex">
         <Envelope className="duration-150 ease-in-out group-hover/mail:scale-125" />
         <span className="duration-300 group-hover/mail:translate-x-2 group-hover/mail:text-gray-400 dark:group-hover/mail:text-gray-600">
           mustafa@kibar.pro

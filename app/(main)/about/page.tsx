@@ -29,7 +29,7 @@ const AboutPage: NextPage = () => {
         {/* Image & Contact & Skills */}
         <div className="flex flex-col items-center gap-4 lg:w-1/3 lg:gap-16">
           <ProfileImage
-            className="rotate-0 rounded-xl ring-2 ring-primary dark:brightness-75 max-lg:max-w-48 lg:rotate-3"
+            className="ring-primary rotate-0 rounded-xl ring-2 max-lg:max-w-48 lg:rotate-3 dark:brightness-75"
             src={ABOUT_PROFILE_IMAGE_SRC}
             alt={ABOUT_PROFILE_IMAGE_ALT}
             blurDataURL={ABOUT_PROFILE_IMAGE_BLUR_DATA_URL}
@@ -46,7 +46,7 @@ const AboutPage: NextPage = () => {
             'flex flex-col gap-8 text-justify opacity-75 lg:-mt-24 lg:w-2/3 lg:gap-16',
             titleFont.className,
           )}>
-          <Text className="pointer-events-none touch-none whitespace-pre-line text-xl antialiased">
+          <Text className="pointer-events-none touch-none text-xl whitespace-pre-line antialiased">
             My name is Mustafa KiBAR. I am a full-stack developer since 2011,
             specializing in crafting scalable, responsive, efficient, and
             maintainable robust software systems.
@@ -141,7 +141,7 @@ const AboutPage: NextPage = () => {
             </div>
 
             <div>
-              <ul className="flex flex-col gap-4 text-center font-bold [&>*:nth-child(odd)]:bg-foreground/5 [&>*]:rounded-lg [&>*]:px-3 [&>*]:py-2">
+              <ul className="[&>*:nth-child(odd)]:bg-foreground/5 flex flex-col gap-4 text-center font-bold *:rounded-lg *:px-3 *:py-2">
                 <li>
                   Tischkönig Flex v2 Adjustable
                   <span className="text-highlight">Desk</span>

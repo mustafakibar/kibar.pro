@@ -51,8 +51,8 @@ const CertificateShowcase: React.FC<CertificateShowcaseProps> = ({
           )}
         </ShowcaseMain>
 
-        <ShowcaseFooter className="absolute right-0 top-0 p-2">
-          <span className="text-xs text-muted-foreground">
+        <ShowcaseFooter className="absolute top-0 right-0 p-2">
+          <span className="text-muted-foreground text-xs">
             {certificate.date}
           </span>
         </ShowcaseFooter>

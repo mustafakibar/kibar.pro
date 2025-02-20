@@ -45,7 +45,7 @@ const FooterHeartIcon: React.FC<FooterHeartIconProps> = ({
   return (
     <div
       className={cn(
-        'flex flex-shrink items-center justify-center overflow-hidden align-middle',
+        'flex shrink items-center justify-center overflow-hidden align-middle',
         color,
         className,
       )}>
