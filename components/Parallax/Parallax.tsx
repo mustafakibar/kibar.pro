@@ -3,7 +3,7 @@
 import { useAnimInMouseEvent } from '@/hooks/useAnimInMouseEvent';
 import { useAnimInView } from '@/hooks/useAnimInView';
 import { cn } from '@/lib/utils';
-import { AnimationControls, motion, useAnimate } from 'motion/react';
+import { AnimationPlaybackControls, motion, useAnimate } from 'motion/react';
 import React, { useEffect, useRef } from 'react';
 import { ParallaxProps } from '.';
 
@@ -17,7 +17,7 @@ const Parallax: React.FC<ParallaxProps> = ({
   ...props
 }) => {
   const [scope, animate] = useAnimate();
-  const controlsRef = useRef<AnimationControls>(null);
+  const controlsRef = useRef<AnimationPlaybackControls>(null);
   useAnimInView(scope, controlsRef);
   useAnimInMouseEvent(scope, controlsRef);
 
