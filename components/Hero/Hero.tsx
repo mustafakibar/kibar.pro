@@ -5,13 +5,7 @@ import {
   HERO_PROFILE_IMAGE_SRC,
 } from '@/common/image';
 import { ProfileImage } from '@/components/ProfileImage';
-import { TurkeyFlagImage } from '@/components/TurkeyFlagImage';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip';
+
 import { cn } from '@/lib/utils';
 import { AnimatePresence } from 'motion/react';
 import * as motion from 'motion/react-client';
@@ -26,7 +20,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
     <div className={cn('my-[1rem] md:my-[8rem]', className)}>
       <AnimatePresence>
         <motion.div
-          className="flex flex-col items-center justify-evenly gap-8 md:flex-row md:gap-4"
+          className="flex flex-col items-center justify-around gap-4 md:flex-row lg:justify-between lg:gap-8"
           layout
           variants={{
             hidden: { opacity: 0 },
@@ -35,38 +29,29 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           initial="hidden"
           animate="visible"
           transition={{ duration: 3, ease: 'easeInOut' }}>
-          <div className="flex flex-col gap-8 text-center antialiased md:text-start">
-            <div className={cn('text-nowrap lg:pt-10', heroFont.className)}>
-              <h1 className="text-3xl text-primary opacity-75 sm:pl-2 lg:text-5xl">
-                Mustafa
-              </h1>
-              <h2 className="ml-1 text-6xl font-extrabold text-secondary opacity-95 lg:text-8xl">
+          <div className="flex flex-col justify-center gap-4 antialiased max-md:items-center">
+            <div
+              className={cn(
+                'flex gap-2 text-5xl text-nowrap lg:pt-10 lg:text-7xl',
+                heroFont.className,
+              )}>
+              <span className="text-primary opacity-75">Mustafa</span>
+              <span className="text-secondary ml-1 font-extrabold opacity-95">
                 K
-                <span className="mx-1 inline-flex scale-75 text-primary">
+                <span className="text-primary mx-1 inline-flex scale-75">
                   i
                 </span>
                 BAR
-              </h2>
+              </span>
             </div>
 
-            <div className="sm:ml-3">
-              <div>
-                <h4 className="text-2xl">
-                  I&#39;am full stack developer{' '}
-                  <span className="text-nowrap">
-                    living in{' '}
-                    <TooltipProvider>
-                      <Tooltip>
-                        <TooltipTrigger>
-                          <TurkeyFlagImage className="mb-2 border-4 border-black/5 dark:border-white/10" />
-                        </TooltipTrigger>
-                        <TooltipContent>
-                          <p>Turkey</p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
-                  </span>
-                </h4>
+            <div className="ml-1.5 max-md:text-center">
+              <div className="flex flex-col gap-2 text-2xl">
+                <span>I&apos;m a full stack developer based in Turkey.</span>
+                <span>
+                  I have a passion for shipping high-quality software to
+                  customers.{' '}
+                </span>
               </div>
 
               <div className="mt-2 tracking-widest">
@@ -79,15 +64,15 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
 
           <div className="relative order-first lg:order-last">
             <Image
-              className="pointer-events-none absolute -left-16 -top-16 hidden size-full scale-x-110 opacity-5 dark:invert lg:inline-flex"
+              className="pointer-events-none absolute -top-16 -left-8 hidden size-full scale-x-110 opacity-5 lg:inline-flex dark:invert"
               src="/misc/profile-bg.webp"
-              alt="profile background"
+              alt="profile image background pattern"
               width={256}
               height={256}
             />
 
             <ProfileImage
-              className="pointer-events-none relative max-w-96 rounded-md border-2 border-gray-100 dark:border-gray-900 dark:grayscale-[50%] max-lg:max-w-48 md:hover:shadow-md"
+              className="pointer-events-none relative max-w-96 rounded-md border-2 border-gray-100 max-lg:max-w-48 md:hover:shadow-md dark:border-gray-900 dark:grayscale-[50%]"
               src={HERO_PROFILE_IMAGE_SRC}
               alt={HERO_PROFILE_IMAGE_ALT}
               blurDataURL={HERO_PROFILE_IMAGE_BLUR_DATA_URL}

@@ -5,7 +5,7 @@ const TimelineContent: React.FC<TimelineContentProps> = ({
   children,
   className,
 }) => {
-  return <p className={cn('opacity-80', className)}>{children}</p>;
+  return <div className={cn('opacity-80', className)}>{children}</div>;
 };
 
 export { TimelineContent };

@@ -16,6 +16,7 @@ import {
 } from '@/components/Timeline';
 import { Text } from '@/components/typography';
 import { cn } from '@/lib/utils';
+import * as motion from 'motion/react-client';
 import { NextPage } from 'next';
 import Image from 'next/image';
 import { FaToolbox } from 'react-icons/fa6';
@@ -46,21 +47,35 @@ const AboutPage: NextPage = () => {
             'flex flex-col gap-8 text-justify opacity-75 lg:-mt-24 lg:w-2/3 lg:gap-16',
             titleFont.className,
           )}>
-          <Text className="pointer-events-none touch-none text-xl whitespace-pre-line antialiased">
-            My name is Mustafa KiBAR. I am a full-stack developer since 2011,
-            specializing in crafting scalable, responsive, efficient, and
-            maintainable robust software systems.
+          <Text className="pointer-events-none touch-none text-lg whitespace-pre-line antialiased">
+            <span className="inline-flex text-4xl">
+              Hi 👋 this is Mustafa K
+              <span className="-translate-y-[1px] scale-90 tracking-tighter">
+                i
+              </span>
+              BAR
+            </span>
             <br />
             <br />
+            <span>
+              I am a full-stack developer since 2011, specializing in crafting
+              scalable, responsive, efficient, and maintainable robust software
+              systems.
+            </span>
             <br />
-            Proficient in Rust, Kotlin, React, React Native, and Flutter.
+            <br />
+            <span className="font-black">
+              Proficient in Rust, Kotlin, React, React Native, and Flutter.
+            </span>
             <br />
             <br />
-            <br />I enjoy making applications that make users&apos; daily tasks
-            easier and continuously push the boundaries of innovation in
-            blockchain, AI, and systems programming, always striving to create
-            high-quality software products efficiently with adapting to latest
-            technology trends.
+            <span className="text-md">
+              I enjoy making applications that make users&apos; daily tasks
+              easier and continuously push the boundaries of innovation in
+              blockchain, AI, and systems programming, always striving to create
+              high-quality software products efficiently while adapting to the
+              latest technology trends.
+            </span>
           </Text>
 
           <ParallaxSkills className="max-lg:hidden" />
@@ -68,8 +83,14 @@ const AboutPage: NextPage = () => {
       </div>
 
       <div className="flex grid-cols-3 flex-col place-items-center items-start gap-16 px-8 lg:grid">
-        {/* Education */}
-        <div className="flex w-full flex-col gap-8">
+        <motion.div
+          layout
+          className="flex w-full flex-col gap-8"
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -20 }}
+          transition={{ duration: 3, ease: 'anticipate' }}
+          viewport={{ once: true }}>
           <SectionHeading
             title={'Education'}
             titleWrapperClassName="max-lg:justify-center"
@@ -115,12 +136,18 @@ const AboutPage: NextPage = () => {
               </TimelineItem>
             </Timeline>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Environments */}
-        <div className="flex w-full flex-col gap-8 lg:col-span-2">
+        <motion.div
+          layout
+          className="flex w-full flex-col gap-8 lg:col-span-2"
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 20 }}
+          transition={{ duration: 3, ease: 'anticipate' }}
+          viewport={{ once: true }}>
           <SectionHeading
-            title={'Environment'}
+            title="Environment"
             titleWrapperClassName="lg:justify-end justify-center"
             icon={<FaToolbox size={24} />}
           />
@@ -198,7 +225,7 @@ const AboutPage: NextPage = () => {
               </ul>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

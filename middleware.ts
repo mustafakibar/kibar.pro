@@ -7,7 +7,7 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Redirect /cv and /resume pathname to the 'RESUME_PATH'
-  if (pathname === '/cv' || pathname === '/resume') {
+  if (pathname.startsWith('/cv') || pathname.startsWith('/resume')) {
     return NextResponse.redirect(new URL(RESUME_PATH, request.url));
   }
 

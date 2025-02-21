@@ -1,4 +1,4 @@
-import { getRandomInt } from '@/lib/utils';
+import { cn, getRandomInt } from '@/lib/utils';
 import React from 'react';
 import { FaAws, FaDocker, FaReact, FaRust } from 'react-icons/fa';
 import { TbBrandFlutter, TbBrandKotlin } from 'react-icons/tb';
@@ -14,7 +14,10 @@ const ParallaxSkills: React.FC<ParallaxSkillsProps> = ({
 }) => {
   return (
     <Parallax
-      className={className}
+      className={cn(
+        'transition-normal duration-500 hover:grayscale-100',
+        className,
+      )}
       durationInMillis={animationDurationInMillis}
       reverse={animationReverse}>
       <FaRust size={iconSize} opacity={iconOpacity} />

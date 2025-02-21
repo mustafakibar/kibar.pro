@@ -7,7 +7,7 @@ const brandFont = Rowdies({
 });
 
 const textFont = Inconsolata({
-  weight: '400',
+  weight: ['400', '600', '900'],
   subsets: ['latin'],
   display: 'swap',
 });

@@ -5,7 +5,6 @@ import {
   ShowcaseDivider,
   ShowcaseFooter,
   ShowcaseHeader,
-  ShowcaseMain,
   ShowcaseTitle,
 } from '@/components/Showcase';
 import { TagItems } from '@/components/Tag';
@@ -24,15 +23,13 @@ const SnippetShowcase: React.FC<SnippetShowcaseProps> = ({
   return (
     <Link href={href} className={cn({ 'pointer-events-none': href == '' })}>
       <ShowcaseContainer className={cn(className)} {...props}>
-        <ShowcaseMain>
-          <ShowcaseHeader>
-            <ShowcaseTitle>{snippet.title}</ShowcaseTitle>
-          </ShowcaseHeader>
+        <ShowcaseHeader>
+          <ShowcaseTitle>{snippet.title}</ShowcaseTitle>
+        </ShowcaseHeader>
 
-          <ShowcaseDivider />
+        <ShowcaseDivider />
 
-          <ShowcaseContent>{snippet.content}</ShowcaseContent>
-        </ShowcaseMain>
+        <ShowcaseContent>{snippet.content}</ShowcaseContent>
 
         <ShowcaseFooter>
           {!hideTags && snippet.tags && <TagItems tags={snippet.tags} />}

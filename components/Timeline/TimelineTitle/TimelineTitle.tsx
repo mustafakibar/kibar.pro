@@ -5,7 +5,7 @@ const TimelineTitle: React.FC<TimelineTitleProps> = ({
   children,
   className,
 }) => {
-  return <h3 className={cn('font-black', className)}>{children}</h3>;
+  return <div className={cn('text-lg font-black', className)}>{children}</div>;
 };
 
 export { TimelineTitle };

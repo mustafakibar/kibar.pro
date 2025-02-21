@@ -16,7 +16,7 @@ const TagItem: React.FC<TagItemProps> = ({
   return (
     <div
       className={cn(
-        'group relative inline-flex -skew-y-3 items-center rounded-sm bg-foreground/10 px-1 outline outline-foreground/30 transition-all duration-500 ease-in-out hover:cursor-pointer hover:rounded-md hover:bg-foreground/20 hover:opacity-95 hover:outline-offset-4 hover:outline-foreground/40 md:px-2 md:py-1',
+        'group bg-foreground/10 outline-foreground/30 hover:bg-foreground/20 relative inline-flex items-center rounded-sm px-1 transition-all duration-500 ease-in-out hover:cursor-pointer hover:opacity-95 md:px-2 md:py-1',
         className,
       )}
       {...props}
@@ -28,10 +28,9 @@ const TagItem: React.FC<TagItemProps> = ({
           router.push(`${window.location.href}${HOME_PATH}/tags/${name}`);
         }
       }}>
-      <span className="absolute scale-75 font-black transition-transform duration-100 ease-linear group-hover:scale-110">
-        #
+      <span className="inline-block text-xs transition-transform duration-100 ease-linear">
+        #{name}
       </span>
-      <span className="ms-3 inline-block group-hover:ms-4">{name}</span>
     </div>
   );
 };

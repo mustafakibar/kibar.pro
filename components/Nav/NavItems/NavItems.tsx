@@ -38,12 +38,13 @@ const NavItems: React.FC<{
               ease: 'easeInOut',
             }}>
             <NavItem
-              text={item.text}
-              href={item.href}
-              active={pathname === item.href}
               className={cn({
                 'my-2 px-2 py-2 text-2xl': isMobile,
               })}
+              text={item.text}
+              href={item.href}
+              blank={item._blank}
+              active={pathname === item.href}
               onClick={onItemClicked?.bind(this, item.text, item.href)}
             />
           </motion.li>

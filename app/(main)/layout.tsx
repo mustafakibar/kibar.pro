@@ -20,17 +20,19 @@ type RootLayoutProps = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html className="scroll-smooth" lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          'flex min-h-screen flex-col overflow-x-hidden bg-background text-foreground [&::-webkit-scrollbar-thumb]:rounded-s-full [&::-webkit-scrollbar-thumb]:bg-secondary [&::-webkit-scrollbar-thumb]:hover:bg-primary/80 [&::-webkit-scrollbar]:w-1.5',
+          '[&::-webkit-scrollbar-thumb]:bg-secondary [&::-webkit-scrollbar-thumb]:hover:bg-primary/80 bg-background text-foreground min-h-screen min-w-screen overflow-x-hidden scroll-smooth [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:rounded-s-full',
           textFont.className,
         )}>
-        <ThemeProvider enableSystem defaultTheme="system" attribute="class">
-          <TopProgressBar />
-          <Header />
-          <div className="container grow">{children}</div>
-          <Footer />
+        <ThemeProvider attribute="class" enableSystem defaultTheme="system">
+          <div className="flex min-h-screen min-w-screen flex-col">
+            <TopProgressBar />
+            <Header />
+            <div className="container">{children}</div>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>

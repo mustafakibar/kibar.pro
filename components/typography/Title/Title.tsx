@@ -7,7 +7,7 @@ const Title: React.FC<TitleProps> = ({ className, children, ...props }) => {
     <h4
       className={cn(
         titleFont.className,
-        'text-xl font-bold tracking-tight',
+        'text-xl font-semibold tracking-tight',
         className,
       )}
       {...props}>

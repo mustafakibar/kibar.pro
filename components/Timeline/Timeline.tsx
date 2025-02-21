@@ -1,16 +1,9 @@
-'use client';
-
 import { cn } from '@/lib/utils';
-import { motion } from 'motion/react';
 import { TimelineProps } from '.';
 
+// TODO - Add motion animation
 const Timeline: React.FC<TimelineProps> = ({ children, className }) => {
-  return (
-    // TODO
-    <motion.div className={cn(className)} layout>
-      {children}
-    </motion.div>
-  );
+  return <div className={cn(className)}>{children}</div>;
 };
 
 export { Timeline };

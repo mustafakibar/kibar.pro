@@ -1,10 +1,6 @@
 import {
   ShowcaseContainer,
-  ShowcaseContent,
-  ShowcaseDivider,
-  ShowcaseFooter,
   ShowcaseHeader,
-  ShowcaseMain,
   ShowcaseTitle,
 } from '@/components/Showcase';
 import { cn } from '@/lib/utils';
@@ -25,37 +21,32 @@ const CertificateShowcase: React.FC<CertificateShowcaseProps> = ({
       target="_blank"
       className={cn({ 'pointer-events-none': href == '' })}>
       <ShowcaseContainer
-        className={cn('group hover:bg-primary/20', className)}
+        className={cn(
+          'group hover:bg-primary/20 relative max-w-lg overflow-hidden p-1',
+          className,
+        )}
         {...props}>
-        <ShowcaseMain>
-          <ShowcaseHeader>
-            <ShowcaseTitle className="line-clamp-none duration-300 group-hover:-skew-y-3 group-hover:font-black group-hover:tracking-tighter">
-              {certificate.title}
-            </ShowcaseTitle>
-          </ShowcaseHeader>
+        {certificate.imageUrl && (
+          <Image
+            className="h-48 w-full scale-125 rounded-lg object-cover object-left-top grayscale transition-all duration-300 ease-in group-hover:-translate-y-1 group-hover:scale-100 group-hover:shadow-lg group-hover:grayscale-0"
+            src={certificate.imageUrl}
+            alt={certificate.title}
+            width={256}
+            height={256}
+            placeholder={certificate.blurDataURL ? 'blur' : 'empty'}
+            blurDataURL={certificate.blurDataURL}
+          />
+        )}
 
-          <ShowcaseDivider />
-
-          <ShowcaseContent>{certificate.description}</ShowcaseContent>
-
-          {certificate.imageUrl && (
-            <Image
-              className="size-full rounded-md object-contain p-4 transition-transform duration-200 ease-in group-hover:-translate-y-1 group-hover:scale-110 group-hover:shadow-lg group-hover:grayscale"
-              src={certificate.imageUrl}
-              alt={certificate.title}
-              width={256}
-              height={256}
-              placeholder={certificate.blurDataURL ? 'blur' : 'empty'}
-              blurDataURL={certificate.blurDataURL}
-            />
-          )}
-        </ShowcaseMain>
-
-        <ShowcaseFooter className="absolute top-0 right-0 p-2">
-          <span className="text-muted-foreground text-xs">
-            {certificate.date}
+        <ShowcaseHeader className="bg-background absolute -bottom-1 -left-1 flex-col items-baseline rounded-tr-lg rounded-bl-sm border-t-1 border-r-1 px-3 pb-1 shadow-md">
+          <span className="text-muted-foreground text-sm">
+            {certificate.description} - {certificate.date}
           </span>
-        </ShowcaseFooter>
+
+          <ShowcaseTitle className="-mt-1 line-clamp-none delay-300 duration-300 group-hover:-skew-y-1">
+            {certificate.title}
+          </ShowcaseTitle>
+        </ShowcaseHeader>
       </ShowcaseContainer>
     </Link>
   );

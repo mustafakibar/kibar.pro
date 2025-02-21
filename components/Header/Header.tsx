@@ -22,8 +22,8 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrollGoingDown, setIsScrollGoingDown] = useState(false);
   const { scrollYProgress } = useScroll();
-  const height = useTransform(scrollYProgress, [0.3, 1], [80, 60]);
-  const opacity = useTransform(scrollYProgress, [0.3, 1], [1, 0.8]);
+  const height = useTransform(scrollYProgress, [0.3, 1], [75, 55]);
+  const opacity = useTransform(scrollYProgress, [0.3, 1], [1, 1]);
 
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
     if (latest > 0.1 && !isScrollGoingDown) {
@@ -38,18 +38,18 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
   return (
     <motion.header
       className={cn(
-        'sticky inset-x-0 top-0 z-10 mx-auto mb-4 w-full',
-        { 'bg-background': isMenuOpen },
+        'bg-background sticky top-0 right-0 left-0 z-10 mx-auto mb-4 w-full transition-all duration-300',
         className,
       )}
+      layout
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
       style={{
+        height,
+        opacity: isMenuOpen ? 1 : opacity,
         originX: 0,
         originY: 0,
-        opacity: isMenuOpen ? 1 : opacity,
-        height,
       }}>
       <div className="container py-3">
         <div className="flex items-center justify-between">
@@ -59,7 +59,8 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             className={cn(
               'from-primary to-secondary inline-block touch-none -space-x-2.5 bg-linear-to-r from-25% to-90% bg-clip-text text-3xl text-transparent hover:cursor-pointer',
               brandFont.className,
-            )}>
+            )}
+            onClick={setIsMenuOpen.bind(this, false)}>
             <span>M</span>
             <span>K</span>
           </Link>
@@ -111,10 +112,10 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         {/* Header shadow */}
         <motion.div
           className={cn(
-            'shadow-primary/20 dark:shadow-primary/20 absolute inset-0 -z-50',
+            'shadow-primary/20 dark:shadow-primary/20 absolute inset-0 -z-50 rounded-sm',
             {
               'shadow-xs': isScrollGoingDown,
-              'bg-background opacity-90': !isMenuOpen,
+              'bg-background': !isMenuOpen,
             },
           )}></motion.div>
       </div>

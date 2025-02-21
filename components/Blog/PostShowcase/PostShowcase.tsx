@@ -5,8 +5,6 @@ import {
   ShowcaseDivider,
   ShowcaseFooter,
   ShowcaseHeader,
-  ShowcaseMain,
-  ShowcaseStamp,
   ShowcaseTitle,
 } from '@/components/Showcase';
 import { TagItems } from '@/components/Tag';
@@ -25,17 +23,15 @@ const PostShowcase: React.FC<PostShowcaseProps> = ({
   return (
     <Link href={href} className={cn({ 'pointer-events-none': href == '' })}>
       <ShowcaseContainer className={cn(className)} {...props}>
-        <ShowcaseMain>
-          <ShowcaseStamp>{post.createdAt}</ShowcaseStamp>
+        <ShowcaseHeader>
+          <ShowcaseTitle>{post.title}</ShowcaseTitle>
+        </ShowcaseHeader>
 
-          <ShowcaseHeader>
-            <ShowcaseTitle>{post.title}</ShowcaseTitle>
-          </ShowcaseHeader>
+        {/* TODO {post.createdAt} */}
 
-          <ShowcaseDivider />
+        <ShowcaseDivider />
 
-          <ShowcaseContent>{post.foreword ?? post.content}</ShowcaseContent>
-        </ShowcaseMain>
+        <ShowcaseContent>{post.foreword ?? post.content}</ShowcaseContent>
 
         <ShowcaseFooter>
           {!hideTags && post.tags && <TagItems tags={post.tags} />}

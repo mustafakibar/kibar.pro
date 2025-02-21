@@ -5,15 +5,18 @@ import React from 'react';
 import { NavItemProps } from '.';
 
 const NavItem: React.FC<NavItemProps> = ({
+  className,
   text,
   href,
-  className,
+  blank,
   active,
   onClick,
   ...props
 }) => {
   return (
     <Link
+      rel="noopener noreferrer"
+      target={blank ? '_blank' : undefined}
       href={href}
       className={cn({
         'pointer-events-none cursor-none select-none': active,
@@ -43,7 +46,7 @@ const NavItem: React.FC<NavItemProps> = ({
           {text}
           {active && (
             <div className="absolute bottom-1.5 left-0 hidden h-[3%] w-full md:inline-flex">
-              <div className="mx-auto w-1/12 rounded-full bg-accent-foreground/80" />
+              <div className="bg-accent-foreground/80 mx-auto w-1/12 rounded-full" />
             </div>
           )}
         </span>

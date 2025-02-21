@@ -7,8 +7,6 @@ import {
   ShowcaseDivider,
   ShowcaseFooter,
   ShowcaseHeader,
-  ShowcaseMain,
-  ShowcaseStamp,
   ShowcaseTitle,
 } from '@/components/Showcase';
 import { TagItems } from '@/components/Tag';
@@ -22,6 +20,7 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({
   hideTags = false,
   ...props
 }) => {
+  const hasTagsAndCanBeShown = !hideTags && project.tags;
   const href = project.repoUrl ?? PROJECTS_PATH;
 
   return (
@@ -30,31 +29,23 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({
       target="_blank"
       className={cn({ 'pointer-events-none': href == '' })}>
       <ShowcaseContainer className={cn(className)} {...props}>
-        <ShowcaseMain>
-          <ShowcaseStamp>{project.year}</ShowcaseStamp>
+        <ShowcaseHeader>
+          <ShowcaseTitle>{project.title}</ShowcaseTitle>
 
-          <ShowcaseHeader>
-            <ShowcaseTitle>{project.title}</ShowcaseTitle>
+          <ShowcaseActionContainer>
+            {project.year}
+            {project.repoUrl && <RepoIcon url={project.repoUrl} />}
+          </ShowcaseActionContainer>
+        </ShowcaseHeader>
 
-            <ShowcaseActionContainer>
-              {project.repoUrl && (
-                <div className="inline-block hover:text-accent-foreground">
-                  <RepoIcon url={project.repoUrl} />
-                </div>
-              )}
-            </ShowcaseActionContainer>
-          </ShowcaseHeader>
+        {(project.description || hasTagsAndCanBeShown) && <ShowcaseDivider />}
 
-          {project.description && (
-            <>
-              <ShowcaseDivider />
-              <ShowcaseContent>{project.description}</ShowcaseContent>
-            </>
-          )}
-        </ShowcaseMain>
+        {project.description && (
+          <ShowcaseContent>{project.description}</ShowcaseContent>
+        )}
 
         <ShowcaseFooter>
-          {!hideTags && project.tags && <TagItems tags={project.tags} />}
+          {hasTagsAndCanBeShown && <TagItems tags={project.tags} />}
         </ShowcaseFooter>
       </ShowcaseContainer>
     </Link>
