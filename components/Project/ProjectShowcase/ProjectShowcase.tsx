@@ -20,8 +20,8 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({
   hideTags = false,
   ...props
 }) => {
-  const hasTagsAndCanBeShown = !hideTags && project.tags;
   const href = project.repoUrl ?? PROJECTS_PATH;
+  const hasTagsAndCanBeShown = !hideTags && project.tags;
 
   return (
     <Link

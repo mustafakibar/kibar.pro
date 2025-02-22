@@ -22,7 +22,7 @@ const CertificateShowcase: React.FC<CertificateShowcaseProps> = ({
       className={cn({ 'pointer-events-none': href == '' })}>
       <ShowcaseContainer
         className={cn(
-          'group hover:bg-primary/20 relative max-w-lg overflow-hidden p-1',
+          'group hover:bg-primary/20 relative w-full overflow-hidden p-1 md:max-w-lg',
           className,
         )}
         {...props}>
@@ -31,8 +31,8 @@ const CertificateShowcase: React.FC<CertificateShowcaseProps> = ({
             className="h-48 w-full scale-125 rounded-lg object-cover object-left-top grayscale transition-all duration-300 ease-in group-hover:-translate-y-1 group-hover:scale-100 group-hover:shadow-lg group-hover:grayscale-0"
             src={certificate.imageUrl}
             alt={certificate.title}
-            width={256}
-            height={256}
+            width={512}
+            height={512}
             placeholder={certificate.blurDataURL ? 'blur' : 'empty'}
             blurDataURL={certificate.blurDataURL}
           />

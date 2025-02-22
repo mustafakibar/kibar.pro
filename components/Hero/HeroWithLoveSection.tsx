@@ -1,33 +1,36 @@
 'use client';
 
+import { cn } from '@/lib/utils';
 import { TypeAnimation } from 'react-type-animation';
 
 const duration = 1500;
-const HeroWithLoveSection: React.FC = () => {
+const HeroWithLoveSection: React.FC<{
+  className?: string;
+}> = ({ className }) => {
   return (
     <TypeAnimation
       preRenderFirstString={true}
       sequence={[
-        'with ❤️ Rust 🦀',
+        'Coding Rust 🦀',
         duration,
-        'with ❤️ Kotlin',
+        'Coding Kotlin',
         duration,
-        'with ❤️ React',
+        'Coding React',
         duration,
-        'with ❤️ React Native',
+        'Coding React Native',
         duration,
-        'with ❤️ Flutter',
+        'Coding Flutter',
         duration,
-        'with ❤️ Docker',
+        'Using Docker',
         duration,
-        'with ❤️ AWS',
+        'Using AWS',
         duration,
       ]}
-      speed={60}
-      className="pointer-events-none touch-none text-lg text-nowrap whitespace-nowrap antialiased"
+      speed={50}
+      className={cn('pointer-events-none touch-none text-nowrap', className)}
       repeat={Infinity}
-      omitDeletionAnimation={true}
-      cursor={false}
+      omitDeletionAnimation={false}
+      cursor={true}
     />
   );
 };

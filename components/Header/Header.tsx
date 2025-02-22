@@ -15,15 +15,14 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import { HeaderProps } from '.';
 import { NavItems } from '../Nav';
-import { ThemeSwitchButton } from '../ThemeSwitchButton';
 import { Button } from '../ui/button';
 
 const Header: React.FC<HeaderProps> = ({ className }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrollGoingDown, setIsScrollGoingDown] = useState(false);
   const { scrollYProgress } = useScroll();
-  const height = useTransform(scrollYProgress, [0.3, 1], [75, 55]);
-  const opacity = useTransform(scrollYProgress, [0.3, 1], [1, 1]);
+  const height = useTransform(scrollYProgress, [0.2, 1], [75, 55]);
+  const opacity = useTransform(scrollYProgress, [0.2, 1], [0.8, 1]);
 
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
     if (latest > 0.1 && !isScrollGoingDown) {
@@ -57,16 +56,16 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             href={HOME_PATH}
             passHref
             className={cn(
-              'from-primary to-secondary inline-block touch-none -space-x-2.5 bg-linear-to-r from-25% to-90% bg-clip-text text-3xl text-transparent hover:cursor-pointer',
+              'from-primary to-secondary inline-block touch-none -space-x-1.5 bg-linear-to-r from-25% to-90% bg-clip-text text-3xl text-transparent hover:cursor-pointer',
               brandFont.className,
             )}
             onClick={setIsMenuOpen.bind(this, false)}>
-            <span>M</span>
-            <span>K</span>
+            <span>m</span>
+            <span className="text-4xl">k</span>
           </Link>
 
           <div className="flex shrink items-center max-md:gap-4 md:flex-row-reverse">
-            {!isMenuOpen && <ThemeSwitchButton />}
+            {/* {!isMenuOpen && <ThemeSwitchButton />} */}
             <motion.div
               whileTap={{ x: -4, opacity: 0.8 }}
               transition={{

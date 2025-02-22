@@ -13,14 +13,15 @@ import Image from 'next/image';
 import React from 'react';
 import { HeroProps } from '.';
 import { Contact } from '../Contact';
+import { Card } from '../ui/card';
 import { HeroWithLoveSection } from './HeroWithLoveSection';
 
 const Hero: React.FC<HeroProps> = ({ className }) => {
   return (
-    <div className={cn('my-[1rem] md:my-[8rem]', className)}>
+    <div className={cn('md:my-[4rem]', className)}>
       <AnimatePresence>
         <motion.div
-          className="flex flex-col items-center justify-around gap-4 md:flex-row lg:justify-between lg:gap-8"
+          className="flex flex-col items-center justify-around gap-4 md:flex-row md:gap-8 lg:justify-between"
           layout
           variants={{
             hidden: { opacity: 0 },
@@ -32,7 +33,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           <div className="flex flex-col justify-center gap-4 antialiased max-md:items-center">
             <div
               className={cn(
-                'flex gap-2 text-5xl text-nowrap lg:pt-10 lg:text-7xl',
+                'flex gap-2 text-3xl text-nowrap md:text-5xl lg:pt-10 lg:text-7xl',
                 heroFont.className,
               )}>
               <span className="text-primary opacity-75">Mustafa</span>
@@ -45,20 +46,23 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
               </span>
             </div>
 
-            <div className="ml-1.5 max-md:text-center">
-              <div className="flex flex-col gap-2 text-2xl">
-                <span>I&apos;m a full stack developer based in Turkey.</span>
-                <span>
-                  I have a passion for shipping high-quality software to
-                  customers.{' '}
+            <div className="flex flex-col gap-2 text-xl max-md:text-center lg:ml-1.5">
+              <div className="flex flex-col max-md:items-center md:max-w-4/5 lg:max-w-2/3">
+                <span className="flex text-justify">
+                  I&apos;m a full stack developer based in Turkey. Having a
+                  passion for shipping high-quality software to customers.
                 </span>
+
+                <Card className="bg-accent/5 my-4 -ml-1 max-h-8 min-h-8 w-fit min-w-16 object-none px-3 py-0.5">
+                  <HeroWithLoveSection className="text-primary/75 font-black" />
+                </Card>
               </div>
 
-              <div className="mt-2 tracking-widest">
-                <HeroWithLoveSection />
-              </div>
+              <Card className="bg-primary/5 py-2 md:hidden">
+                <Contact className="rounded-xl" />
+              </Card>
 
-              <Contact className="mt-8 flex" />
+              <Contact className="hidden md:flex" />
             </div>
           </div>
 
@@ -67,8 +71,8 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
               className="pointer-events-none absolute -top-16 -left-8 hidden size-full scale-x-110 opacity-5 lg:inline-flex dark:invert"
               src="/misc/profile-bg.webp"
               alt="profile image background pattern"
-              width={256}
-              height={256}
+              width={512}
+              height={512}
             />
 
             <ProfileImage
@@ -76,6 +80,8 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
               src={HERO_PROFILE_IMAGE_SRC}
               alt={HERO_PROFILE_IMAGE_ALT}
               blurDataURL={HERO_PROFILE_IMAGE_BLUR_DATA_URL}
+              width={512}
+              height={512}
             />
           </div>
         </motion.div>

@@ -1,5 +1,5 @@
-import { BsEnvelope, BsHeartPulse } from 'react-icons/bs';
-import { FaCheck, FaChevronRight, FaMoon } from 'react-icons/fa';
+import { BsEnvelope } from 'react-icons/bs';
+import { FaCheck, FaChevronRight, FaHeart, FaMoon } from 'react-icons/fa';
 import {
   FaArrowLeft,
   FaArrowRight,
@@ -25,7 +25,7 @@ export {
   BsEnvelope as Envelope,
   FaGithub as Github,
   FaGitlab as Gitlab,
-  BsHeartPulse as HeartPulse,
+  FaHeart as HeartIcon,
   LuMilestone as Milestone,
   FaMoon as Moon,
   FaXTwitter as SocialX,

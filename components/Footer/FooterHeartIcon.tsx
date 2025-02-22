@@ -2,6 +2,7 @@
 
 import { useAnimInMouseEvent } from '@/hooks/useAnimInMouseEvent';
 import { useAnimInView } from '@/hooks/useAnimInView';
+import { HeartIcon } from '@/lib/icons';
 import { cn } from '@/lib/utils';
 import {
   AnimatePresence,
@@ -10,12 +11,11 @@ import {
   useAnimate,
 } from 'motion/react';
 import React, { useEffect, useRef } from 'react';
-import { FaRegHeart } from 'react-icons/fa6';
 import { FooterHeartIconProps } from '.';
 
 const FooterHeartIcon: React.FC<FooterHeartIconProps> = ({
   className,
-  size,
+  size = 32,
   color,
 }) => {
   const [scope, animate] = useAnimate();
@@ -50,12 +50,12 @@ const FooterHeartIcon: React.FC<FooterHeartIconProps> = ({
         className,
       )}>
       <AnimatePresence>
-        <FaRegHeart key="h1" size={Math.max(8, size - 16)} />
+        <HeartIcon key="h1" size={Math.max(8, size - 16)} />
         <motion.div
           ref={scope}
           initial={{ opacity: 0, scale: 1 }}
           className="absolute">
-          <FaRegHeart key="h2" size={size} />
+          <HeartIcon key="h2" size={size} />
         </motion.div>
       </AnimatePresence>
     </div>

@@ -34,6 +34,8 @@ const AboutPage: NextPage = () => {
             src={ABOUT_PROFILE_IMAGE_SRC}
             alt={ABOUT_PROFILE_IMAGE_ALT}
             blurDataURL={ABOUT_PROFILE_IMAGE_BLUR_DATA_URL}
+            width={512}
+            height={512}
           />
 
           <Contact />
@@ -48,11 +50,8 @@ const AboutPage: NextPage = () => {
             titleFont.className,
           )}>
           <Text className="pointer-events-none touch-none text-lg whitespace-pre-line antialiased">
-            <span className="inline-flex text-4xl">
-              Hi 👋 this is Mustafa K
-              <span className="-translate-y-[1px] scale-90 tracking-tighter">
-                i
-              </span>
+            <span className="inline-flex w-full items-center text-4xl max-md:justify-center max-md:text-2xl">
+              Hi 👋 this is Mustafa K<span className="tracking-tighter">i</span>
               BAR
             </span>
             <br />
@@ -89,7 +88,7 @@ const AboutPage: NextPage = () => {
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -20 }}
-          transition={{ duration: 3, ease: 'anticipate' }}
+          transition={{ duration: 1.5, ease: 'anticipate' }}
           viewport={{ once: true }}>
           <SectionHeading
             title={'Education'}
@@ -144,7 +143,7 @@ const AboutPage: NextPage = () => {
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: 20 }}
-          transition={{ duration: 3, ease: 'anticipate' }}
+          transition={{ duration: 1.5, ease: 'anticipate' }}
           viewport={{ once: true }}>
           <SectionHeading
             title="Environment"
@@ -168,7 +167,7 @@ const AboutPage: NextPage = () => {
             </div>
 
             <div>
-              <ul className="[&>*:nth-child(odd)]:bg-foreground/5 flex flex-col gap-4 text-center font-bold *:rounded-lg *:px-3 *:py-2">
+              <ul className="[&>*:nth-child(odd)]:bg-foreground/5 flex flex-col gap-4 text-center font-semibold *:rounded-lg *:px-3 *:py-2">
                 <li>
                   Tischkönig Flex v2 Adjustable
                   <span className="text-highlight">Desk</span>

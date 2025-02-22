@@ -4,7 +4,7 @@ type FooterProps = {
 
 type FooterHeartIconProps = {
   className?: string;
-  size: number;
+  size?: number;
   color: string;
 };
 
