@@ -6,7 +6,7 @@ import { RESUME_PATH } from './common/paths';
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Redirect /cv and /resume pathname to the 'RESUME_PATH'
+  // Redirect /cv or /resume pathname to the 'RESUME_PATH'
   if (pathname.startsWith('/cv') || pathname.startsWith('/resume')) {
     return NextResponse.redirect(new URL(RESUME_PATH, request.url));
   }
@@ -18,7 +18,7 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // match all routes except static files and APIs
+    // match all routes except api or static files
     '/((?!api|_next/static|_next/image|favicon.ico).*)',
   ],
 };
