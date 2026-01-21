@@ -6,7 +6,7 @@ const SNIPPETS_PATH = '/snippets';
 const CERTIFICATES_PATH = '/certificates';
 // TODO env variable
 const RESUME_PATH =
-  'https://disk.yandex.com.tr/i/Vw8LYXIrS02taA';
+  'https://drive.google.com/file/d/1JiFtl1BGmENDRV5OV3MpcaydRlGOS-2M';
 
 export {
   ABOUT_PATH,
