@@ -21,7 +21,7 @@ export const ShowcaseContainer: React.FC<WithChildren> = ({
 }) => (
   <div
     className={cn(
-      'ring-primary/20 hover:ring-primary dark:ring-primary/30 dark:hover:ring-primary translate-x-0 rounded-lg p-3 ring-2 duration-500 ease-out hover:gap-8',
+      'group ring-primary/20 hover:ring-primary/80 dark:ring-primary/30 dark:hover:ring-primary hover:shadow-primary/10 relative rounded-lg p-3 ring-1 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-md',
       className,
     )}
     {...props}>

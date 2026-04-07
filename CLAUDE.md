@@ -24,11 +24,12 @@ Modernization pass complete. Strict nonce-based CSP, full SEO, branded error pag
 ## Next steps
 
 1. Optional: privacy-friendly analytics (Plausible/Umami) with CSP allow-list.
-2. Optional: per-route OG image variants (about, projects, certificates).
-3. Optional: revisit Showcase card hover/reveal motion.
+2. Optional: visual rhythm/typography sweep on About page (long sections feel dense).
 
 ## Completed
 
+- Per-route OG image variants for `/about`, `/projects`, `/certificates`. Shared rendering helper in `app/_og/og-template.tsx` (eyebrow + title + subtitle template), keeping each route file ~10 lines.
+- Polished `ShowcaseContainer` hover state: subtle `-translate-y-0.5` lift, `ring-1`, primary-tinted shadow, 300ms ease-out. Removed leftover `hover:gap-8` from earlier experiments.
 - Added dynamic Open Graph image route at `app/opengraph-image.tsx` (1200×630, edge runtime, gradient + brand layout).
 - Refined Header: replaced state-flag shadow + opacity tween with a single backdrop-blur layer whose opacity is bound to scrollYProgress, sleeker entrance (-16y, 0.5s easeOut), border-bottom only when scrolled or menu open. Removed unused `AnimatePresence` mount thrash on the wrapper.
 - Migrated CSP to a strict, nonce-based policy via `middleware.ts`. Each HTML response gets a fresh `nonce`, propagated through `x-nonce` request header. Layout reads it via `headers()` and applies it to JSON-LD. `script-src` now uses `'strict-dynamic'` with the nonce in production; dev keeps `'unsafe-eval'` for HMR. Removed CSP from `next.config.ts` to avoid duplication.
