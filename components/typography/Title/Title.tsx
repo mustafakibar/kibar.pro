@@ -1,6 +1,11 @@
-import { titleFont } from '@/app/(main)/fonts';
+import { titleFont } from '@/app/fonts';
 import { cn } from '@/lib/utils';
-import { TitleProps } from '..';
+import React from 'react';
+
+export type TitleProps = {
+  className?: string;
+  children: React.ReactNode;
+};
 
 const Title: React.FC<TitleProps> = ({ className, children, ...props }) => {
   return (

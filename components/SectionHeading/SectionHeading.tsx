@@ -1,6 +1,12 @@
 import { cn } from '@/lib/utils';
-import { SectionHeadingProps } from '.';
 import { Heading, Subhead } from '../typography';
+export type SectionHeadingProps = {
+  className?: string;
+  title: string;
+  titleWrapperClassName?: string;
+  description?: string;
+  icon?: React.ReactNode;
+};
 
 const SectionHeading: React.FC<SectionHeadingProps> = ({
   className,

@@ -1,5 +1,3 @@
-import { GridWrapper } from './GridWrapper';
-import { GridWrapperProps } from './type';
-
+import { GridWrapper, type GridWrapperProps } from './GridWrapper';
 export { GridWrapper };
 export type { GridWrapperProps };

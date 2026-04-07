@@ -1,7 +1,10 @@
 import { Milestone } from '@/lib/icons';
 import { cn } from '@/lib/utils';
 import React from 'react';
-import { TimelineItemProps } from '.';
+export type TimelineItemProps = {
+  className?: string;
+  children: React.ReactNode;
+};
 
 const TimelineItem: React.FC<TimelineItemProps> = ({ children, className }) => {
   return (

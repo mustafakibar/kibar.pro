@@ -1,6 +1,11 @@
-import { headingFont } from '@/app/(main)/fonts';
+import { headingFont } from '@/app/fonts';
 import { cn } from '@/lib/utils';
-import { HeadingProps } from '..';
+import React from 'react';
+
+export type HeadingProps = {
+  className?: string;
+  children: React.ReactNode;
+};
 
 const Heading: React.FC<HeadingProps> = ({ className, children }) => {
   return (

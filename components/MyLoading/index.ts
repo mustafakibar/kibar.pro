@@ -1,5 +1,3 @@
-import { MyLoading } from './MyLoading';
-import { MyLoadingProps } from './type';
-
+import { MyLoading, type MyLoadingProps } from './MyLoading';
 export { MyLoading };
 export type { MyLoadingProps };

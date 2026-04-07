@@ -1,5 +1,3 @@
-import { Hero } from './Hero';
-import { HeroProps } from './type';
-
+import { Hero, type HeroProps } from './Hero';
 export { Hero };
 export type { HeroProps };

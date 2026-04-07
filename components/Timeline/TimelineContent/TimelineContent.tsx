@@ -1,5 +1,8 @@
 import { cn } from '@/lib/utils';
-import { TimelineContentProps } from '.';
+export type TimelineContentProps = {
+  className?: string;
+  children: React.ReactNode;
+};
 
 const TimelineContent: React.FC<TimelineContentProps> = ({
   children,

@@ -1,5 +1,8 @@
 import { cn } from '@/lib/utils';
-import { TimelineTitleProps } from '.';
+export type TimelineTitleProps = {
+  className?: string;
+  children: React.ReactNode;
+};
 
 const TimelineTitle: React.FC<TimelineTitleProps> = ({
   children,

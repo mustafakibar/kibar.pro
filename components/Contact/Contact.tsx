@@ -1,8 +1,17 @@
 import { Envelope, Github, SocialX } from '@/lib/icons';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
-import { ContactProps } from '.';
-import { ContactItemProps } from './type';
+import { IconType } from 'react-icons/lib';
+
+export type ContactProps = {
+  className?: string;
+};
+
+export type ContactItemProps = {
+  icon: IconType;
+  href: string;
+  className?: string;
+};
 
 const contactItemList: ContactItemProps[] = [
   { icon: Github, href: 'https://github.com/mustafakibar' },

@@ -1,5 +1,3 @@
-import { ViewAllButton } from './ViewAllButton';
-import { ViewAllButtonProps } from './type';
-
+import { ViewAllButton, type ViewAllButtonProps } from './ViewAllButton';
 export { ViewAllButton };
 export type { ViewAllButtonProps };

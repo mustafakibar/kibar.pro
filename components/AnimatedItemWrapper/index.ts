@@ -1,5 +1,4 @@
-import { AnimatedItemWrapper } from './AnimatedItemWrapper';
-import type { AnimatedItemWrapperProps } from './type';
-
-export { AnimatedItemWrapper };
-export type { AnimatedItemWrapperProps };
+export {
+  AnimatedItemWrapper,
+  type AnimatedItemWrapperProps,
+} from './AnimatedItemWrapper';

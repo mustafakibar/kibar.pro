@@ -1,5 +1,6 @@
-import { ThemeSwitchButton } from './ThemeSwitchButton';
-import { ThemeSwitchButtonProps } from './type';
-
+import {
+  ThemeSwitchButton,
+  type ThemeSwitchButtonProps,
+} from './ThemeSwitchButton';
 export { ThemeSwitchButton };
 export type { ThemeSwitchButtonProps };

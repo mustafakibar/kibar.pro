@@ -1,5 +1,6 @@
-import { CertificateShowcase } from './CertificateShowcase';
-import { CertificateShowcaseProps } from './type';
-
+import {
+  CertificateShowcase,
+  type CertificateShowcaseProps,
+} from './CertificateShowcase';
 export { CertificateShowcase };
 export type { CertificateShowcaseProps };

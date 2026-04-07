@@ -1,4 +1,8 @@
-import { ProjectViewProps } from '.';
+import { Project } from '..';
+
+export type ProjectViewProps = {
+  project: Project;
+};
 
 const ProjectView: React.FC<ProjectViewProps> = ({ project }) => {
   return (

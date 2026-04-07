@@ -1,5 +1,8 @@
 import { cn } from '@/lib/utils';
-import { GridWrapperProps } from '.';
+export type GridWrapperProps = {
+  className?: string;
+  children: React.ReactNode;
+};
 
 const GridWrapper: React.FC<GridWrapperProps> = ({ className, children }) => {
   return (

@@ -3,7 +3,7 @@
 import { cn } from '@/lib/utils';
 import { motion, useMotionValueEvent, useScroll } from 'motion/react';
 import { useEffect, useRef, useState } from 'react';
-import { TopProgressBarProps } from '.';
+export type TopProgressBarProps = {};
 
 const TopProgressBar: React.FC<TopProgressBarProps> = () => {
   const [enableHideAnim, setEnableHideAnim] = useState(false);

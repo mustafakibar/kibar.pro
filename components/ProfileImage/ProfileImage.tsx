@@ -1,7 +1,15 @@
-import { ProfileImageProps } from '@/components/ProfileImage/type';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import React from 'react';
+
+export type ProfileImageProps = {
+  src: string;
+  alt: string;
+  className?: string;
+  width?: number;
+  height?: number;
+  blurDataURL?: string;
+};
 
 const ProfileImage: React.FC<ProfileImageProps> = ({
   className,

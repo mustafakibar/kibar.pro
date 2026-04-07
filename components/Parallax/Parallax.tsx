@@ -1,11 +1,16 @@
 'use client';
 
-import { useAnimInMouseEvent } from '@/hooks/useAnimInMouseEvent';
-import { useAnimInView } from '@/hooks/useAnimInView';
+import { useAnimationInView } from '@/hooks/useAnimationInView';
+import { useAnimationOnHover } from '@/hooks/useAnimationOnHover';
 import { cn } from '@/lib/utils';
 import { AnimationPlaybackControls, motion, useAnimate } from 'motion/react';
 import React, { useEffect, useRef } from 'react';
-import { ParallaxProps } from '.';
+export type ParallaxProps = {
+  className?: string;
+  children: React.ReactNode;
+  durationInMillis: number;
+  reverse?: boolean;
+};
 
 // thanks to https://codepen.io/ykadosh/pen/KKezJzz
 
@@ -18,8 +23,8 @@ const Parallax: React.FC<ParallaxProps> = ({
 }) => {
   const [scope, animate] = useAnimate();
   const controlsRef = useRef<AnimationPlaybackControls>(null);
-  useAnimInView(scope, controlsRef);
-  useAnimInMouseEvent(scope, controlsRef);
+  useAnimationInView(scope, controlsRef);
+  useAnimationOnHover(scope, controlsRef);
 
   useEffect(() => {
     controlsRef.current = animate(

@@ -1,5 +1,3 @@
-import { NavItem } from './NavItem';
-import { NavItemProps } from './type';
-
+import { NavItem, type NavItemProps } from './NavItem';
 export { NavItem };
 export type { NavItemProps };

@@ -6,7 +6,12 @@ import {
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
-import { CertificateShowcaseProps } from '.';
+import type { Certificate } from '..';
+
+export type CertificateShowcaseProps = {
+  certificate: Certificate;
+  className?: string;
+};
 
 const CertificateShowcase: React.FC<CertificateShowcaseProps> = ({
   certificate,

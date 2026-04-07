@@ -1,5 +1,3 @@
-import { Parallax } from './Parallax';
-import { ParallaxProps } from './type';
-
+import { Parallax, type ParallaxProps } from './Parallax';
 export { Parallax };
 export type { ParallaxProps };

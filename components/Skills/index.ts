@@ -1,5 +1,3 @@
-import { ParallaxSkills } from './ParallaxSkills';
-import { ParallaxSkillsProps } from './type';
-
+import { ParallaxSkills, type ParallaxSkillsProps } from './ParallaxSkills';
 export { ParallaxSkills };
 export type { ParallaxSkillsProps };

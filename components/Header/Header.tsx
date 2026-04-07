@@ -1,7 +1,7 @@
 'use client';
 
-import { brandFont } from '@/app/(main)/fonts';
-import { HOME_PATH } from '@/common/paths';
+import { brandFont } from '@/app/fonts';
+import { HOME_PATH } from '@/lib/constants/paths';
 import { BurgerMenu, BurgerMenuOpened } from '@/lib/icons';
 import { cn } from '@/lib/utils';
 import {
@@ -13,9 +13,12 @@ import {
 } from 'motion/react';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { HeaderProps } from '.';
 import { NavItems } from '../Nav';
 import { Button } from '../ui/button';
+
+export type HeaderProps = {
+  className?: string;
+};
 
 const Header: React.FC<HeaderProps> = ({ className }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -59,7 +62,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               'from-primary to-secondary inline-block touch-none -space-x-1.5 bg-linear-to-r from-25% to-90% bg-clip-text text-3xl text-transparent hover:cursor-pointer',
               brandFont.className,
             )}
-            onClick={setIsMenuOpen.bind(this, false)}>
+            onClick={() => setIsMenuOpen(false)}>
             <span>m</span>
             <span className="text-4xl">k</span>
           </Link>
@@ -76,7 +79,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
                 className="md:hidden"
                 variant="ghost"
                 size="icon"
-                onClick={setIsMenuOpen.bind(this, !isMenuOpen)}>
+                onClick={() => setIsMenuOpen((open) => !open)}>
                 {isMenuOpen ? (
                   <BurgerMenuOpened size={32} />
                 ) : (
@@ -101,7 +104,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               <nav className="bg-background absolute left-0 z-10 h-screen w-full py-6 opacity-[.98]">
                 <NavItems
                   isMobile={isMenuOpen}
-                  onItemClicked={setIsMenuOpen.bind(this, false)}
+                  onItemClicked={() => setIsMenuOpen(false)}
                 />
               </nav>
             </motion.div>

@@ -20,7 +20,7 @@ const NavItems: React.FC<{
           { 'px-2': !isMobile, 'gap-0': isMobile },
           className,
         )}>
-        {NAV_ITEMS.filter(({ enabled = true }) => enabled).map((item, i) => (
+        {NAV_ITEMS.map((item, i) => (
           <motion.li
             key={item.text.concat(item.href)}
             className={cn({
@@ -45,7 +45,7 @@ const NavItems: React.FC<{
               href={item.href}
               blank={item._blank}
               active={pathname === item.href}
-              onClick={onItemClicked?.bind(this, item.text, item.href)}
+              onClick={() => onItemClicked?.(item.text, item.href)}
             />
           </motion.li>
         ))}

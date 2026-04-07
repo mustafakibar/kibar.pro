@@ -1,7 +1,7 @@
 'use client';
 
-import { useAnimInMouseEvent } from '@/hooks/useAnimInMouseEvent';
-import { useAnimInView } from '@/hooks/useAnimInView';
+import { useAnimationInView } from '@/hooks/useAnimationInView';
+import { useAnimationOnHover } from '@/hooks/useAnimationOnHover';
 import { HeartIcon } from '@/lib/icons';
 import { cn } from '@/lib/utils';
 import {
@@ -11,7 +11,7 @@ import {
   useAnimate,
 } from 'motion/react';
 import React, { useEffect, useRef } from 'react';
-import { FooterHeartIconProps } from '.';
+import type { FooterHeartIconProps } from './Footer';
 
 const FooterHeartIcon: React.FC<FooterHeartIconProps> = ({
   className,
@@ -20,8 +20,8 @@ const FooterHeartIcon: React.FC<FooterHeartIconProps> = ({
 }) => {
   const [scope, animate] = useAnimate();
   const controlsRef = useRef<AnimationPlaybackControls>(null);
-  useAnimInView(scope, controlsRef);
-  useAnimInMouseEvent(scope, controlsRef);
+  useAnimationInView(scope, controlsRef);
+  useAnimationOnHover(scope, controlsRef);
 
   useEffect(() => {
     controlsRef.current = animate(

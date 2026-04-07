@@ -16,11 +16,20 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  {
+    ignores: [
+      '.next/**',
+      'node_modules/**',
+      'next-env.d.ts',
+      'public/**',
+      '.husky/**',
+      'bun.lock',
+    ],
+  },
   ...compat.extends(
     'next/core-web-vitals',
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
-    // 'plugin:tailwindcss/recommended', // lint broken after tailwindcss v4 upgrade
     'prettier',
   ),
   {

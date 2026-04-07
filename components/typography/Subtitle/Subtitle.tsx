@@ -1,10 +1,19 @@
 import { cn } from '@/lib/utils';
-import { SubtitleProps } from '..';
+import React from 'react';
 
-const Subtitle: React.FC<SubtitleProps> = ({ children, ...props }) => {
+export type SubtitleProps = {
+  className?: string;
+  children: React.ReactNode;
+};
+
+const Subtitle: React.FC<SubtitleProps> = ({
+  className,
+  children,
+  ...props
+}) => {
   return (
     <h5
-      className={cn('text-md tracking-tight text-muted-foreground')}
+      className={cn('text-md text-muted-foreground tracking-tight', className)}
       {...props}>
       {children}
     </h5>

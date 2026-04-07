@@ -1,5 +1,8 @@
 import { cn } from '@/lib/utils';
-import { TimelineDescriptionProps } from '.';
+export type TimelineDescriptionProps = {
+  className?: string;
+  children: React.ReactNode;
+};
 
 const TimelineDescription: React.FC<TimelineDescriptionProps> = ({
   children,
@@ -8,7 +11,7 @@ const TimelineDescription: React.FC<TimelineDescriptionProps> = ({
   return (
     <span
       className={cn(
-        'mb-2 block text-sm font-normal leading-none text-gray-400 dark:text-gray-500',
+        'mb-2 block text-sm leading-none font-normal text-gray-400 dark:text-gray-500',
         className,
       )}>
       {children}

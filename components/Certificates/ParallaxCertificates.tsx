@@ -3,6 +3,17 @@ import Image from 'next/image';
 import { Parallax } from '../Parallax';
 import { Card } from '../ui/card';
 import { CERTIFICATE_ITEMS } from './constant';
+export type ParallaxCertificatesProps = {
+  className?: string;
+};
+
+export type Certificate = {
+  title: string;
+  description: string;
+  imageUrl?: string;
+  blurDataURL?: string;
+  date: string;
+};
 
 const ParallaxCertificates = () => {
   return (

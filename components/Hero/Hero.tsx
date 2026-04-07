@@ -1,35 +1,33 @@
-import { heroFont } from '@/app/(main)/fonts';
+import { heroFont } from '@/app/fonts';
+import { ProfileImage } from '@/components/ProfileImage';
 import {
   HERO_PROFILE_IMAGE_ALT,
   HERO_PROFILE_IMAGE_BLUR_DATA_URL,
   HERO_PROFILE_IMAGE_SRC,
-} from '@/common/image';
-import { ProfileImage } from '@/components/ProfileImage';
+} from '@/lib/constants/image';
 
 import { cn } from '@/lib/utils';
 import { AnimatePresence } from 'motion/react';
 import * as motion from 'motion/react-client';
 import Image from 'next/image';
 import React from 'react';
-import { HeroProps } from '.';
 import { Contact } from '../Contact';
 import { Card } from '../ui/card';
 import { HeroWithLoveSection } from './HeroWithLoveSection';
 
+export type HeroProps = {
+  className?: string;
+};
+
 const Hero: React.FC<HeroProps> = ({ className }) => {
   return (
-    <div className={cn('md:my-[4rem]', className)}>
+    <div className={cn('md:my-16', className)}>
       <AnimatePresence>
         <motion.div
-          className="flex flex-col items-center justify-around gap-4 md:flex-row md:gap-8 lg:justify-between"
-          layout
-          variants={{
-            hidden: { opacity: 0 },
-            visible: { y: [16, 0], opacity: [0, 1] },
-          }}
-          initial="hidden"
-          animate="visible"
-          transition={{ duration: 3, ease: 'easeInOut' }}>
+          className="flex flex-col items-center justify-around gap-6 md:flex-row md:gap-10 lg:justify-between"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}>
           <div className="flex flex-col justify-center gap-4 antialiased max-md:items-center">
             <div
               className={cn(
@@ -49,8 +47,9 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             <div className="flex flex-col gap-2 text-xl max-md:text-center lg:ml-1.5">
               <div className="flex flex-col max-md:items-center md:max-w-4/5 lg:max-w-2/3">
                 <span className="flex text-justify">
-                  I&apos;m a full stack developer based in Turkey. Having a
-                  passion for shipping high-quality software to customers.
+                  Senior full-stack engineer based in Istanbul. I design and
+                  ship reliable, performant products — from API to UI — with a
+                  focus on clean architecture and strong developer experience.
                 </span>
 
                 <Card className="bg-accent/5 my-4 -ml-1 max-h-8 min-h-8 w-fit min-w-16 object-none px-3 py-0.5">

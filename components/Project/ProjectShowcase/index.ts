@@ -1,5 +1,3 @@
-import { ProjectShowcase } from './ProjectShowcase';
-import { ProjectShowcaseProps } from './type';
-
+import { ProjectShowcase, type ProjectShowcaseProps } from './ProjectShowcase';
 export { ProjectShowcase };
 export type { ProjectShowcaseProps };

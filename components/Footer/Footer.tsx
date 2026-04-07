@@ -1,5 +1,16 @@
 import { cn } from '@/lib/utils';
-import { FooterHeartIcon, FooterProps } from '.';
+import React from 'react';
+import { FooterHeartIcon } from './FooterHeartIcon';
+
+export type FooterProps = {
+  className?: string;
+};
+
+export type FooterHeartIconProps = {
+  className?: string;
+  size?: number;
+  color: string;
+};
 
 const Footer: React.FC<FooterProps> = ({ className }) => {
   return (

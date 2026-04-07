@@ -1,7 +1,11 @@
 import { cn } from '@/lib/utils';
 import React from 'react';
-import { MyLoadingProps } from '.';
 import { Skeleton } from '../ui/skeleton';
+export type MyLoadingProps = {
+  className?: string;
+  text?: string;
+  children?: React.ReactNode;
+};
 
 const MyLoading: React.FC<MyLoadingProps> = ({ className, text, children }) => {
   return (

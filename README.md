@@ -1,44 +1,86 @@
-# Hi, Welcome My Web Portfolio Project
+# kibar.pro
 
-## Overview
+Personal portfolio of **Mustafa Kibar** — senior full-stack engineer based in Istanbul.
 
-This project is a personal web portfolio built using Next.js. It showcases my skills, projects, and experiences in web development.
+Live: [kibar.pro](https://kibar.pro)
 
-## Features
+## Stack
 
-- **Responsive Design**: Optimized for various devices and screen sizes.
-- **Dynamic Content**: Utilizes Next.js for server-side rendering and static site generation.
-- **Interactive UI**: Includes animations and interactive elements to enhance user experience.
-- **SEO Friendly**: Implemented best practices for search engine optimization.
+- **Framework:** Next.js 15 (App Router, React Server Components, Turbopack)
+- **UI:** React 19, Tailwind CSS v4, Radix UI primitives, shadcn/ui-style components
+- **Motion:** [`motion`](https://motion.dev) (Framer Motion successor)
+- **Theme:** `next-themes`
+- **Tooling:** TypeScript 5, ESLint 9, Prettier, Husky, lint-staged, commitlint
+- **Compiler:** React Compiler (experimental)
+- **Package manager:** Bun (`bun.lock` checked in)
 
-## Technologies Used
+## Project structure
 
-- **Next.js**: Framework for server-rendered React applications.
-- **React**: JavaScript library for building user interfaces.
-- **Tailwind CSS**: Utility-first CSS framework for styling.
+```
+app/                   App Router routes (home, about, projects, certificates)
+  layout.tsx           Root layout, metadata, fonts, providers
+  sitemap.ts           Sitemap generator
+  robots.ts            robots.txt generator
+components/            Feature components and ui/ primitives
+env/                   Typed environment variable access
+hooks/                 Reusable React hooks
+lib/
+  constants/           Paths, headers, image and cache-tag constants
+  data/                Server-only data fetchers (cached)
+  github.ts            GitHub API client
+  utils.ts             Shared utilities (cn, ...)
+public/                Static assets
+middleware.ts          Path-aware redirects + request headers
+next.config.ts         Security headers, image config, React Compiler
+```
 
-## Installation
+## Getting started
 
-1. Clone the repository
+Requirements: Node.js 20+ and [Bun](https://bun.sh) (or npm/pnpm).
 
-2. Navigate to the project directory
+```bash
+bun install
+cp .env.example .env.local   # then fill in values
+bun run dev
+```
 
-3. Run the development server
+Open [http://localhost:3000](http://localhost:3000).
 
-   ```bash
-   npm run dev
-   ```
+## Environment variables
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to view the portfolio.
+See [`.env.example`](./.env.example).
 
-## Contributing
+| Variable               | Required | Purpose                                              |
+| ---------------------- | -------- | ---------------------------------------------------- |
+| `GITHUB_USERNAME`      | optional | GitHub user whose repos populate the projects page   |
+| `GITHUB_API_KEY`       | optional | PAT to raise GitHub API rate limits                  |
+| `GITHUB_API_VER`       | optional | GitHub API version (defaults to `2022-11-28`)        |
+| `NEXT_PUBLIC_SITE_URL` | optional | Canonical site URL (defaults to `https://kibar.pro`) |
 
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+## Scripts
+
+| Script               | Description                     |
+| -------------------- | ------------------------------- |
+| `bun run dev`        | Start dev server with Turbopack |
+| `bun run build`      | Production build                |
+| `bun run start`      | Run production build            |
+| `bun run lint`       | ESLint                          |
+| `bun run typecheck`  | `tsc --noEmit`                  |
+| `bun run format`     | Prettier check                  |
+| `bun run format:fix` | Prettier write                  |
+
+## Security & quality
+
+- Strict security headers (HSTS, X-Frame-Options, Referrer-Policy, Permissions-Policy, X-Content-Type-Options) configured in `next.config.ts`.
+- `poweredByHeader` disabled.
+- Server-only data fetchers marked with `'server-only'`.
+- Optimized images via `next/image` with allow-listed remote patterns.
+- Husky + lint-staged + commitlint enforce conventional commits and formatting.
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+[MIT](./LICENSE)
 
 ## Contact
 
-For any inquiries, please reach out to me at [mustafa@kibar.pro](mailto:mustafa@kibar.pro).
+[mustafa@kibar.pro](mailto:mustafa@kibar.pro)

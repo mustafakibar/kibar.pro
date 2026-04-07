@@ -2,10 +2,16 @@
 
 import { Github, Gitlab } from '@/lib/icons';
 import { openInNewTab } from '@/lib/utils';
-import React from 'react';
-import { RepoIconPros } from '.';
+import React, { ReactNode } from 'react';
 
-const RepoIcon: React.FC<RepoIconPros> = ({
+export type RepoIconProps = {
+  className?: string;
+  url: string;
+  customIcon?: ReactNode;
+  customTooltipText?: string;
+};
+
+const RepoIcon: React.FC<RepoIconProps> = ({
   url,
   className,
   customIcon,

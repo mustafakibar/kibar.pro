@@ -1,9 +1,15 @@
 'use client';
 
-import { HOME_PATH } from '@/common/paths';
+import { HOME_PATH } from '@/lib/constants/paths';
 import { cn } from '@/lib/utils';
 import { useRouter } from 'next/navigation';
-import { TagItemProps } from '..';
+import React from 'react';
+
+export type TagItemProps = {
+  name: string;
+  className?: string;
+  clickable?: boolean;
+};
 
 const TagItem: React.FC<TagItemProps> = ({
   name,

@@ -1,8 +1,15 @@
-import { navFont } from '@/app/(main)/fonts';
+import { navFont } from '@/app/fonts';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import React from 'react';
-import { NavItemProps } from '.';
+export type NavItemProps = {
+  text: string;
+  href: string;
+  blank?: boolean;
+  active?: boolean;
+  className?: string;
+  onClick?: (e: React.MouseEvent) => void;
+};
 
 const NavItem: React.FC<NavItemProps> = ({
   className,

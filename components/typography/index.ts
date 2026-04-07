@@ -1,10 +1,10 @@
 export { Heading } from './Heading/Heading';
-export type { HeadingProps } from './Heading/type';
+export type { HeadingProps } from './Heading/Heading';
 export { Subhead } from './Subhead/Subhead';
-export type { SubheadProps } from './Subhead/type';
+export type { SubheadProps } from './Subhead/Subhead';
 export { Subtitle } from './Subtitle/Subtitle';
-export type { SubtitleProps } from './Subtitle/type';
+export type { SubtitleProps } from './Subtitle/Subtitle';
 export { Text } from './Text/Text';
-export type { TextProps } from './Text/type';
+export type { TextProps } from './Text/Text';
 export { Title } from './Title/Title';
-export type { TitleProps } from './Title/type';
+export type { TitleProps } from './Title/Title';

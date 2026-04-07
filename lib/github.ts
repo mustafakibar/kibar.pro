@@ -1,6 +1,6 @@
 import env from '@/env';
 
-type GithubRepo = {
+export type GithubRepo = {
   id: number;
   name: string;
   html_url: string;
@@ -10,27 +10,29 @@ type GithubRepo = {
   topics: string[];
 };
 
-const getGithubRepos = async () => {
-  const repos: GithubRepo[] = [];
+const getGithubRepos = async (): Promise<GithubRepo[]> => {
   const username = env.GITHUB_USERNAME;
+  if (!username) return [];
 
-  if (username != null) {
-    const response = await fetch(
-      `https://api.github.com/users/${username}/repos`,
-      {
-        headers: {
-          UserAgent: env.GITHUB_USERNAME,
-          Authorization: `Bearer ${env.GITHUB_API_KEY}`,
-          Accept: 'application/vnd.github.v3+json',
-          'X-GitHub-Api-Version': env.GITHUB_API_VER,
-        } as unknown as HeadersInit,
-      },
-    );
-
-    return (await response.json()) as GithubRepo[];
+  const headers: Record<string, string> = {
+    'User-Agent': username,
+    Accept: 'application/vnd.github.v3+json',
+    'X-GitHub-Api-Version': env.GITHUB_API_VER,
+  };
+  if (env.GITHUB_API_KEY) {
+    headers.Authorization = `Bearer ${env.GITHUB_API_KEY}`;
   }
 
-  return repos;
+  const response = await fetch(
+    `https://api.github.com/users/${username}/repos`,
+    {
+      headers,
+    },
+  );
+  if (!response.ok) {
+    throw new Error(`GitHub API responded ${response.status}`);
+  }
+  return (await response.json()) as GithubRepo[];
 };
 
 export { getGithubRepos };

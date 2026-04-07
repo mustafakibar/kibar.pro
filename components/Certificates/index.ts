@@ -1,7 +1,13 @@
-import { CertificateView } from './CertificateView';
-import { CertificateViewProps } from './CertificateView/type';
-import { ParallaxCertificates } from './ParallaxCertificates';
-import { Certificate, ParallaxCertificatesProps } from './type';
-
-export { CertificateView, ParallaxCertificates };
-export type { Certificate, CertificateViewProps, ParallaxCertificatesProps };
+export {
+  CertificateShowcase,
+  type CertificateShowcaseProps,
+} from './CertificatesShowcase/CertificateShowcase';
+export {
+  CertificateView,
+  type CertificateViewProps,
+} from './CertificateView/CertificateView';
+export {
+  ParallaxCertificates,
+  type Certificate,
+  type ParallaxCertificatesProps,
+} from './ParallaxCertificates';

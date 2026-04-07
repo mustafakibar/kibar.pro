@@ -1,5 +1,3 @@
-import { Header } from './Header';
-import { HeaderProps } from './type';
-
+import { Header, type HeaderProps } from './Header';
 export { Header };
 export type { HeaderProps };

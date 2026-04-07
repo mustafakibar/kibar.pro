@@ -1,5 +1,12 @@
 import { cn } from '@/lib/utils';
-import { TagItem, TagItemsProps } from '..';
+import React from 'react';
+import { TagItem } from '../TagItem/TagItem';
+
+export type TagItemsProps = {
+  className?: string;
+  tags: string[] | null | undefined;
+  tagItemClassName?: string;
+};
 
 const TagItems: React.FC<TagItemsProps> = ({
   className,

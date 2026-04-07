@@ -1,6 +1,10 @@
 import * as motion from 'motion/react-client';
 import React from 'react';
-import { AnimatedItemWrapperProps } from '.';
+export type AnimatedItemWrapperProps = {
+  className?: string;
+  delay?: number;
+  children: React.ReactNode;
+};
 
 const AnimatedItemWrapper: React.FC<AnimatedItemWrapperProps> = ({
   className,

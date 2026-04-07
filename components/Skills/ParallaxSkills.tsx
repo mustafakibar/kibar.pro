@@ -3,7 +3,13 @@ import React from 'react';
 import { FaAws, FaDocker, FaReact, FaRust } from 'react-icons/fa';
 import { TbBrandFlutter, TbBrandKotlin } from 'react-icons/tb';
 import { Parallax } from '../Parallax';
-import { ParallaxSkillsProps } from './type';
+export type ParallaxSkillsProps = {
+  className?: string;
+  iconSize?: number;
+  iconOpacity?: number;
+  animationReverse?: boolean;
+  animationDurationInMillis?: number;
+};
 
 const ParallaxSkills: React.FC<ParallaxSkillsProps> = ({
   className,

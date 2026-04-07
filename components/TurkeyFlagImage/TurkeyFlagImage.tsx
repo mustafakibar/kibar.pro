@@ -1,22 +1,32 @@
-import { TurkeyFlagImageProps } from '@/components/TurkeyFlagImage/type';
+import {
+  TURKEY_FLAG_IMAGE_ALT,
+  TURKEY_FLAG_IMAGE_BLUR_DATA_URL,
+  TURKEY_FLAG_IMAGE_SRC,
+} from '@/lib/constants/image';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import React from 'react';
 
+export type TurkeyFlagImageProps = {
+  className?: string;
+  width?: number;
+  height?: number;
+};
+
 const TurkeyFlagImage: React.FC<TurkeyFlagImageProps> = ({
   className,
-  width,
-  height,
+  width = 48,
+  height = 48,
 }) => {
   return (
     <Image
       className={cn('inline-flex', className)}
-      src="/misc/turkey_flag.webp"
-      alt="Turkey Flag"
-      width={width || 48}
-      height={height || 48}
+      src={TURKEY_FLAG_IMAGE_SRC}
+      alt={TURKEY_FLAG_IMAGE_ALT}
+      width={width}
+      height={height}
       placeholder="blur"
-      blurDataURL="data:image/webp;base64,UklGRlIDAABXRUJQVlA4WAoAAAAgAAAAngAAaQAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZWUDggZAEAADAMAJ0BKp8AagA+7WytUj+2LiKpNZqT8B2JZW7d1f5JkwjusAjuxpBPDPiexZf6n0SEfb8urP+g27hiWX/Kfe7jqg7kOEx8bengdgo6LzsKHUDfc2gXM67L898lDdKzXXF3yq0Qt/DFhAAA/tGGT2/WMJmwb/+XD/sw/gFj9hFBUia8fobqJaRrt/VdK5rx5IgZwAiMZSPWlnx/GM12XvX/TA8Pxl4gwcf6MPvFuFTX7A5xeDnqrty1xDwYd0JWUUHoQG8Sdu2WEpmDsU8TsvsIiXJaX5wabt3bjIW+NJnGoos1IJ/8c20F2GkGBv04/41YciUdzMfu4BZr5uaBNRTs/xO0ExEEcrlNqJ+nSz5VnDYw0pJ3wOnb7XP4AsJTGcAKgi+YpcHRa36izcq5CUYEUD3o8i2CaT6CXGUrjqEV9T5M+wxiizkgnNlctJQL3XTHALZgPMGQIAXjfLfqzJzqgAAA"
+      blurDataURL={TURKEY_FLAG_IMAGE_BLUR_DATA_URL}
     />
   );
 };

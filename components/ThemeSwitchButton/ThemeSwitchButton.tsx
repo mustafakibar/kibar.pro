@@ -5,7 +5,9 @@ import { cn } from '@/lib/utils';
 import { motion } from 'motion/react';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
-import { ThemeSwitchButtonProps } from '.';
+export type ThemeSwitchButtonProps = {
+  className?: string;
+};
 
 const ThemeSwitchButton: React.FC<ThemeSwitchButtonProps> = ({
   className,
@@ -28,7 +30,7 @@ const ThemeSwitchButton: React.FC<ThemeSwitchButtonProps> = ({
     <motion.div
       whileTap={{ scale: 0.7 }}
       className={cn(
-        'rounded-lg p-2 text-gray-600 duration-300 hover:cursor-pointer hover:bg-foreground/25 dark:text-gray-400',
+        'hover:bg-foreground/25 rounded-lg p-2 text-gray-600 duration-300 hover:cursor-pointer dark:text-gray-400',
         className,
       )}
       onClick={changeTheme.bind(this)}

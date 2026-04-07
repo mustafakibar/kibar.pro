@@ -1,4 +1,8 @@
-import { CertificateViewProps } from './type';
+import { Certificate } from '..';
+
+export type CertificateViewProps = {
+  certificate: Certificate;
+};
 
 const CertificateView: React.FC<CertificateViewProps> = ({ certificate }) => {
   return (

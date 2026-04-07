@@ -1,5 +1,3 @@
-import { Contact } from './Contact';
-import { ContactProps } from './type';
-
+import { Contact, type ContactProps } from './Contact';
 export { Contact };
 export type { ContactProps };

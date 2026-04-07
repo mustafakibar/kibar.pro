@@ -1,5 +1,5 @@
+import type { TimelineTitleProps } from './TimelineTitle';
 import { TimelineTitle } from './TimelineTitle';
-import type { TimelineTitleProps } from './type';
 
 export { TimelineTitle };
 export type { TimelineTitleProps };

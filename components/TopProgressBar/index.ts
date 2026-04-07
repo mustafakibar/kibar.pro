@@ -1,5 +1,3 @@
-import { TopProgressBar } from './TopProgressBar';
-import { TopProgressBarProps } from './type';
-
+import { TopProgressBar, type TopProgressBarProps } from './TopProgressBar';
 export { TopProgressBar };
 export type { TopProgressBarProps };

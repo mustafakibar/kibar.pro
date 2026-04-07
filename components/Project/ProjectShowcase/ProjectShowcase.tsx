@@ -1,4 +1,3 @@
-import { PROJECTS_PATH } from '@/common/paths';
 import { RepoIcon } from '@/components/RepoIcon';
 import {
   ShowcaseActionContainer,
@@ -10,9 +9,16 @@ import {
   ShowcaseTitle,
 } from '@/components/Showcase';
 import { TagItems } from '@/components/Tag';
+import { PROJECTS_PATH } from '@/lib/constants/paths';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
-import { ProjectShowcaseProps } from '.';
+import type { Project } from '..';
+
+export type ProjectShowcaseProps = {
+  project: Project;
+  className?: string;
+  hideTags?: boolean;
+};
 
 const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({
   project,
