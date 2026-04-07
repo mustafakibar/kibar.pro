@@ -15,7 +15,12 @@ export default function Error({ error, reset }: ErrorProps) {
   }, [error]);
 
   return (
-    <main className="flex min-h-[60vh] flex-col items-center justify-center gap-6 px-6 text-center">
+    <main className="relative flex min-h-[60vh] flex-col items-center justify-center gap-6 overflow-hidden px-6 text-center">
+      <div
+        aria-hidden
+        className="from-destructive/25 to-primary/10 pointer-events-none absolute top-1/2 left-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-br bg-clip-text text-[16rem] leading-none font-black text-transparent select-none md:text-[22rem]">
+        500
+      </div>
       <p className="text-muted-foreground text-sm tracking-widest uppercase">
         Something broke
       </p>

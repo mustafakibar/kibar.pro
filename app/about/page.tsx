@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 
 const AboutPage: NextPage = () => {
   return (
-    <div className="flex flex-col gap-8 py-4 lg:gap-24 lg:py-8">
+    <div className="before:bg-primary/20 after:bg-secondary/15 relative flex flex-col gap-8 py-4 before:pointer-events-none before:absolute before:top-40 before:left-0 before:-z-10 before:h-[460px] before:w-[460px] before:-translate-x-1/3 before:rounded-full before:blur-[130px] after:pointer-events-none after:absolute after:top-[60%] after:right-0 after:-z-10 after:h-[420px] after:w-[420px] after:translate-x-1/3 after:rounded-full after:blur-[130px] lg:gap-24 lg:py-8">
       <div className="flex flex-col justify-evenly gap-10 md:p-16 lg:flex-row lg:items-center lg:gap-16 xl:gap-24">
         {/* Image & Contact & Skills */}
         <div className="flex flex-col items-center gap-4 lg:w-1/3 lg:gap-16">

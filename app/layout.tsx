@@ -1,3 +1,4 @@
+import { CommandPalette } from '@/components/CommandPalette';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { TopProgressBar } from '@/components/TopProgressBar';
@@ -121,6 +122,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         )}>
         <div className="flex min-h-screen min-w-screen flex-col">
           <TopProgressBar />
+          <CommandPalette />
           <Header />
           <div className="container">{children}</div>
           <Footer />

@@ -21,7 +21,9 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
   return (
     <motion.div
       className={cn(
-        'flex flex-col items-center justify-around gap-6 md:my-16 md:flex-row md:gap-10 lg:justify-between',
+        'relative flex flex-col items-center justify-around gap-6 md:my-16 md:flex-row md:gap-10 lg:justify-between',
+        'before:bg-primary/20 before:pointer-events-none before:absolute before:top-1/2 before:left-1/4 before:-z-10 before:h-[420px] before:w-[420px] before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:blur-[120px]',
+        'after:bg-secondary/15 after:pointer-events-none after:absolute after:top-1/3 after:right-0 after:-z-10 after:h-[360px] after:w-[360px] after:rounded-full after:blur-[120px]',
         className,
       )}
       initial={{ opacity: 0, y: 16 }}
