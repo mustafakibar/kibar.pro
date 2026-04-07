@@ -40,12 +40,12 @@ export const metadata: Metadata = {
 
 const AboutPage: NextPage = () => {
   return (
-    <div className="flex flex-col gap-16 py-4 lg:gap-24 lg:py-12">
+    <div className="flex flex-col gap-8 py-4 lg:gap-24 lg:py-8">
       <div className="flex flex-col justify-evenly gap-10 md:p-16 lg:flex-row lg:items-center lg:gap-16 xl:gap-24">
         {/* Image & Contact & Skills */}
         <div className="flex flex-col items-center gap-4 lg:w-1/3 lg:gap-16">
           <ProfileImage
-            className="ring-primary rotate-0 rounded-xl ring-2 max-lg:max-w-48 lg:rotate-3 dark:brightness-75"
+            className="ring-primary rounded-xl ring-2 max-lg:max-w-48 dark:brightness-75"
             src={ABOUT_PROFILE_IMAGE_SRC}
             alt={ABOUT_PROFILE_IMAGE_ALT}
             blurDataURL={ABOUT_PROFILE_IMAGE_BLUR_DATA_URL}
@@ -93,89 +93,79 @@ const AboutPage: NextPage = () => {
         </div>
       </div>
 
-      <div className="border-foreground/10 flex grid-cols-3 flex-col place-items-center items-start gap-16 border-t px-4 pt-16 md:px-8 lg:grid lg:gap-20 lg:pt-24">
-        <motion.div
-          layout
-          className="flex w-full flex-col gap-8"
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -20 }}
-          transition={{ duration: 1.5, ease: 'anticipate' }}
-          viewport={{ once: true }}>
-          <SectionHeading
-            title={'Education'}
-            titleWrapperClassName="max-lg:justify-center"
-            icon={<TbSchool size={24} />}
-          />
+      <div className="flex flex-col gap-16 px-4 md:px-8 lg:gap-20">
+        <div className="flex flex-col place-items-center items-start gap-16 lg:grid lg:grid-cols-2 lg:gap-20">
+          <motion.div
+            layout
+            className="flex w-full flex-col gap-8"
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            transition={{ duration: 1.5, ease: 'anticipate' }}
+            viewport={{ once: true }}>
+            <SectionHeading
+              title={'Education'}
+              titleWrapperClassName="max-lg:justify-center"
+              icon={<TbSchool size={24} />}
+            />
 
-          <div className="flex max-lg:justify-center">
-            <Timeline>
-              <TimelineItem>
-                <TimelineDescription>Present</TimelineDescription>
-                <TimelineTitle>Computer Programming</TimelineTitle>
-                <TimelineContent>Istanbul University</TimelineContent>
-              </TimelineItem>
+            <div className="flex max-lg:justify-center">
+              <Timeline>
+                <TimelineItem>
+                  <TimelineDescription>Present</TimelineDescription>
+                  <TimelineTitle>Computer Programming</TimelineTitle>
+                  <TimelineContent>Istanbul University</TimelineContent>
+                </TimelineItem>
 
-              <TimelineItem>
-                <TimelineDescription>2018-2020</TimelineDescription>
-                <TimelineTitle>Public Administration</TimelineTitle>
-                <TimelineContent>Eskisehir University</TimelineContent>
-              </TimelineItem>
+                <TimelineItem>
+                  <TimelineDescription>2018-2020</TimelineDescription>
+                  <TimelineTitle>Public Administration</TimelineTitle>
+                  <TimelineContent>Eskisehir University</TimelineContent>
+                </TimelineItem>
 
-              <TimelineItem>
-                <TimelineDescription>2011-2013</TimelineDescription>
-                <TimelineTitle>Rustu Unsal P.M.Y.O</TimelineTitle>
-                <TimelineContent>Buca/Izmir</TimelineContent>
-              </TimelineItem>
+                <TimelineItem>
+                  <TimelineDescription>2011-2013</TimelineDescription>
+                  <TimelineTitle>Rustu Unsal P.M.Y.O</TimelineTitle>
+                  <TimelineContent>Buca/Izmir</TimelineContent>
+                </TimelineItem>
 
-              <TimelineItem>
-                <TimelineDescription>2005-2009</TimelineDescription>
-                <TimelineTitle>T.O.K.I Anatolian High School</TimelineTitle>
-                <TimelineContent>Eryaman/Ankara</TimelineContent>
-              </TimelineItem>
+                <TimelineItem>
+                  <TimelineDescription>2005-2009</TimelineDescription>
+                  <TimelineTitle>T.O.K.I Anatolian High School</TimelineTitle>
+                  <TimelineContent>Eryaman/Ankara</TimelineContent>
+                </TimelineItem>
 
-              <TimelineItem>
-                <TimelineDescription>1998-2005</TimelineDescription>
-                <TimelineTitle>Meliksah Primary School</TimelineTitle>
-                <TimelineContent>Sincan/Ankara</TimelineContent>
-              </TimelineItem>
+                <TimelineItem>
+                  <TimelineDescription>1998-2005</TimelineDescription>
+                  <TimelineTitle>Meliksah Primary School</TimelineTitle>
+                  <TimelineContent>Sincan/Ankara</TimelineContent>
+                </TimelineItem>
 
-              <TimelineItem>
-                <TimelineDescription>1991</TimelineDescription>
-                <TimelineTitle>Born</TimelineTitle>
-                <TimelineContent>Yenimahalle/Ankara</TimelineContent>
-              </TimelineItem>
-            </Timeline>
-          </div>
-        </motion.div>
-
-        <motion.div
-          layout
-          className="flex w-full flex-col gap-8 lg:col-span-2"
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: 20 }}
-          transition={{ duration: 1.5, ease: 'anticipate' }}
-          viewport={{ once: true }}>
-          <SectionHeading
-            title="Environment"
-            titleWrapperClassName="lg:justify-end justify-center"
-            icon={<FaToolbox size={24} />}
-          />
-
-          <div className="flex flex-col items-center justify-evenly gap-8 lg:items-end">
-            <div>
-              <Image
-                className="object-fill"
-                src={ABOUT_DESK_IMAGE_SRC}
-                alt={ABOUT_DESK_IMAGE_ALT}
-                width={512}
-                height={512}
-              />
+                <TimelineItem>
+                  <TimelineDescription>1991</TimelineDescription>
+                  <TimelineTitle>Born</TimelineTitle>
+                  <TimelineContent>Yenimahalle/Ankara</TimelineContent>
+                </TimelineItem>
+              </Timeline>
             </div>
+          </motion.div>
+
+          <motion.div
+            layout
+            className="flex w-full flex-col gap-8"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 20 }}
+            transition={{ duration: 1.5, ease: 'anticipate' }}
+            viewport={{ once: true }}>
+            <SectionHeading
+              title="Environment"
+              titleWrapperClassName="max-lg:justify-center"
+              icon={<FaToolbox size={24} />}
+            />
 
             <div>
-              <ul className="[&>*:nth-child(odd)]:bg-foreground/5 flex flex-col gap-4 text-center font-semibold *:rounded-lg *:px-3 *:py-2">
+              <ul className="divide-foreground/10 text-foreground/85 flex flex-col divide-y text-sm font-medium [&>li]:flex [&>li]:items-center [&>li]:justify-between [&>li]:gap-4 [&>li]:py-3 [&>li>span]:shrink-0 [&>li>span]:text-[0.68rem] [&>li>span]:font-semibold [&>li>span]:tracking-widest [&>li>span]:uppercase">
                 <li>
                   Tischkönig Flex v2 Adjustable
                   <span className="text-highlight">Desk</span>
@@ -231,9 +221,26 @@ const AboutPage: NextPage = () => {
                 </li>
               </ul>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
+
+      <motion.div
+        className="ring-foreground/10 relative aspect-[3/2] w-full overflow-hidden rounded-2xl ring-1"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2, ease: 'easeOut' }}
+        viewport={{ once: true }}>
+        <Image
+          className="object-cover"
+          src={ABOUT_DESK_IMAGE_SRC}
+          alt={ABOUT_DESK_IMAGE_ALT}
+          fill
+          sizes="100vw"
+          priority={false}
+        />
+        <div className="from-background/70 pointer-events-none absolute inset-0 bg-gradient-to-t to-transparent" />
+      </motion.div>
     </div>
   );
 };

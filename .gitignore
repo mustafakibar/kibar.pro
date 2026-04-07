@@ -39,6 +39,7 @@ yarn-error.log*
 
 # claude code local config
 .claude
+CLAUDE.md
 
 # typescript
 *.tsbuildinfo

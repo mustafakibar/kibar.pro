@@ -8,7 +8,6 @@ import {
 
 import { cn } from '@/lib/utils';
 import * as motion from 'motion/react-client';
-import Image from 'next/image';
 import React from 'react';
 import { Contact } from '../Contact';
 import { Card } from '../ui/card';
@@ -63,22 +62,13 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
       </div>
 
       <div className="relative order-first lg:order-last">
-        <Image
-          aria-hidden
-          className="pointer-events-none absolute -top-16 -left-8 hidden size-full scale-x-110 opacity-5 lg:inline-flex dark:invert"
-          src="/misc/profile-bg.webp"
-          alt=""
-          width={512}
-          height={512}
-        />
-
         <ProfileImage
-          className="pointer-events-none relative max-w-96 rounded-md border-2 border-gray-100 max-lg:max-w-48 md:hover:shadow-md dark:border-gray-900 dark:grayscale-[50%]"
+          className="pointer-events-none relative max-w-96 rounded-md max-lg:max-w-48 md:hover:shadow-md dark:grayscale-[50%]"
           src={HERO_PROFILE_IMAGE_SRC}
           alt={HERO_PROFILE_IMAGE_ALT}
           blurDataURL={HERO_PROFILE_IMAGE_BLUR_DATA_URL}
-          width={512}
-          height={512}
+          width={256}
+          height={256}
           priority
         />
       </div>
