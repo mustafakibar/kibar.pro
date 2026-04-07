@@ -114,6 +114,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         />
       </head>
       <body
+        suppressHydrationWarning
         className={cn(
           '[&::-webkit-scrollbar-thumb]:bg-secondary [&::-webkit-scrollbar-thumb]:hover:bg-primary/80 bg-background text-foreground min-h-screen min-w-screen overflow-x-hidden scroll-smooth [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:rounded-s-full',
           textFont.className,

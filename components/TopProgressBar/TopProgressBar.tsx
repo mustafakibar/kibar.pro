@@ -1,14 +1,26 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { motion, useMotionValueEvent, useScroll } from 'motion/react';
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useSpring,
+  useTransform,
+} from 'motion/react';
 import { useEffect, useRef, useState } from 'react';
 export type TopProgressBarProps = {};
 
 const TopProgressBar: React.FC<TopProgressBarProps> = () => {
   const [enableHideAnim, setEnableHideAnim] = useState(false);
-  const { scrollYProgress } = useScroll({
-    offset: ['start start', 'end end'],
+  const { scrollYProgress } = useScroll();
+  const smoothed = useSpring(scrollYProgress, {
+    stiffness: 180,
+    damping: 30,
+    mass: 0.3,
+  });
+  const width = useTransform(smoothed, [0, 0.985], ['0%', '100%'], {
+    clamp: true,
   });
   const lastTimeout = useRef<NodeJS.Timeout | null>(null);
 
@@ -22,7 +34,7 @@ const TopProgressBar: React.FC<TopProgressBarProps> = () => {
       lastTimeout.current = null;
     }
 
-    if (y >= 0.99) {
+    if (y >= 0.985) {
       if (!enableHideAnim) {
         setEnableHideAnim(true);
         return;
@@ -41,21 +53,17 @@ const TopProgressBar: React.FC<TopProgressBarProps> = () => {
   }, []);
 
   return (
-    <motion.div
+    <div
       id="top-progress-bar"
       className={cn(
-        'from-primary to-secondary fixed top-0 right-0 left-0 z-20 h-0.5 bg-linear-to-r from-25% to-90% shadow-md',
-        {
-          'h-[1px] opacity-10 transition-all duration-700 ease-in':
-            enableHideAnim,
-        },
-      )}
-      transition={{ ease: 'anticipate' }}
-      style={{
-        scaleX: scrollYProgress,
-        originX: 0,
-      }}
-    />
+        'pointer-events-none fixed top-0 right-0 left-0 z-50 h-[3px] transition-opacity duration-500 ease-out',
+        enableHideAnim ? 'opacity-0' : 'opacity-100',
+      )}>
+      <motion.div
+        className="from-primary via-primary to-accent-foreground h-full bg-linear-to-r shadow-[0_0_14px_rgba(255,255,255,0.5)]"
+        style={{ width }}
+      />
+    </div>
   );
 };
 
