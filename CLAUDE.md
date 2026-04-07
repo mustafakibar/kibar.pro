@@ -19,15 +19,16 @@ Modernize the entire project end-to-end for a senior full-stack developer portfo
 
 ## Current status
 
-Modernization pass complete. Strict nonce-based CSP, full SEO, branded error pages, dependency cleanup, ESLint-CLI migration, image-constant cleanup — all done. `bun run typecheck`, `bun run lint`, `bun run build` all green. Routes are now dynamic (`ƒ`) due to per-request nonce; caching still active via `unstable_cache`.
+Modernization pass complete + Plausible analytics wired + About page typography polish. `bun run build` green (10 routes, 102 kB shared JS).
 
 ## Next steps
 
-1. Optional: privacy-friendly analytics (Plausible/Umami) with CSP allow-list.
-2. Optional: visual rhythm/typography sweep on About page (long sections feel dense).
+- Final consistency sweep, then close out.
 
 ## Completed
 
+- Plausible analytics: `components/Analytics/PlausibleAnalytics.tsx` (gated by `NEXT_PUBLIC_PLAUSIBLE_DOMAIN`, dev no-op, nonce-aware via `next/script`). Wired into root layout `<head>`. `middleware.ts` `buildCsp()` now adds the Plausible script origin to `connect-src` only when enabled. Env vars added to `env/index.ts` and `.env.example`.
+- About page: rewrote intro block — proper `<h1>`, semantic paragraph stack, dropped `<br>` spacing hack, increased section gaps (gap-16/24), added subtle top border between intro and Education/Environment grid, bumped body opacity for readability.
 - Per-route OG image variants for `/about`, `/projects`, `/certificates`. Shared rendering helper in `app/_og/og-template.tsx` (eyebrow + title + subtitle template), keeping each route file ~10 lines.
 - Polished `ShowcaseContainer` hover state: subtle `-translate-y-0.5` lift, `ring-1`, primary-tinted shadow, 300ms ease-out. Removed leftover `hover:gap-8` from earlier experiments.
 - Added dynamic Open Graph image route at `app/opengraph-image.tsx` (1200×630, edge runtime, gradient + brand layout).

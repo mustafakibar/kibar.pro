@@ -1,3 +1,4 @@
+import { PlausibleAnalytics } from '@/components/Analytics';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { TopProgressBar } from '@/components/TopProgressBar';
@@ -105,6 +106,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
           nonce={nonce}
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
+        <PlausibleAnalytics nonce={nonce} />
       </head>
       <body
         className={cn(

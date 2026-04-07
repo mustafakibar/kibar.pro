@@ -5,10 +5,26 @@ import { NextResponse } from 'next/server';
 
 const isProd = process.env.NODE_ENV === 'production';
 
+function getPlausibleOrigin(): string | null {
+  const src =
+    process.env.NEXT_PUBLIC_PLAUSIBLE_SCRIPT_SRC ??
+    'https://plausible.io/js/script.js';
+  if (!process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN) return null;
+  try {
+    return new URL(src).origin;
+  } catch {
+    return null;
+  }
+}
+
 function buildCsp(nonce: string): string {
   const scriptSrc = isProd
     ? `'self' 'nonce-${nonce}' 'strict-dynamic'`
     : `'self' 'nonce-${nonce}' 'unsafe-eval'`;
+
+  const plausibleOrigin = getPlausibleOrigin();
+  const connectSrc = ["'self'", 'https://api.github.com'];
+  if (plausibleOrigin) connectSrc.push(plausibleOrigin);
 
   return [
     "default-src 'self'",
@@ -20,7 +36,7 @@ function buildCsp(nonce: string): string {
     "style-src 'self' 'unsafe-inline'",
     "img-src 'self' data: blob: https:",
     "font-src 'self' data:",
-    "connect-src 'self' https://api.github.com",
+    `connect-src ${connectSrc.join(' ')}`,
     "manifest-src 'self'",
     'upgrade-insecure-requests',
   ].join('; ');

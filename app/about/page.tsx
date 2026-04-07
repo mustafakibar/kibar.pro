@@ -40,8 +40,8 @@ export const metadata: Metadata = {
 
 const AboutPage: NextPage = () => {
   return (
-    <div className="flex flex-col gap-8 py-2 lg:py-8">
-      <div className="flex flex-col justify-evenly gap-4 md:p-16 lg:flex-row lg:items-center lg:gap-16 xl:gap-32">
+    <div className="flex flex-col gap-16 py-4 lg:gap-24 lg:py-12">
+      <div className="flex flex-col justify-evenly gap-10 md:p-16 lg:flex-row lg:items-center lg:gap-16 xl:gap-24">
         {/* Image & Contact & Skills */}
         <div className="flex flex-col items-center gap-4 lg:w-1/3 lg:gap-16">
           <ProfileImage
@@ -61,41 +61,39 @@ const AboutPage: NextPage = () => {
         {/* Profile Details */}
         <div
           className={cn(
-            'flex flex-col gap-8 text-justify opacity-75 lg:-mt-24 lg:w-2/3 lg:gap-16',
+            'flex flex-col gap-10 lg:-mt-16 lg:w-2/3 lg:gap-16',
             titleFont.className,
           )}>
-          <Text className="pointer-events-none touch-none text-lg whitespace-pre-line antialiased">
-            <span className="inline-flex w-full items-center text-4xl max-md:justify-center max-md:text-2xl">
-              Hi 👋 this is Mustafa K<span className="tracking-tighter">i</span>
-              BAR
-            </span>
-            <br />
-            <br />
-            <span>
-              I&apos;ve been building software since 2011, focused on shipping
-              scalable, maintainable systems end-to-end — from data layer to UI.
-            </span>
-            <br />
-            <br />
-            <span className="font-black">
-              Day-to-day stack: TypeScript, React, Next.js, Node.js, Rust,
-              Kotlin, React Native, and Flutter.
-            </span>
-            <br />
-            <br />
-            <span className="text-md">
-              I care about clean architecture, strong developer experience, and
-              tools that get out of the user&apos;s way. Lately, my interests
-              lean toward systems programming, AI tooling, and the boring
-              fundamentals that make products feel fast and reliable.
-            </span>
-          </Text>
+          <div className="flex flex-col gap-6 antialiased">
+            <h1 className="text-3xl leading-tight font-semibold tracking-tight max-md:text-center md:text-4xl lg:text-5xl">
+              Hi <span aria-hidden>👋</span> this is Mustafa K
+              <span className="tracking-tighter">i</span>BAR
+            </h1>
+
+            <div className="text-foreground/80 flex flex-col gap-4 text-pretty">
+              <Text className="text-base leading-relaxed md:text-lg">
+                I&apos;ve been building software since 2011, focused on shipping
+                scalable, maintainable systems end-to-end — from data layer to
+                UI.
+              </Text>
+              <Text className="text-foreground text-base leading-relaxed font-semibold md:text-lg">
+                Day-to-day stack: TypeScript, React, Next.js, Node.js, Rust,
+                Kotlin, React Native, and Flutter.
+              </Text>
+              <Text className="text-base leading-relaxed md:text-lg">
+                I care about clean architecture, strong developer experience,
+                and tools that get out of the user&apos;s way. Lately, my
+                interests lean toward systems programming, AI tooling, and the
+                boring fundamentals that make products feel fast and reliable.
+              </Text>
+            </div>
+          </div>
 
           <ParallaxSkills className="max-lg:hidden" />
         </div>
       </div>
 
-      <div className="flex grid-cols-3 flex-col place-items-center items-start gap-16 px-8 lg:grid">
+      <div className="border-foreground/10 flex grid-cols-3 flex-col place-items-center items-start gap-16 border-t px-4 pt-16 md:px-8 lg:grid lg:gap-20 lg:pt-24">
         <motion.div
           layout
           className="flex w-full flex-col gap-8"
