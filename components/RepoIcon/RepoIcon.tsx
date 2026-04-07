@@ -1,3 +1,5 @@
+'use client';
+
 import { Github, Gitlab } from '@/lib/icons';
 import React, { ReactNode } from 'react';
 
@@ -30,16 +32,18 @@ const RepoIcon: React.FC<RepoIconProps> = ({
   if (label == null || icon == null) return icon;
 
   return (
-    <a
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
+    <button
+      type="button"
       aria-label={label}
       title={label}
-      onClick={(e) => e.stopPropagation()}
+      onClick={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        window.open(url, '_blank', 'noopener,noreferrer');
+      }}
       className="focus-visible:ring-primary inline-flex rounded-sm focus-visible:ring-2 focus-visible:outline-none">
       {icon}
-    </a>
+    </button>
   );
 };
 

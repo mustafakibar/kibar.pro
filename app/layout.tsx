@@ -110,6 +110,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         <script
           type="application/ld+json"
           nonce={nonce}
+          suppressHydrationWarning
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
