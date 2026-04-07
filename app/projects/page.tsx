@@ -38,7 +38,7 @@ const ProjectsPage: NextPage = async () => {
             </AnimatedItemWrapper>
           ))
         ) : (
-          <p className="text-xl">No projects yet.</p>
+          <p className="text-foreground/60 text-lg">No projects to show yet.</p>
         )}
       </GridWrapper>
     </section>

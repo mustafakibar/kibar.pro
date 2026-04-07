@@ -1,8 +1,8 @@
 import { AnimatedItemWrapper } from '@/components/AnimatedItemWrapper';
 import { CertificateShowcase } from '@/components/Certificates/CertificatesShowcase';
+import { CERTIFICATE_ITEMS } from '@/components/Certificates/constant';
 import { GridWrapper } from '@/components/GridWrapper';
 import { SectionHeading } from '@/components/SectionHeading';
-import { getCertificates } from '@/lib/data/getCertificates';
 import { AnimatePresence } from 'motion/react';
 import type { Metadata, NextPage } from 'next';
 import { ReactNode } from 'react';
@@ -20,22 +20,24 @@ export const metadata: Metadata = {
   },
 };
 
-const CertificatesPage: NextPage = async () => {
-  const certificates = await getCertificates();
+const CertificatesPage: NextPage = () => {
+  const certificates = CERTIFICATE_ITEMS;
 
   let CertificateListComponent: ReactNode;
-  if (certificates && certificates.length > 0) {
+  if (certificates.length > 0) {
     CertificateListComponent = (
       <AnimatePresence>
         {certificates.map((data, index) => (
-          <AnimatedItemWrapper key={index} delay={index}>
+          <AnimatedItemWrapper key={data.title} delay={index}>
             <CertificateShowcase certificate={data} />
           </AnimatedItemWrapper>
         ))}
       </AnimatePresence>
     );
   } else {
-    CertificateListComponent = <p className="text-xl">No certificates yet.</p>;
+    CertificateListComponent = (
+      <p className="text-foreground/60 text-lg">No credentials to show yet.</p>
+    );
   }
 
   return (

@@ -11,19 +11,21 @@ const HeroWithLoveSection: React.FC<{
     <TypeAnimation
       preRenderFirstString={true}
       sequence={[
-        'Coding Rust 🦀',
+        'Shipping TypeScript',
         duration,
-        'Coding Kotlin',
+        'Shipping React & Next.js',
         duration,
-        'Coding React',
+        'Shipping Node.js APIs',
         duration,
-        'Coding React Native',
+        'Crafting Rust',
         duration,
-        'Coding Flutter',
+        'Crafting Kotlin',
         duration,
-        'Using Docker',
+        'Building React Native',
         duration,
-        'Using AWS',
+        'Building Flutter',
+        duration,
+        'Designing systems',
         duration,
       ]}
       speed={50}

@@ -66,8 +66,8 @@ const AboutPage: NextPage = () => {
           )}>
           <div className="flex flex-col gap-6 antialiased">
             <h1 className="text-3xl leading-tight font-semibold tracking-tight max-md:text-center md:text-4xl lg:text-5xl">
-              Hi <span aria-hidden>👋</span> this is Mustafa K
-              <span className="tracking-tighter">i</span>BAR
+              Hi <span aria-hidden>👋</span> I&apos;m Mustafa K
+              <span className="tracking-tighter">i</span>bar
             </h1>
 
             <div className="text-foreground/80 flex flex-col gap-4 text-pretty">

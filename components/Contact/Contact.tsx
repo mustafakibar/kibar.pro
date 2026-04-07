@@ -1,4 +1,4 @@
-import { Envelope, Github, SocialX } from '@/lib/icons';
+import { Envelope, Github } from '@/lib/icons';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { IconType } from 'react-icons/lib';
@@ -10,15 +10,20 @@ export type ContactProps = {
 export type ContactItemProps = {
   icon: IconType;
   href: string;
+  label: string;
   className?: string;
 };
 
 const contactItemList: ContactItemProps[] = [
-  { icon: Github, href: 'https://github.com/mustafakibar' },
-  { icon: SocialX, href: 'https://x.com/kibarpro' },
+  {
+    icon: Github,
+    href: 'https://github.com/mustafakibar',
+    label: 'GitHub profile',
+  },
   {
     icon: Envelope,
     href: 'mailto:mustafa@kibar.pro',
+    label: 'Send email',
     className: 'inline-flex md:hidden',
   },
 ];
@@ -31,8 +36,13 @@ const Contact: React.FC<ContactProps> = ({ className }) => {
         className,
       )}>
       <div className="group/container flex shrink-0 transform-gpu flex-row items-center gap-8">
-        {contactItemList.map(({ icon: Icon, className, href }, idx) => (
-          <Link href={href} target="_blank" key={idx}>
+        {contactItemList.map(({ icon: Icon, className, href, label }) => (
+          <Link
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={label}
+            key={href}>
             <Icon
               className={cn(
                 'transition-transform duration-150 group-hover/container:opacity-35 hover:scale-125 hover:text-gray-800 hover:opacity-100! dark:hover:text-gray-200',

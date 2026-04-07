@@ -9,6 +9,7 @@ export type ProfileImageProps = {
   width?: number;
   height?: number;
   blurDataURL?: string;
+  priority?: boolean;
 };
 
 const ProfileImage: React.FC<ProfileImageProps> = ({
@@ -18,6 +19,7 @@ const ProfileImage: React.FC<ProfileImageProps> = ({
   src,
   alt,
   blurDataURL,
+  priority,
 }) => {
   return (
     <Image
@@ -28,6 +30,7 @@ const ProfileImage: React.FC<ProfileImageProps> = ({
       height={height || 512}
       placeholder={blurDataURL ? 'blur' : 'empty'}
       blurDataURL={blurDataURL}
+      priority={priority}
     />
   );
 };

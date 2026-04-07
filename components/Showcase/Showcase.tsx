@@ -5,10 +5,6 @@ import { ViewAllButton } from '@/components/ViewAllButton';
 import { cn } from '@/lib/utils';
 import type React from 'react';
 
-/* -------------------------------------------------------------------------- */
-/*  Item-level primitives — used to compose a single Showcase card            */
-/* -------------------------------------------------------------------------- */
-
 type WithChildren = {
   children: React.ReactNode;
   className?: string;
@@ -102,10 +98,6 @@ export const ShowcaseFooter: React.FC<WithChildren> = ({
       {children}
     </div>
   ) : null;
-
-/* -------------------------------------------------------------------------- */
-/*  Section-level viewer — wraps a grid of showcases under a heading          */
-/* -------------------------------------------------------------------------- */
 
 export type ShowcaseViewerProps = {
   title: string;

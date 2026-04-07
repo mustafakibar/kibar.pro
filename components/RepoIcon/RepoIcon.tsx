@@ -1,7 +1,4 @@
-'use client';
-
 import { Github, Gitlab } from '@/lib/icons';
-import { openInNewTab } from '@/lib/utils';
 import React, { ReactNode } from 'react';
 
 export type RepoIconProps = {
@@ -17,34 +14,33 @@ const RepoIcon: React.FC<RepoIconProps> = ({
   customIcon,
   customTooltipText,
 }) => {
-  let tooltipText = customTooltipText;
-  let repoIcon = customIcon;
+  let label = customTooltipText;
+  let icon = customIcon;
 
-  if (repoIcon == null && url != null) {
+  if (icon == null && url != null) {
     if (url.includes('github')) {
-      tooltipText = 'View on GitHub';
-      repoIcon = <Github className={className} />;
+      label = 'View on GitHub';
+      icon = <Github className={className} />;
     } else if (url.includes('gitlab')) {
-      tooltipText = 'View on GitLab';
-      repoIcon = <Gitlab className={className} />;
+      label = 'View on GitLab';
+      icon = <Gitlab className={className} />;
     }
   }
 
-  if (tooltipText != null && repoIcon != null) {
-    return (
-      <div
-        className="inline-flex"
-        onClick={(e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          openInNewTab(url);
-        }}>
-        {repoIcon}
-      </div>
-    );
-  }
+  if (label == null || icon == null) return icon;
 
-  return repoIcon;
+  return (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={label}
+      title={label}
+      onClick={(e) => e.stopPropagation()}
+      className="focus-visible:ring-primary inline-flex rounded-sm focus-visible:ring-2 focus-visible:outline-none">
+      {icon}
+    </a>
+  );
 };
 
 export { RepoIcon };

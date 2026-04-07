@@ -5,23 +5,35 @@ import { ProjectShowcase } from '@/components/Project/ProjectShowcase';
 import { ShowcaseViewer } from '@/components/Showcase';
 import { CERTIFICATES_PATH, PROJECTS_PATH } from '@/lib/constants/paths';
 import { getProjects } from '@/lib/data/getProjects';
-import { NextPage } from 'next';
+import type { Metadata, NextPage } from 'next';
 import { Suspense } from 'react';
 import CertificatesLoading from './certificates/loading';
 import ProjectsLoading from './projects/loading';
 
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+};
+
 const HomePage: NextPage = async () => {
+  const projects = await getProjects();
+
   return (
     <main className="flex flex-col gap-16">
       <Hero />
 
       <ShowcaseViewer title="Selected Work" viewAllHref={PROJECTS_PATH}>
         <Suspense fallback={<ProjectsLoading />}>
-          {(await getProjects())
-            ?.slice(0, 9)
-            .map((item) => (
-              <ProjectShowcase key={item.id} project={item} hideTags />
-            )) ?? 'No projects yet.'}
+          {projects && projects.length > 0 ? (
+            projects
+              .slice(0, 9)
+              .map((item) => (
+                <ProjectShowcase key={item.id} project={item} hideTags />
+              ))
+          ) : (
+            <p className="text-foreground/60 text-lg">
+              No projects to show yet.
+            </p>
+          )}
         </Suspense>
       </ShowcaseViewer>
 

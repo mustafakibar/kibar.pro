@@ -19,15 +19,22 @@ Modernize the entire project end-to-end for a senior full-stack developer portfo
 
 ## Current status
 
-Modernization pass complete + Plausible analytics wired + About page typography polish. `bun run build` green (10 routes, 102 kB shared JS).
+Final professional polish complete. Plausible swapped for free Vercel Analytics + Speed Insights, all Twitter/X removed, a11y baseline wired, dead code purged, copy/grammar tightened, JSON-LD expanded with WebSite schema. `bun run build` green (10 routes, 102 kB shared JS).
 
 ## Next steps
 
-- Final consistency sweep, then close out.
+- None — project is shipping-ready.
 
 ## Completed
 
-- Plausible analytics: `components/Analytics/PlausibleAnalytics.tsx` (gated by `NEXT_PUBLIC_PLAUSIBLE_DOMAIN`, dev no-op, nonce-aware via `next/script`). Wired into root layout `<head>`. `middleware.ts` `buildCsp()` now adds the Plausible script origin to `connect-src` only when enabled. Env vars added to `env/index.ts` and `.env.example`.
+- Analytics swap: removed Plausible (paid) — deleted `components/Analytics/`, `PLAUSIBLE_*` env vars, and Plausible CSP allowance. Added `@vercel/analytics` + `@vercel/speed-insights` (free on Vercel Hobby), mounted in root layout, no extra CSP host needed (same-origin `/_vercel/insights`). `connect-src` adds `vitals.vercel-insights.com`.
+- Twitter/X full removal: `metadata.twitter` block, `Contact` X icon entry, `lib/icons.ts` `FaXTwitter`/`SocialX` exports — all gone. Verified zero residual references.
+- A11y: Header burger button gets `aria-label`/`aria-expanded`/`aria-controls`, `<nav id="primary-navigation" aria-label="Primary">`. `RepoIcon` is now an `<a>` with `aria-label`, focus ring, and proper `rel`. `Contact` icons get `aria-label`. `Heading` component now renders `<h2>` (semantic). `NavItem` cleaned to single Link with `aria-current`, focus-visible ring. `TagItem` converted to `<button>` with focus ring. `prefers-reduced-motion` global guard added to `globals.css`.
+- Copy & visual: Hero headline now `<h1>`, sentence tightened (no "from API to UI" double-dash); `HeroWithLoveSection` gerund-consistent ("Shipping/Crafting/Building/Designing"); Footer rewritten as `Crafted with ❤ by Mustafa Kibar · © {year}` with dynamic year, no bracket hack; About `<h1>` softened to "Hi 👋 I'm Mustafa Kibar"; consistent empty states (`No projects to show yet.` / `No credentials to show yet.`).
+- SEO: explicit `metadata` with canonical on `/`. JSON-LD expanded to `@graph` with both `Person` and `WebSite` schemas.
+- Dead code purge: deleted `components/ThemeSwitchButton/`, `components/Project/ProjectView/`, `lib/data/getCertificates.ts` (page now imports `CERTIFICATE_ITEMS` directly). Removed `openInNewTab`, `shuffle`, `asyncTimeout` from `lib/utils.ts`. Removed `Moon`/`Sun`/`SunMoon` icon exports (theme switcher gone). Dropped `.html.light` SVG pattern from `globals.css` and unused `light` viewport entries (project is `forcedTheme="dark"`).
+- Theme consistency: `viewport.themeColor: '#0a0a0a'`, `colorScheme: 'dark'`. Removed commented `ThemeSwitchButton` slot from `Header`.
+- Performance: Hero `<ProfileImage priority>` for LCP. Removed redundant `AnimatePresence` wrapper around the single-fade Hero motion.
 - About page: rewrote intro block — proper `<h1>`, semantic paragraph stack, dropped `<br>` spacing hack, increased section gaps (gap-16/24), added subtle top border between intro and Education/Environment grid, bumped body opacity for readability.
 - Per-route OG image variants for `/about`, `/projects`, `/certificates`. Shared rendering helper in `app/_og/og-template.tsx` (eyebrow + title + subtitle template), keeping each route file ~10 lines.
 - Polished `ShowcaseContainer` hover state: subtle `-translate-y-0.5` lift, `ring-1`, primary-tinted shadow, 300ms ease-out. Removed leftover `hover:gap-8` from earlier experiments.

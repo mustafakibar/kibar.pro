@@ -9,14 +9,14 @@ export type HeadingProps = {
 
 const Heading: React.FC<HeadingProps> = ({ className, children }) => {
   return (
-    <span
+    <h2
       className={cn(
         headingFont.className,
         'text-2xl tracking-tight',
         className,
       )}>
       {children}
-    </span>
+    </h2>
   );
 };
 

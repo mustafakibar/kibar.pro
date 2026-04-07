@@ -1,9 +1,10 @@
-import { PlausibleAnalytics } from '@/components/Analytics';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { TopProgressBar } from '@/components/TopProgressBar';
 import env from '@/env';
 import { cn } from '@/lib/utils';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata, Viewport } from 'next';
 import { headers } from 'next/headers';
 import React from 'react';
@@ -46,12 +47,6 @@ export const metadata: Metadata = {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: SITE_TITLE,
-    description: SITE_DESCRIPTION,
-    creator: '@mustafakibar',
-  },
   robots: {
     index: true,
     follow: true,
@@ -66,32 +61,43 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#0a0a0a' },
-  ],
-  colorScheme: 'light dark',
+  themeColor: '#0a0a0a',
+  colorScheme: 'dark',
 };
 
 type RootLayoutProps = {
   children: React.ReactNode;
 };
 
-const personJsonLd = {
+const structuredData = {
   '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: SITE_NAME,
-  url: env.SITE_URL,
-  jobTitle: 'Senior Full-Stack Engineer',
-  description: SITE_DESCRIPTION,
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Istanbul',
-    addressCountry: 'TR',
-  },
-  sameAs: [
-    'https://github.com/mustafakibar',
-    'https://www.linkedin.com/in/mustafakibar',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': `${env.SITE_URL}/#person`,
+      name: SITE_NAME,
+      url: env.SITE_URL,
+      jobTitle: 'Senior Full-Stack Engineer',
+      description: SITE_DESCRIPTION,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Istanbul',
+        addressCountry: 'TR',
+      },
+      sameAs: [
+        'https://github.com/mustafakibar',
+        'https://www.linkedin.com/in/mustafakibar',
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${env.SITE_URL}/#website`,
+      url: env.SITE_URL,
+      name: SITE_NAME,
+      description: SITE_DESCRIPTION,
+      publisher: { '@id': `${env.SITE_URL}/#person` },
+      inLanguage: 'en',
+    },
   ],
 };
 
@@ -104,9 +110,8 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         <script
           type="application/ld+json"
           nonce={nonce}
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-        <PlausibleAnalytics nonce={nonce} />
       </head>
       <body
         className={cn(
@@ -120,6 +125,8 @@ export default async function RootLayout({ children }: RootLayoutProps) {
             <div className="container">{children}</div>
             <Footer />
           </div>
+          <Analytics />
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>

@@ -13,17 +13,18 @@ export type FooterHeartIconProps = {
 };
 
 const Footer: React.FC<FooterProps> = ({ className }) => {
+  const year = new Date().getFullYear();
+
   return (
     <footer
       className={cn(
-        'w-full max-w-full overflow-hidden py-[2.5rem]',
+        'text-foreground/70 w-full max-w-full overflow-hidden py-10 text-sm',
         className,
       )}>
-      <div className="from-background/5 to-foreground/100 flex items-center justify-center gap-1 bg-linear-to-r from-1% to-91% bg-clip-text p-3 text-transparent transition-all duration-500 ease-out hover:gap-[0.1rem]">
-        <span>designed [with</span>
-        <FooterHeartIcon className="-pb-0.5 ml-1" color="text-red-700" />
-        <span>] by</span>
-        <span>Mustafa KiBAR</span>
+      <div className="flex items-center justify-center gap-2 p-3">
+        <span>Crafted with</span>
+        <FooterHeartIcon className="ml-0.5" color="text-red-700" />
+        <span>by Mustafa Kibar · © {year}</span>
       </div>
     </footer>
   );

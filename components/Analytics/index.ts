@@ -1,1 +1,0 @@
-export { PlausibleAnalytics } from './PlausibleAnalytics';

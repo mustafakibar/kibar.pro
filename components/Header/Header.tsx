@@ -61,7 +61,6 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           </Link>
 
           <div className="flex shrink items-center max-md:gap-4 md:flex-row-reverse">
-            {/* {!isMenuOpen && <ThemeSwitchButton />} */}
             <motion.div
               whileTap={{ x: -4, opacity: 0.8 }}
               transition={{
@@ -72,6 +71,11 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
                 className="md:hidden"
                 variant="ghost"
                 size="icon"
+                aria-label={
+                  isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'
+                }
+                aria-expanded={isMenuOpen}
+                aria-controls="primary-navigation"
                 onClick={() => setIsMenuOpen((open) => !open)}>
                 {isMenuOpen ? (
                   <BurgerMenuOpened size={32} />
@@ -81,7 +85,10 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               </Button>
             </motion.div>
 
-            <nav className="hidden md:flex">
+            <nav
+              id="primary-navigation"
+              aria-label="Primary"
+              className="hidden md:flex">
               <NavItems isMobile={isMenuOpen} />
             </nav>
           </div>
@@ -94,7 +101,10 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               animate={{ opacity: [0, 1] }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3, ease: 'easeInOut' }}>
-              <nav className="bg-background absolute left-0 z-10 h-screen w-full py-6 opacity-[.98]">
+              <nav
+                id="primary-navigation"
+                aria-label="Primary"
+                className="bg-background absolute left-0 z-10 h-screen w-full py-6 opacity-[.98]">
                 <NavItems
                   isMobile={isMenuOpen}
                   onItemClicked={() => setIsMenuOpen(false)}
