@@ -23,13 +23,14 @@ Modernization pass complete. Strict nonce-based CSP, full SEO, branded error pag
 
 ## Next steps
 
-1. Optional: revisit Header scroll motion and Showcase reveal motion for polish.
-2. Optional: add Plausible/Umami-style privacy-friendly analytics (with CSP allow-list).
-3. Optional: add ISR-only fallback for `/projects` (use `revalidate` segment config) if dynamic rendering becomes a hotspot.
-4. Optional: Open Graph image generation via `app/opengraph-image.tsx` for richer link previews.
+1. Optional: privacy-friendly analytics (Plausible/Umami) with CSP allow-list.
+2. Optional: per-route OG image variants (about, projects, certificates).
+3. Optional: revisit Showcase card hover/reveal motion.
 
 ## Completed
 
+- Added dynamic Open Graph image route at `app/opengraph-image.tsx` (1200×630, edge runtime, gradient + brand layout).
+- Refined Header: replaced state-flag shadow + opacity tween with a single backdrop-blur layer whose opacity is bound to scrollYProgress, sleeker entrance (-16y, 0.5s easeOut), border-bottom only when scrolled or menu open. Removed unused `AnimatePresence` mount thrash on the wrapper.
 - Migrated CSP to a strict, nonce-based policy via `middleware.ts`. Each HTML response gets a fresh `nonce`, propagated through `x-nonce` request header. Layout reads it via `headers()` and applies it to JSON-LD. `script-src` now uses `'strict-dynamic'` with the nonce in production; dev keeps `'unsafe-eval'` for HMR. Removed CSP from `next.config.ts` to avoid duplication.
 - Replaced inline base64 blob `blurDataURL` placeholders in `TurkeyFlagImage.tsx` and About page `desk` image with constants in `lib/constants/image.ts`.
 - Migrated `package.json` lint script from deprecated `next lint` to direct `eslint .`. Added `lint:fix` script. Added `ignores` block in `eslint.config.mjs` (`.next`, `node_modules`, `next-env.d.ts`, `public`, `.husky`, `bun.lock`).

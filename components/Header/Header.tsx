@@ -22,37 +22,30 @@ export type HeaderProps = {
 
 const Header: React.FC<HeaderProps> = ({ className }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrollGoingDown, setIsScrollGoingDown] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const { scrollYProgress } = useScroll();
-  const height = useTransform(scrollYProgress, [0.2, 1], [75, 55]);
-  const opacity = useTransform(scrollYProgress, [0.2, 1], [0.8, 1]);
+  const height = useTransform(scrollYProgress, [0, 0.15], [76, 60]);
+  const backdropOpacity = useTransform(scrollYProgress, [0, 0.15], [0, 0.85]);
 
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
-    if (latest > 0.1 && !isScrollGoingDown) {
-      setIsScrollGoingDown(true);
-    }
-
-    if (latest <= 0.1 && isScrollGoingDown) {
-      setIsScrollGoingDown(false);
-    }
+    setIsScrolled(latest > 0.05);
   });
 
   return (
     <motion.header
       className={cn(
-        'bg-background sticky top-0 right-0 left-0 z-10 mx-auto mb-4 w-full transition-all duration-300',
+        'sticky top-0 right-0 left-0 z-20 mx-auto mb-4 w-full',
         className,
       )}
-      layout
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      style={{
-        height,
-        opacity: isMenuOpen ? 1 : opacity,
-        originX: 0,
-        originY: 0,
-      }}>
+      initial={{ opacity: 0, y: -16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+      style={{ height }}>
+      <motion.div
+        aria-hidden
+        className="bg-background/80 absolute inset-0 -z-10 backdrop-blur-md"
+        style={{ opacity: isMenuOpen ? 1 : backdropOpacity }}
+      />
       <div className="container py-3">
         <div className="flex items-center justify-between">
           <Link
@@ -111,15 +104,13 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           )}
         </AnimatePresence>
 
-        {/* Header shadow */}
-        <motion.div
+        <div
+          aria-hidden
           className={cn(
-            'shadow-primary/20 dark:shadow-primary/20 absolute inset-0 -z-50 rounded-sm',
-            {
-              'shadow-xs': isScrollGoingDown,
-              'bg-background': !isMenuOpen,
-            },
-          )}></motion.div>
+            'border-foreground/10 pointer-events-none absolute inset-x-0 bottom-0 border-b transition-opacity duration-300',
+            isScrolled || isMenuOpen ? 'opacity-100' : 'opacity-0',
+          )}
+        />
       </div>
     </motion.header>
   );
