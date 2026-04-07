@@ -10,7 +10,6 @@ import { headers } from 'next/headers';
 import React from 'react';
 import { textFont } from './fonts';
 import './globals.css';
-import ThemeProvider from './theme-provider';
 
 const SITE_NAME = 'Mustafa Kibar';
 const SITE_TITLE = 'Mustafa Kibar — Senior Full-Stack Engineer';
@@ -105,7 +104,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
   const nonce = (await headers()).get('x-nonce') ?? undefined;
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark">
       <head>
         <script
           type="application/ld+json"
@@ -119,16 +118,14 @@ export default async function RootLayout({ children }: RootLayoutProps) {
           '[&::-webkit-scrollbar-thumb]:bg-secondary [&::-webkit-scrollbar-thumb]:hover:bg-primary/80 bg-background text-foreground min-h-screen min-w-screen overflow-x-hidden scroll-smooth [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:rounded-s-full',
           textFont.className,
         )}>
-        <ThemeProvider attribute="class" enableSystem defaultTheme="system">
-          <div className="flex min-h-screen min-w-screen flex-col">
-            <TopProgressBar />
-            <Header />
-            <div className="container">{children}</div>
-            <Footer />
-          </div>
-          <Analytics />
-          <SpeedInsights />
-        </ThemeProvider>
+        <div className="flex min-h-screen min-w-screen flex-col">
+          <TopProgressBar />
+          <Header />
+          <div className="container">{children}</div>
+          <Footer />
+        </div>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

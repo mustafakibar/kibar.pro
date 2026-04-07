@@ -9,7 +9,6 @@ Live: [kibar.pro](https://kibar.pro)
 - **Framework:** Next.js 15 (App Router, React Server Components, Turbopack)
 - **UI:** React 19, Tailwind CSS v4, lightweight shadcn/ui-style primitives
 - **Motion:** [`motion`](https://motion.dev) (Framer Motion successor)
-- **Theme:** `next-themes` (forced dark)
 - **Analytics:** Vercel Analytics + Speed Insights (free, privacy-friendly)
 - **Tooling:** TypeScript 5, ESLint 9, Prettier, Husky, lint-staged, commitlint
 - **Compiler:** React Compiler (experimental)
