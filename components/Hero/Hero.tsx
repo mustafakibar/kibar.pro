@@ -49,8 +49,8 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
               strong developer experience.
             </p>
 
-            <Card className="bg-accent/5 my-4 -ml-1 max-h-8 min-h-8 w-fit min-w-16 object-none px-3 py-0.5">
-              <HeroWithLoveSection className="text-primary/75 font-black" />
+            <Card className="bg-accent/5 my-4 -ml-1 max-h-8 min-h-8 w-fit min-w-16 border-0 object-none px-0.5 py-0.5">
+              <HeroWithLoveSection className="text-secondary/75" />
             </Card>
           </div>
 

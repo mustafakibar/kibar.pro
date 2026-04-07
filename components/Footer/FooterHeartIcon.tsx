@@ -4,12 +4,7 @@ import { useAnimationInView } from '@/hooks/useAnimationInView';
 import { useAnimationOnHover } from '@/hooks/useAnimationOnHover';
 import { HeartIcon } from '@/lib/icons';
 import { cn } from '@/lib/utils';
-import {
-  AnimatePresence,
-  AnimationPlaybackControls,
-  motion,
-  useAnimate,
-} from 'motion/react';
+import { AnimationPlaybackControls, motion, useAnimate } from 'motion/react';
 import React, { useEffect, useRef } from 'react';
 import type { FooterHeartIconProps } from './Footer';
 
@@ -49,15 +44,13 @@ const FooterHeartIcon: React.FC<FooterHeartIconProps> = ({
         color,
         className,
       )}>
-      <AnimatePresence>
-        <HeartIcon key="h1" size={Math.max(8, size - 16)} />
-        <motion.div
-          ref={scope}
-          initial={{ opacity: 0, scale: 1 }}
-          className="absolute">
-          <HeartIcon key="h2" size={size} />
-        </motion.div>
-      </AnimatePresence>
+      <HeartIcon size={Math.max(8, size - 16)} />
+      <motion.div
+        ref={scope}
+        initial={{ opacity: 0, scale: 1 }}
+        className="absolute">
+        <HeartIcon size={size} />
+      </motion.div>
     </div>
   );
 };
