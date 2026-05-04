@@ -1,31 +1,26 @@
-import { Inconsolata, Lilita_One, Outfit, Rowdies } from 'next/font/google';
+import { Fraunces, Geist, Geist_Mono } from 'next/font/google';
 
-const brandFont = Rowdies({
-  weight: '400',
+const displayFont = Fraunces({
   subsets: ['latin'],
   display: 'swap',
+  axes: ['opsz', 'SOFT'],
+  weight: ['400', '500', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-display',
 });
 
-const textFont = Inconsolata({
-  weight: ['400', '600', '900'],
+const bodyFont = Geist({
   subsets: ['latin'],
   display: 'swap',
+  weight: ['300', '400', '500', '600'],
+  variable: '--font-body',
 });
 
-const headingFont = Lilita_One({
-  weight: '400',
+const monoFont = Geist_Mono({
   subsets: ['latin'],
   display: 'swap',
+  weight: ['400', '500'],
+  variable: '--font-mono',
 });
 
-const heroFont = brandFont;
-
-const titleFont = textFont;
-
-const navFont = Outfit({
-  weight: '400',
-  subsets: ['latin'],
-  display: 'swap',
-});
-
-export { brandFont, headingFont, heroFont, navFont, textFont, titleFont };
+export { bodyFont, displayFont, monoFont };
