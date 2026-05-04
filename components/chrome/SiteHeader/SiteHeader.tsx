@@ -30,10 +30,7 @@ const SiteHeader = ({ className }: { className?: string }) => {
 
   return (
     <motion.header
-      className={cn(
-        'sticky top-0 right-0 left-0 z-20 mx-auto w-full',
-        className,
-      )}
+      className={cn('sticky top-0 z-20 mx-auto w-full', className)}
       initial={{ opacity: 0, y: -16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: duration.slow, ease: easing.out }}
@@ -48,7 +45,7 @@ const SiteHeader = ({ className }: { className?: string }) => {
           href={HOME_PATH}
           aria-label="kibar.pro home"
           onClick={() => setIsMenuOpen(false)}
-          className="text-3xl">
+          className="focus-visible:ring-gold/50 rounded-sm text-3xl outline-none focus-visible:ring-1">
           <Monogram />
         </Link>
 
@@ -88,7 +85,7 @@ const SiteHeader = ({ className }: { className?: string }) => {
             transition={{ duration: duration.normal, ease: easing.inOut }}>
             <nav
               aria-label="Mobile primary"
-              className="bg-canvas/95 absolute left-0 z-10 h-screen w-full px-6 py-10">
+              className="bg-canvas/95 absolute left-0 z-10 h-dvh w-full px-6 py-10">
               <NavList
                 variant="vertical"
                 onItemClick={() => setIsMenuOpen(false)}
