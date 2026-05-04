@@ -4,7 +4,6 @@ const displayFont = Fraunces({
   subsets: ['latin'],
   display: 'swap',
   axes: ['opsz', 'SOFT'],
-  weight: ['400', '500', '700'],
   style: ['normal', 'italic'],
   variable: '--font-display',
 });

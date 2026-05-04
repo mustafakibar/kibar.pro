@@ -1,6 +1,6 @@
 'server-only';
 
-import { Project } from '@/components/Project';
+import type { Project } from '@/components/projects/ProjectCard';
 import env from '@/env';
 import { CACHE_TAG_GITHUB_REPOS } from '@/lib/constants/cache-tags';
 import { getGithubRepos } from '@/lib/github';
