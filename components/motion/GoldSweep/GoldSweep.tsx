@@ -3,7 +3,7 @@
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { duration, easing } from '@/lib/tokens';
 import { cn } from '@/lib/utils';
-import * as motion from 'motion/react-client';
+import { motion } from 'motion/react';
 import type { ReactNode } from 'react';
 
 type GoldSweepProps = {
@@ -27,7 +27,7 @@ const GoldSweep = ({ children, className, delay = 0 }: GoldSweepProps) => {
       className={cn('inline-block bg-clip-text text-transparent', className)}
       style={{
         backgroundImage:
-          'linear-gradient(95deg, var(--color-ink) 0%, var(--color-gold-bright) 50%, var(--color-ink) 100%)',
+          'linear-gradient(95deg, var(--color-ink) 0%, var(--color-gold) 60%, var(--color-ink) 100%)',
         backgroundSize: '200% 100%',
         backgroundPosition: '100% 0%',
       }}

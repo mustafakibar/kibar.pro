@@ -2,7 +2,7 @@
 
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { duration, easing } from '@/lib/tokens';
-import * as motion from 'motion/react-client';
+import { motion } from 'motion/react';
 import type { ReactNode } from 'react';
 
 type RevealOnViewProps = {
