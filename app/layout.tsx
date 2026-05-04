@@ -1,3 +1,7 @@
+import { CommandPalette } from '@/components/chrome/CommandPalette';
+import { ScrollProgress } from '@/components/chrome/ScrollProgress';
+import { SiteFooter } from '@/components/chrome/SiteFooter';
+import { SiteHeader } from '@/components/chrome/SiteHeader';
 import env from '@/env';
 import { cn } from '@/lib/utils';
 import { Analytics } from '@vercel/analytics/next';
@@ -118,7 +122,13 @@ export default async function RootLayout({ children }: RootLayoutProps) {
           displayFont.variable,
           monoFont.variable,
         )}>
-        <div className="flex min-h-screen min-w-full flex-col">{children}</div>
+        <div className="flex min-h-screen min-w-full flex-col">
+          <ScrollProgress />
+          <CommandPalette />
+          <SiteHeader />
+          <main className="flex-1">{children}</main>
+          <SiteFooter />
+        </div>
         <Analytics />
         <SpeedInsights />
       </body>
