@@ -1,7 +1,3 @@
-import { CommandPalette } from '@/components/CommandPalette';
-import { Footer } from '@/components/Footer';
-import { Header } from '@/components/Header';
-import { TopProgressBar } from '@/components/TopProgressBar';
 import env from '@/env';
 import { cn } from '@/lib/utils';
 import { Analytics } from '@vercel/analytics/next';
@@ -9,7 +5,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata, Viewport } from 'next';
 import { headers } from 'next/headers';
 import React from 'react';
-import { textFont } from './fonts';
+import { bodyFont, displayFont, monoFont } from './fonts';
 import './globals.css';
 
 const SITE_NAME = 'Mustafa Kibar';
@@ -117,16 +113,12 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       <body
         suppressHydrationWarning
         className={cn(
-          '[&::-webkit-scrollbar-thumb]:bg-secondary [&::-webkit-scrollbar-thumb]:hover:bg-primary/80 bg-background text-foreground min-h-screen min-w-screen overflow-x-hidden scroll-smooth [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:rounded-s-full',
-          textFont.className,
+          'bg-canvas text-ink font-body min-h-screen min-w-full overflow-x-hidden antialiased',
+          bodyFont.variable,
+          displayFont.variable,
+          monoFont.variable,
         )}>
-        <div className="flex min-h-screen min-w-screen flex-col">
-          <TopProgressBar />
-          <CommandPalette />
-          <Header />
-          <div className="container">{children}</div>
-          <Footer />
-        </div>
+        <div className="flex min-h-screen min-w-full flex-col">{children}</div>
         <Analytics />
         <SpeedInsights />
       </body>
