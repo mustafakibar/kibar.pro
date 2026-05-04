@@ -64,12 +64,12 @@
   --radius-lg:  14px;
 
   /* Motion durations */
-  --dur-instant:    80ms;
-  --dur-fast:      150ms;
-  --dur-normal:    220ms;
-  --dur-slow:      360ms;
-  --dur-hero:      720ms;
-  --dur-cinematic: 1200ms;
+  --duration-instant:    80ms;
+  --duration-fast:      150ms;
+  --duration-normal:    220ms;
+  --duration-slow:      360ms;
+  --duration-hero:      720ms;
+  --duration-cinematic: 1200ms;
 
   /* Easings */
   --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);

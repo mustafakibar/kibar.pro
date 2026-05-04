@@ -1,6 +1,6 @@
 /**
  * Motion tokens mirrored from globals.css for JS-driven animations.
- * Keep durations in sync with --dur-* CSS variables.
+ * Keep durations in sync with --duration-* CSS variables.
  */
 
 export const duration = {
