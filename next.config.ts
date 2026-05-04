@@ -23,6 +23,7 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  pageExtensions: ['ts', 'tsx', 'mdx'],
   experimental: {
     reactCompiler: true,
   },
@@ -34,12 +35,7 @@ const nextConfig: NextConfig = {
     ],
   },
   async headers() {
-    return [
-      {
-        source: '/:path*',
-        headers: securityHeaders,
-      },
-    ];
+    return [{ source: '/:path*', headers: securityHeaders }];
   },
 };
 
