@@ -170,7 +170,7 @@ const CommandPalette = () => {
                         key={item.label}
                         value={item.label}
                         onSelect={() => run(item)}
-                        className="font-body text-ink-muted data-[selected=true]:bg-rule data-[selected=true]:text-ink flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm">
+                        className="group duration-fast font-body text-ink-muted data-[selected=true]:from-gold/10 data-[selected=true]:via-gold/15 data-[selected=true]:text-ink flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors data-[selected=true]:bg-gradient-to-r data-[selected=true]:to-transparent">
                         <span className="text-gold">{item.icon}</span>
                         <span>{item.label}</span>
                         {item.external && (
