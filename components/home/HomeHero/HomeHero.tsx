@@ -52,6 +52,16 @@ const HomeHero = ({ className }: HomeHeroProps) => (
     <Container>
       <div className="flex flex-col">
         <Wordmark />
+        <div className="text-ink-faint mt-6 flex items-center gap-3">
+          <span aria-hidden className="bg-gold/60 h-px w-8" />
+          <Mono className="text-xs tracking-[0.35em] uppercase">
+            Senior Engineer · Full-Stack · Istanbul
+          </Mono>
+          <span
+            aria-hidden
+            className="from-gold/40 via-gold/10 h-px flex-1 bg-gradient-to-r to-transparent"
+          />
+        </div>
         <Body size="lg" muted className="mt-8 max-w-2xl">
           Senior full-stack engineer based in Istanbul. I design and ship
           reliable, performant products end-to-end — clean architecture, strong
