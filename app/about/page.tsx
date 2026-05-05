@@ -8,6 +8,7 @@ import { Timeline } from '@/components/timeline/Timeline';
 import { Body, Eyebrow, Subhead } from '@/components/typography';
 import { EDUCATION_TIMELINE } from '@/lib/data/timeline.data';
 import type { Metadata, NextPage } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -51,13 +52,13 @@ const AboutPage: NextPage = () => (
 
       <Body muted className="border-rule border-t pt-8 text-center italic">
         → Workshop &amp; gear at{' '}
-        <a className="text-gold hover:underline" href="/uses">
+        <Link className="text-gold hover:underline" href="/uses">
           /uses
-        </a>{' '}
+        </Link>{' '}
         · → Recent thinking at{' '}
-        <a className="text-gold hover:underline" href="/notes">
+        <Link className="text-gold hover:underline" href="/notes">
           /notes
-        </a>
+        </Link>
         .
       </Body>
     </Container>
