@@ -7,4 +7,10 @@ export type Project = {
   description: string;
   images?: readonly { src: string; alt: string }[];
   repoUrl?: string;
+  stars?: number;
+  forks?: number;
+  language?: string | null;
+  isFork?: boolean;
+  isArchived?: boolean;
+  pushedAt?: string;
 };
