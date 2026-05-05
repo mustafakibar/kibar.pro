@@ -1,5 +1,4 @@
 import { EmptyState } from '@/components/feedback/EmptyState';
-import { ChapterBand } from '@/components/layout/ChapterBand';
 import { ChapterHead } from '@/components/layout/ChapterHead';
 import { Container } from '@/components/layout/Container';
 import { Grid } from '@/components/layout/Grid';
@@ -25,15 +24,13 @@ const ProjectsPage: NextPage = async () => {
   const projects = await getProjects();
   return (
     <>
-      <ChapterBand>
-        <Container>
-          <ChapterHead
-            title="Projects"
-            description="A selection of open-source and production work across the stack."
-            headingLevel="h1"
-          />
-        </Container>
-      </ChapterBand>
+      <Container className="pt-12 pb-4">
+        <ChapterHead
+          title="Projects"
+          description="A selection of open-source and production work across the stack."
+          headingLevel="h1"
+        />
+      </Container>
 
       <Container className="py-16">
         {projects.length === 0 ? (

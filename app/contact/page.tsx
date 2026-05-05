@@ -1,7 +1,6 @@
 import { ContactList } from '@/components/contact/ContactList';
 import { EmailRow } from '@/components/contact/EmailRow';
 import { StatusPill } from '@/components/contact/StatusPill';
-import { ChapterBand } from '@/components/layout/ChapterBand';
 import { ChapterHead } from '@/components/layout/ChapterHead';
 import { Container } from '@/components/layout/Container';
 import { Body, Subhead } from '@/components/typography';
@@ -23,20 +22,18 @@ export const metadata: Metadata = {
 
 const ContactPage: NextPage = () => (
   <>
-    <ChapterBand>
-      <Container>
-        <ChapterHead
-          title={
-            <>
-              Direct, considered{' '}
-              <em className="font-normal italic">correspondence</em>.
-            </>
-          }
-          description="Best caught by email or in writing. Replies within 48 hours."
-          headingLevel="h1"
-        />
-      </Container>
-    </ChapterBand>
+    <Container className="pt-12 pb-4">
+      <ChapterHead
+        title={
+          <>
+            Direct, considered{' '}
+            <em className="font-normal italic">correspondence</em>.
+          </>
+        }
+        description="Best caught by email or in writing. Replies within 48 hours."
+        headingLevel="h1"
+      />
+    </Container>
 
     <Container size="narrow" className="flex flex-col gap-12 py-16">
       <StatusPill>Istanbul · UTC+3 · Remote-friendly</StatusPill>

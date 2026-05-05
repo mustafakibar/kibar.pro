@@ -1,5 +1,4 @@
 import { EmptyState } from '@/components/feedback/EmptyState';
-import { ChapterBand } from '@/components/layout/ChapterBand';
 import { ChapterHead } from '@/components/layout/ChapterHead';
 import { Container } from '@/components/layout/Container';
 import { RevealOnView } from '@/components/motion/RevealOnView';
@@ -45,15 +44,13 @@ const NotesPage: NextPage = async () => {
 
   return (
     <>
-      <ChapterBand>
-        <Container>
-          <ChapterHead
-            title="Notes"
-            description="Snippets, observations, and things worth keeping."
-            headingLevel="h1"
-          />
-        </Container>
-      </ChapterBand>
+      <Container className="pt-12 pb-4">
+        <ChapterHead
+          title="Notes"
+          description="Snippets, observations, and things worth keeping."
+          headingLevel="h1"
+        />
+      </Container>
 
       <Container size="narrow" className="py-16">
         {merged.length === 0 ? (

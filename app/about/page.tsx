@@ -1,8 +1,6 @@
 import { Biography } from '@/components/about/Biography';
 import { PortraitBand } from '@/components/about/PortraitBand';
 import { SkillsIndex } from '@/components/home/SkillsIndex';
-import { ChapterBand } from '@/components/layout/ChapterBand';
-import { ChapterHead } from '@/components/layout/ChapterHead';
 import { Container } from '@/components/layout/Container';
 import { Timeline } from '@/components/timeline/Timeline';
 import { Body, Subhead } from '@/components/typography';
@@ -25,20 +23,6 @@ export const metadata: Metadata = {
 
 const AboutPage: NextPage = () => (
   <>
-    <ChapterBand>
-      <Container>
-        <ChapterHead
-          title={
-            <>
-              The <em className="font-normal italic">Maker</em>
-            </>
-          }
-          description="A short biography, a portrait, and the threads that brought me here."
-          headingLevel="h1"
-        />
-      </Container>
-    </ChapterBand>
-
     <Container size="narrow" className="flex flex-col gap-16 py-16">
       <PortraitBand />
       <Biography />

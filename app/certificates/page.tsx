@@ -1,6 +1,5 @@
 import { CertificateCard } from '@/components/certificates/CertificateCard';
 import { EmptyState } from '@/components/feedback/EmptyState';
-import { ChapterBand } from '@/components/layout/ChapterBand';
 import { ChapterHead } from '@/components/layout/ChapterHead';
 import { Container } from '@/components/layout/Container';
 import { Grid } from '@/components/layout/Grid';
@@ -23,15 +22,13 @@ export const metadata: Metadata = {
 
 const CertificatesPage: NextPage = () => (
   <>
-    <ChapterBand>
-      <Container>
-        <ChapterHead
-          title="Certificates"
-          description="Certificates earned across engineering, cloud, and product disciplines."
-          headingLevel="h1"
-        />
-      </Container>
-    </ChapterBand>
+    <Container className="pt-12 pb-4">
+      <ChapterHead
+        title="Certificates"
+        description="Certificates earned across engineering, cloud, and product disciplines."
+        headingLevel="h1"
+      />
+    </Container>
 
     <Container className="py-16">
       {CERTIFICATES.length === 0 ? (

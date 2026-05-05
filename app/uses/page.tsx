@@ -1,4 +1,3 @@
-import { ChapterBand } from '@/components/layout/ChapterBand';
 import { ChapterHead } from '@/components/layout/ChapterHead';
 import { Container } from '@/components/layout/Container';
 import { DeskBand } from '@/components/uses/DeskBand';
@@ -18,15 +17,13 @@ export const metadata: Metadata = {
 
 const UsesPage: NextPage = () => (
   <>
-    <ChapterBand>
-      <Container>
-        <ChapterHead
-          title="Workshop"
-          description="The desk, the machine, and the tools — what I actually use."
-          headingLevel="h1"
-        />
-      </Container>
-    </ChapterBand>
+    <Container className="pt-12 pb-4">
+      <ChapterHead
+        title="Workshop"
+        description="The desk, the machine, and the tools — what I actually use."
+        headingLevel="h1"
+      />
+    </Container>
 
     <Container size="narrow" className="flex flex-col gap-16 py-16">
       <UsesIndex />
