@@ -17,7 +17,7 @@ const Wordmark = ({ className }: WordmarkProps) => {
     <h1
       className={cn(
         'gold-sweep font-display leading-[0.92] tracking-[-0.025em]',
-        'text-[clamp(4rem,15vw,12rem)]',
+        'text-[clamp(3rem,11vw,8.5rem)]',
         className,
       )}
       style={{ fontVariationSettings: "'opsz' 144, 'SOFT' 30" }}
@@ -29,7 +29,7 @@ const Wordmark = ({ className }: WordmarkProps) => {
             className={cn(
               'inline-block',
               isItalic &&
-                'mx-[0.05em] align-baseline text-[0.62em] font-normal italic',
+                'mx-[0.04em] align-baseline text-[0.85em] font-normal italic',
             )}
             style={
               isItalic
