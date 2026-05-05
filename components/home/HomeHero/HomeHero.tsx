@@ -50,16 +50,16 @@ const HomeHero = ({ className }: HomeHeroProps) => (
     </div>
 
     <Container>
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col">
         <Wordmark />
-        <Body size="lg" muted className="max-w-2xl">
+        <Body size="lg" muted className="mt-8 max-w-2xl">
           Senior full-stack engineer based in Istanbul. I design and ship
           reliable, performant products end-to-end — clean architecture, strong
           developer experience, considered motion.
         </Body>
         <Marquee
           speed={45}
-          className="border-rule -mx-4 mt-6 border-y py-4 md:-mx-8">
+          className="border-rule -mx-4 mt-12 border-y py-4 md:-mx-8">
           {STACK.map((label) => (
             <Mono
               key={label}
