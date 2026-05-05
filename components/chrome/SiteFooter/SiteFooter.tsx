@@ -13,7 +13,7 @@ const SiteFooter = ({ className }: { className?: string }) => {
       <div className="container flex flex-col items-center gap-4 text-center md:flex-row md:justify-between md:text-left">
         <div className="flex items-center gap-3">
           <FooterStamp />
-          <Caption>Crafted by Mustafa Kibar in Istanbul.</Caption>
+          <Caption>Crafted by Mustafa KiBAR in Istanbul.</Caption>
         </div>
         <Mono className="text-ink-faint">© {year} · KiBAR</Mono>
       </div>
