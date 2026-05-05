@@ -54,8 +54,9 @@ export const USES: readonly UseCategory[] = [
     items: [
       { name: 'Cursor settings', label: 'Synced via Cursor account' },
       {
-        name: 'Custom zsh config',
-        label: 'Mostly defaults + a handful of aliases',
+        name: 'Dotfiles',
+        label: 'github.com/mustafakibar/dotfiles',
+        link: 'https://github.com/mustafakibar/dotfiles',
       },
     ],
   },
