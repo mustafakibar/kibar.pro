@@ -19,13 +19,13 @@ const GistCard = ({ gist, className }: GistCardProps) => (
       className,
     )}>
     <div className="min-w-0 flex-1">
-      <div className="flex items-baseline gap-2">
+      <div className="flex min-w-0 items-baseline gap-2">
         <Subhead
           as="h3"
-          className="text-ink duration-fast group-hover:text-gold not-italic transition-colors">
+          className="text-ink duration-fast group-hover:text-gold min-w-0 truncate not-italic transition-colors">
           {gist.title}
         </Subhead>
-        <Mono className="bg-rule text-ink-faint rounded-sm px-1.5 py-0.5 text-[10px] tracking-widest uppercase">
+        <Mono className="bg-rule text-ink-faint shrink-0 rounded-sm px-1.5 py-0.5 text-[10px] tracking-widest uppercase">
           Gist
         </Mono>
       </div>
