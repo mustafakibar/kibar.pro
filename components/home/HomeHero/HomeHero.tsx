@@ -29,7 +29,7 @@ const STACK = [
 const HomeHero = ({ className }: HomeHeroProps) => (
   <section
     className={cn(
-      'relative isolate overflow-hidden py-20 md:py-32',
+      'relative isolate flex min-h-[100dvh] flex-col justify-center overflow-hidden py-20 md:py-32',
       'before:bg-glow-gold before:pointer-events-none before:absolute before:top-[20%] before:right-[10%] before:-z-10 before:h-[420px] before:w-[420px] before:rounded-full before:blur-[140px]',
       'after:bg-glow-crimson after:pointer-events-none after:absolute after:bottom-0 after:left-0 after:-z-10 after:h-[360px] after:w-[360px] after:rounded-full after:blur-[120px]',
       className,
@@ -50,9 +50,9 @@ const HomeHero = ({ className }: HomeHeroProps) => (
     </div>
 
     <Container>
-      <div className="flex flex-col">
+      <div className="flex flex-col items-center text-center md:items-start md:text-left">
         <Wordmark />
-        <div className="text-ink-faint mt-6 flex items-center gap-3">
+        <div className="text-ink-faint mt-6 flex w-full items-center gap-3">
           <span aria-hidden className="bg-gold/60 h-px w-8" />
           <Mono className="text-xs tracking-[0.35em] uppercase">
             Senior Engineer · Full-Stack · Istanbul
