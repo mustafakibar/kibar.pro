@@ -16,76 +16,55 @@ export function renderOgImage({ eyebrow, title, subtitle }: OgTemplateProps) {
         style={{
           width: '100%',
           height: '100%',
+          background:
+            'radial-gradient(ellipse at 30% 20%, #2a1212 0%, #0a0606 80%)',
+          color: '#f3e3c7',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          padding: '80px',
-          background:
-            'radial-gradient(circle at 20% 20%, #1e293b 0%, #0a0a0a 60%)',
-          color: '#f8fafc',
+          padding: 80,
           fontFamily: 'sans-serif',
         }}>
         <div
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 16,
             fontSize: 28,
-            color: '#94a3b8',
-            letterSpacing: 2,
+            letterSpacing: 8,
             textTransform: 'uppercase',
+            color: '#c89b53',
+            fontWeight: 500,
           }}>
-          <span
-            style={{
-              width: 48,
-              height: 48,
-              borderRadius: 12,
-              background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontWeight: 800,
-              color: '#fff',
-              fontSize: 28,
-            }}>
-            mk
-          </span>
           {eyebrow}
         </div>
-
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-          <div
-            style={{
-              fontSize: 84,
-              fontWeight: 800,
-              lineHeight: 1.05,
-              letterSpacing: -2,
-            }}>
-            {title}
-          </div>
-          {subtitle && (
-            <div
-              style={{
-                fontSize: 32,
-                color: '#cbd5e1',
-                maxWidth: 960,
-                marginTop: 8,
-              }}>
-              {subtitle}
-            </div>
-          )}
+        <div
+          style={{
+            fontWeight: 500,
+            fontSize: 140,
+            lineHeight: 1,
+            letterSpacing: '-0.04em',
+            backgroundImage:
+              'linear-gradient(95deg, #f3e3c7 0%, #c89b53 60%, #f3e3c7 100%)',
+            backgroundClip: 'text',
+            color: 'transparent',
+            whiteSpace: 'pre-wrap',
+          }}>
+          {title}
         </div>
-
         <div
           style={{
             display: 'flex',
-            alignItems: 'center',
             justifyContent: 'space-between',
-            fontSize: 24,
-            color: '#64748b',
+            alignItems: 'flex-end',
           }}>
-          <span>Mustafa Kibar — kibar.pro</span>
-          <span>github.com/mustafakibar</span>
+          <div
+            style={{
+              fontSize: 22,
+              color: '#d4c19b',
+              maxWidth: 760,
+              lineHeight: 1.4,
+            }}>
+            {subtitle}
+          </div>
+          <div style={{ fontSize: 22, color: '#c89b53' }}>kibar.pro</div>
         </div>
       </div>
     ),

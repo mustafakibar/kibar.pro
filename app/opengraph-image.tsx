@@ -7,9 +7,9 @@ export const contentType = ogContentType;
 
 export default function OpengraphImage() {
   return renderOgImage({
-    eyebrow: 'kibar.pro',
-    title: 'Mustafa Kibar',
+    eyebrow: '§ 0 — INDEX',
+    title: 'K𝑖BAR',
     subtitle:
-      'Senior Full-Stack Engineer — designing and shipping reliable products across the web stack.',
+      'Senior full-stack engineer based in Istanbul. Reliable, performant products end-to-end.',
   });
 }
