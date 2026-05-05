@@ -2,6 +2,7 @@ import { EmptyState } from '@/components/feedback/EmptyState';
 import { ChapterBand } from '@/components/layout/ChapterBand';
 import { ChapterHead } from '@/components/layout/ChapterHead';
 import { Container } from '@/components/layout/Container';
+import { RevealOnView } from '@/components/motion/RevealOnView';
 import { NoteCard } from '@/components/notes/NoteCard';
 import { listNoteSummaries } from '@/lib/notes';
 import type { Metadata, NextPage } from 'next';
@@ -41,7 +42,9 @@ const NotesPage: NextPage = async () => {
           <ol className="flex flex-col" role="list">
             {notes.map((note, i) => (
               <li key={note.slug}>
-                <NoteCard note={note} index={i} />
+                <RevealOnView delay={Math.min(i, 9) * 0.04}>
+                  <NoteCard note={note} index={i} />
+                </RevealOnView>
               </li>
             ))}
           </ol>
