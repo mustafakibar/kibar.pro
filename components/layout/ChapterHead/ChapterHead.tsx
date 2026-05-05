@@ -8,6 +8,7 @@ type ChapterHeadProps = {
   description?: ReactNode;
   className?: string;
   align?: 'start' | 'center';
+  headingLevel?: 'h1' | 'h2' | 'h3';
 };
 
 const ChapterHead = ({
@@ -16,6 +17,7 @@ const ChapterHead = ({
   description,
   className,
   align = 'start',
+  headingLevel = 'h2',
 }: ChapterHeadProps) => (
   <header
     className={cn(
@@ -24,7 +26,7 @@ const ChapterHead = ({
       className,
     )}>
     <Eyebrow>{chapter}</Eyebrow>
-    <Heading as="h1">{title}</Heading>
+    <Heading as={headingLevel}>{title}</Heading>
     {description && (
       <Body muted size="lg" className="max-w-prose">
         {description}
