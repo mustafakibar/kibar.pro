@@ -5,6 +5,10 @@
    Single dark-only palette. OKLCH tokens. No light variant.
    ============================================================ */
 
+@view-transition {
+  navigation: auto;
+}
+
 @theme {
   /* Surfaces */
   --color-canvas:        oklch(0.09  0.012  35);
@@ -157,5 +161,11 @@
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
     }
+  }
+
+  ::view-transition-old(site-monogram),
+  ::view-transition-new(site-monogram) {
+    animation-duration: var(--duration-normal);
+    animation-timing-function: var(--ease-out);
   }
 }

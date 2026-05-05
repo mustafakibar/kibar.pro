@@ -5,7 +5,9 @@ type MonogramProps = {
 };
 
 const Monogram = ({ className }: MonogramProps) => (
-  <span className={cn('font-display inline-flex items-baseline', className)}>
+  <span
+    className={cn('font-display inline-flex items-baseline', className)}
+    style={{ viewTransitionName: 'site-monogram' }}>
     <span
       className="gold-sweep italic"
       style={{ fontVariationSettings: "'opsz' 144, 'SOFT' 60" }}>
