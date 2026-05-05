@@ -1,9 +1,7 @@
 import { EmptyState } from '@/components/feedback/EmptyState';
 import { ChapterHead } from '@/components/layout/ChapterHead';
 import { Container } from '@/components/layout/Container';
-import { Grid } from '@/components/layout/Grid';
-import { RevealOnView } from '@/components/motion/RevealOnView';
-import { ProjectCard } from '@/components/projects/ProjectCard';
+import { ProjectsView } from '@/components/projects/ProjectsView';
 import { getProjects } from '@/lib/data/getProjects';
 import type { Metadata, NextPage } from 'next';
 
@@ -36,13 +34,7 @@ const ProjectsPage: NextPage = async () => {
         {projects.length === 0 ? (
           <EmptyState message="No projects to show yet." />
         ) : (
-          <Grid cols={{ md: 2, xl: 3 }}>
-            {projects.map((p, i) => (
-              <RevealOnView key={p.id} delay={Math.min(i, 9) * 0.04}>
-                <ProjectCard project={p} />
-              </RevealOnView>
-            ))}
-          </Grid>
+          <ProjectsView projects={projects} />
         )}
       </Container>
     </>
