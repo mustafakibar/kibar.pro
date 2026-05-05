@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 import type { ReactNode } from 'react';
 
 type ChapterHeadProps = {
-  chapter: string;
+  chapter?: string;
   title: ReactNode;
   description?: ReactNode;
   className?: string;
@@ -25,7 +25,7 @@ const ChapterHead = ({
       align === 'center' && 'items-center text-center',
       className,
     )}>
-    <Eyebrow>{chapter}</Eyebrow>
+    {chapter && <Eyebrow>{chapter}</Eyebrow>}
     <Heading as={headingLevel}>{title}</Heading>
     {description && (
       <Body muted size="lg" className="max-w-prose">

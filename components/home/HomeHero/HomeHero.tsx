@@ -1,6 +1,6 @@
 import { Container } from '@/components/layout/Container';
 import { Marquee } from '@/components/motion/Marquee';
-import { Body, Eyebrow, Mono } from '@/components/typography';
+import { Body, Mono } from '@/components/typography';
 import { CONTACT_PATH } from '@/lib/constants/paths';
 import { ChevronUpRight } from '@/lib/icons';
 import { cn } from '@/lib/utils';
@@ -54,7 +54,6 @@ const HomeHero = ({ className }: HomeHeroProps) => (
 
     <Container>
       <div className="flex flex-col gap-8">
-        <Eyebrow>§ 0 — INDEX</Eyebrow>
         <Wordmark />
         <Body size="lg" muted className="max-w-2xl">
           Senior full-stack engineer based in Istanbul. I design and ship

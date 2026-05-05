@@ -28,7 +28,6 @@ const ProjectsPage: NextPage = async () => {
       <ChapterBand>
         <Container>
           <ChapterHead
-            chapter="§ II — SELECTED WORK"
             title="Projects"
             description="A selection of open-source and production work across the stack."
             headingLevel="h1"

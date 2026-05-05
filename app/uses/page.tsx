@@ -21,7 +21,6 @@ const UsesPage: NextPage = () => (
     <ChapterBand>
       <Container>
         <ChapterHead
-          chapter="§ V — WORKSHOP"
           title="Workshop"
           description="The desk, the machine, and the tools — what I actually use."
           headingLevel="h1"

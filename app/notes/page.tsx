@@ -5,7 +5,6 @@ import { Container } from '@/components/layout/Container';
 import { RevealOnView } from '@/components/motion/RevealOnView';
 import { GistCard } from '@/components/notes/GistCard';
 import { NoteCard } from '@/components/notes/NoteCard';
-import { Eyebrow } from '@/components/typography';
 import { getGists } from '@/lib/data/getGists';
 import { listNoteSummaries } from '@/lib/notes';
 import type { Metadata, NextPage } from 'next';
@@ -31,7 +30,6 @@ const NotesPage: NextPage = async () => {
       <ChapterBand>
         <Container>
           <ChapterHead
-            chapter="§ VI — NOTES"
             title="Notes"
             description="Snippets, observations, and things worth keeping."
             headingLevel="h1"
@@ -41,7 +39,6 @@ const NotesPage: NextPage = async () => {
 
       <Container size="narrow" className="flex flex-col gap-16 py-16">
         <section className="flex flex-col gap-4">
-          <Eyebrow>§ Notes</Eyebrow>
           {notes.length === 0 ? (
             <EmptyState message="No notes published yet." />
           ) : (
@@ -59,7 +56,6 @@ const NotesPage: NextPage = async () => {
 
         {gists.length > 0 && (
           <section className="flex flex-col gap-4">
-            <Eyebrow>§ Gists</Eyebrow>
             <ol className="flex flex-col" role="list">
               {gists.map((gist, i) => (
                 <li key={gist.id}>

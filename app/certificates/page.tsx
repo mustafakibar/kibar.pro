@@ -26,7 +26,6 @@ const CertificatesPage: NextPage = () => (
     <ChapterBand>
       <Container>
         <ChapterHead
-          chapter="§ III — CREDENTIALS"
           title="Credentials"
           description="Certificates earned across engineering, cloud, and product disciplines."
           headingLevel="h1"

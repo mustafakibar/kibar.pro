@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 import type { ReactNode } from 'react';
 
 type SectionViewerProps = {
-  chapter: string;
+  chapter?: string;
   title: ReactNode;
   description?: ReactNode;
   viewAllHref?: string;

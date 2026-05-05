@@ -5,7 +5,7 @@ import { ChapterBand } from '@/components/layout/ChapterBand';
 import { ChapterHead } from '@/components/layout/ChapterHead';
 import { Container } from '@/components/layout/Container';
 import { Timeline } from '@/components/timeline/Timeline';
-import { Body, Eyebrow, Subhead } from '@/components/typography';
+import { Body, Subhead } from '@/components/typography';
 import { EDUCATION_TIMELINE } from '@/lib/data/timeline.data';
 import type { Metadata, NextPage } from 'next';
 import Link from 'next/link';
@@ -28,7 +28,6 @@ const AboutPage: NextPage = () => (
     <ChapterBand>
       <Container>
         <ChapterHead
-          chapter="§ I — THE MAKER"
           title={
             <>
               The <em className="font-normal italic">Maker</em>
@@ -43,9 +42,8 @@ const AboutPage: NextPage = () => (
     <Container size="narrow" className="flex flex-col gap-16 py-16">
       <PortraitBand />
       <Biography />
-      <SkillsIndex eyebrow="§ I.a — Stack" />
+      <SkillsIndex />
       <section className="flex flex-col gap-6">
-        <Eyebrow>§ I.b — Education</Eyebrow>
         <Subhead className="text-ink">A path, briefly</Subhead>
         <Timeline entries={EDUCATION_TIMELINE} />
       </section>

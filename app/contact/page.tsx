@@ -26,7 +26,6 @@ const ContactPage: NextPage = () => (
     <ChapterBand>
       <Container>
         <ChapterHead
-          chapter="§ IV — CORRESPONDENCE"
           title={
             <>
               Currently <em className="font-normal italic">available</em> for

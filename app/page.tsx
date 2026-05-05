@@ -5,7 +5,7 @@ import { SelectedWorkList } from '@/components/home/SelectedWorkList';
 import { SkillsIndex } from '@/components/home/SkillsIndex';
 import { Container } from '@/components/layout/Container';
 import { SectionViewer } from '@/components/layout/SectionViewer';
-import { Eyebrow, Subhead } from '@/components/typography';
+import { Subhead } from '@/components/typography';
 import {
   CERTIFICATES_PATH,
   CONTACT_PATH,
@@ -33,7 +33,6 @@ const HomePage: NextPage = async () => {
         <SkillsIndex />
 
         <SectionViewer
-          chapter="§ II — SELECTED WORK"
           title={
             <>
               Selected <em className="font-normal italic">Work</em>
@@ -49,7 +48,6 @@ const HomePage: NextPage = async () => {
         </SectionViewer>
 
         <SectionViewer
-          chapter="§ III — CREDENTIALS"
           title={<>Credentials</>}
           description="Certificates earned across engineering, cloud, and product disciplines."
           viewAllHref={CERTIFICATES_PATH}>
@@ -57,7 +55,6 @@ const HomePage: NextPage = async () => {
         </SectionViewer>
 
         <section className="flex flex-col items-center gap-3 py-12 text-center">
-          <Eyebrow>§ Coda</Eyebrow>
           <Subhead className="text-ink text-2xl">
             Currently available for senior roles.
           </Subhead>
