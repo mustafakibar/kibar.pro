@@ -1,10 +1,7 @@
 import { Container } from '@/components/layout/Container';
 import { Marquee } from '@/components/motion/Marquee';
 import { Body, Mono } from '@/components/typography';
-import { CONTACT_PATH } from '@/lib/constants/paths';
-import { ChevronUpRight } from '@/lib/icons';
 import { cn } from '@/lib/utils';
-import Link from 'next/link';
 import { Wordmark } from './Wordmark';
 
 type HomeHeroProps = {
@@ -72,12 +69,35 @@ const HomeHero = ({ className }: HomeHeroProps) => (
             </Mono>
           ))}
         </Marquee>
-        <Link
-          href={CONTACT_PATH}
-          className="group font-body text-ink-muted hover:text-gold mt-2 inline-flex items-center gap-2 text-sm transition-colors">
-          <span className="italic">Currently available for senior roles.</span>
-          <ChevronUpRight className="duration-normal size-4 transition-transform ease-out group-hover:translate-x-1 group-hover:-rotate-12" />
-        </Link>
+        <dl className="text-ink-faint font-mono text-sm tracking-widest uppercase">
+          <dt className="text-gold mb-2">Now</dt>
+          <dd className="flex flex-col gap-1.5 tracking-normal normal-case">
+            <div className="flex items-baseline gap-3">
+              <span aria-hidden className="text-gold">
+                —
+              </span>
+              <span className="text-ink">
+                Shipping kibar.pro v2 across the stack.
+              </span>
+            </div>
+            <div className="flex items-baseline gap-3">
+              <span aria-hidden className="text-gold">
+                —
+              </span>
+              <span className="text-ink-muted">
+                Exploring Rust + Bun for small CLI tools.
+              </span>
+            </div>
+            <div className="flex items-baseline gap-3">
+              <span aria-hidden className="text-gold">
+                —
+              </span>
+              <span className="text-ink-muted">
+                Reading about scroll-driven CSS and OKLCH.
+              </span>
+            </div>
+          </dd>
+        </dl>
       </div>
     </Container>
   </section>
