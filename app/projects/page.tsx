@@ -1,5 +1,4 @@
 import { EmptyState } from '@/components/feedback/EmptyState';
-import { ChapterHead } from '@/components/layout/ChapterHead';
 import { Container } from '@/components/layout/Container';
 import { ProjectsView } from '@/components/projects/ProjectsView';
 import { getProjects } from '@/lib/data/getProjects';
@@ -20,24 +19,19 @@ export const metadata: Metadata = {
 
 const ProjectsPage: NextPage = async () => {
   const projects = await getProjects();
-  return (
-    <>
-      <Container className="pt-12 pb-4">
-        <ChapterHead
-          title="Projects"
-          description="A selection of open-source and production work across the stack."
-          headingLevel="h1"
-        />
-      </Container>
-
+  if (projects.length === 0) {
+    return (
       <Container className="py-16">
-        {projects.length === 0 ? (
-          <EmptyState message="No projects to show yet." />
-        ) : (
-          <ProjectsView projects={projects} />
-        )}
+        <EmptyState message="No projects to show yet." />
       </Container>
-    </>
+    );
+  }
+  return (
+    <ProjectsView
+      projects={projects}
+      title="Projects"
+      description="A selection of open-source and production work across the stack."
+    />
   );
 };
 
