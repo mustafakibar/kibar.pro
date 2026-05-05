@@ -57,20 +57,21 @@ const HomeHero = ({ className }: HomeHeroProps) => (
           reliable, performant products end-to-end — clean architecture, strong
           developer experience, considered motion.
         </Body>
-        <Marquee
-          speed={45}
-          className="border-rule -mx-4 mt-12 border-y py-4 md:-mx-8">
-          {STACK.map((label) => (
-            <Mono
-              key={label}
-              className="text-ink-faint group-hover:text-ink-muted flex items-center gap-12 text-sm tracking-widest uppercase transition-colors">
-              <span>{label}</span>
-              <span aria-hidden className="bg-gold size-1 rounded-full" />
-            </Mono>
-          ))}
-        </Marquee>
       </div>
     </Container>
+
+    <div className="border-rule mt-12 border-y py-4">
+      <Marquee speed={45}>
+        {STACK.map((label) => (
+          <Mono
+            key={label}
+            className="text-ink-faint group-hover:text-ink-muted flex items-center gap-12 text-sm tracking-widest uppercase transition-colors">
+            <span>{label}</span>
+            <span aria-hidden className="bg-gold size-1 rounded-full" />
+          </Mono>
+        ))}
+      </Marquee>
+    </div>
   </section>
 );
 
