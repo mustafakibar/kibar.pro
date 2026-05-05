@@ -46,4 +46,47 @@ const getGithubRepos = async (): Promise<GithubRepo[]> => {
   return [...first, ...second];
 };
 
-export { getGithubRepos };
+export type GithubGist = {
+  id: string;
+  description: string | null;
+  html_url: string;
+  files: Record<
+    string,
+    {
+      filename: string;
+      type: string;
+      language: string | null;
+      raw_url: string;
+      size: number;
+    }
+  >;
+  public: boolean;
+  created_at: string;
+  updated_at: string;
+  comments: number;
+};
+
+const getGithubGists = async (): Promise<GithubGist[]> => {
+  const username = env.GITHUB_USERNAME;
+  if (!username) return [];
+
+  const headers: Record<string, string> = {
+    'User-Agent': username,
+    Accept: 'application/vnd.github.v3+json',
+    'X-GitHub-Api-Version': env.GITHUB_API_VER,
+  };
+  if (env.GITHUB_API_KEY) {
+    headers.Authorization = `Bearer ${env.GITHUB_API_KEY}`;
+  }
+
+  const response = await fetch(
+    `https://api.github.com/users/${username}/gists?per_page=100`,
+    { headers, next: { revalidate: 60 * 60 * 6 } },
+  );
+  if (!response.ok) {
+    throw new Error(`GitHub Gists API responded ${response.status}`);
+  }
+  return (await response.json()) as GithubGist[];
+};
+
+export { getGithubGists, getGithubRepos };
