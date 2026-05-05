@@ -8,7 +8,9 @@ type MonoProps = {
 };
 
 const Mono = ({ as: Tag = 'span', children, className }: MonoProps) => (
-  <Tag className={cn('font-mono text-sm', className)}>{children}</Tag>
+  <Tag className={cn('font-mono text-sm md:text-base', className)}>
+    {children}
+  </Tag>
 );
 
 export { Mono };

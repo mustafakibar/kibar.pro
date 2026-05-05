@@ -9,7 +9,7 @@ type EyebrowProps = {
 const Eyebrow = ({ children, className }: EyebrowProps) => (
   <p
     className={cn(
-      'font-body text-gold text-xs font-medium tracking-[0.4em] uppercase',
+      'font-body text-gold text-sm font-medium tracking-[0.4em] uppercase',
       className,
     )}>
     {children}

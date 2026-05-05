@@ -10,9 +10,9 @@ type BodyProps = {
 };
 
 const sizes = {
-  sm: 'text-sm',
-  base: 'text-base',
-  lg: 'text-md',
+  sm: 'text-base',
+  base: 'text-lg',
+  lg: 'text-xl',
 } as const;
 
 const Body = ({
