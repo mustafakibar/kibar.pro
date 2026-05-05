@@ -1,4 +1,4 @@
-import { CommandPalette } from '@/components/chrome/CommandPalette';
+import { CommandPaletteLazy } from '@/components/chrome/CommandPalette';
 import { ScrollProgress } from '@/components/chrome/ScrollProgress';
 import { SiteFooter } from '@/components/chrome/SiteFooter';
 import { SiteHeader } from '@/components/chrome/SiteHeader';
@@ -124,7 +124,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         )}>
         <div className="flex min-h-screen min-w-full flex-col">
           <ScrollProgress />
-          <CommandPalette />
+          <CommandPaletteLazy />
           <SiteHeader />
           <main className="flex-1">{children}</main>
           <SiteFooter />
