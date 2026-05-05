@@ -53,7 +53,7 @@ export default async function NotePage({ params }: PageProps) {
             Notes
           </Link>
           <ChapterHead
-            chapter={`§ VI · ${summary.frontmatter.date}`}
+            chapter={`§ Notes · ${summary.frontmatter.date}`}
             title={summary.frontmatter.title}
             description={summary.frontmatter.description}
             headingLevel="h1"

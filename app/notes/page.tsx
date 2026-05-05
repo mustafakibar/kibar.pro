@@ -27,8 +27,8 @@ const NotesPage: NextPage = async () => {
       <ChapterBand>
         <Container>
           <ChapterHead
-            chapter="§ VI — MARGINALIA"
-            title="Marginalia"
+            chapter="§ VI — NOTES"
+            title="Notes"
             description="Snippets, observations, and things worth keeping."
             headingLevel="h1"
           />

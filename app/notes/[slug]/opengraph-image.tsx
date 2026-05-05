@@ -15,7 +15,7 @@ export default async function OpengraphImage({
   const note = await getNote(slug);
   if (!note) notFound();
   return renderOgImage({
-    eyebrow: `§ VI · ${note.frontmatter.date}`,
+    eyebrow: `§ Notes · ${note.frontmatter.date}`,
     title: note.frontmatter.title,
     subtitle: note.frontmatter.description,
   });

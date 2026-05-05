@@ -7,7 +7,7 @@ export const contentType = ogContentType;
 
 export default function OpengraphImage() {
   return renderOgImage({
-    eyebrow: '§ VI — MARGINALIA',
+    eyebrow: '§ VI — NOTES',
     title: 'Notes',
     subtitle: 'Snippets, observations, and things worth keeping.',
   });
