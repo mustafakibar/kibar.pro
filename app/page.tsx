@@ -2,7 +2,6 @@ import { EmptyState } from '@/components/feedback/EmptyState';
 import { CredentialsList } from '@/components/home/CredentialsList';
 import { HomeHero } from '@/components/home/HomeHero';
 import { SelectedWorkList } from '@/components/home/SelectedWorkList';
-import { SkillsIndex } from '@/components/home/SkillsIndex';
 import { Container } from '@/components/layout/Container';
 import { SectionViewer } from '@/components/layout/SectionViewer';
 import { Subhead } from '@/components/typography';
@@ -30,13 +29,6 @@ const HomePage: NextPage = async () => {
       <HomeHero />
 
       <Container className="flex flex-col gap-24 pb-24">
-        <section className="flex flex-col gap-6">
-          <Subhead as="h2" className="text-ink">
-            Stack
-          </Subhead>
-          <SkillsIndex />
-        </section>
-
         <SectionViewer
           title={
             <>
