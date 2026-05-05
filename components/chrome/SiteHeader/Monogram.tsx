@@ -33,7 +33,6 @@ const Monogram = ({ className }: MonogramProps) => {
               'oklch(0.86 0.085 82)',
               'oklch(0.55 0.180 22)',
             ],
-            scale: [1, 1.18, 1.05, 1],
           }}
           transition={{
             duration: 6,
