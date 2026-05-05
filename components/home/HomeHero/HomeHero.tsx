@@ -1,5 +1,5 @@
 import { Container } from '@/components/layout/Container';
-import { Body, Eyebrow, Subhead } from '@/components/typography';
+import { Body, Eyebrow } from '@/components/typography';
 import { CONTACT_PATH } from '@/lib/constants/paths';
 import { ChevronUpRight } from '@/lib/icons';
 import { cn } from '@/lib/utils';
@@ -22,9 +22,6 @@ const HomeHero = ({ className }: HomeHeroProps) => (
       <div className="flex flex-col gap-8">
         <Eyebrow>§ 0 — INDEX</Eyebrow>
         <Wordmark />
-        <Subhead className="max-w-xl text-2xl">
-          — shipping reliable systems since 2011.
-        </Subhead>
         <Body size="lg" muted className="max-w-2xl">
           Senior full-stack engineer based in Istanbul. I design and ship
           reliable, performant products end-to-end — clean architecture, strong
