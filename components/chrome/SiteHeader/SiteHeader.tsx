@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils';
 import {
   AnimatePresence,
   motion,
+  useMotionTemplate,
   useMotionValueEvent,
   useScroll,
   useTransform,
@@ -21,8 +22,12 @@ const SiteHeader = ({ className }: { className?: string }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { scrollYProgress } = useScroll();
-  const height = useTransform(scrollYProgress, [0, 0.15], [76, 60]);
-  const backdropOpacity = useTransform(scrollYProgress, [0, 0.15], [0, 0.85]);
+  const height = useTransform(scrollYProgress, [0, 0.15], [80, 56]);
+  const backdropOpacity = useTransform(scrollYProgress, [0, 0.15], [0, 0.92]);
+  const backdropSaturate = useTransform(scrollYProgress, [0, 0.15], [1, 1.4]);
+  const backdropFilter = useMotionTemplate`saturate(${backdropSaturate})`;
+  const monogramScale = useTransform(scrollYProgress, [0, 0.15], [1, 0.92]);
+  const containerPaddingY = useTransform(scrollYProgress, [0, 0.15], [12, 6]);
 
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
     setIsScrolled(latest > 0.05);
@@ -38,16 +43,27 @@ const SiteHeader = ({ className }: { className?: string }) => {
       <motion.div
         aria-hidden
         className="bg-canvas/80 absolute inset-0 -z-10 backdrop-blur-md"
-        style={{ opacity: isMenuOpen ? 1 : backdropOpacity }}
+        style={{
+          opacity: isMenuOpen ? 1 : backdropOpacity,
+          backdropFilter,
+          WebkitBackdropFilter: backdropFilter,
+        }}
       />
-      <div className="container flex h-full items-center justify-between py-3">
-        <Link
-          href={HOME_PATH}
-          aria-label="kibar.pro home"
-          onClick={() => setIsMenuOpen(false)}
-          className="focus-visible:ring-gold/50 rounded-sm text-3xl outline-none focus-visible:ring-1">
-          <Monogram />
-        </Link>
+      <motion.div
+        className="container flex h-full items-center justify-between"
+        style={{
+          paddingTop: containerPaddingY,
+          paddingBottom: containerPaddingY,
+        }}>
+        <motion.div style={{ scale: monogramScale }} className="origin-left">
+          <Link
+            href={HOME_PATH}
+            aria-label="kibar.pro home"
+            onClick={() => setIsMenuOpen(false)}
+            className="focus-visible:ring-gold/50 rounded-sm text-3xl outline-none focus-visible:ring-1">
+            <Monogram />
+          </Link>
+        </motion.div>
 
         <nav
           id="primary-navigation"
@@ -72,7 +88,7 @@ const SiteHeader = ({ className }: { className?: string }) => {
             <BurgerMenu className="size-7" />
           )}
         </Button>
-      </div>
+      </motion.div>
 
       <AnimatePresence>
         {isMenuOpen && (
@@ -98,7 +114,7 @@ const SiteHeader = ({ className }: { className?: string }) => {
       <span
         aria-hidden
         className={cn(
-          'border-rule duration-normal pointer-events-none absolute inset-x-0 bottom-0 border-b transition-opacity',
+          'duration-normal via-gold/40 pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent to-transparent transition-opacity',
           isScrolled || isMenuOpen ? 'opacity-100' : 'opacity-0',
         )}
       />
