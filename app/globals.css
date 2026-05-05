@@ -81,6 +81,16 @@
   --ease-emphasis: cubic-bezier(0.32, 0.72, 0, 1);
 }
 
+@media (prefers-contrast: more) {
+  :root {
+    --color-rule:        oklch(0.96 0.022 85 / 0.25);
+    --color-rule-strong: oklch(0.96 0.022 85 / 0.40);
+    --color-ink-muted:   oklch(0.86 0.045 75);
+    --color-ink-subtle:  oklch(0.70 0.045 70);
+    --color-ink-faint:   oklch(0.55 0.030 65);
+  }
+}
+
 @layer base {
   *, ::after, ::before, ::backdrop, ::file-selector-button {
     border-color: var(--color-rule);
