@@ -28,8 +28,8 @@ const Wordmark = ({ className }: WordmarkProps) => {
           <span
             className={cn(
               'inline-block',
-              isItalic && 'font-normal italic',
-              isItalic && 'mx-[0.05em] scale-[0.7]',
+              isItalic &&
+                'mx-[0.05em] align-baseline text-[0.62em] font-normal italic',
             )}
             style={
               isItalic
