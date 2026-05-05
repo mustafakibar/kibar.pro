@@ -1,5 +1,6 @@
 import { CommandPaletteLazy } from '@/components/chrome/CommandPalette';
 import { ScrollProgress } from '@/components/chrome/ScrollProgress';
+import { ScrollToTop } from '@/components/chrome/ScrollToTop';
 import { SiteFooter } from '@/components/chrome/SiteFooter';
 import { SiteHeader } from '@/components/chrome/SiteHeader';
 import env from '@/env';
@@ -135,6 +136,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
             {children}
           </main>
           <SiteFooter />
+          <ScrollToTop />
         </div>
         <Analytics />
         <SpeedInsights />
