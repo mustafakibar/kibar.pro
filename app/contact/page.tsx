@@ -28,18 +28,18 @@ const ContactPage: NextPage = () => (
         <ChapterHead
           title={
             <>
-              Currently <em className="font-normal italic">available</em> for
-              senior roles.
+              Direct, considered{' '}
+              <em className="font-normal italic">correspondence</em>.
             </>
           }
-          description="Direct, considered correspondence preferred over forms."
+          description="Best caught by email or in writing. Replies within 48 hours."
           headingLevel="h1"
         />
       </Container>
     </ChapterBand>
 
     <Container size="narrow" className="flex flex-col gap-12 py-16">
-      <StatusPill>Available · Istanbul · Remote-friendly</StatusPill>
+      <StatusPill>Istanbul · UTC+3 · Remote-friendly</StatusPill>
       <div className="flex flex-col gap-3">
         <Subhead className="text-ink-muted not-italic">Write directly</Subhead>
         <EmailRow email={EMAIL_ADDRESS} />

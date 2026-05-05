@@ -56,7 +56,7 @@ const HomePage: NextPage = async () => {
 
         <section className="flex flex-col items-center gap-3 py-12 text-center">
           <Subhead className="text-ink text-2xl">
-            Currently available for senior roles.
+            Built in Istanbul. Open to good problems.
           </Subhead>
           <Link
             href={CONTACT_PATH}

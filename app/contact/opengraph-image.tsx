@@ -9,6 +9,6 @@ export default function OpengraphImage() {
   return renderOgImage({
     eyebrow: '§ IV — CORRESPONDENCE',
     title: 'Contact',
-    subtitle: 'Available for senior roles. Reach out directly.',
+    subtitle: 'Best caught by email or in writing.',
   });
 }
