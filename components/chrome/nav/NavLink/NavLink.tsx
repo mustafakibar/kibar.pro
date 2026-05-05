@@ -1,7 +1,9 @@
 'use client';
 
 import { ChevronUpRight } from '@/lib/icons';
+import { duration, easing } from '@/lib/tokens';
 import { cn } from '@/lib/utils';
+import { motion } from 'motion/react';
 import Link from 'next/link';
 
 type NavLinkProps = {
@@ -34,13 +36,32 @@ const NavLink = ({
     )}>
     <span className="relative">
       {label}
-      <span
-        aria-hidden
-        className={cn(
-          'bg-gold duration-normal absolute inset-x-0 -bottom-1 h-px origin-left scale-x-0 transition-transform ease-out',
-          active ? 'scale-x-100' : 'group-hover:scale-x-100',
-        )}
-      />
+      {active ? (
+        <motion.span
+          aria-hidden
+          className="bg-gold absolute inset-x-0 -bottom-1 h-px origin-left"
+          initial={{ scaleX: 0, opacity: 0 }}
+          animate={{
+            scaleX: 1,
+            opacity: [0, 1, 0.7, 1],
+          }}
+          transition={{
+            scaleX: { duration: duration.slow, ease: easing.out },
+            opacity: {
+              duration: 4,
+              repeat: Infinity,
+              ease: easing.inOut,
+              times: [0, 0.15, 0.6, 1],
+              delay: 0.4,
+            },
+          }}
+        />
+      ) : (
+        <span
+          aria-hidden
+          className="bg-gold duration-normal absolute inset-x-0 -bottom-1 h-px origin-left scale-x-0 transition-transform ease-out group-hover:scale-x-100"
+        />
+      )}
     </span>
     {external && (
       <ChevronUpRight
