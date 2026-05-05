@@ -23,6 +23,7 @@ export {
   Milestone,
   Search,
   Layers as SquareStack,
+  Star,
   Wrench as ToolboxIcon,
   User as UserIcon,
   X as XIcon,
