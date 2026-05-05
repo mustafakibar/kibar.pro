@@ -37,15 +37,15 @@ const HomeHero = ({ className }: HomeHeroProps) => (
     <div
       aria-hidden
       className="text-ink-faint pointer-events-none absolute top-1/2 right-4 hidden -translate-y-1/2 flex-col items-center gap-4 select-none lg:flex">
-      <span className="font-mono text-[10px] tracking-[0.4em] uppercase [writing-mode:vertical-rl]">
-        kibar.pro · v2 · since 2011
+      <span className="text-ink-faint font-mono text-[10px] tracking-[0.4em] uppercase [writing-mode:vertical-rl]">
+        Mustafa KiBAR
       </span>
       <span
         aria-hidden
         className="via-gold/40 h-16 w-px bg-gradient-to-b from-transparent to-transparent"
       />
-      <span className="font-mono text-[10px] tracking-[0.4em] uppercase [writing-mode:vertical-rl]">
-        Istanbul
+      <span className="text-ink-faint font-mono text-[10px] tracking-[0.4em] uppercase [writing-mode:vertical-rl]">
+        2026
       </span>
     </div>
 
