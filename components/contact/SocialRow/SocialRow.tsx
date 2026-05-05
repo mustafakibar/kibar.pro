@@ -17,7 +17,7 @@ const SocialRow = ({ social, className }: SocialRowProps) => {
       target={social.external ? '_blank' : undefined}
       rel={social.external ? 'noopener noreferrer' : undefined}
       className={cn(
-        'group border-rule duration-fast hover:border-gold/40 flex items-center justify-between gap-4 border-b py-4 transition-colors',
+        'group border-rule duration-fast hover:border-gold/40 flex items-center justify-between gap-4 border-b px-3 py-4 transition-colors',
         className,
       )}>
       <span className="flex items-center gap-4">

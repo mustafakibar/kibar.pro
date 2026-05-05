@@ -24,7 +24,7 @@ const CertificateRow = ({ certificate, className }: CertificateRowProps) => {
     <Wrapper
       {...(wrapperProps as { href: string })}
       className={cn(
-        'group border-rule duration-fast hover:bg-rule/40 flex items-center gap-4 border-b py-4 transition-colors',
+        'group border-rule duration-fast hover:bg-rule/40 flex items-center gap-4 border-b px-3 py-4 transition-colors',
         !isLinked && 'pointer-events-none',
         className,
       )}>

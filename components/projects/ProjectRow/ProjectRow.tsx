@@ -51,7 +51,7 @@ const ProjectRow = ({ project, className }: ProjectRowProps) => {
       target={isLinked ? '_blank' : undefined}
       rel={isLinked ? 'noopener noreferrer' : undefined}
       className={cn(
-        'group border-rule duration-fast hover:bg-rule/40 flex items-center gap-4 border-b py-4 transition-colors',
+        'group border-rule duration-fast hover:bg-rule/40 flex items-center gap-4 border-b px-3 py-4 transition-colors',
         !isLinked && 'pointer-events-none',
         className,
       )}>

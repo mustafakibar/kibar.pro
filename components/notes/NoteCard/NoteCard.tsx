@@ -13,7 +13,7 @@ const NoteCard = ({ note, className }: NoteCardProps) => (
   <Link
     href={`${NOTES_PATH}/${note.slug}`}
     className={cn(
-      'group border-rule duration-fast hover:bg-rule/40 flex items-baseline gap-4 border-b py-4 transition-colors',
+      'group border-rule duration-fast hover:bg-rule/40 flex items-baseline gap-4 border-b px-3 py-4 transition-colors',
       className,
     )}>
     <div className="min-w-0 flex-1">

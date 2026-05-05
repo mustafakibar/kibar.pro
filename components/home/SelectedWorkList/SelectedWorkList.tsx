@@ -21,7 +21,7 @@ const SelectedWorkList = ({ projects, className }: SelectedWorkListProps) => (
             href={href}
             target={p.repoUrl ? '_blank' : undefined}
             rel={p.repoUrl ? 'noopener noreferrer' : undefined}
-            className="group hover:bg-rule/40 duration-fast relative flex items-center gap-4 py-4 transition-colors ease-out">
+            className="group hover:bg-rule/40 duration-fast relative flex items-center gap-4 px-3 py-4 transition-colors ease-out">
             <span className="duration-normal flex min-w-0 flex-1 items-center gap-3 transition-transform ease-out group-hover:translate-x-1">
               <Body className="text-ink font-medium">{p.title}</Body>
               {p.description && (
