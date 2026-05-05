@@ -53,7 +53,7 @@ const HomePage: NextPage = async () => {
         </SectionViewer>
 
         <SectionViewer
-          title={<>Credentials</>}
+          title={<>Certificates</>}
           description="Certificates earned across engineering, cloud, and product disciplines."
           viewAllHref={CERTIFICATES_PATH}>
           <CredentialsList certificates={featuredCerts} />

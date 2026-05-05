@@ -9,14 +9,14 @@ import { CERTIFICATES } from '@/lib/data/certificates.data';
 import type { Metadata, NextPage } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Credentials',
+  title: 'Certificates',
   description:
-    'Professional certificates and credentials earned across engineering, cloud, and product disciplines.',
+    'Certificates earned across engineering, cloud, and product disciplines.',
   alternates: { canonical: '/certificates' },
   openGraph: {
-    title: 'Credentials · Mustafa Kibar',
+    title: 'Certificates · Mustafa Kibar',
     description:
-      'Professional certificates and credentials earned across engineering, cloud, and product disciplines.',
+      'Certificates earned across engineering, cloud, and product disciplines.',
     url: '/certificates',
   },
 };
@@ -26,7 +26,7 @@ const CertificatesPage: NextPage = () => (
     <ChapterBand>
       <Container>
         <ChapterHead
-          title="Credentials"
+          title="Certificates"
           description="Certificates earned across engineering, cloud, and product disciplines."
           headingLevel="h1"
         />
@@ -35,7 +35,7 @@ const CertificatesPage: NextPage = () => (
 
     <Container className="py-16">
       {CERTIFICATES.length === 0 ? (
-        <EmptyState message="No credentials to show yet." />
+        <EmptyState message="No certificates to show yet." />
       ) : (
         <Grid cols={{ md: 2, xl: 3 }}>
           {CERTIFICATES.map((c, i) => (
