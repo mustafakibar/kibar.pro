@@ -1,0 +1,18 @@
+---
+title: A small mental model for Server Components
+description: Components are server-by-default; 'use client' is the exception.
+date: 2026-03-30
+tags: [react, next.js]
+published: true
+---
+
+The simplest mental model that has worked for me: pretend every component is
+server-rendered until proven otherwise. Then add `'use client'` only when the
+component needs:
+
+- state hooks (`useState`, `useReducer`),
+- lifecycle effects (`useEffect`, `useLayoutEffect`),
+- browser APIs (clipboard, observers, refs you actually mutate), or
+- event handlers wired through callbacks.
+
+Most components don't need any of this. Most components are server components.

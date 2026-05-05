@@ -1,0 +1,20 @@
+---
+title: OKLCH for design tokens
+description: Why OKLCH beats HSL for perceptual lightness and brand control.
+date: 2026-04-12
+tags: [css, design]
+published: true
+---
+
+HSL's lightness axis lies — `hsl(60 100% 50%)` and `hsl(240 100% 50%)` are nominally
+the same lightness but yellow looks much brighter than blue. OKLCH fixes this.
+
+```css
+:root {
+  --gold:    oklch(0.74 0.105 72);
+  --crimson: oklch(0.55 0.180 22);
+}
+```
+
+When I want a paler gold, I tweak `L` (the first axis) and chroma stays
+honest. Modern Safari, Chrome, Firefox all support it.

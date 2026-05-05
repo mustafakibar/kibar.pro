@@ -1,0 +1,24 @@
+---
+title: TypeScript — satisfies vs as
+description: Use satisfies to validate a value's shape without widening it.
+date: 2026-04-22
+tags: [typescript]
+published: true
+---
+
+`as` casts a value, throwing away whatever the compiler knew. `satisfies`
+validates a value against a type and keeps the narrower inferred shape:
+
+```ts
+type Color = 'gold' | 'crimson';
+
+const palette = {
+  gold:    'oklch(0.74 0.105 72)',
+  crimson: 'oklch(0.55 0.180 22)',
+} satisfies Record<Color, string>;
+
+type Keys = keyof typeof palette; // 'gold' | 'crimson'  (kept narrow)
+```
+
+Reach for `satisfies` whenever you'd otherwise write `as const` plus a manual
+type assertion.
