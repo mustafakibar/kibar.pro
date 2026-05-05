@@ -87,11 +87,9 @@ const CertificatesView = ({ certificates }: CertificatesViewProps) => {
         </Grid>
       ) : (
         <ol className="flex flex-col" role="list">
-          {certificates.map((c, i) => (
+          {certificates.map((c) => (
             <li key={c.title}>
-              <RevealOnView delay={Math.min(i, 9) * 0.04}>
-                <CertificateRow certificate={c} />
-              </RevealOnView>
+              <CertificateRow certificate={c} />
             </li>
           ))}
         </ol>

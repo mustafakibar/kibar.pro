@@ -1,7 +1,6 @@
 import { EmptyState } from '@/components/feedback/EmptyState';
 import { ChapterHead } from '@/components/layout/ChapterHead';
 import { Container } from '@/components/layout/Container';
-import { RevealOnView } from '@/components/motion/RevealOnView';
 import { GistCard } from '@/components/notes/GistCard';
 import { NoteCard } from '@/components/notes/NoteCard';
 import { getGists, type GistSummary } from '@/lib/data/getGists';
@@ -57,20 +56,18 @@ const NotesPage: NextPage = async () => {
           <EmptyState message="No notes or gists published yet." />
         ) : (
           <ol className="flex flex-col" role="list">
-            {merged.map((item, i) => (
+            {merged.map((item) => (
               <li
                 key={
                   item.kind === 'note'
                     ? `n-${item.data.slug}`
                     : `g-${item.data.id}`
                 }>
-                <RevealOnView delay={Math.min(i, 9) * 0.04}>
-                  {item.kind === 'note' ? (
-                    <NoteCard note={item.data} />
-                  ) : (
-                    <GistCard gist={item.data} />
-                  )}
-                </RevealOnView>
+                {item.kind === 'note' ? (
+                  <NoteCard note={item.data} />
+                ) : (
+                  <GistCard gist={item.data} />
+                )}
               </li>
             ))}
           </ol>

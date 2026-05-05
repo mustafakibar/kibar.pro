@@ -87,11 +87,9 @@ const ProjectsView = ({ projects }: ProjectsViewProps) => {
         </Grid>
       ) : (
         <ol className="flex flex-col" role="list">
-          {projects.map((p, i) => (
+          {projects.map((p) => (
             <li key={p.id}>
-              <RevealOnView delay={Math.min(i, 9) * 0.04}>
-                <ProjectRow project={p} />
-              </RevealOnView>
+              <ProjectRow project={p} />
             </li>
           ))}
         </ol>

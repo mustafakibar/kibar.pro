@@ -11,6 +11,7 @@ type RevealOnViewProps = {
   className?: string;
   y?: number;
   once?: boolean;
+  amount?: number;
 };
 
 const RevealOnView = ({
@@ -19,6 +20,7 @@ const RevealOnView = ({
   className,
   y = 8,
   once = true,
+  amount = 0.1,
 }: RevealOnViewProps) => {
   const reduced = useReducedMotion();
   if (reduced) return <div className={className}>{children}</div>;
@@ -27,7 +29,7 @@ const RevealOnView = ({
       className={className}
       initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once, margin: '-10% 0px' }}
+      viewport={{ once, margin: '-5% 0px', amount }}
       transition={{ duration: duration.slow, delay, ease: easing.out }}>
       {children}
     </motion.div>
