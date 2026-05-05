@@ -7,7 +7,7 @@ type SkillsIndexProps = {
 };
 
 const SkillsIndex = ({ className }: SkillsIndexProps) => (
-  <section className={cn('flex flex-col gap-6', className)} aria-label="Skills">
+  <div className={cn('flex flex-col gap-6', className)}>
     <dl className="grid grid-cols-1 gap-x-8 gap-y-4 md:grid-cols-[120px_1fr]">
       {SKILLS.map((cat) => (
         <div key={cat.label} className="contents">
@@ -20,7 +20,7 @@ const SkillsIndex = ({ className }: SkillsIndexProps) => (
         </div>
       ))}
     </dl>
-  </section>
+  </div>
 );
 
 export { SkillsIndex };

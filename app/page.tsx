@@ -30,7 +30,12 @@ const HomePage: NextPage = async () => {
       <HomeHero />
 
       <Container className="flex flex-col gap-24 pb-24">
-        <SkillsIndex />
+        <section className="flex flex-col gap-6">
+          <Subhead as="h2" className="text-ink">
+            Stack
+          </Subhead>
+          <SkillsIndex />
+        </section>
 
         <SectionViewer
           title={

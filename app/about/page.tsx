@@ -42,11 +42,20 @@ const AboutPage: NextPage = () => (
     <Container size="narrow" className="flex flex-col gap-16 py-16">
       <PortraitBand />
       <Biography />
-      <SkillsIndex />
-      <section className="flex flex-col gap-6">
-        <Subhead className="text-ink">A path, briefly</Subhead>
-        <Timeline entries={EDUCATION_TIMELINE} />
-      </section>
+      <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
+        <section className="flex flex-col gap-6">
+          <Subhead as="h2" className="text-ink">
+            Stack
+          </Subhead>
+          <SkillsIndex />
+        </section>
+        <section className="flex flex-col gap-6">
+          <Subhead as="h2" className="text-ink">
+            Education
+          </Subhead>
+          <Timeline entries={EDUCATION_TIMELINE} />
+        </section>
+      </div>
 
       <Body muted className="border-rule border-t pt-8 text-center italic">
         → Workshop &amp; gear at{' '}
