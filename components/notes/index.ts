@@ -4,3 +4,4 @@ export * from './Demo';
 export * from './GistCard';
 export * from './NoteCard';
 export * from './NoteContent';
+export * from './NotesView';
