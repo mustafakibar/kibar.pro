@@ -7,28 +7,12 @@ type CredentialsListProps = {
   className?: string;
 };
 
-const ROMANS = [
-  'i',
-  'ii',
-  'iii',
-  'iv',
-  'v',
-  'vi',
-  'vii',
-  'viii',
-  'ix',
-  'x',
-] as const;
-
 const CredentialsList = ({ certificates, className }: CredentialsListProps) => (
   <ol
     className={cn('divide-rule flex flex-col divide-y', className)}
     role="list">
-    {certificates.map((c, idx) => (
+    {certificates.map((c) => (
       <li key={c.title} className="flex items-baseline gap-4 py-4">
-        <span className="font-display text-gold w-10 shrink-0 text-base italic">
-          {ROMANS[idx] ?? `${idx + 1}.`}
-        </span>
         <span className="flex-1">
           <Body className="text-ink font-medium">{c.title}</Body>
           <Body size="sm" muted className="mt-0.5">

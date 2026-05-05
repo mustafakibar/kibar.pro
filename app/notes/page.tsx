@@ -43,7 +43,7 @@ const NotesPage: NextPage = async () => {
             {notes.map((note, i) => (
               <li key={note.slug}>
                 <RevealOnView delay={Math.min(i, 9) * 0.04}>
-                  <NoteCard note={note} index={i} />
+                  <NoteCard note={note} />
                 </RevealOnView>
               </li>
             ))}

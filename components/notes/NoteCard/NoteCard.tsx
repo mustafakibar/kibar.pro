@@ -6,35 +6,16 @@ import Link from 'next/link';
 
 type NoteCardProps = {
   note: NoteSummary;
-  index: number;
   className?: string;
 };
 
-const ROMANS = [
-  'i',
-  'ii',
-  'iii',
-  'iv',
-  'v',
-  'vi',
-  'vii',
-  'viii',
-  'ix',
-  'x',
-  'xi',
-  'xii',
-] as const;
-
-const NoteCard = ({ note, index, className }: NoteCardProps) => (
+const NoteCard = ({ note, className }: NoteCardProps) => (
   <Link
     href={`${NOTES_PATH}/${note.slug}`}
     className={cn(
       'group border-rule duration-fast hover:bg-rule/40 flex items-baseline gap-4 border-b py-4 transition-colors',
       className,
     )}>
-    <span className="font-display text-gold w-10 shrink-0 italic">
-      {ROMANS[index] ?? `${index + 1}.`}
-    </span>
     <div className="flex-1">
       <Subhead
         as="h3"
