@@ -12,6 +12,7 @@ type PortraitProps = {
   tint?: boolean;
   className?: string;
   sizes?: string;
+  objectPosition?: string;
 };
 
 const Portrait = ({
@@ -25,6 +26,7 @@ const Portrait = ({
   tint = false,
   className,
   sizes = '(min-width: 1024px) 384px, 256px',
+  objectPosition,
 }: PortraitProps) => (
   <div
     className={cn(
@@ -43,6 +45,7 @@ const Portrait = ({
       priority={priority}
       sizes={sizes}
       className={cn('h-full w-full object-cover', grayscale && 'grayscale')}
+      style={objectPosition ? { objectPosition } : undefined}
     />
   </div>
 );

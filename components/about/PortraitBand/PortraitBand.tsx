@@ -27,11 +27,12 @@ const PortraitBand = ({
         alt={HERO_PROFILE_IMAGE_ALT}
         blurDataURL={HERO_PROFILE_IMAGE_BLUR_DATA_URL}
         width={1600}
-        height={1066}
+        height={900}
         grayscale
         tint
+        objectPosition="center 25%"
         sizes="(min-width: 1024px) 100vw, 100vw"
-        className="ring-rule aspect-[3/2] w-full rounded-lg ring-1 shadow-[0_30px_80px_-30px_oklch(0_0_0/0.6)]"
+        className="ring-rule aspect-[16/9] w-full rounded-lg ring-1 shadow-[0_30px_80px_-30px_oklch(0_0_0/0.6)]"
       />
       <div
         aria-hidden
