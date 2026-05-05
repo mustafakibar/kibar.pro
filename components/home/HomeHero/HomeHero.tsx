@@ -36,6 +36,11 @@ const HomeHero = ({ className }: HomeHeroProps) => (
           <span className="italic">Currently available for senior roles.</span>
           <ChevronUpRight className="duration-normal size-4 transition-transform ease-out group-hover:translate-x-1 group-hover:-rotate-12" />
         </Link>
+        <span className="border-rule text-ink-faint mt-2 inline-flex w-fit items-center gap-2 rounded-full border px-3 py-1 font-mono text-xs tracking-widest uppercase">
+          Press <kbd className="bg-rule text-ink rounded px-1.5 py-0.5">⌘</kbd>
+          <kbd className="bg-rule text-ink rounded px-1.5 py-0.5">K</kbd>
+          <span>to navigate</span>
+        </span>
       </div>
     </Container>
   </section>
