@@ -75,7 +75,7 @@ const ProjectCard = ({
         <div className="flex min-w-0 flex-col gap-1">
           <Subhead
             as="h3"
-            className="text-ink duration-fast group-hover:text-gold not-italic transition-colors">
+            className="text-ink duration-fast group-hover:text-gold truncate not-italic transition-colors">
             {project.title}
           </Subhead>
           {(project.isFork || project.isArchived) && (
