@@ -2,6 +2,8 @@
 
 import { CertificateCard } from '@/components/certificates/CertificateCard';
 import { CertificateRow } from '@/components/certificates/CertificateRow';
+import { ChapterHead } from '@/components/layout/ChapterHead';
+import { Container } from '@/components/layout/Container';
 import { Grid } from '@/components/layout/Grid';
 import { RevealOnView } from '@/components/motion/RevealOnView';
 import { Mono } from '@/components/typography';
@@ -15,9 +17,15 @@ const STORAGE_KEY = 'kibar:certificates-view';
 
 type CertificatesViewProps = {
   certificates: readonly Certificate[];
+  title: string;
+  description: string;
 };
 
-const CertificatesView = ({ certificates }: CertificatesViewProps) => {
+const CertificatesView = ({
+  certificates,
+  title,
+  description,
+}: CertificatesViewProps) => {
   const [view, setView] = useState<ViewMode>('grid');
 
   useEffect(() => {
@@ -39,64 +47,87 @@ const CertificatesView = ({ certificates }: CertificatesViewProps) => {
   };
 
   return (
-    <div className="flex flex-col gap-6">
-      <div className="flex items-center justify-end gap-2">
-        <Mono className="text-ink-faint text-xs tracking-widest uppercase">
-          View
-        </Mono>
-        <div
-          role="group"
-          aria-label="Toggle view mode"
-          className="border-rule flex overflow-hidden rounded-md border">
-          <button
-            type="button"
-            aria-pressed={view === 'grid'}
-            aria-label="Grid view"
-            onClick={() => setViewPersisted('grid')}
-            className={cn(
-              'duration-fast flex size-8 items-center justify-center transition-colors',
-              view === 'grid'
-                ? 'bg-gold/15 text-gold'
-                : 'text-ink-muted hover:bg-rule/40 hover:text-ink',
-            )}>
-            <LayoutGrid className="size-4" />
-          </button>
-          <button
-            type="button"
-            aria-pressed={view === 'list'}
-            aria-label="List view"
-            onClick={() => setViewPersisted('list')}
-            className={cn(
-              'border-rule duration-fast flex size-8 items-center justify-center border-l transition-colors',
-              view === 'list'
-                ? 'bg-gold/15 text-gold'
-                : 'text-ink-muted hover:bg-rule/40 hover:text-ink',
-            )}>
-            <ListIcon className="size-4" />
-          </button>
+    <>
+      <Container className="pt-12 pb-4">
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <ChapterHead
+            title={title}
+            description={description}
+            headingLevel="h1"
+          />
+          <ViewToolbar view={view} onChange={setViewPersisted} />
         </div>
-      </div>
+      </Container>
 
-      {view === 'grid' ? (
-        <Grid cols={{ md: 2, xl: 3 }}>
-          {certificates.map((c, i) => (
-            <RevealOnView key={c.title} delay={Math.min(i, 9) * 0.04}>
-              <CertificateCard certificate={c} />
-            </RevealOnView>
-          ))}
-        </Grid>
-      ) : (
-        <ol className="flex flex-col" role="list">
-          {certificates.map((c) => (
-            <li key={c.title}>
-              <CertificateRow certificate={c} />
-            </li>
-          ))}
-        </ol>
-      )}
-    </div>
+      <Container className="py-8">
+        {view === 'grid' ? (
+          <Grid cols={{ md: 2, xl: 3 }}>
+            {certificates.map((c, i) => (
+              <RevealOnView
+                key={c.title}
+                delay={Math.min(i, 9) * 0.04}
+                amount={0.1}>
+                <CertificateCard certificate={c} />
+              </RevealOnView>
+            ))}
+          </Grid>
+        ) : (
+          <ol className="flex flex-col" role="list">
+            {certificates.map((c) => (
+              <li key={c.title}>
+                <CertificateRow certificate={c} />
+              </li>
+            ))}
+          </ol>
+        )}
+      </Container>
+    </>
   );
 };
+
+type ViewToolbarProps = {
+  view: ViewMode;
+  onChange: (next: ViewMode) => void;
+};
+
+const ViewToolbar = ({ view, onChange }: ViewToolbarProps) => (
+  <div className="flex items-center gap-2">
+    <Mono className="text-ink-faint text-xs tracking-widest uppercase">
+      View
+    </Mono>
+    <div
+      role="group"
+      aria-label="Toggle view mode"
+      className="border-rule flex overflow-hidden rounded-md border">
+      <button
+        type="button"
+        aria-pressed={view === 'grid'}
+        aria-label="Grid view"
+        onClick={() => onChange('grid')}
+        className={cn(
+          'duration-fast flex size-8 items-center justify-center transition-colors',
+          view === 'grid'
+            ? 'bg-gold/15 text-gold'
+            : 'text-ink-muted hover:bg-rule/40 hover:text-ink',
+        )}>
+        <LayoutGrid className="size-4" />
+      </button>
+      <button
+        type="button"
+        aria-pressed={view === 'list'}
+        aria-label="List view"
+        onClick={() => onChange('list')}
+        className={cn(
+          'border-rule duration-fast flex size-8 items-center justify-center border-l transition-colors',
+          view === 'list'
+            ? 'bg-gold/15 text-gold'
+            : 'text-ink-muted hover:bg-rule/40 hover:text-ink',
+        )}>
+        <ListIcon className="size-4" />
+      </button>
+    </div>
+  </div>
+);
 
 export { CertificatesView };
 export type { CertificatesViewProps };

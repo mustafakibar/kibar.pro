@@ -1,7 +1,4 @@
 import { CertificatesView } from '@/components/certificates/CertificatesView';
-import { EmptyState } from '@/components/feedback/EmptyState';
-import { ChapterHead } from '@/components/layout/ChapterHead';
-import { Container } from '@/components/layout/Container';
 import { CERTIFICATES } from '@/lib/data/certificates.data';
 import type { Metadata, NextPage } from 'next';
 
@@ -19,23 +16,11 @@ export const metadata: Metadata = {
 };
 
 const CertificatesPage: NextPage = () => (
-  <>
-    <Container className="pt-12 pb-4">
-      <ChapterHead
-        title="Certificates"
-        description="Certificates earned across engineering, cloud, and product disciplines."
-        headingLevel="h1"
-      />
-    </Container>
-
-    <Container className="py-16">
-      {CERTIFICATES.length === 0 ? (
-        <EmptyState message="No certificates to show yet." />
-      ) : (
-        <CertificatesView certificates={CERTIFICATES} />
-      )}
-    </Container>
-  </>
+  <CertificatesView
+    certificates={CERTIFICATES}
+    title="Certificates"
+    description="Certificates earned across engineering, cloud, and product disciplines."
+  />
 );
 
 export default CertificatesPage;
