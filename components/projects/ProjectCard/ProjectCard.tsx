@@ -63,6 +63,7 @@ const ProjectCard = ({
       href={href}
       target={isLinked ? '_blank' : undefined}
       rel={isLinked ? 'noopener noreferrer' : undefined}
+      data-touch-elevated={isLinked ? '' : undefined}
       className={cn(
         'group border-rule bg-elevated duration-normal flex flex-col gap-3 rounded-lg border p-5 transition-all ease-out',
         isLinked &&

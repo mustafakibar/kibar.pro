@@ -190,5 +190,9 @@
       opacity: 1 !important;
       transform: none !important;
     }
+
+    [data-touch-elevated] {
+      border-color: oklch(0.74 0.105 72 / 0.25);
+    }
   }
 }
