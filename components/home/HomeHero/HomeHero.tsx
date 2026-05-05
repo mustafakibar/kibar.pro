@@ -69,35 +69,6 @@ const HomeHero = ({ className }: HomeHeroProps) => (
             </Mono>
           ))}
         </Marquee>
-        <dl className="text-ink-faint font-mono text-sm tracking-widest uppercase">
-          <dt className="text-gold mb-2">Now</dt>
-          <dd className="flex flex-col gap-1.5 tracking-normal normal-case">
-            <div className="flex items-baseline gap-3">
-              <span aria-hidden className="text-gold">
-                —
-              </span>
-              <span className="text-ink">
-                Shipping kibar.pro v2 across the stack.
-              </span>
-            </div>
-            <div className="flex items-baseline gap-3">
-              <span aria-hidden className="text-gold">
-                —
-              </span>
-              <span className="text-ink-muted">
-                Exploring Rust + Bun for small CLI tools.
-              </span>
-            </div>
-            <div className="flex items-baseline gap-3">
-              <span aria-hidden className="text-gold">
-                —
-              </span>
-              <span className="text-ink-muted">
-                Reading about scroll-driven CSS and OKLCH.
-              </span>
-            </div>
-          </dd>
-        </dl>
       </div>
     </Container>
   </section>
