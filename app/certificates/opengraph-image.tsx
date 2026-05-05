@@ -1,15 +1,14 @@
 import { ogContentType, ogSize, renderOgImage } from '../_og/og-template';
 
 export const runtime = 'edge';
-export const alt = 'Credentials — Mustafa Kibar';
+export const alt = 'Credentials · Mustafa Kibar';
 export const size = ogSize;
 export const contentType = ogContentType;
 
 export default function OpengraphImage() {
   return renderOgImage({
-    eyebrow: 'Credentials',
+    eyebrow: '§ III — CREDENTIALS',
     title: 'Credentials',
-    subtitle:
-      'Professional certificates earned across engineering, cloud, and product disciplines.',
+    subtitle: 'Earned across engineering, cloud, and product disciplines.',
   });
 }
