@@ -22,10 +22,10 @@ const SelectedWorkList = ({ projects, className }: SelectedWorkListProps) => (
             target={p.repoUrl ? '_blank' : undefined}
             rel={p.repoUrl ? 'noopener noreferrer' : undefined}
             className="group hover:bg-rule/40 duration-fast relative flex items-center gap-4 py-4 transition-colors ease-out">
-            <span className="duration-normal flex flex-1 items-baseline gap-3 transition-transform ease-out group-hover:translate-x-1">
+            <span className="duration-normal flex min-w-0 flex-1 items-center gap-3 transition-transform ease-out group-hover:translate-x-1">
               <Body className="text-ink font-medium">{p.title}</Body>
               {p.description && (
-                <Body size="sm" muted className="line-clamp-1">
+                <Body size="sm" muted className="truncate">
                   — {p.description}
                 </Body>
               )}
@@ -33,7 +33,7 @@ const SelectedWorkList = ({ projects, className }: SelectedWorkListProps) => (
             <Mono className="text-ink-faint">{p.year}</Mono>
             <ChevronUpRight
               data-hover-only-arrow
-              className="text-ink-faint duration-normal group-hover:text-gold size-4 opacity-0 transition-all ease-out group-hover:opacity-100"
+              className="text-ink-faint duration-normal group-hover:text-gold size-4 self-center opacity-0 transition-all ease-out group-hover:opacity-100"
             />
           </Link>
         </li>
