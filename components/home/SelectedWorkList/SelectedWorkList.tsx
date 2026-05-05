@@ -31,7 +31,10 @@ const SelectedWorkList = ({ projects, className }: SelectedWorkListProps) => (
               )}
             </span>
             <Mono className="text-ink-faint">{p.year}</Mono>
-            <ChevronUpRight className="text-ink-faint duration-normal group-hover:text-gold size-4 opacity-0 transition-all ease-out group-hover:opacity-100" />
+            <ChevronUpRight
+              data-hover-only-arrow
+              className="text-ink-faint duration-normal group-hover:text-gold size-4 opacity-0 transition-all ease-out group-hover:opacity-100"
+            />
           </Link>
         </li>
       );

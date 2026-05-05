@@ -36,7 +36,10 @@ const GistCard = ({ gist, className }: GistCardProps) => (
       </Body>
     </div>
     <Mono className="text-ink-faint">{gist.updatedAt.slice(0, 10)}</Mono>
-    <ChevronUpRight className="text-ink-faint duration-normal group-hover:text-gold size-4 transition-all ease-out group-hover:translate-x-1 group-hover:-rotate-12" />
+    <ChevronUpRight
+      data-hover-only-arrow
+      className="text-ink-faint duration-normal group-hover:text-gold size-4 transition-all ease-out group-hover:translate-x-1 group-hover:-rotate-12"
+    />
   </Link>
 );
 

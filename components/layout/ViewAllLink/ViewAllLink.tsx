@@ -18,6 +18,7 @@ const ViewAllLink = ({ href, children, className }: ViewAllLinkProps) => (
     )}>
     <span>{children}</span>
     <ChevronUpRight
+      data-hover-only-arrow
       className="duration-normal size-4 transition-transform ease-out group-hover:translate-x-1 group-hover:-rotate-12 group-focus-visible:translate-x-1 group-focus-visible:-rotate-12"
       strokeWidth={2}
     />

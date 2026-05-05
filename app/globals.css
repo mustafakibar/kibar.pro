@@ -183,4 +183,12 @@
     from { transform: translateX(0); }
     to   { transform: translateX(-50%); }
   }
+
+  @media (hover: none) {
+    .group [data-hover-only-arrow],
+    .group [data-hover-only-indicator] {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
 }
