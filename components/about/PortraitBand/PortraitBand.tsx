@@ -30,7 +30,7 @@ const PortraitBand = ({
         height={900}
         grayscale
         tint
-        objectPosition="center 25%"
+        objectPosition="center 12%"
         sizes="(min-width: 1024px) 100vw, 100vw"
         className="ring-rule aspect-[16/9] w-full rounded-lg ring-1 shadow-[0_30px_80px_-30px_oklch(0_0_0/0.6)]"
       />
