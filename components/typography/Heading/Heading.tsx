@@ -16,7 +16,7 @@ const Heading = ({
 }: HeadingProps) => (
   <Tag
     className={cn(
-      'font-display text-3xl leading-[1.05] tracking-[-0.015em] md:text-4xl',
+      'font-display text-2xl leading-[1.05] tracking-[-0.015em] md:text-3xl',
       italic && 'italic',
       className,
     )}

@@ -18,7 +18,7 @@ const Display = ({
 }: DisplayProps) => (
   <Tag
     className={cn(
-      'font-display text-5xl leading-[0.95] tracking-[-0.02em] md:text-[clamp(3.5rem,10vw,10rem)]',
+      'font-display text-4xl leading-[0.95] tracking-[-0.02em] md:text-[clamp(3rem,9vw,8.5rem)]',
       italic && 'italic',
       sweep && 'gold-sweep',
       className,

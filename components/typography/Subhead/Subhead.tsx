@@ -10,7 +10,7 @@ type SubheadProps = {
 const Subhead = ({ as: Tag = 'h3', children, className }: SubheadProps) => (
   <Tag
     className={cn(
-      'font-display text-ink-muted text-xl leading-tight font-normal italic',
+      'font-display text-ink-muted text-lg leading-tight font-normal italic',
       className,
     )}>
     {children}
