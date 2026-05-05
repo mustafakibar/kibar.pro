@@ -5,8 +5,8 @@ import { Container } from '@/components/layout/Container';
 import { RevealOnView } from '@/components/motion/RevealOnView';
 import { GistCard } from '@/components/notes/GistCard';
 import { NoteCard } from '@/components/notes/NoteCard';
-import { getGists } from '@/lib/data/getGists';
-import { listNoteSummaries } from '@/lib/notes';
+import { getGists, type GistSummary } from '@/lib/data/getGists';
+import { listNoteSummaries, type NoteSummary } from '@/lib/notes';
 import type { Metadata, NextPage } from 'next';
 
 export const metadata: Metadata = {
@@ -22,9 +22,27 @@ export const metadata: Metadata = {
   },
 };
 
+type FeedItem =
+  | { kind: 'note'; date: string; data: NoteSummary }
+  | { kind: 'gist'; date: string; data: GistSummary };
+
 const NotesPage: NextPage = async () => {
   const notes = await listNoteSummaries();
   const gists = await getGists();
+
+  const merged: FeedItem[] = [
+    ...notes.map<FeedItem>((n) => ({
+      kind: 'note' as const,
+      date: n.frontmatter.date,
+      data: n,
+    })),
+    ...gists.map<FeedItem>((g) => ({
+      kind: 'gist' as const,
+      date: g.updatedAt.slice(0, 10),
+      data: g,
+    })),
+  ].sort((a, b) => (a.date < b.date ? 1 : -1));
+
   return (
     <>
       <ChapterBand>
@@ -37,35 +55,28 @@ const NotesPage: NextPage = async () => {
         </Container>
       </ChapterBand>
 
-      <Container size="narrow" className="flex flex-col gap-16 py-16">
-        <section className="flex flex-col gap-4">
-          {notes.length === 0 ? (
-            <EmptyState message="No notes published yet." />
-          ) : (
-            <ol className="flex flex-col" role="list">
-              {notes.map((note, i) => (
-                <li key={note.slug}>
-                  <RevealOnView delay={Math.min(i, 9) * 0.04}>
-                    <NoteCard note={note} />
-                  </RevealOnView>
-                </li>
-              ))}
-            </ol>
-          )}
-        </section>
-
-        {gists.length > 0 && (
-          <section className="flex flex-col gap-4">
-            <ol className="flex flex-col" role="list">
-              {gists.map((gist, i) => (
-                <li key={gist.id}>
-                  <RevealOnView delay={Math.min(i, 9) * 0.04}>
-                    <GistCard gist={gist} />
-                  </RevealOnView>
-                </li>
-              ))}
-            </ol>
-          </section>
+      <Container size="narrow" className="py-16">
+        {merged.length === 0 ? (
+          <EmptyState message="No notes or gists published yet." />
+        ) : (
+          <ol className="flex flex-col" role="list">
+            {merged.map((item, i) => (
+              <li
+                key={
+                  item.kind === 'note'
+                    ? `n-${item.data.slug}`
+                    : `g-${item.data.id}`
+                }>
+                <RevealOnView delay={Math.min(i, 9) * 0.04}>
+                  {item.kind === 'note' ? (
+                    <NoteCard note={item.data} />
+                  ) : (
+                    <GistCard gist={item.data} />
+                  )}
+                </RevealOnView>
+              </li>
+            ))}
+          </ol>
         )}
       </Container>
     </>

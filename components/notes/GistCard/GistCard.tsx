@@ -19,11 +19,16 @@ const GistCard = ({ gist, className }: GistCardProps) => (
       className,
     )}>
     <div className="min-w-0 flex-1">
-      <Subhead
-        as="h3"
-        className="text-ink duration-fast group-hover:text-gold not-italic transition-colors">
-        {gist.title}
-      </Subhead>
+      <div className="flex items-baseline gap-2">
+        <Subhead
+          as="h3"
+          className="text-ink duration-fast group-hover:text-gold not-italic transition-colors">
+          {gist.title}
+        </Subhead>
+        <Mono className="bg-rule text-ink-faint rounded-sm px-1.5 py-0.5 text-[10px] tracking-widest uppercase">
+          Gist
+        </Mono>
+      </div>
       <Body size="sm" muted className="mt-1 truncate">
         {gist.primaryFile}
         {gist.fileCount > 1 && ` · ${gist.fileCount} files`}
