@@ -1,5 +1,5 @@
 import { RESUME_PATH } from '@/lib/constants/paths';
-import { Envelope, FileText, Github, Linkedin } from '@/lib/icons';
+import { Envelope, FileText, Github } from '@/lib/icons';
 import type { ComponentType, SVGProps } from 'react';
 
 export type Social = {
@@ -16,12 +16,6 @@ export const SOCIALS: readonly Social[] = [
     label: 'GitHub',
     href: 'https://github.com/mustafakibar',
     icon: Github,
-    external: true,
-  },
-  {
-    label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/mustafakibar',
-    icon: Linkedin,
     external: true,
   },
   { label: 'Resume', href: RESUME_PATH, icon: FileText, external: true },

@@ -18,7 +18,6 @@ import {
   Folder,
   Github,
   HomeIcon,
-  Linkedin,
   ToolboxIcon,
   UserIcon,
 } from '@/lib/icons';
@@ -92,13 +91,6 @@ const ITEMS: readonly Item[] = [
     href: 'https://github.com/mustafakibar',
     group: 'Links',
     icon: <Github className="size-4" />,
-    external: true,
-  },
-  {
-    label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/mustafakibar',
-    group: 'Links',
-    icon: <Linkedin className="size-4" />,
     external: true,
   },
 ];
