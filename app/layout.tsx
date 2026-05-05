@@ -122,11 +122,18 @@ export default async function RootLayout({ children }: RootLayoutProps) {
           displayFont.variable,
           monoFont.variable,
         )}>
+        <a
+          href="#main-content"
+          className="focus:bg-gold focus:text-canvas sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[200] focus:rounded-md focus:px-3 focus:py-2 focus:font-mono focus:text-xs focus:tracking-widest focus:uppercase">
+          Skip to main content
+        </a>
         <div className="flex min-h-screen min-w-full flex-col">
           <ScrollProgress />
           <CommandPaletteLazy />
           <SiteHeader />
-          <main className="flex-1">{children}</main>
+          <main id="main-content" className="flex-1">
+            {children}
+          </main>
           <SiteFooter />
         </div>
         <Analytics />
