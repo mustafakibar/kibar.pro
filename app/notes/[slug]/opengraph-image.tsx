@@ -2,7 +2,7 @@ import { getNote } from '@/lib/notes';
 import { notFound } from 'next/navigation';
 import { ogContentType, ogSize, renderOgImage } from '../../_og/og-template';
 
-export const alt = 'Notes · Mustafa Kibar';
+export const alt = 'Notes · Mustafa KiBAR';
 export const size = ogSize;
 export const contentType = ogContentType;
 

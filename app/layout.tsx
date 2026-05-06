@@ -1,8 +1,13 @@
+import { AmbientBackground } from '@/components/chrome/AmbientBackground';
 import { CommandPaletteLazy } from '@/components/chrome/CommandPalette';
+import { CursorTracker, CustomCursor } from '@/components/chrome/cursor';
+import { InteractionGuards } from '@/components/chrome/InteractionGuards';
 import { ScrollProgress } from '@/components/chrome/ScrollProgress';
 import { ScrollToTop } from '@/components/chrome/ScrollToTop';
+import { SideStamp } from '@/components/chrome/SideStamp';
 import { SiteFooter } from '@/components/chrome/SiteFooter';
 import { SiteHeader } from '@/components/chrome/SiteHeader';
+import { SmoothScroll } from '@/components/chrome/SmoothScroll';
 import env from '@/env';
 import { cn } from '@/lib/utils';
 import { Analytics } from '@vercel/analytics/next';
@@ -13,8 +18,8 @@ import React from 'react';
 import { bodyFont, displayFont, monoFont } from './fonts';
 import './globals.css';
 
-const SITE_NAME = 'Mustafa Kibar';
-const SITE_TITLE = 'Mustafa Kibar — Senior Full-Stack Engineer';
+const SITE_NAME = 'Mustafa KiBAR';
+const SITE_TITLE = 'Mustafa KiBAR — Senior Full-Stack Engineer';
 const SITE_DESCRIPTION =
   'Senior full-stack engineer based in Istanbul. I design and ship reliable, performant products across the web stack — from API to UI.';
 
@@ -22,14 +27,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(env.SITE_URL),
   title: {
     default: SITE_TITLE,
-    template: '%s · Mustafa Kibar',
+    template: '%s · Mustafa KiBAR',
   },
   description: SITE_DESCRIPTION,
   applicationName: SITE_NAME,
   authors: [{ name: SITE_NAME, url: env.SITE_URL }],
   creator: SITE_NAME,
   keywords: [
-    'Mustafa Kibar',
+    'Mustafa KiBAR',
     'Full-Stack Engineer',
     'Senior Software Engineer',
     'TypeScript',
@@ -128,6 +133,11 @@ export default async function RootLayout({ children }: RootLayoutProps) {
           className="focus:bg-gold focus:text-canvas sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[200] focus:rounded-md focus:px-3 focus:py-2 focus:font-mono focus:text-xs focus:tracking-widest focus:uppercase">
           Skip to main content
         </a>
+        <SmoothScroll />
+        <CursorTracker />
+        <InteractionGuards />
+        <AmbientBackground />
+        <SideStamp />
         <div className="flex min-h-screen min-w-full flex-col">
           <ScrollProgress />
           <CommandPaletteLazy />
@@ -138,6 +148,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
           <SiteFooter />
           <ScrollToTop />
         </div>
+        <CustomCursor />
         <Analytics />
         <SpeedInsights />
       </body>

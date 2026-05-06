@@ -25,7 +25,12 @@ const SelectedWorkList = ({ projects, className }: SelectedWorkListProps) => (
             <span className="duration-normal flex min-w-0 flex-1 items-center gap-3 transition-transform ease-out group-hover:translate-x-1">
               <Body className="text-ink font-medium">{p.title}</Body>
               {p.description && (
-                <Body size="sm" muted className="truncate">
+                <Body
+                  size="sm"
+                  muted
+                  title={p.description}
+                  data-tooltip={p.description}
+                  className="truncate">
                   — {p.description}
                 </Body>
               )}

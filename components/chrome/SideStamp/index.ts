@@ -1,0 +1,1 @@
+export { SideStamp } from './SideStamp';

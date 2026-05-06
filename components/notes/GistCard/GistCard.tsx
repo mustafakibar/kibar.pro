@@ -22,6 +22,8 @@ const GistCard = ({ gist, className }: GistCardProps) => (
       <div className="flex min-w-0 items-baseline gap-2">
         <Subhead
           as="h3"
+          title={gist.title}
+          data-tooltip={gist.title}
           className="text-ink duration-fast group-hover:text-gold min-w-0 truncate not-italic transition-colors">
           {gist.title}
         </Subhead>
@@ -29,11 +31,25 @@ const GistCard = ({ gist, className }: GistCardProps) => (
           Gist
         </Mono>
       </div>
-      <Body size="sm" muted className="mt-1 truncate">
-        {gist.primaryFile}
-        {gist.fileCount > 1 && ` · ${gist.fileCount} files`}
-        {gist.primaryLanguage && ` · ${gist.primaryLanguage}`}
-      </Body>
+      {(() => {
+        const meta = [
+          gist.primaryFile,
+          gist.fileCount > 1 ? `${gist.fileCount} files` : null,
+          gist.primaryLanguage,
+        ]
+          .filter(Boolean)
+          .join(' · ');
+        return (
+          <Body
+            size="sm"
+            muted
+            title={meta}
+            data-tooltip={meta}
+            className="mt-1 truncate">
+            {meta}
+          </Body>
+        );
+      })()}
     </div>
     <Mono className="text-ink-faint">{gist.updatedAt.slice(0, 10)}</Mono>
     <ChevronUpRight

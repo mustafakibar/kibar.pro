@@ -1,10 +1,10 @@
 import { EmptyState } from '@/components/feedback/EmptyState';
 import { CredentialsList } from '@/components/home/CredentialsList';
 import { HomeHero } from '@/components/home/HomeHero';
+import { HomeMetrics } from '@/components/home/HomeMetrics';
 import { SelectedWorkList } from '@/components/home/SelectedWorkList';
 import { Container } from '@/components/layout/Container';
 import { SectionViewer } from '@/components/layout/SectionViewer';
-import { Subhead } from '@/components/typography';
 import {
   CERTIFICATES_PATH,
   CONTACT_PATH,
@@ -27,6 +27,10 @@ const HomePage: NextPage = async () => {
   return (
     <>
       <HomeHero />
+
+      <Container className="pt-16 pb-12 md:pt-24">
+        <HomeMetrics />
+      </Container>
 
       <Container className="flex flex-col gap-24 pb-24">
         <SectionViewer
@@ -51,13 +55,10 @@ const HomePage: NextPage = async () => {
           <CredentialsList certificates={featuredCerts} />
         </SectionViewer>
 
-        <section className="flex flex-col items-center gap-3 py-12 text-center">
-          <Subhead className="text-ink text-2xl">
-            Built in Istanbul. Open to good problems.
-          </Subhead>
+        <section className="flex flex-col items-center py-4 text-center">
           <Link
             href={CONTACT_PATH}
-            className="border-gold/50 bg-gold/10 text-gold duration-fast hover:bg-gold/20 mt-2 inline-flex rounded-full border px-4 py-1.5 font-mono text-xs tracking-widest uppercase transition-colors">
+            className="border-gold/50 bg-gold/10 text-gold duration-fast hover:bg-gold/20 inline-flex rounded-full border px-4 py-1.5 font-mono text-xs tracking-widest uppercase transition-colors">
             → Reach out
           </Link>
         </section>

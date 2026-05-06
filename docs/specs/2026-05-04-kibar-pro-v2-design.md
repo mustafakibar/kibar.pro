@@ -9,19 +9,19 @@
 
 ## § 0 — Vision
 
-The current site is a competent dark dev portfolio. v2 is a different animal: an **editorial, cinematic, single-author publication** that happens to be a portfolio. The reading experience matters as much as the content. Every detail — the italic *i* in the wordmark, the gold sweep across the hero, the Roman-numeral list rows, the *§* chapter markers — should reinforce a single coherent voice: **a senior engineer who treats craft seriously**.
+The current site is a competent dark dev portfolio. v2 is a different animal: an **editorial, cinematic, single-author publication** that happens to be a portfolio. The reading experience matters as much as the content. Every detail — the italic _i_ in the wordmark, the gold sweep across the hero, the Roman-numeral list rows, the _§_ chapter markers — should reinforce a single coherent voice: **a senior engineer who treats craft seriously**.
 
 ### Brand Covenant
 
 The site MUST honour these inviolable rules across every page, asset, and artifact:
 
-| | |
-|---|---|
-| **Wordmark** | `KiBAR` — only the `i` is lowercase; `K`, `B`, `A`, `R` are uppercase. The italic `i` is the brand's signature. Never write `Kibar`, `KIBAR`, or `kibar` in any rendered headline. |
-| **Monogram** | `k.` — a single italic Fraunces lowercase `k` followed by a crimson period. Used in the header logo, favicon variants, and as the brand stamp. |
-| **Theme** | Dark only. No light mode, no toggle. Brand commitment, not a limitation. |
-| **Authorship** | No reference to AI, "AI-assisted", "Claude", or similar in any commit message, code comment, README, PR description, or visible artifact. The author is Mustafa Kibar. |
-| **Language** | All copy, comments, code, docs, and metadata are in English. Turkish appears only as occasional intentional brand details (the `kibar` = polite easter egg, etc.). |
+|                |                                                                                                                                                                                    |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Wordmark**   | `KiBAR` — only the `i` is lowercase; `K`, `B`, `A`, `R` are uppercase. The italic `i` is the brand's signature. Never write `Kibar`, `KIBAR`, or `kibar` in any rendered headline. |
+| **Monogram**   | `k.` — a single italic Fraunces lowercase `k` followed by a crimson period. Used in the header logo, favicon variants, and as the brand stamp.                                     |
+| **Theme**      | Dark only. No light mode, no toggle. Brand commitment, not a limitation.                                                                                                           |
+| **Authorship** | No reference to AI, "AI-assisted", "Claude", or similar in any commit message, code comment, README, PR description, or visible artifact. The author is Mustafa Kibar.             |
+| **Language**   | All copy, comments, code, docs, and metadata are in English. Turkish appears only as occasional intentional brand details (the `kibar` = polite easter egg, etc.).                 |
 
 ---
 
@@ -67,45 +67,48 @@ All colors are defined in OKLCH for perceptual consistency. Tailwind v4 `@theme`
 ```css
 :root {
   /* Surfaces */
-  --bg-canvas:     oklch(0.09  0.012  35);   /* near-black, warm tint */
-  --bg-elevated:   oklch(0.13  0.018  30);   /* card surfaces */
-  --bg-overlay:    oklch(0.06  0.010  30 / 0.85); /* modals / palette */
-  --bg-stage:      oklch(0.14  0.045  20);   /* hero / chapter bands */
+  --bg-canvas: oklch(0.09 0.012 35); /* near-black, warm tint */
+  --bg-elevated: oklch(0.13 0.018 30); /* card surfaces */
+  --bg-overlay: oklch(0.06 0.01 30 / 0.85); /* modals / palette */
+  --bg-stage: oklch(0.14 0.045 20); /* hero / chapter bands */
 
   /* Ink (text) */
-  --ink:           oklch(0.96  0.022  85);   /* primary body */
-  --ink-muted:     oklch(0.80  0.045  75);   /* secondary body */
-  --ink-subtle:    oklch(0.58  0.045  70);   /* captions, labels */
-  --ink-faint:     oklch(0.40  0.030  65);   /* metadata */
+  --ink: oklch(0.96 0.022 85); /* primary body */
+  --ink-muted: oklch(0.8 0.045 75); /* secondary body */
+  --ink-subtle: oklch(0.58 0.045 70); /* captions, labels */
+  --ink-faint: oklch(0.4 0.03 65); /* metadata */
 
   /* Brand accents */
-  --gold:          oklch(0.74  0.105  72);   /* primary gold */
-  --gold-bright:   oklch(0.86  0.085  82);   /* hero sweep peak */
-  --gold-deep:     oklch(0.55  0.110  60);   /* gold pressed/active */
-  --crimson:       oklch(0.55  0.180  22);   /* primary crimson */
-  --crimson-deep:  oklch(0.34  0.150  22);   /* crimson backgrounds */
+  --gold: oklch(0.74 0.105 72); /* primary gold */
+  --gold-bright: oklch(0.86 0.085 82); /* hero sweep peak */
+  --gold-deep: oklch(0.55 0.11 60); /* gold pressed/active */
+  --crimson: oklch(0.55 0.18 22); /* primary crimson */
+  --crimson-deep: oklch(0.34 0.15 22); /* crimson backgrounds */
 
   /* Structure */
-  --rule:          oklch(0.96  0.022  85 / 0.10); /* hairlines */
-  --rule-strong:   oklch(0.96  0.022  85 / 0.18);
+  --rule: oklch(0.96 0.022 85 / 0.1); /* hairlines */
+  --rule-strong: oklch(0.96 0.022 85 / 0.18);
 
   /* State */
-  --success:       oklch(0.70  0.150 145);
-  --warning:       oklch(0.78  0.140  82);
-  --danger:        oklch(0.62  0.220  25);
+  --success: oklch(0.7 0.15 145);
+  --warning: oklch(0.78 0.14 82);
+  --danger: oklch(0.62 0.22 25);
 
   /* Glow / atmospheric */
-  --glow-gold:     oklch(0.74  0.105  72 / 0.15);
-  --glow-crimson:  oklch(0.55  0.180  22 / 0.18);
+  --glow-gold: oklch(0.74 0.105 72 / 0.15);
+  --glow-crimson: oklch(0.55 0.18 22 / 0.18);
 }
 ```
 
 **Gradient — the gold sweep** (used in wordmark, hero, monogram, heading accents):
+
 ```css
-background: linear-gradient(95deg,
+background: linear-gradient(
+  95deg,
   var(--ink) 0%,
   var(--gold) 60%,
-  var(--ink) 100%);
+  var(--ink) 100%
+);
 ```
 
 **Background atmosphere:** A subtle radial gold glow at upper-left (10% opacity) and crimson glow at lower-right of every page hero. Fixed-positioned, blurred 130px, behind content.
@@ -129,18 +132,18 @@ mono:    Geist Mono (wght 400..500)
 
 **Type scale** (rem-based, 1.0rem = 16px):
 
-| Token | Size | Usage |
-|---|---|---|
-| `text-xs` | 0.6875rem (11px) | Labels, footnotes |
-| `text-sm` | 0.8125rem (13px) | Captions, metadata |
-| `text-base` | 0.9375rem (15px) | Body |
-| `text-md` | 1.0625rem (17px) | Body-lead |
-| `text-lg` | 1.25rem (20px) | Subheadings |
-| `text-xl` | 1.625rem (26px) | Section heads |
-| `text-2xl` | 2.125rem (34px) | Page titles |
-| `text-3xl` | 2.75rem (44px) | Hero subheads |
-| `text-4xl` | 3.75rem (60px) | Hero (mobile) |
-| `text-display` | `clamp(3rem, 9vw, 8.5rem)` | Hero (desktop) |
+| Token          | Size                       | Usage              |
+| -------------- | -------------------------- | ------------------ |
+| `text-xs`      | 0.6875rem (11px)           | Labels, footnotes  |
+| `text-sm`      | 0.8125rem (13px)           | Captions, metadata |
+| `text-base`    | 0.9375rem (15px)           | Body               |
+| `text-md`      | 1.0625rem (17px)           | Body-lead          |
+| `text-lg`      | 1.25rem (20px)             | Subheadings        |
+| `text-xl`      | 1.625rem (26px)            | Section heads      |
+| `text-2xl`     | 2.125rem (34px)            | Page titles        |
+| `text-3xl`     | 2.75rem (44px)             | Hero subheads      |
+| `text-4xl`     | 3.75rem (60px)             | Hero (mobile)      |
+| `text-display` | `clamp(3rem, 9vw, 8.5rem)` | Hero (desktop)     |
 
 **Line-heights:** Display = 0.92. Headings = 1.05. Body = 1.55. Captions = 1.45.
 
@@ -154,17 +157,17 @@ mono:    Geist Mono (wght 400..500)
 
 ```css
 :root {
-  --dur-instant:   80ms;
-  --dur-fast:     150ms;
-  --dur-normal:   220ms;
-  --dur-slow:     360ms;
-  --dur-hero:     720ms;
+  --dur-instant: 80ms;
+  --dur-fast: 150ms;
+  --dur-normal: 220ms;
+  --dur-slow: 360ms;
+  --dur-hero: 720ms;
   --dur-cinematic: 1200ms;
 
   /* Custom easings — premium feel */
-  --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);   /* soft landing */
-  --ease-in-out:   cubic-bezier(0.65, 0, 0.35, 1);
-  --ease-emphasis: cubic-bezier(0.32, 0.72, 0, 1);  /* MD3 emphasised */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); /* soft landing */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-emphasis: cubic-bezier(0.32, 0.72, 0, 1); /* MD3 emphasised */
 }
 ```
 
@@ -187,8 +190,9 @@ mono:    Geist Mono (wght 400..500)
 ### II.6 — Elevation / Shadow
 
 Premium Luxe minimises shadows. Two ambient shadows:
-- `shadow-quiet`:  `0 1px 0 0 var(--rule)` (hairline)
-- `shadow-lift`:   `0 12px 40px -10px oklch(0.05 0 0 / 0.6), 0 0 0 1px var(--rule)` (cards on hover)
+
+- `shadow-quiet`: `0 1px 0 0 var(--rule)` (hairline)
+- `shadow-lift`: `0 12px 40px -10px oklch(0.05 0 0 / 0.6), 0 0 0 1px var(--rule)` (cards on hover)
 
 ### II.7 — Radius
 
@@ -205,7 +209,7 @@ K𝑖BAR
 ```
 
 - `K`, `B`, `A`, `R` set in Fraunces 500, opsz 144, SOFT 30.
-- The `i` is set in Fraunces 400 *italic*, opsz 144, SOFT 60.
+- The `i` is set in Fraunces 400 _italic_, opsz 144, SOFT 60.
 - Tracking: -0.025em.
 - The `i` is rendered with `inline-block; transform: scale(0.75); transform-origin: center;` so it sits visually smaller than the surrounding caps — the "small breath" between the strong letters.
 - In the hero: gradient-fill with the gold sweep.
@@ -218,21 +222,21 @@ K𝑖BAR
 k.
 ```
 
-- Lowercase Fraunces *italic* `k`, opsz 144, SOFT 60, weight 500, gold-sweep gradient fill.
+- Lowercase Fraunces _italic_ `k`, opsz 144, SOFT 60, weight 500, gold-sweep gradient fill.
 - Followed immediately by a `.` set in Geist Sans, color `var(--crimson)`, no gradient.
 - Sizes: header 22px → favicon 32px master → favicon 16/32/48 generated from master.
 - The `.` is the brand's "full stop" — quiet, decisive.
 
 ### III.3 — Wordmark vs Monogram usage
 
-| Surface | Mark |
-|---|---|
+| Surface             | Mark                                  |
+| ------------------- | ------------------------------------- |
 | Browser tab favicon | `i` (just the italic `i`, simplified) |
-| Header (sticky) | `k.` |
-| Hero (home) | `KiBAR` (display) |
-| OG image — home | `KiBAR` + chapter marker |
-| OG image — others | Page chapter + page name |
-| Footer | `KiBAR · © 2026` |
+| Header (sticky)     | `k.`                                  |
+| Hero (home)         | `KiBAR` (display)                     |
+| OG image — home     | `KiBAR` + chapter marker              |
+| OG image — others   | Page chapter + page name              |
+| Footer              | `KiBAR · © 2026`                     |
 
 ---
 
@@ -243,24 +247,27 @@ k.
 **Composition (top to bottom):**
 
 1. **Hero band** (full-bleed, ~85vh on desktop, ~60vh on mobile)
+
    - Chapter marker: `§ 0 — INDEX` (Geist Sans 11px, gold).
    - Massive type-driven wordmark: `KiBAR`. Animated entry: letter-by-letter staggered fade-up, then a single gold-sweep highlight passes left-to-right (`background-position` animation, ~1.4s, eased `--ease-out`). Plays once on mount.
-   - Subhead (Fraunces 1.625rem italic): "*— shipping reliable systems since 2011.*"
+   - Subhead (Fraunces 1.625rem italic): "_— shipping reliable systems since 2011._"
    - Body lede (Geist 17px, max 60ch): a single tight paragraph about what you do and where (inherits the existing copy, lightly tightened).
    - A single inline link row: `mailto · GitHub · LinkedIn` (Geist 13px, ink-muted, hover gold).
    - Atmospheric: gold radial glow upper-right; subtle dust particles (CSS-only, 8 absolutely-positioned dots with looping float animations, all `prefers-reduced-motion` respected).
 
 2. **§ II — Selected Work** (chapter band header → editorial-narrow card list)
-   - Chapter marker + heading "*Selected Work*".
+
+   - Chapter marker + heading "_Selected Work_".
    - 6-9 GitHub repos from the existing `getProjects()` cache, rendered as **list rows** (not card grid) — Roman numeral, repo name, year, language indicator chip. On hover: row gains a 1px gold left border, name shifts 4px right, becomes gold.
    - "View all →" link (chevron rotates -24° on hover, current behaviour preserved).
 
 3. **§ III — Credentials** (chapter band header → 3 most-recent certificates)
+
    - Same editorial-narrow row treatment as Selected Work.
    - Tile-style card variant for the 3 home-featured certificates only — see Certificates page for full grid treatment.
 
 4. **Closing band** (subtle)
-   - A single italic Fraunces line: "*Currently available for senior roles.*" + small gold pill linking to `/contact`.
+   - A single italic Fraunces line: "_Currently available for senior roles._" + small gold pill linking to `/contact`.
 
 **Removed from current home:** `react-type-animation` typing effect, `HeroWithLoveSection` (replaced by the static italic subhead), the photo (moved to /about only).
 
@@ -270,8 +277,8 @@ k.
 
 **Composition:**
 
-1. Page heading "*The Maker*" + biography lede (1 paragraph, Geist 17px).
-2. **Portrait band** — full-bleed image (current `me-2.webp`), grayscale + gold overlay tint at low opacity, height ~50vh. Caption below in italic Fraunces ("*Mustafa Kibar, Istanbul, 2026.*").
+1. Page heading "_The Maker_" + biography lede (1 paragraph, Geist 17px).
+2. **Portrait band** — full-bleed image (current `me-2.webp`), grayscale + gold overlay tint at low opacity, height ~50vh. Caption below in italic Fraunces ("_Mustafa Kibar, Istanbul, 2026._").
 3. **Biography prose** — editorial-narrow column, 3-5 paragraphs, Geist 15-17px. The current copy migrates with light editorial tightening.
 4. **Skills index** (see § VI.SkillsIndex — Editorial Index treatment).
 5. **§ I.b — Education** — Timeline (rebuilt; see § VI.Timeline).
@@ -318,11 +325,11 @@ k.
 
 **Composition:**
 
-1. Display heading: "*Currently available for senior roles.*" — Fraunces 500, italic, gold sweep, 60-80px.
+1. Display heading: "_Currently available for senior roles._" — Fraunces 500, italic, gold sweep, 60-80px.
 2. Status pill (small gold-bordered pill): "Available · Istanbul · Remote-friendly".
 3. **Email row** — large (Fraunces 500, 36px): `mustafa@kibar.pro`. Click copies to clipboard with a brief tooltip ("Copied"); long-press / aux-click opens `mailto:`. Implementation uses `navigator.clipboard.writeText` with a small `motion`-driven tooltip.
 4. **Socials** — three large rows: GitHub, LinkedIn, Resume. Each row: lucide icon · label · external chevron. Hover: row gains crimson left border, icon goes gold.
-5. Closing italic line: "*Reply within 48 hours.*"
+5. Closing italic line: "_Reply within 48 hours._"
 
 **No form. No CAPTCHA. No third-party booking.**
 
@@ -332,12 +339,12 @@ k.
 
 **Composition:**
 
-1. Heading "*Workshop*" + 1-paragraph lede.
+1. Heading "_Workshop_" + 1-paragraph lede.
 2. **Editorial Index** — `UsesIndex` component:
    - Categories (italic Fraunces label, gold) + items (Geist 14px, ivory) in a 2-column grid (label left, value right) on desktop; stacked on mobile.
-   - Categories: *Desk*, *Computer*, *Peripherals*, *Audio*, *Software*, *Editor & Dotfiles*.
+   - Categories: _Desk_, _Computer_, _Peripherals_, _Audio_, _Software_, _Editor & Dotfiles_.
    - Each item is a one-liner; long descriptions go to `/notes` instead.
-3. **Desk image** at the bottom — full-bleed band, current `desk.webp`, with a gold-tinted overlay and bottom gradient fade. Caption italic ("*The desk, 2026.*").
+3. **Desk image** at the bottom — full-bleed band, current `desk.webp`, with a gold-tinted overlay and bottom gradient fade. Caption italic ("_The desk, 2026._").
 
 **Data:** `lib/data/uses.data.ts` — typed array of `{ category, items: { name, label?, link? }[] }`.
 
@@ -346,11 +353,13 @@ k.
 **Chapter marker:** `§ VI — MARGINALIA`
 
 **Index page:**
-1. Heading "*Marginalia*" + lede ("*Snippets, observations, things worth keeping.*").
+
+1. Heading "_Marginalia_" + lede ("_Snippets, observations, things worth keeping._").
 2. **Year-sorted list** — Roman numeral + title + reading-time estimate + date.
 3. Hover: row lifts, gold left border, subtle background tint.
 
 **Note page (`/notes/[slug]`):**
+
 1. Chapter marker + back-to-index link.
 2. Title (Fraunces 500, 44px) + date + reading time.
 3. **MDX content body** — editorial-narrow column. Custom MDX components:
@@ -360,6 +369,7 @@ k.
 4. Footer: previous/next note links.
 
 **MDX architecture:**
+
 - Content lives under `content/notes/<slug>.mdx` — one file per note. No per-route mdx files in `app/`.
 - The dynamic route `app/notes/[slug]/page.tsx` reads the matching mdx file at request time, parses frontmatter via `gray-matter`, and compiles with `next-mdx-remote/rsc`'s `compileMDX`.
 - Frontmatter: `title`, `description`, `date`, `tags`, `published`.
@@ -376,83 +386,83 @@ The following table captures every existing component, its replacement, and the 
 
 ### V.1 — Renames
 
-| Old | New | Reason |
-|---|---|---|
-| `Hero/HeroWithLoveSection` | *(deleted)* | Typing animation removed; replaced by static italic subhead. |
-| `Hero/Hero` | `home/HomeHero` | Scoped to home; co-located. Card wrapper around HeroWithLoveSection drops. |
-| `MyLoading` | `feedback/LoadingCard` | "My" prefix removed; clearer purpose. |
-| `AnimatedItemWrapper` | `motion/RevealOnView` | Describes behaviour; not "wrapper". |
-| `GridWrapper` | `layout/Grid` | Drops `Wrapper` suffix. |
-| `ParallaxSkills` | `home/SkillsIndex` *(rebuilt)* | Was a marquee mis-labelled "parallax"; replaced by Editorial Index. |
-| `ParallaxCertificates` | *(deleted)* | Unused; replaced by editorial grid on /certificates. |
-| `Parallax` | *(deleted)* | Was a mis-labelled marquee. Editorial Index replaces all uses; no marquee primitive shipped. |
-| `Showcase` (compound) | `card/Card.*` family | Reframed as Card primitive with sub-components. |
-| `Showcase/ShowcaseViewer` | `layout/SectionViewer` | Wraps Section heading + Grid. |
-| `ProjectShowcase` | `projects/ProjectCard` | Co-located, clearer. |
-| `CertificatesShowcase/CertificateShowcase` | `certificates/CertificateCard` | Folder/file mismatch resolved. |
-| `Certificates/CertificateView` | *(deleted)* | Was a stub. |
-| `Certificates/constant.ts` | `lib/data/certificates.data.ts` | `constants` plural; `.data.ts` convention. |
-| `RepoIcon` | `projects/SourceLink` | Describes destination, not just iconography. |
-| `TopProgressBar` | `chrome/ScrollProgress` | "Top" is positional; meaning is "scroll progress". |
-| `FooterHeartIcon` | `chrome/FooterStamp` | "Heart icon with pulsing animation" → simpler "stamp" idea. |
-| `Header` | `chrome/SiteHeader` | Consistency with chrome bucket. |
-| `Footer` | `chrome/SiteFooter` | Same. |
-| `CommandPalette` | `chrome/CommandPalette` | Stays — already good. |
-| `ProfileImage` | `media/Portrait` | One word, clearer. |
-| `TurkeyFlagImage` | *(deleted if unused)* | Verify usage; remove if dead. |
-| `Contact` | `contact/ContactList` | Co-located. |
-| `Nav/NavItem`, `Nav/NavItems` | `chrome/nav/NavLink`, `chrome/nav/NavList` | Kept structure, renamed for clarity. |
-| `Tag/TagItem`, `Tag/TagItems` | `tag/Tag`, `tag/TagList` | Drops the `Item` redundancy. |
-| `Timeline/Timeline*` (5 components) | `timeline/Timeline` (single component, data-driven) | Over-modularised; collapsed. |
-| `SectionHeading` | `layout/ChapterHead` | Reframed around "chapter" brand language. |
-| `ViewAllButton` | `layout/ViewAllLink` | It's a link, not a button. |
+| Old                                                          | New                                                           | Reason                                                                                           |
+| ------------------------------------------------------------ | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| `Hero/HeroWithLoveSection`                                   | _(deleted)_                                                   | Typing animation removed; replaced by static italic subhead.                                     |
+| `Hero/Hero`                                                  | `home/HomeHero`                                               | Scoped to home; co-located. Card wrapper around HeroWithLoveSection drops.                       |
+| `MyLoading`                                                  | `feedback/LoadingCard`                                        | "My" prefix removed; clearer purpose.                                                            |
+| `AnimatedItemWrapper`                                        | `motion/RevealOnView`                                         | Describes behaviour; not "wrapper".                                                              |
+| `GridWrapper`                                                | `layout/Grid`                                                 | Drops `Wrapper` suffix.                                                                          |
+| `ParallaxSkills`                                             | `home/SkillsIndex` _(rebuilt)_                                | Was a marquee mis-labelled "parallax"; replaced by Editorial Index.                              |
+| `ParallaxCertificates`                                       | _(deleted)_                                                   | Unused; replaced by editorial grid on /certificates.                                             |
+| `Parallax`                                                   | _(deleted)_                                                   | Was a mis-labelled marquee. Editorial Index replaces all uses; no marquee primitive shipped.     |
+| `Showcase` (compound)                                        | `card/Card.*` family                                          | Reframed as Card primitive with sub-components.                                                  |
+| `Showcase/ShowcaseViewer`                                    | `layout/SectionViewer`                                        | Wraps Section heading + Grid.                                                                    |
+| `ProjectShowcase`                                            | `projects/ProjectCard`                                        | Co-located, clearer.                                                                             |
+| `CertificatesShowcase/CertificateShowcase`                   | `certificates/CertificateCard`                                | Folder/file mismatch resolved.                                                                   |
+| `Certificates/CertificateView`                               | _(deleted)_                                                   | Was a stub.                                                                                      |
+| `Certificates/constant.ts`                                   | `lib/data/certificates.data.ts`                               | `constants` plural; `.data.ts` convention.                                                       |
+| `RepoIcon`                                                   | `projects/SourceLink`                                         | Describes destination, not just iconography.                                                     |
+| `TopProgressBar`                                             | `chrome/ScrollProgress`                                       | "Top" is positional; meaning is "scroll progress".                                               |
+| `FooterHeartIcon`                                            | `chrome/FooterStamp`                                          | "Heart icon with pulsing animation" → simpler "stamp" idea.                                      |
+| `Header`                                                     | `chrome/SiteHeader`                                           | Consistency with chrome bucket.                                                                  |
+| `Footer`                                                     | `chrome/SiteFooter`                                           | Same.                                                                                            |
+| `CommandPalette`                                             | `chrome/CommandPalette`                                       | Stays — already good.                                                                            |
+| `ProfileImage`                                               | `media/Portrait`                                              | One word, clearer.                                                                               |
+| `TurkeyFlagImage`                                            | _(deleted if unused)_                                         | Verify usage; remove if dead.                                                                    |
+| `Contact`                                                    | `contact/ContactList`                                         | Co-located.                                                                                      |
+| `Nav/NavItem`, `Nav/NavItems`                                | `chrome/nav/NavLink`, `chrome/nav/NavList`                    | Kept structure, renamed for clarity.                                                             |
+| `Tag/TagItem`, `Tag/TagItems`                                | `tag/Tag`, `tag/TagList`                                      | Drops the `Item` redundancy.                                                                     |
+| `Timeline/Timeline*` (5 components)                          | `timeline/Timeline` (single component, data-driven)           | Over-modularised; collapsed.                                                                     |
+| `SectionHeading`                                             | `layout/ChapterHead`                                          | Reframed around "chapter" brand language.                                                        |
+| `ViewAllButton`                                              | `layout/ViewAllLink`                                          | It's a link, not a button.                                                                       |
 | `typography/Heading`, `Title`, `Subhead`, `Subtitle`, `Text` | `typography/Display`, `Heading`, `Subhead`, `Body`, `Caption` | Consolidated 5 thin wrappers into a clear scale. `Text` is dropped (it just wrapped a `<span>`). |
-| `useAnimationInView`, `useAnimationOnHover` | `hooks/useMarqueeControls` | Single hook serving the Marquee primitive's needs; private to that primitive. |
-| `lib/utils.getRandomInt` | *(deleted)* | Used in `ParallaxSkills` default prop — caused hydration risk; replaced with deterministic data. |
-| `lib/icons` (re-exports react-icons) | `lib/icons` *(rewritten)* | Switches to `lucide-react`. Keeps thin re-export for project-wide consistency. |
+| `useAnimationInView`, `useAnimationOnHover`                  | `hooks/useMarqueeControls`                                    | Single hook serving the Marquee primitive's needs; private to that primitive.                    |
+| `lib/utils.getRandomInt`                                     | _(deleted)_                                                   | Used in `ParallaxSkills` default prop — caused hydration risk; replaced with deterministic data. |
+| `lib/icons` (re-exports react-icons)                         | `lib/icons` _(rewritten)_                                     | Switches to `lucide-react`. Keeps thin re-export for project-wide consistency.                   |
 
 ### V.2 — New components
 
-| Name | Purpose |
-|---|---|
-| `chrome/SiteHeader` | Sticky header with shrinking height + gold-sweep monogram. |
-| `chrome/CommandPalette` | Existing cmdk palette, polished: gold accent on selected, Geist Mono labels, ⌘K hint chip. |
-| `home/HomeHero` | Type-driven hero with gold-sweep wordmark. |
-| `home/SkillsIndex` | Editorial Index (categorised italic-label list). |
-| `home/SelectedWorkList` | Editorial-row list of recent projects. |
-| `home/CredentialsList` | Editorial-row list of recent certificates. |
-| `about/Biography` | Editorial-narrow prose with section breaks. |
-| `about/PortraitBand` | Full-bleed portrait with caption. |
-| `projects/ProjectCard` | Replaces ProjectShowcase. |
-| `projects/SourceLink` | Replaces RepoIcon. |
-| `certificates/CertificateCard` | Replaces CertificateShowcase. |
-| `contact/EmailRow` | Large click-to-copy email with tooltip. |
-| `contact/SocialRow` | Icon + label + external chevron. |
-| `contact/StatusPill` | Availability pill. |
-| `uses/UsesIndex` | Editorial Index for hardware/software. |
-| `uses/DeskBand` | Full-bleed desk image footer. |
-| `notes/NoteCard` | Index-page row. |
-| `notes/NoteContent` | MDX wrapper with custom components. |
-| `notes/Callout` | Custom MDX `<Callout>`. |
-| `notes/CodeBlock` | Custom MDX code with Shiki + copy button. |
-| `notes/Demo` | Sandbox container for interactive demos. |
-| `layout/Container` | Width-bounded container (narrow / wide / full). |
-| `layout/ChapterHead` | `§ N — TITLE` chapter marker + heading. |
-| `layout/ChapterBand` | Full-bleed chapter band. |
-| `layout/Grid` | Responsive grid. |
-| `layout/SectionViewer` | Section heading + grid. |
-| `layout/ViewAllLink` | "View all →" link. |
-| `motion/RevealOnView` | Opacity + 8px translate on enter view. |
-| `motion/GoldSweep` | Mask-based gold gradient sweep across element. |
-| `motion/PageTransition` | Wraps `app/template.tsx` with View Transitions / motion fallback. |
-| `media/Portrait` | Polymorphic profile/portrait image with grayscale + tint. |
-| `tag/Tag`, `tag/TagList` | Visual-only chips. |
-| `timeline/Timeline` | Data-driven timeline (single component). |
-| `typography/Display`, `Heading`, `Subhead`, `Body`, `Caption`, `Eyebrow`, `Mono` | Consolidated typographic scale. |
-| `feedback/LoadingCard`, `feedback/EmptyState`, `feedback/ErrorState` | Loading/empty/error primitives. |
-| `chrome/ScrollProgress` | Existing top progress bar, simplified. |
-| `chrome/FooterStamp` | Quiet brand stamp at footer (replaces heart icon animation). |
-| `chrome/SiteFooter` | Footer with stamp + nav rail + © year. |
+| Name                                                                             | Purpose                                                                                    |
+| -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| `chrome/SiteHeader`                                                              | Sticky header with shrinking height + gold-sweep monogram.                                 |
+| `chrome/CommandPalette`                                                          | Existing cmdk palette, polished: gold accent on selected, Geist Mono labels, ⌘K hint chip. |
+| `home/HomeHero`                                                                  | Type-driven hero with gold-sweep wordmark.                                                 |
+| `home/SkillsIndex`                                                               | Editorial Index (categorised italic-label list).                                           |
+| `home/SelectedWorkList`                                                          | Editorial-row list of recent projects.                                                     |
+| `home/CredentialsList`                                                           | Editorial-row list of recent certificates.                                                 |
+| `about/Biography`                                                                | Editorial-narrow prose with section breaks.                                                |
+| `about/PortraitBand`                                                             | Full-bleed portrait with caption.                                                          |
+| `projects/ProjectCard`                                                           | Replaces ProjectShowcase.                                                                  |
+| `projects/SourceLink`                                                            | Replaces RepoIcon.                                                                         |
+| `certificates/CertificateCard`                                                   | Replaces CertificateShowcase.                                                              |
+| `contact/EmailRow`                                                               | Large click-to-copy email with tooltip.                                                    |
+| `contact/SocialRow`                                                              | Icon + label + external chevron.                                                           |
+| `contact/StatusPill`                                                             | Availability pill.                                                                         |
+| `uses/UsesIndex`                                                                 | Editorial Index for hardware/software.                                                     |
+| `uses/DeskBand`                                                                  | Full-bleed desk image footer.                                                              |
+| `notes/NoteCard`                                                                 | Index-page row.                                                                            |
+| `notes/NoteContent`                                                              | MDX wrapper with custom components.                                                        |
+| `notes/Callout`                                                                  | Custom MDX `<Callout>`.                                                                    |
+| `notes/CodeBlock`                                                                | Custom MDX code with Shiki + copy button.                                                  |
+| `notes/Demo`                                                                     | Sandbox container for interactive demos.                                                   |
+| `layout/Container`                                                               | Width-bounded container (narrow / wide / full).                                            |
+| `layout/ChapterHead`                                                             | `§ N — TITLE` chapter marker + heading.                                                    |
+| `layout/ChapterBand`                                                             | Full-bleed chapter band.                                                                   |
+| `layout/Grid`                                                                    | Responsive grid.                                                                           |
+| `layout/SectionViewer`                                                           | Section heading + grid.                                                                    |
+| `layout/ViewAllLink`                                                             | "View all →" link.                                                                         |
+| `motion/RevealOnView`                                                            | Opacity + 8px translate on enter view.                                                     |
+| `motion/GoldSweep`                                                               | Mask-based gold gradient sweep across element.                                             |
+| `motion/PageTransition`                                                          | Wraps `app/template.tsx` with View Transitions / motion fallback.                          |
+| `media/Portrait`                                                                 | Polymorphic profile/portrait image with grayscale + tint.                                  |
+| `tag/Tag`, `tag/TagList`                                                         | Visual-only chips.                                                                         |
+| `timeline/Timeline`                                                              | Data-driven timeline (single component).                                                   |
+| `typography/Display`, `Heading`, `Subhead`, `Body`, `Caption`, `Eyebrow`, `Mono` | Consolidated typographic scale.                                                            |
+| `feedback/LoadingCard`, `feedback/EmptyState`, `feedback/ErrorState`             | Loading/empty/error primitives.                                                            |
+| `chrome/ScrollProgress`                                                          | Existing top progress bar, simplified.                                                     |
+| `chrome/FooterStamp`                                                             | Quiet brand stamp at footer (replaces heart icon animation).                               |
+| `chrome/SiteFooter`                                                              | Footer with stamp + nav rail + © year.                                                    |
 
 ### V.3 — Folder reorganisation
 
@@ -573,19 +583,20 @@ components/
 
 ### VI.4 — Hover micro-interactions
 
-| Element | Effect |
-|---|---|
-| Editorial list rows | 1px gold left-border slide-in (transform: scaleY) + name 4px right + color → gold |
-| Cards (Project / Certificate) | translateY -2px, ring intensifies, scale 1.005 |
-| Source / external link | underline grows from left (transform: scaleX) |
-| Nav link | underline-grow, opacity 0.6 → 1 |
-| View-all chevron | rotate -24deg, scale 1.75 (preserved from v1) |
-| Email row | Click: copy + brief gold tooltip "Copied" (200ms) |
-| Footer stamp | Looping 10s breath: opacity 0→0.1→0 + scale 1→2 |
+| Element                       | Effect                                                                            |
+| ----------------------------- | --------------------------------------------------------------------------------- |
+| Editorial list rows           | 1px gold left-border slide-in (transform: scaleY) + name 4px right + color → gold |
+| Cards (Project / Certificate) | translateY -2px, ring intensifies, scale 1.005                                    |
+| Source / external link        | underline grows from left (transform: scaleX)                                     |
+| Nav link                      | underline-grow, opacity 0.6 → 1                                                   |
+| View-all chevron              | rotate -24deg, scale 1.75 (preserved from v1)                                     |
+| Email row                     | Click: copy + brief gold tooltip "Copied" (200ms)                                 |
+| Footer stamp                  | Looping 10s breath: opacity 0→0.1→0 + scale 1→2                                   |
 
 ### VI.5 — Reduced motion
 
 Every motion primitive has a reduced-motion branch that renders the static end state. This is enforced by:
+
 - Tailwind v4 `motion-reduce:*` variants for CSS animations.
 - A `useReducedMotion()` hook for JS-driven motion.
 - A global CSS rule (already present): `@media (prefers-reduced-motion: reduce)` zeroes all animation durations.
@@ -603,18 +614,18 @@ Every motion primitive has a reduced-motion branch that renders the static end s
 
 ### VII.1 — Targets
 
-| Metric | Target |
-|---|---|
-| Lighthouse Perf | 100 |
-| Lighthouse A11y | 100 |
-| Lighthouse Best Practices | 100 |
-| Lighthouse SEO | 100 |
-| LCP (75p mobile) | < 1.5s |
-| TBT | < 100ms |
-| CLS | < 0.05 |
-| INP (75p) | < 200ms |
-| Client JS (initial) | < 100kb gzipped |
-| Total transfer (home, mobile) | < 250kb |
+| Metric                        | Target          |
+| ----------------------------- | --------------- |
+| Lighthouse Perf               | 100             |
+| Lighthouse A11y               | 100             |
+| Lighthouse Best Practices     | 100             |
+| Lighthouse SEO                | 100             |
+| LCP (75p mobile)              | < 1.5s          |
+| TBT                           | < 100ms         |
+| CLS                           | < 0.05          |
+| INP (75p)                     | < 200ms         |
+| Client JS (initial)           | < 100kb gzipped |
+| Total transfer (home, mobile) | < 250kb         |
 
 ### VII.2 — Tactics
 
@@ -667,6 +678,7 @@ The current Metadata API setup is solid; v2 retains it. New routes (`/contact`, 
 ### IX.2 — OG images
 
 Per-route OG images via `app/<route>/opengraph-image.tsx`. Each is a 1200×630 image rendered with `@vercel/og`, using:
+
 - Background: dark gradient + grain.
 - Top-left: chapter marker (`§ N — ROUTE NAME`), Geist Sans 24px gold.
 - Centre: page-specific display title, Fraunces 96px, gold sweep.
@@ -690,20 +702,20 @@ Per-route OG images via `app/<route>/opengraph-image.tsx`. Each is a 1200×630 i
 
 ### X.1 — Dependencies — added
 
-| Package | Why |
-|---|---|
+| Package           | Why                                                    |
+| ----------------- | ------------------------------------------------------ |
 | `next-mdx-remote` | MDX rendering at runtime in RSC; build-time compilable |
-| `shiki` | Build-time code highlighting |
-| `lucide-react` | Icon library (replaces `react-icons`) |
-| `gray-matter` | MDX frontmatter parsing |
-| `reading-time` | Estimated read time on /notes |
+| `shiki`           | Build-time code highlighting                           |
+| `lucide-react`    | Icon library (replaces `react-icons`)                  |
+| `gray-matter`     | MDX frontmatter parsing                                |
+| `reading-time`    | Estimated read time on /notes                          |
 
 ### X.2 — Dependencies — removed
 
-| Package | Reason |
-|---|---|
+| Package                | Reason                     |
+| ---------------------- | -------------------------- |
 | `react-type-animation` | Hero typing effect dropped |
-| `react-icons` | Replaced by lucide-react |
+| `react-icons`          | Replaced by lucide-react   |
 
 ### X.3 — Dependencies — kept
 
@@ -716,6 +728,7 @@ ESLint stack, Prettier, Husky, lint-staged, commitlint, bundle analyzer, Tailwin
 ### X.5 — Tailwind v4 configuration
 
 `globals.css` is rewritten to:
+
 - Import Tailwind v4.
 - Define `@theme` with all OKLCH tokens + spacing/type/motion tokens.
 - Define a single dark-only palette (no `:root` light + `.dark` override).
@@ -750,6 +763,7 @@ Nine phases. Each ends with a verifiable local preview. The user reviews after e
 ### Phase 1 — Primitives
 
 Build (in this order):
+
 1. `typography/*` (Display, Heading, Subhead, Body, Caption, Eyebrow, Mono).
 2. `layout/Container`, `layout/Grid`.
 3. `motion/RevealOnView`, `motion/GoldSweep`, `motion/PageTransition`.
@@ -862,14 +876,14 @@ These are stretch goals for a future v3 if and only if they earn their place.
 
 ## § XIII — Risks & Mitigations
 
-| Risk | Mitigation |
-|---|---|
-| Fraunces variable axes don't render in older Safari (`SOFT` axis support) | Provide a fallback `font-variation-settings: 'opsz' 144` (no SOFT). Visually nearly identical. |
-| View Transitions API support varies | `unstable_ViewTransition` from Next 15.x is the entry point; on browsers without support, default to motion-driven cross-fade in `app/template.tsx`. |
-| Lighthouse 100 across all metrics is hard with hero gradients/animations | Hero gradient is CSS-only; sweep is `background-position`; particles are 8 absolutely-positioned dots. JS-driven motion is gated by reduced-motion. Worst-case: lower hero motion intensity to keep TBT in budget. |
-| MDX content authoring is new | Phase 6 includes a 5-snippet seed. Templates and Callout/Code/Demo components remove most authoring friction. |
-| Naming refactor breaks every internal import | The branch is isolated. Imports are rewritten as part of the same commit that creates the new component. ESLint catches strays. |
-| `K𝑖BAR` scaled-`i` rendering inconsistencies (subpixel / kerning) | Implemented as a styled `<span>` with `inline-block`, explicit `transform: scale(0.75)`, `font-style: italic`, and `transform-origin: center`. Tested across browsers in Phase 1. |
+| Risk                                                                      | Mitigation                                                                                                                                                                                                         |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Fraunces variable axes don't render in older Safari (`SOFT` axis support) | Provide a fallback `font-variation-settings: 'opsz' 144` (no SOFT). Visually nearly identical.                                                                                                                     |
+| View Transitions API support varies                                       | `unstable_ViewTransition` from Next 15.x is the entry point; on browsers without support, default to motion-driven cross-fade in `app/template.tsx`.                                                               |
+| Lighthouse 100 across all metrics is hard with hero gradients/animations  | Hero gradient is CSS-only; sweep is `background-position`; particles are 8 absolutely-positioned dots. JS-driven motion is gated by reduced-motion. Worst-case: lower hero motion intensity to keep TBT in budget. |
+| MDX content authoring is new                                              | Phase 6 includes a 5-snippet seed. Templates and Callout/Code/Demo components remove most authoring friction.                                                                                                      |
+| Naming refactor breaks every internal import                              | The branch is isolated. Imports are rewritten as part of the same commit that creates the new component. ESLint catches strays.                                                                                    |
+| `K𝑖BAR` scaled-`i` rendering inconsistencies (subpixel / kerning)         | Implemented as a styled `<span>` with `inline-block`, explicit `transform: scale(0.75)`, `font-style: italic`, and `transform-origin: center`. Tested across browsers in Phase 1.                                  |
 
 ---
 
@@ -892,4 +906,4 @@ v2 is shippable to `main` when ALL of the following are true:
 
 ---
 
-*— End of spec —*
+_— End of spec —_

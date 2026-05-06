@@ -31,10 +31,17 @@ const CertificateRow = ({ certificate, className }: CertificateRowProps) => {
       <div className="flex min-w-0 flex-1 flex-col">
         <Subhead
           as="h3"
+          title={certificate.title}
+          data-tooltip={certificate.title}
           className="text-ink duration-fast group-hover:text-gold truncate not-italic transition-colors">
           {certificate.title}
         </Subhead>
-        <Caption className="truncate">{certificate.description}</Caption>
+        <Caption
+          title={certificate.description}
+          data-tooltip={certificate.description}
+          className="truncate">
+          {certificate.description}
+        </Caption>
       </div>
 
       <Mono className="text-ink-faint">{certificate.date}</Mono>

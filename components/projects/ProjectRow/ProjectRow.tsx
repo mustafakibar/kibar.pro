@@ -58,11 +58,18 @@ const ProjectRow = ({ project, className }: ProjectRowProps) => {
       <div className="duration-normal flex min-w-0 flex-1 items-center gap-3 transition-transform ease-out group-hover:translate-x-1">
         <Subhead
           as="h3"
+          title={project.title}
+          data-tooltip={project.title}
           className="text-ink duration-fast group-hover:text-gold truncate not-italic transition-colors">
           {project.title}
         </Subhead>
         {project.description && (
-          <Body size="sm" muted className="hidden truncate sm:inline">
+          <Body
+            size="sm"
+            muted
+            title={project.description}
+            data-tooltip={project.description}
+            className="hidden truncate sm:inline">
             — {project.description}
           </Body>
         )}

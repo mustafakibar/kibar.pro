@@ -31,7 +31,9 @@ const NavLink = ({
     aria-current={active ? 'page' : undefined}
     className={cn(
       'group font-body duration-fast relative inline-flex items-center gap-1 px-2 py-1 text-sm transition-colors ease-out',
-      active ? 'text-ink pointer-events-none' : 'text-ink-muted hover:text-ink',
+      active
+        ? 'text-ink pointer-events-none cursor-default font-medium'
+        : 'text-ink-muted hover:text-ink',
       className,
     )}>
     <span className="relative">
@@ -39,27 +41,23 @@ const NavLink = ({
       {active ? (
         <motion.span
           aria-hidden
-          className="bg-gold absolute inset-x-0 -bottom-1 h-px origin-left"
-          initial={{ scaleX: 0, opacity: 0 }}
-          animate={{
-            scaleX: 1,
-            opacity: [0, 1, 0.7, 1],
+          className="absolute inset-x-0 -bottom-1 h-[1.5px] origin-left rounded-full"
+          style={{
+            backgroundImage:
+              'linear-gradient(90deg, var(--color-gold-deep) 0%, var(--color-gold-bright) 50%, var(--color-gold-deep) 100%)',
+            boxShadow: '0 0 8px var(--color-glow-gold)',
           }}
+          initial={{ scaleX: 0, opacity: 0 }}
+          animate={{ scaleX: 1, opacity: 1 }}
           transition={{
-            scaleX: { duration: duration.slow, ease: easing.out },
-            opacity: {
-              duration: 4,
-              repeat: Infinity,
-              ease: easing.inOut,
-              times: [0, 0.15, 0.6, 1],
-              delay: 0.4,
-            },
+            scaleX: { duration: duration.slow, ease: easing.emphasis },
+            opacity: { duration: duration.normal, ease: easing.out },
           }}
         />
       ) : (
         <span
           aria-hidden
-          className="bg-gold duration-normal absolute inset-x-0 -bottom-1 h-px origin-left scale-x-0 transition-transform ease-out group-hover:scale-x-100"
+          className="bg-gold duration-normal absolute inset-x-0 -bottom-1 h-px origin-left scale-x-0 rounded-full transition-transform ease-out group-hover:scale-x-100"
         />
       )}
     </span>

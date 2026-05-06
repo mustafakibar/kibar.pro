@@ -13,10 +13,14 @@ type PortraitBandProps = {
 };
 
 const PortraitBand = ({
-  caption = 'Mustafa Kibar, Istanbul, 2026.',
+  caption = 'Mustafa KiBAR, 2026.',
   className,
 }: PortraitBandProps) => (
-  <figure className={cn('relative flex flex-col gap-3', className)}>
+  <figure
+    className={cn(
+      'relative mx-auto flex w-full max-w-[320px] flex-col gap-3 sm:max-w-[360px]',
+      className,
+    )}>
     <div className="relative isolate">
       <div
         aria-hidden
@@ -26,13 +30,13 @@ const PortraitBand = ({
         src={HERO_PROFILE_IMAGE_SRC}
         alt={HERO_PROFILE_IMAGE_ALT}
         blurDataURL={HERO_PROFILE_IMAGE_BLUR_DATA_URL}
-        width={1600}
-        height={900}
+        width={714}
+        height={955}
         grayscale
         tint
-        objectPosition="center 12%"
-        sizes="(min-width: 1024px) 100vw, 100vw"
-        className="ring-rule aspect-[16/9] w-full rounded-lg ring-1 shadow-[0_30px_80px_-30px_oklch(0_0_0/0.6)]"
+        objectPosition="center 0%"
+        sizes="360px"
+        className="ring-rule aspect-[4/5] w-full rounded-lg ring-1 shadow-[0_30px_80px_-30px_oklch(0_0_0/0.6)]"
       />
       <div
         aria-hidden

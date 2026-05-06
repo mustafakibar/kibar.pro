@@ -19,11 +19,18 @@ const NoteCard = ({ note, className }: NoteCardProps) => (
     <div className="min-w-0 flex-1">
       <Subhead
         as="h3"
+        title={note.frontmatter.title}
+        data-tooltip={note.frontmatter.title}
         className="text-ink duration-fast group-hover:text-gold truncate not-italic transition-colors">
         {note.frontmatter.title}
       </Subhead>
       {note.frontmatter.description && (
-        <Body size="sm" muted className="mt-1 truncate">
+        <Body
+          size="sm"
+          muted
+          title={note.frontmatter.description}
+          data-tooltip={note.frontmatter.description}
+          className="mt-1 truncate">
           {note.frontmatter.description}
         </Body>
       )}

@@ -13,7 +13,7 @@ validates a value against a type and keeps the narrower inferred shape:
 type Color = 'gold' | 'crimson';
 
 const palette = {
-  gold:    'oklch(0.74 0.105 72)',
+  gold: 'oklch(0.74 0.105 72)',
   crimson: 'oklch(0.55 0.180 22)',
 } satisfies Record<Color, string>;
 

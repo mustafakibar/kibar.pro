@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import type { ElementType, ReactNode } from 'react';
+import type { ComponentPropsWithoutRef, ElementType, ReactNode } from 'react';
 
 type BodyProps = {
   as?: ElementType;
@@ -7,7 +7,7 @@ type BodyProps = {
   className?: string;
   size?: 'sm' | 'base' | 'lg';
   muted?: boolean;
-};
+} & Omit<ComponentPropsWithoutRef<'p'>, 'children' | 'className'>;
 
 const sizes = {
   sm: 'text-sm',
@@ -21,8 +21,10 @@ const Body = ({
   className,
   size = 'base',
   muted = false,
+  ...rest
 }: BodyProps) => (
   <Tag
+    {...rest}
     className={cn(
       'font-body leading-[1.55]',
       sizes[size],

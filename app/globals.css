@@ -11,88 +11,92 @@
 
 @theme {
   /* Surfaces */
-  --color-canvas:        oklch(0.09  0.012  35);
-  --color-elevated:      oklch(0.13  0.018  30);
-  --color-overlay:       oklch(0.06  0.010  30 / 0.85);
-  --color-stage:         oklch(0.14  0.045  20);
+  --color-canvas: oklch(0.09 0.012 35);
+  --color-elevated: oklch(0.13 0.018 30);
+  --color-overlay: oklch(0.06 0.01 30 / 0.85);
+  --color-stage: oklch(0.14 0.045 20);
 
   /* Ink (text) */
-  --color-ink:           oklch(0.96  0.022  85);
-  --color-ink-muted:     oklch(0.80  0.045  75);
-  --color-ink-subtle:    oklch(0.58  0.045  70);
-  --color-ink-faint:     oklch(0.40  0.030  65);
+  --color-ink: oklch(0.96 0.022 85);
+  --color-ink-muted: oklch(0.8 0.045 75);
+  --color-ink-subtle: oklch(0.58 0.045 70);
+  --color-ink-faint: oklch(0.4 0.03 65);
 
   /* Brand accents */
-  --color-gold:          oklch(0.74  0.105  72);
-  --color-gold-bright:   oklch(0.86  0.085  82);
-  --color-gold-deep:     oklch(0.55  0.110  60);
-  --color-crimson:       oklch(0.55  0.180  22);
-  --color-crimson-deep:  oklch(0.34  0.150  22);
+  --color-gold: oklch(0.74 0.105 72);
+  --color-gold-bright: oklch(0.86 0.085 82);
+  --color-gold-deep: oklch(0.55 0.11 60);
+  --color-crimson: oklch(0.55 0.18 22);
+  --color-crimson-deep: oklch(0.34 0.15 22);
 
   /* Structure */
-  --color-rule:          oklch(0.96  0.022  85 / 0.10);
-  --color-rule-strong:   oklch(0.96  0.022  85 / 0.18);
+  --color-rule: oklch(0.96 0.022 85 / 0.1);
+  --color-rule-strong: oklch(0.96 0.022 85 / 0.18);
 
   /* State */
-  --color-success:       oklch(0.70  0.150 145);
-  --color-warning:       oklch(0.78  0.140  82);
-  --color-danger:        oklch(0.62  0.220  25);
+  --color-success: oklch(0.7 0.15 145);
+  --color-warning: oklch(0.78 0.14 82);
+  --color-danger: oklch(0.62 0.22 25);
 
   /* Glow */
-  --color-glow-gold:     oklch(0.74  0.105  72 / 0.15);
-  --color-glow-crimson:  oklch(0.55  0.180  22 / 0.18);
+  --color-glow-gold: oklch(0.74 0.105 72 / 0.15);
+  --color-glow-crimson: oklch(0.55 0.18 22 / 0.18);
 
   /* Type families */
   --font-display: var(--font-display);
-  --font-body:    var(--font-body);
-  --font-mono:    var(--font-mono);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
 
   /* Type scale */
-  --text-xs:      0.6875rem;
-  --text-sm:      0.8125rem;
-  --text-base:    0.9375rem;
-  --text-md:      1.0625rem;
-  --text-lg:      1.25rem;
-  --text-xl:      1.625rem;
-  --text-2xl:     2.125rem;
-  --text-3xl:     2.75rem;
-  --text-4xl:     3.75rem;
+  --text-xs: 0.6875rem;
+  --text-sm: 0.8125rem;
+  --text-base: 0.9375rem;
+  --text-md: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.625rem;
+  --text-2xl: 2.125rem;
+  --text-3xl: 2.75rem;
+  --text-4xl: 3.75rem;
 
   /* Layout */
   --container-narrow: 680px;
-  --container-wide:  1100px;
+  --container-wide: 1100px;
 
   /* Radius */
-  --radius-sm:   4px;
-  --radius-md:   8px;
-  --radius-lg:  14px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
 
   /* Motion durations */
-  --duration-instant:    80ms;
-  --duration-fast:      150ms;
-  --duration-normal:    220ms;
-  --duration-slow:      360ms;
-  --duration-hero:      720ms;
+  --duration-instant: 80ms;
+  --duration-fast: 150ms;
+  --duration-normal: 220ms;
+  --duration-slow: 360ms;
+  --duration-hero: 720ms;
   --duration-cinematic: 1200ms;
 
   /* Easings */
-  --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in-out:   cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
   --ease-emphasis: cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 @media (prefers-contrast: more) {
   :root {
-    --color-rule:        oklch(0.96 0.022 85 / 0.25);
-    --color-rule-strong: oklch(0.96 0.022 85 / 0.40);
-    --color-ink-muted:   oklch(0.86 0.045 75);
-    --color-ink-subtle:  oklch(0.70 0.045 70);
-    --color-ink-faint:   oklch(0.55 0.030 65);
+    --color-rule: oklch(0.96 0.022 85 / 0.25);
+    --color-rule-strong: oklch(0.96 0.022 85 / 0.4);
+    --color-ink-muted: oklch(0.86 0.045 75);
+    --color-ink-subtle: oklch(0.7 0.045 70);
+    --color-ink-faint: oklch(0.55 0.03 65);
   }
 }
 
 @layer base {
-  *, ::after, ::before, ::backdrop, ::file-selector-button {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
     border-color: var(--color-rule);
   }
 
@@ -110,12 +114,16 @@
     overflow-x: hidden;
   }
 
-  body::-webkit-scrollbar { width: 6px; }
+  body::-webkit-scrollbar {
+    width: 6px;
+  }
   body::-webkit-scrollbar-thumb {
     background: var(--color-elevated);
     border-radius: 9999px;
   }
-  body::-webkit-scrollbar-thumb:hover { background: var(--color-gold-deep); }
+  body::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gold-deep);
+  }
 
   ::selection {
     background: var(--color-gold);
@@ -130,7 +138,9 @@
     max-width: var(--container-wide);
   }
   @media (min-width: 1400px) {
-    .container { padding-inline: 6rem; }
+    .container {
+      padding-inline: 6rem;
+    }
   }
 
   .container-narrow {
@@ -170,13 +180,179 @@
     inset: 0;
     pointer-events: none;
     z-index: -1;
-    background-image: radial-gradient(circle, oklch(0.74 0.105 72 / 0.025) 1px, transparent 1px);
+    background-image: radial-gradient(
+      circle,
+      oklch(0.74 0.105 72 / 0.025) 1px,
+      transparent 1px
+    );
     background-size: 28px 28px;
     background-position: 0 0;
   }
 
+  /* Ambient background — inner pages only (rendered by <AmbientBackground />) */
+  :root {
+    --cursor-x: 50vw;
+    --cursor-y: 50vh;
+  }
+  .ambient-background {
+    contain: strict;
+  }
+
+  .ambient-moire {
+    opacity: 0.035;
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        oklch(0.74 0.105 72) 0,
+        oklch(0.74 0.105 72) 1px,
+        transparent 1px,
+        transparent 23px
+      ),
+      repeating-linear-gradient(
+        135deg,
+        oklch(0.96 0.022 85) 0,
+        oklch(0.96 0.022 85) 1px,
+        transparent 1px,
+        transparent 27px
+      );
+    mask-image: radial-gradient(
+      ellipse 90% 70% at 50% 40%,
+      #000 30%,
+      transparent 80%
+    );
+    -webkit-mask-image: radial-gradient(
+      ellipse 90% 70% at 50% 40%,
+      #000 30%,
+      transparent 80%
+    );
+  }
+
+  .ambient-halo {
+    background: radial-gradient(
+      circle 320px at var(--cursor-x) var(--cursor-y),
+      oklch(0.74 0.105 72 / 0.1) 0%,
+      oklch(0.55 0.18 22 / 0.05) 35%,
+      transparent 70%
+    );
+    transition: background 80ms linear;
+    will-change: background;
+    mix-blend-mode: screen;
+  }
+
+  @media (hover: none) {
+    .ambient-halo {
+      background: radial-gradient(
+        ellipse 60vw 50vh at 50% 30%,
+        oklch(0.74 0.105 72 / 0.07) 0%,
+        transparent 70%
+      );
+    }
+  }
   @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
+    .ambient-halo {
+      transition: none;
+    }
+  }
+
+  /* ============================================================
+     Custom cursor (rendered by <CustomCursor />)
+     ============================================================ */
+  @media (hover: hover) and (pointer: fine) {
+    html,
+    body {
+      cursor: none;
+    }
+    a,
+    button,
+    [role='button'],
+    input,
+    label,
+    summary,
+    [contenteditable] {
+      cursor: none;
+    }
+  }
+
+  .custom-cursor-dot,
+  .custom-cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    border-radius: 9999px;
+  }
+
+  .custom-cursor-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--color-gold);
+    transform: translate3d(
+      calc(var(--cursor-x) - 3px),
+      calc(var(--cursor-y) - 3px),
+      0
+    );
+    box-shadow: 0 0 12px oklch(0.74 0.105 72 / 0.6);
+  }
+
+  .custom-cursor-ring {
+    width: 30px;
+    height: 30px;
+    border: 1px solid oklch(0.86 0.085 82 / 0.7);
+    transform: translate3d(
+      calc(var(--cursor-x) - 15px),
+      calc(var(--cursor-y) - 15px),
+      0
+    );
+    transition:
+      transform 180ms cubic-bezier(0.16, 1, 0.3, 1),
+      width 220ms cubic-bezier(0.16, 1, 0.3, 1),
+      height 220ms cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 220ms ease-out,
+      background-color 220ms ease-out;
+  }
+
+  /* Grow on interactive hover via :has() — pure CSS, no JS hover detection */
+  html:has(:is(a, button, [role='button'], input, summary):hover):not(
+      [data-cursor-active='false']
+    )
+    .custom-cursor-ring {
+    width: 56px;
+    height: 56px;
+    transform: translate3d(
+      calc(var(--cursor-x) - 28px),
+      calc(var(--cursor-y) - 28px),
+      0
+    );
+    border-color: var(--color-gold);
+    background-color: oklch(0.74 0.105 72 / 0.1);
+  }
+
+  html[data-cursor-active='false'] .custom-cursor-dot,
+  html[data-cursor-active='false'] .custom-cursor-ring {
+    opacity: 0;
+  }
+
+  @media (hover: none), (pointer: coarse) {
+    .custom-cursor-dot,
+    .custom-cursor-ring {
+      display: none;
+    }
+    html,
+    body {
+      cursor: auto;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .custom-cursor-ring {
+      transition: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
@@ -191,8 +367,12 @@
   }
 
   @keyframes marquee {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
   }
 
   @media (hover: none) {
@@ -204,6 +384,53 @@
 
     [data-touch-elevated] {
       border-color: oklch(0.74 0.105 72 / 0.25);
+    }
+  }
+
+  /* Tooltip on truncated text — pure CSS, with delay so it doesn't flicker on pass-by */
+  [data-tooltip] {
+    position: relative;
+  }
+  [data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 6px);
+    transform: translateX(-50%) translateY(2px);
+    background: var(--color-overlay);
+    color: var(--color-ink);
+    border: 1px solid var(--color-rule-strong);
+    border-radius: var(--radius-md);
+    padding: 0.4rem 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    max-width: min(80vw, 28rem);
+    white-space: normal;
+    word-break: break-word;
+    pointer-events: none;
+    opacity: 0;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 28px -12px oklch(0.05 0 0 / 0.7);
+    z-index: 50;
+    transition:
+      opacity var(--duration-fast) var(--ease-out) 400ms,
+      transform var(--duration-fast) var(--ease-out) 400ms;
+  }
+  [data-tooltip]:hover::after,
+  [data-tooltip]:focus-visible::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  @media (hover: none) {
+    [data-tooltip]::after {
+      display: none;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-tooltip]::after {
+      transition: opacity var(--duration-fast) linear;
     }
   }
 }

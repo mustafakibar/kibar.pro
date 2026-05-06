@@ -1,13 +1,14 @@
 import { cn } from '@/lib/utils';
-import type { ReactNode } from 'react';
+import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 
 type CaptionProps = {
   children: ReactNode;
   className?: string;
-};
+} & Omit<ComponentPropsWithoutRef<'p'>, 'children' | 'className'>;
 
-const Caption = ({ children, className }: CaptionProps) => (
+const Caption = ({ children, className, ...rest }: CaptionProps) => (
   <p
+    {...rest}
     className={cn(
       'font-body text-ink-subtle text-sm leading-[1.45]',
       className,

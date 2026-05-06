@@ -3,6 +3,7 @@ import { Container } from '@/components/layout/Container';
 import { NotesView, type FeedItem } from '@/components/notes/NotesView';
 import { getGists } from '@/lib/data/getGists';
 import { listNoteSummaries } from '@/lib/notes';
+import { readViewCookie } from '@/lib/viewPreference';
 import type { Metadata, NextPage } from 'next';
 
 export const metadata: Metadata = {
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
     'Snippets, observations, and things worth keeping — short technical notes.',
   alternates: { canonical: '/notes' },
   openGraph: {
-    title: 'Notes · Mustafa Kibar',
+    title: 'Notes · Mustafa KiBAR',
     description:
       'Snippets, observations, and things worth keeping — short technical notes.',
     url: '/notes',
@@ -19,8 +20,11 @@ export const metadata: Metadata = {
 };
 
 const NotesPage: NextPage = async () => {
-  const notes = await listNoteSummaries();
-  const gists = await getGists();
+  const [notes, gists, initialView] = await Promise.all([
+    listNoteSummaries(),
+    getGists(),
+    readViewCookie('notes', 'list'),
+  ]);
 
   const merged: FeedItem[] = [
     ...notes.map<FeedItem>((n) => ({
@@ -46,6 +50,7 @@ const NotesPage: NextPage = async () => {
   return (
     <NotesView
       items={merged}
+      initialView={initialView}
       title="Notes"
       description="Snippets, observations, and things worth keeping."
     />

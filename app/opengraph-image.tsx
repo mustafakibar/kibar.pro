@@ -1,7 +1,7 @@
 import { ogContentType, ogSize, renderOgImage } from './_og/og-template';
 
 export const runtime = 'edge';
-export const alt = 'Mustafa Kibar — Senior Full-Stack Engineer';
+export const alt = 'Mustafa KiBAR — Senior Full-Stack Engineer';
 export const size = ogSize;
 export const contentType = ogContentType;
 

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     'Reach out for senior roles, consulting, and considered correspondence.',
   alternates: { canonical: '/contact' },
   openGraph: {
-    title: 'Contact · Mustafa Kibar',
+    title: 'Contact · Mustafa KiBAR',
     description:
       'Reach out for senior roles, consulting, and considered correspondence.',
     url: '/contact',
@@ -31,7 +31,7 @@ const ContactPage: NextPage = () => (
         <Subhead className="text-ink-muted not-italic">Or find me at</Subhead>
         <ContactList />
       </div>
-      <Body muted className="border-rule border-t pt-6 italic">
+      <Body muted className="italic">
         Replies within 48 hours.
       </Body>
     </Container>
