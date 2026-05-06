@@ -17,24 +17,29 @@ const NavList = ({
   onItemClick,
 }: NavListProps) => {
   const pathname = usePathname();
+  const isVertical = variant === 'vertical';
   return (
     <ul
       className={cn(
-        'flex list-none gap-1',
-        variant === 'vertical'
-          ? 'flex-col items-start gap-3'
-          : 'flex-row items-center',
+        'flex list-none',
+        isVertical
+          ? 'flex-col items-stretch gap-1'
+          : 'flex-row items-center gap-1',
         className,
       )}>
       {NAV_ENTRIES.map((entry) => (
-        <li key={entry.href}>
+        <li key={entry.href} className={isVertical ? 'w-full' : undefined}>
           <NavLink
             href={entry.href}
             label={entry.label}
             external={entry.external}
             active={pathname === entry.href}
             onClick={onItemClick}
-            className={variant === 'vertical' ? 'text-lg' : ''}
+            className={
+              isVertical
+                ? 'flex w-full items-center justify-between px-3 py-3 text-lg'
+                : ''
+            }
           />
         </li>
       ))}
