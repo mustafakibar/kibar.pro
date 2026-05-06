@@ -1,15 +1,15 @@
-import { LoadingCard } from '@/components/feedback/LoadingCard';
-import { Container } from '@/components/layout/Container';
-import { Grid } from '@/components/layout/Grid';
+import { ListPageSkeleton } from '@/components/feedback/ListPageSkeleton';
+import { readViewCookie } from '@/lib/viewPreference';
 
-export default function CertificatesLoading() {
+const CertificatesLoading = async () => {
+  const view = await readViewCookie('certificates', 'grid');
   return (
-    <Container className="py-16">
-      <Grid cols={{ md: 2, xl: 3 }}>
-        {Array.from({ length: 6 }).map((_, i) => (
-          <LoadingCard key={i} />
-        ))}
-      </Grid>
-    </Container>
+    <ListPageSkeleton
+      title="Certificates"
+      description="Certificates earned across engineering, cloud, and product disciplines."
+      view={view}
+    />
   );
-}
+};
+
+export default CertificatesLoading;

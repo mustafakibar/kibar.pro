@@ -1,15 +1,15 @@
-import { LoadingCard } from '@/components/feedback/LoadingCard';
-import { Container } from '@/components/layout/Container';
-import { Grid } from '@/components/layout/Grid';
+import { ListPageSkeleton } from '@/components/feedback/ListPageSkeleton';
+import { readViewCookie } from '@/lib/viewPreference';
 
-export default function ProjectsLoading() {
+const ProjectsLoading = async () => {
+  const view = await readViewCookie('projects', 'grid');
   return (
-    <Container className="py-16">
-      <Grid cols={{ md: 2, xl: 3 }}>
-        {Array.from({ length: 6 }).map((_, i) => (
-          <LoadingCard key={i} />
-        ))}
-      </Grid>
-    </Container>
+    <ListPageSkeleton
+      title="Projects"
+      description="A selection of open-source and production work across the stack."
+      view={view}
+    />
   );
-}
+};
+
+export default ProjectsLoading;
