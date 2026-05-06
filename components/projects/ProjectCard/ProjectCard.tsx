@@ -2,6 +2,8 @@ import { Tilt } from '@/components/motion/Tilt';
 import { SourceLink } from '@/components/projects/SourceLink';
 import { TagList } from '@/components/tag/TagList';
 import { Body, Mono, Subhead } from '@/components/typography';
+import { getLanguageColor } from '@/lib/data/languageColors';
+import { formatRelativeLong } from '@/lib/format/relative';
 import { Star } from '@/lib/icons';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
@@ -13,40 +15,6 @@ type ProjectCardProps = {
   className?: string;
 };
 
-const LANG_COLORS: Record<string, string> = {
-  TypeScript: '#3178c6',
-  JavaScript: '#f1e05a',
-  Rust: '#dea584',
-  Go: '#00add8',
-  Python: '#3572a5',
-  Kotlin: '#a97bff',
-  Dart: '#00b4ab',
-  Swift: '#f05138',
-  CSS: '#563d7c',
-  HTML: '#e34c26',
-  Shell: '#89e051',
-  C: '#555555',
-  'C++': '#f34b7d',
-  Java: '#b07219',
-  Ruby: '#701516',
-  PHP: '#4f5d95',
-  MDX: '#fcb32c',
-};
-
-const formatRelative = (iso?: string): string => {
-  if (!iso) return '';
-  const then = new Date(iso).getTime();
-  const now = Date.now();
-  const diff = now - then;
-  const day = 86400000;
-  const days = Math.floor(diff / day);
-  if (days < 1) return 'today';
-  if (days < 7) return `${days}d ago`;
-  if (days < 30) return `${Math.floor(days / 7)}w ago`;
-  if (days < 365) return `${Math.floor(days / 30)}mo ago`;
-  return `${Math.floor(days / 365)}y ago`;
-};
-
 const ProjectCard = ({
   project,
   hideTags = false,
@@ -56,7 +24,7 @@ const ProjectCard = ({
   const showTags = !hideTags && project.tags && project.tags.length > 0;
   const isLinked = Boolean(project.repoUrl);
   const langColor = project.language
-    ? (LANG_COLORS[project.language] ?? '#9f8a6a')
+    ? getLanguageColor(project.language)
     : null;
 
   return (
@@ -131,7 +99,7 @@ const ProjectCard = ({
               <span
                 aria-hidden
                 className="size-2 rounded-full"
-                style={{ background: langColor ?? '#9f8a6a' }}
+                style={{ background: langColor ?? undefined }}
               />
               <Mono className="text-xs">{project.language}</Mono>
             </span>
@@ -144,7 +112,7 @@ const ProjectCard = ({
           )}
           {project.pushedAt && (
             <Mono className="text-ink-faint ml-auto text-xs">
-              {formatRelative(project.pushedAt)}
+              {formatRelativeLong(project.pushedAt)}
             </Mono>
           )}
         </footer>

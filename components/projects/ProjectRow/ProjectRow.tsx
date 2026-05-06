@@ -1,5 +1,7 @@
 import type { Project } from '@/components/projects/ProjectCard';
 import { Body, Mono, Subhead } from '@/components/typography';
+import { getLanguageColor } from '@/lib/data/languageColors';
+import { formatRelativeShort } from '@/lib/format/relative';
 import { ChevronUpRight, Star } from '@/lib/icons';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
@@ -9,40 +11,10 @@ type ProjectRowProps = {
   className?: string;
 };
 
-const LANG_COLORS: Record<string, string> = {
-  TypeScript: '#3178c6',
-  JavaScript: '#f1e05a',
-  Rust: '#dea584',
-  Go: '#00add8',
-  Python: '#3572a5',
-  Kotlin: '#a97bff',
-  Dart: '#00b4ab',
-  Swift: '#f05138',
-  CSS: '#563d7c',
-  HTML: '#e34c26',
-  Shell: '#89e051',
-  C: '#555555',
-  'C++': '#f34b7d',
-  Java: '#b07219',
-  Ruby: '#701516',
-  PHP: '#4f5d95',
-  MDX: '#fcb32c',
-};
-
-const formatRelative = (iso?: string): string => {
-  if (!iso) return '';
-  const days = Math.floor((Date.now() - new Date(iso).getTime()) / 86400000);
-  if (days < 1) return 'today';
-  if (days < 7) return `${days}d`;
-  if (days < 30) return `${Math.floor(days / 7)}w`;
-  if (days < 365) return `${Math.floor(days / 30)}mo`;
-  return `${Math.floor(days / 365)}y`;
-};
-
 const ProjectRow = ({ project, className }: ProjectRowProps) => {
   const isLinked = Boolean(project.repoUrl);
   const langColor = project.language
-    ? (LANG_COLORS[project.language] ?? '#9f8a6a')
+    ? getLanguageColor(project.language)
     : null;
 
   return (
@@ -80,7 +52,7 @@ const ProjectRow = ({ project, className }: ProjectRowProps) => {
           <span
             aria-hidden
             className="size-2 rounded-full"
-            style={{ background: langColor ?? '#9f8a6a' }}
+            style={{ background: langColor ?? undefined }}
           />
           <Mono className="text-ink-muted text-xs">{project.language}</Mono>
         </span>
@@ -95,7 +67,7 @@ const ProjectRow = ({ project, className }: ProjectRowProps) => {
 
       {project.pushedAt && (
         <Mono className="text-ink-faint hidden text-xs md:inline">
-          {formatRelative(project.pushedAt)}
+          {formatRelativeShort(project.pushedAt)}
         </Mono>
       )}
 
